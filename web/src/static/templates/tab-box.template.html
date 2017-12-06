@@ -1,0 +1,68 @@
+<!-- tab box -->
+<div class="tab-box">
+
+    <!-- tab box tabs -->
+    <div class="tab-box__tabs" ng-if="::!$ctrl.CONFIG.device.isPhone">
+
+        <!-- tab box - wrapper -->
+        <div class="tab-box__wrapper">
+
+            <!-- tab box - container -->
+            <div class="tab-box__container">
+                <!-- tab box tab -->
+                <h4 class="tab-box__tab needsclick" ng-repeat="tab in ::$ctrl.data.children" ng-class="{'tab-box__tab--is-active':  tab.isActive}">
+                    <a class="tab-box__tab__link" href="#" title="{{::tab.headline}}" ng-click="$ctrl.showTab(tab, $event)" ng-cloak> {{::tab.headline}} </a>
+                </h4><!-- tab box tab end -->
+            </div><!-- tab box - container end-->
+
+        </div><!-- tab box - wrapper end -->
+
+    </div><!-- tab box tabs end -->
+
+    <!-- tab box contents -->
+    <div class="tab-box__contents" ng-if="::!$ctrl.CONFIG.device.isPhone">
+
+        <!-- tab box - wrapper -->
+        <div class="tab-box__wrapper">
+
+            <!-- tab box - content -->
+            <div class="tab-box__content" ng-repeat="content in ::$ctrl.data.children" ng-if="content.isActive">
+                <!-- tab box - container -->
+                <div class="tab-box__container" ng-switch="::$ctrl.type">
+                    <!-- tab box icons -->
+                    <tab-icons ng-switch-when="icon" data="::content" color="{{::content.attr.color}}"></tab-icons>
+                </div><!-- tab box - container end-->
+            </div><!-- tab box - content end -->
+
+        </div><!-- tab box - wrapper end -->
+
+    </div><!-- tab box contents end -->
+
+    <!-- accordion -->
+    <accordion>
+        <!-- accordion -->
+        <div class="accordion tab-box__accordion">
+
+            <!-- accordion wrapper -->
+            <div class="accordion__wrapper" ng-repeat="accordionItem in ::$ctrl.data.children">
+
+                <!-- accordion tab -->
+                <h4 class="accordion__tab" ng-class="{'accordion__tab--is-active':  accordionItem.isActive}">
+                    <a class="accordion__tab__link" href="#" title="{{::accordionItem.headline}}" ng-cloak> {{::accordionItem.headline}} </a>
+                </h4>
+
+                <!-- accordion content -->
+                <div class="accordion__content">
+                    <!-- accordion container -->
+                    <div class="accordion__container" ng-switch="::$ctrl.type">
+                        <!-- tab box icons -->
+                        <tab-icons ng-switch-when="icon" data="::accordionItem" color="{{::accordionItem.attr.color}}"></tab-icons>
+                    </div><!-- accordion container end -->
+                </div><!-- accordion content end -->
+
+            </div><!-- accordion wrapper end -->
+
+        </div><!-- accordion end -->
+    </accordion><!-- accordion end -->
+
+</div><!-- tab box end -->

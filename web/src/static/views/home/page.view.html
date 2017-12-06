@@ -1,0 +1,48 @@
+<!-- page -->
+<div class="app__page app__scroll" ng-class="::{'app__page--device-mobile': $ctrl_home.CONFIG.device.isMobile, 'app__page--device-desktop': !$ctrl_home.CONFIG.device.isMobile}" home-controller>
+
+    <!-- page loader -->
+    <div class="app__page__loader animate-fade-out" ng-if="!$ctrl_home.page.isVisible" leave-speed="slow" style="opacity: 1;">
+        <img ng-src="{{::($ctrl_home.CONFIG.path.images + 'page_loader.png')}}" alt=""/>
+        <span></span>
+    </div><!-- page loader end -->
+
+    <!-- page content -->
+    <div class="app__page__content" ng-if="$ctrl_home.page.isVisible" ng-class="::{'app__page__content--error': $ctrl_home.page.hasErrors}">
+
+        <!-- section -->
+        <section class="section section--color-dark" animate-fade-in enter-delay="3" enter-speed="slow">
+            <!-- container -->
+            <div class="container">
+
+                <h2> Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit. </h2>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at vulputate justo. Fusce dapibus, lacus ut vulputate rutrum, nisl justo ultrices risus, nec tristique metus lacus ut metus. Vivamus lobortis id magna non maximus. Nulla hendrerit posuere lacinia. Donec quam nulla, eleifend in quam quis, interdum sodales enim. Duis vestibulum leo erat, in porta lectus vestibulum at. Vivamus porta ex malesuada ante viverra dignissim. </p>
+
+            </div><!-- container end -->
+        </section><!-- section end -->
+
+        <!-- section -->
+        <section class="section section--color-light" animate-slide-up-in enter-delay="5" enter-speed="slow">
+            <!-- container -->
+            <div class="container">
+
+                <h2> Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit. </h2>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at vulputate justo. Fusce dapibus, lacus ut vulputate rutrum, nisl justo ultrices risus, nec tristique metus lacus ut metus. Vivamus lobortis id magna non maximus. Nulla hendrerit posuere lacinia. Donec quam nulla, eleifend in quam quis, interdum sodales enim. Duis vestibulum leo erat, in porta lectus vestibulum at. Vivamus porta ex malesuada ante viverra dignissim. </p>
+
+            </div><!-- container end -->
+        </section><!-- section end -->
+
+        <!-- section -->
+        <section class="section section--color-default" animate-slide-up-in enter-delay="7" enter-speed="slow">
+            <!-- container -->
+            <div class="container">
+
+                <h2> Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit. </h2>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at vulputate justo. Fusce dapibus, lacus ut vulputate rutrum, nisl justo ultrices risus, nec tristique metus lacus ut metus. Vivamus lobortis id magna non maximus. Nulla hendrerit posuere lacinia. Donec quam nulla, eleifend in quam quis, interdum sodales enim. Duis vestibulum leo erat, in porta lectus vestibulum at. Vivamus porta ex malesuada ante viverra dignissim. </p>
+
+            </div><!-- container end -->
+        </section><!-- section end -->
+
+    </div><!-- page content end -->
+
+</div><!-- page end -->

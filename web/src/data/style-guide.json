@@ -1,0 +1,953 @@
+{
+    "user": {
+        "firstname": "Pradeep",
+        "lastname": "Sekar",
+        "brand": "PV"
+    },
+
+    "content": { },
+
+    "template": {
+        "options": { },
+
+        "content": [
+            {
+                "id": "teaser-image-small-top",
+                "template": "teaser-image-small",
+
+                "headline": "Headline teaser image small",
+                "copy": "Copy top ipsum dolor sit amet.",
+                "attr": { "align": "top" },
+
+                "image": {
+                    "desktop": "/home/home-1920x540.jpg",
+                    "mobile": "/home/home-800x225.jpg"
+                }
+            },
+
+
+
+            {
+                "id": "style-guide-break-1",
+                "template": "style-guide-break",
+                "attr": { "mobile": "false" }
+            },
+
+
+
+            {
+                "id": "teaser-image-small-center",
+                "template": "teaser-image-small",
+
+                "headline": "Headline teaser image small",
+                "copy": "Copy center ipsum dolor sit amet.",
+                "attr": { "align": "center" },
+
+                "cta" : {
+                    "label": "Cta lorem ipsum",
+                    "url": "#"
+                },
+
+                "image": {
+                    "desktop": "/home/home-1920x540.jpg",
+                    "mobile": "/home/home-800x225.jpg"
+                }
+            },
+
+
+
+            {
+                "id": "style-guide-break-2",
+                "template": "style-guide-break",
+                "attr": { "mobile": "false" }
+            },
+
+
+
+            {
+                "id": "teaser-image-small-alt-top",
+                "template": "teaser-image-small-alt",
+
+                "headline": "Headline teaser image small alt top",
+                "attr": { "align": "top" },
+
+                "image": {
+                    "desktop": "/home/home-1920x540.jpg",
+                    "mobile": "/home/home-800x225.jpg"
+                }
+            },
+
+
+
+            {
+                "id": "style-guide-break-3",
+                "template": "style-guide-break"
+            },
+
+
+
+            {
+                "id": "teaser-image-small-alt-center",
+                "template": "teaser-image-small-alt",
+
+                "headline": "Headline teaser image small alt center",
+                "attr": { "align": "center" },
+
+                "image": {
+                    "desktop": "/home/home-1920x540.jpg",
+                    "mobile": "/home/home-800x225.jpg"
+                }
+            },
+
+
+
+            {
+                "id": "shipping-pathway",
+                "template": "shipping-pathway",
+
+                "headline": "Headline shipping pathway",
+                "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum <br> leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+                "attr": { },
+
+                "start-at": 1,
+                "vehicle": {
+                    "model_name": "Golf",
+                    "model_code": "BQ13NZ/18",
+                    "model_color_code": "H7H7",
+                    "model_option_code": null,
+                    "model_image": "https://secure.volkswagenaustralia.com.au/vehicle-image/ro-welcome--bq13nz-18--h7h7--default.png"
+                }
+            },
+
+
+
+            {
+                "id": "ming-zing-tiles",
+                "template": "ming-zing-tiles",
+
+                "headline": "Headline ming zing tiles",
+                "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum <br> leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem."
+            },
+
+
+
+            {
+                "id": "inline-video",
+                "template": "inline-video",
+
+                "headline": "Headline inline video",
+                "copy": "Copy ipsum dolor sit amet.",
+
+                "video": {
+                    "desktop": "/m3/ship/desktop/",
+                    "tablet": "/m3/ship/tablet/",
+                    "mobile": "/m3/ship/mobile/"
+                }
+            },
+
+
+
+            {
+                "id": "media-player-inline",
+                "template": "media-player-inline",
+
+                "start-at": 0,
+                "headline": "Headline media player inline",
+                "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum <br> leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+
+                "cta" : {
+                    "label": "Cta lorem ipsum",
+                    "url": "#"
+                },
+
+                "image": {
+                    "desktop": "/home/home-1440x810.jpg",
+                    "mobile": "/home/home-800x450.jpg"
+                },
+
+                "video": {
+                    "desktop": "va1EAh6vBFw",
+                    "mobile": "va1EAh6vBFw"
+                }
+            },
+
+
+
+            {
+                "id": "media-player-inline-alt",
+                "template": "media-player-inline-alt",
+                "start-at": 0,
+
+                "headline": "Headline media player inline alt",
+                "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum <br> leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+
+                "cta" : {
+                    "label": "Cta lorem ipsum",
+                    "url": "#"
+                },
+
+                "image": {
+                    "desktop": "/home/home-1440x810.jpg",
+                    "mobile": "/home/home-800x450.jpg"
+                },
+
+                "video": {
+                    "desktop": "va1EAh6vBFw",
+                    "mobile": "va1EAh6vBFw"
+                }
+            },
+
+
+
+            {
+                "id": "teaser-next-steps-x3",
+                "template": "teaser-next-steps-x3",
+
+                "headline": "Headline teaser next steps x3",
+                "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum <br> leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+
+                "children": [
+                    {
+                        "template": "teaser-content-basic",
+                        "headline": "Headline teaser content basic",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit.",
+
+                        "cta" : {
+                            "label": "Cta lorem ipsum",
+                            "url": "#"
+                        },
+
+                        "image": {
+                            "desktop": "/home/home-480x270.jpg",
+                            "mobile": "/home/home-480x360.jpg"
+                        }
+                    },
+
+                    {
+                        "template": "teaser-content-basic",
+                        "headline": "Headline teaser content basic",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit.",
+
+                        "cta" : {
+                            "label": "Cta lorem ipsum",
+                            "url": "#"
+                        },
+
+                        "image": {
+                            "desktop": "/home/home-480x270.jpg",
+                            "mobile": "/home/home-480x360.jpg"
+                        }
+                    },
+
+                    {
+                        "template": "media-player-inline",
+
+                        "start-at": 0,
+                        "headline": "Headline media player inline",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit.",
+
+                        "cta" : {
+                            "label": "Cta lorem ipsum",
+                            "url": "#"
+                        },
+
+                        "image": {
+                            "desktop": "/home/home-480x270.jpg",
+                            "mobile": "/home/home-800x450.jpg"
+                        },
+
+                        "video": {
+                            "desktop": "va1EAh6vBFw",
+                            "mobile": "va1EAh6vBFw"
+                        }
+                    }
+                ]
+            },
+
+
+
+            {
+                "id": "teaser-next-steps-x2",
+                "template": "teaser-next-steps-x2",
+
+                "headline": "Headline teaser next steps x2",
+                "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum <br> leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+
+                "children": [
+                    {
+                        "template": "teaser-content-basic",
+                        "headline": "Headline teaser content basic",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit.",
+
+                        "cta" : {
+                            "label": "Cta lorem ipsum",
+                            "url": "#"
+                        },
+
+                        "image": {
+                            "desktop": "/home/home-800x450.jpg",
+                            "mobile": "/home/home-480x360.jpg"
+                        }
+                    },
+
+                    {
+                        "template": "media-player-inline-alt",
+
+                        "start-at": 0,
+                        "headline": "Headline media player inline alt",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit.",
+
+                        "cta" : {
+                            "label": "Cta lorem ipsum",
+                            "url": "#"
+                        },
+
+                        "image": {
+                            "desktop": "/home/home-800x450.jpg",
+                            "mobile": "/home/home-800x450.jpg"
+                        },
+
+                        "video": {
+                            "desktop": "va1EAh6vBFw",
+                            "mobile": "va1EAh6vBFw"
+                        }
+                    }
+                ]
+            },
+
+
+
+            {
+                "id": "teaser-next-steps-x1-left",
+                "template": "teaser-next-steps-x1",
+
+                "headline": "Headline teaser next steps x1 left",
+                "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum <br> leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+                "attr": { "align": "left" },
+
+                "children": [
+                    {
+                        "template": "teaser-content-basic",
+                        "headline": "Headline teaser content basic",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+
+                        "cta" : {
+                            "label": "Cta lorem ipsum",
+                            "url": "#"
+                        },
+
+                        "image": {
+                            "desktop": "/home/home-800x450.jpg",
+                            "mobile": "/home/home-800x450.jpg"
+                        }
+                    }
+                ]
+            },
+
+
+
+            {
+                "id": "teaser-next-steps-x1-right",
+                "template": "teaser-next-steps-x1",
+
+                "headline": "Headline teaser next steps x1 right",
+                "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum <br> leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+                "attr": { "align": "right" },
+
+                "children": [
+                    {
+                        "template": "teaser-content-basic",
+                        "headline": "Headline teaser content basic",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+
+                        "cta" : {
+                            "label": "Cta lorem ipsum",
+                            "url": "#"
+                        },
+
+                        "image": {
+                            "desktop": "/home/home-800x450.jpg",
+                            "mobile": "/home/home-800x450.jpg"
+                        }
+                    }
+                ]
+            },
+
+
+
+            {
+                "id": "feature-wrapper-x3",
+                "template": "feature-wrapper-x3",
+
+                "headline": "Headline feature wrapper x3",
+                "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum <br> leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+
+                "children": [
+                    {
+                        "template": "teaser-content-basic",
+                        "headline": "Headline teaser content basic",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit.",
+
+                        "cta" : {
+                            "label": "Cta lorem ipsum",
+                            "url": "#"
+                        },
+
+                        "image": {
+                            "desktop": "/home/home-480x270.jpg",
+                            "mobile": "/home/home-800x450.jpg"
+                        }
+                    },
+
+                    {
+                        "template": "teaser-content-basic",
+                        "headline": "Headline teaser content basic",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit.",
+
+                        "cta" : {
+                            "label": "Cta lorem ipsum",
+                            "url": "#"
+                        },
+
+                        "image": {
+                            "desktop": "/home/home-480x270.jpg",
+                            "mobile": "/home/home-800x450.jpg"
+                        }
+                    },
+
+                    {
+                        "template": "media-player-inline",
+
+                        "start-at": 0,
+                        "headline": "Headline media player inline",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit.",
+
+                        "cta" : {
+                            "label": "Cta lorem ipsum",
+                            "url": "#"
+                        },
+
+                        "image": {
+                            "desktop": "/home/home-480x270.jpg",
+                            "mobile": "/home/home-800x450.jpg"
+                        },
+
+                        "video": {
+                            "desktop": "va1EAh6vBFw",
+                            "mobile": "va1EAh6vBFw"
+                        }
+                    }
+                ]
+            },
+
+
+
+            {
+                "id": "feature-wrapper-x2",
+                "template": "feature-wrapper-x2",
+
+                "headline": "Headline feature wrapper x2",
+                "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum <br> leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+
+                "children": [
+                    {
+                        "template": "teaser-content-basic",
+                        "headline": "Headline teaser content basic",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit.",
+
+                        "cta" : {
+                            "label": "Cta lorem ipsum",
+                            "url": "#"
+                        },
+
+                        "image": {
+                            "desktop": "/home/home-800x450.jpg",
+                            "mobile": "/home/home-800x450.jpg"
+                        }
+                    },
+
+                    {
+                        "template": "media-player-inline-alt",
+
+                        "start-at": 0,
+                        "headline": "Headline media player inline alt",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit.",
+
+                        "cta" : {
+                            "label": "Cta lorem ipsum",
+                            "url": "#"
+                        },
+
+                        "image": {
+                            "desktop": "/home/home-800x450.jpg",
+                            "mobile": "/home/home-800x450.jpg"
+                        },
+
+                        "video": {
+                            "desktop": "va1EAh6vBFw",
+                            "mobile": "va1EAh6vBFw"
+                        }
+                    }
+                ]
+            },
+
+
+
+            {
+                "id": "feature-wrapper-x1-left",
+                "template": "feature-wrapper-x1",
+
+                "headline": "Headline feature wrapper x1 left",
+                "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum <br> leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+                "attr": { "align": "left" },
+
+                "children": [
+                    {
+                        "template": "teaser-content-basic",
+                        "headline": "Headline teaser content basic",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+
+                        "cta" : {
+                            "label": "Cta lorem ipsum",
+                            "url": "#"
+                        },
+
+                        "image": {
+                            "desktop": "/home/home-800x450.jpg",
+                            "mobile": "/home/home-800x450.jpg"
+                        }
+                    }
+                ]
+            },
+
+
+
+            {
+                "id": "feature-wrapper-x1-right",
+                "template": "feature-wrapper-x1",
+
+                "headline": "Headline feature wrapper x1 right",
+                "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum <br> leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+                "attr": { "align": "right" },
+
+                "children": [
+                    {
+                        "template": "teaser-content-basic",
+                        "headline": "Headline teaser content basic",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+
+                        "cta" : {
+                            "label": "Cta lorem ipsum",
+                            "url": "#"
+                        },
+
+                        "image": {
+                            "desktop": "/home/home-800x450.jpg",
+                            "mobile": "/home/home-800x450.jpg"
+                        }
+                    }
+                ]
+            },
+
+
+
+            {
+                "id": "tab-box-icons",
+                "template": "tab-box-icons",
+
+                "headline": "Headline tab box icon",
+                "copy": "<ul><li> Copy ipsum dolor sit amet, consectetur adipiscing elit. </li><li> Cras sit amet interdum leo, ut aliquet eros. </li><li> Praesent et lacinia odio, in placerat sem. </li></ul><br> Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum <br> leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+
+                "children": [
+                    {
+                        "headline": "Headline ipsum dolor",
+
+                        "children": [
+                            {
+                                "copy": "Copy ipsum dolor sit",
+                                "attr": { "name": "face-smiling" }
+                            },
+                            {
+                                "copy": "Copy ipsum dolor sit",
+                                "attr": { "name": "face-laughing" }
+                            },
+                            {
+                                "copy": "Copy ipsum dolor sit",
+                                "attr": { "name": "face-sunglasses" }
+                            },
+                            {
+                                "copy": "Copy ipsum dolor sit",
+                                "attr": { "name": "face-smiling" }
+                            },
+                            {
+                                "copy": "Copy ipsum dolor sit",
+                                "attr": { "name": "face-laughing" }
+                            },
+                            {
+                                "copy": "Copy ipsum dolor sit",
+                                "attr": { "name": "face-sunglasses" }
+                            },
+                            {
+                                "copy": "Copy ipsum dolor sit"
+                            },
+                            {
+                                "copy": "Copy ipsum dolor sit"
+                            }
+                        ]
+                    },
+
+                    {
+                        "headline": "Headline ipsum dolor",
+                        "attr": { "color": "#0099da" },
+
+                        "children": [
+                            {
+                                "copy": "Copy ipsum dolor sit",
+                                "attr": { "name": "face-smiling" }
+                            },
+                            {
+                                "copy": "Copy ipsum dolor sit",
+                                "attr": { "name": "face-laughing" }
+                            },
+                            {
+                                "copy": "Copy ipsum dolor sit",
+                                "attr": { "name": "face-sunglasses" }
+                            },
+                            {
+                                "copy": "Copy ipsum dolor sit"
+                            },
+                            {
+                                "copy": "Copy ipsum dolor sit"
+                            }
+                        ]
+                    },
+
+                    {
+                        "headline": "Headline ipsum dolor",
+                        "attr": { "color": "#faaa00" },
+
+                        "children": [
+                            {
+                                "copy": "Copy ipsum dolor sit",
+                                "attr": { "name": "face-smiling" }
+                            },
+                            {
+                                "copy": "Copy ipsum dolor sit",
+                                "attr": { "name": "face-laughing" }
+                            },
+                            {
+                                "copy": "Copy ipsum dolor sit",
+                                "attr": { "name": "face-sunglasses" }
+                            },
+                            {
+                                "copy": "Copy ipsum dolor sit",
+                                "attr": { "name": "face-smiling" }
+                            },
+                            {
+                                "copy": "Copy ipsum dolor sit",
+                                "attr": { "name": "face-laughing" }
+                            },
+                            {
+                                "copy": "Copy ipsum dolor sit",
+                                "attr": { "name": "face-sunglasses" }
+                            },
+                            {
+                                "copy": "Copy ipsum dolor sit"
+                            },
+                            {
+                                "copy": "Copy ipsum dolor sit"
+                            },
+                            {
+                                "copy": "Copy ipsum dolor sit"
+                            }
+                        ]
+                    }
+                ]
+            },
+
+
+
+            {
+                "id": "teaser-image-big-left",
+                "template": "teaser-image-big",
+
+                "headline": "Headline teaser image big left",
+                "copy": "Copy ipsum dolor sit amet.",
+                "attr": { "align": "left" },
+
+                "cta" : {
+                    "label": "Cta lorem ipsum",
+                    "url": "#"
+                },
+
+                "image": {
+                    "desktop": "/home/home-1920x874.jpg",
+                    "mobile": "/home/home-800x364.jpg"
+                }
+            },
+
+
+
+            {
+                "id": "style-guide-break-4",
+                "template": "style-guide-break",
+                "attr": { "mobile": "false" }
+            },
+
+
+
+            {
+                "id": "teaser-image-big-right",
+                "template": "teaser-image-big",
+
+                "headline": "Headline teaser image big right",
+                "copy": "Copy ipsum dolor sit amet.",
+                "attr": { "align": "right" },
+
+                "cta" : {
+                    "label": "Cta lorem ipsum",
+                    "url": "#"
+                },
+
+                "image": {
+                    "desktop": "/home/home-1920x874.jpg",
+                    "mobile": "/home/home-800x364.jpg"
+                }
+            },
+
+
+
+            {
+                "id": "style-guide-break-5",
+                "template": "style-guide-break",
+                "attr": { "mobile": "false" }
+            },
+
+
+
+            {
+                "id": "teaser-image-big-left-alt",
+                "template": "teaser-image-big-alt",
+
+                "headline": "Headline teaser image big alt left",
+                "copy": "Copy ipsum dolor sit amet.",
+                "attr": { "align": "left" },
+
+                "cta" : {
+                    "label": "Cta lorem ipsum",
+                    "url": "#"
+                },
+
+                "cta-alt" : {
+                    "label": "Cta lorem ipsum",
+                    "url": "#"
+                },
+
+                "image": {
+                    "desktop": "/home/home-1920x874.jpg",
+                    "mobile": "/home/home-800x364.jpg"
+                }
+            },
+
+
+
+            {
+                "id": "style-guide-break-6",
+                "template": "style-guide-break",
+                "attr": { "mobile": "false" }
+            },
+
+
+
+            {
+                "id": "teaser-image-big-right-alt",
+                "template": "teaser-image-big-alt",
+
+                "headline": "Headline teaser image big alt right",
+                "copy": "Copy ipsum dolor sit amet.",
+                "attr": { "align": "right" },
+
+                "cta" : {
+                    "label": "Cta lorem ipsum",
+                    "url": "#"
+                },
+
+                "cta-alt" : {
+                    "label": "Cta lorem ipsum",
+                    "url": "#"
+                },
+
+                "image": {
+                    "desktop": "/home/home-1920x874.jpg",
+                    "mobile": "/home/home-800x364.jpg"
+                }
+            },
+
+
+
+            {
+                "id": "carousel",
+                "template": "carousel",
+
+                "headline": "Headline carousel ipsum dolor",
+                "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum <br> leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+                "attr": { },
+
+                "start-at": 1,
+                "children": [
+                    {
+                        "headline": "Headline first ipsum dolor",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing <br/> elit. Cras sit amet interdum leo ut aliquet eros.",
+
+                        "image": {
+                            "desktop": "/home/home-800x450.jpg",
+                            "mobile": "/home/home-800x450.jpg"
+                        }
+                    },
+
+                    {
+                        "headline": "Headline second ipsum dolor",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing <br/> elit. Cras sit amet interdum leo ut aliquet eros.",
+
+                        "image": {
+                            "desktop": "/home/home-800x450.jpg",
+                            "mobile": "/home/home-800x450.jpg"
+                        }
+                    },
+
+                    {
+                        "headline": "Headline third ipsum dolor",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing <br/> elit. Cras sit amet interdum leo ut aliquet eros.",
+
+                        "image": {
+                            "desktop": "/home/home-800x450.jpg",
+                            "mobile": "/home/home-800x450.jpg"
+                        }
+                    },
+
+                    {
+                        "headline": "Headline last ipsum dolor",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing <br/> elit. Cras sit amet interdum leo ut aliquet eros.",
+
+                        "image": {
+                            "desktop": "/home/home-800x450.jpg",
+                            "mobile": "/home/home-800x450.jpg"
+                        }
+                    }
+                ]
+            },
+
+
+
+            {
+                "id": "share-left",
+                "template": "share",
+
+                "headline": "Headline share left",
+                "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum <br> leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+                "attr": { "align": "left" },
+
+                "children": [
+                    {
+                        "headline": "Headline lorem ipsum dolor",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+
+                        "cta" : {
+                            "label": "Cta lorem ipsum",
+                            "caption": "Pradeep Sekar",
+                            "title": "Title share ipsum dolor",
+                            "copy": "Copy share ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+                            "url": "http://volkswagenaustralia.com.au/welcome/assets/images/cars/beetle-rline-yellow-left-800x450.png"
+                        },
+
+                        "image": {
+                            "desktop": "http://volkswagenaustralia.com.au/welcome/assets/images/cars/beetle-rline-yellow-left-800x450.png",
+                            "mobile": "http://volkswagenaustralia.com.au/welcome/assets/images/cars/beetle-rline-yellow-left-800x450.png"
+                        }
+                    }
+                ]
+            },
+
+
+
+            {
+                "id": "share-right",
+                "template": "share",
+
+                "headline": "Headline share right",
+                "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum <br> leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+                "attr": { "align": "right" },
+
+                "children": [
+                    {
+                        "headline": "Headline lorem ipsum dolor",
+                        "copy": "Copy ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+
+                        "cta" : {
+                            "label": "Cta lorem ipsum",
+                            "caption": "Pradeep Sekar",
+                            "title": "Title share ipsum dolor",
+                            "copy": "Copy share ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet interdum leo, ut aliquet eros. Praesent et lacinia odio, in placerat sem.",
+                            "url": "http://volkswagenaustralia.com.au/welcome/assets/images/cars/beetle-rline-yellow-left-800x450.png"
+                        },
+
+                        "image": {
+                            "desktop": "http://volkswagenaustralia.com.au/welcome/assets/images/cars/beetle-rline-yellow-right-800x450.png",
+                            "mobile": "http://volkswagenaustralia.com.au/welcome/assets/images/cars/beetle-rline-yellow-right-800x450.png"
+                        }
+                    }
+                ]
+            },
+
+
+
+            {
+                "id": "dealer-info",
+                "template": "dealer-info",
+
+                "headline": "", "dealer": "", "address": "",
+                "copy": "Of course, <b>Mt Gravatt Volkswagen</b> know just about everything there is to know about me <br> and are always there to help. If you have any questions call them on <b>0734210999</b>. <br class='all'><br class='all'> Or, you can always say hello at <br class='all'> 750 Logan Road, Greenslopes, 4122"
+            },
+
+
+
+            {
+                "id": "footer",
+                "template": "footer",
+
+                "subline": "Follow us on social media",
+                "copy": "The information, pictures, colours, and specifications contained within the Volkswagen Group Australia website are presented as a general guide to the products and accessories offered by Volkswagen Group Australia. Any Innovative Technologies shown are a combination of standard and/or optional extras per model. For further information, please contact your local Volkswagen dealer. Although every effort has been made to ensure that such information is correct and up to date, no warranty is provided that all such information is reliable, complete, accurate or without error. In some cases pictures of overseas models may be shown as a guide. Therefore, Volkswagen Group Australia does not accept liability for damages of any kind resulting from the access or use of this site and its contents.",
+
+                "children": [
+                    {
+                        "cta" : {
+                            "label": "Privacy Policy",
+                            "url": "http://www.volkswagen.com.au/en/tools/navigation/footer/privacy.html"
+                        }
+                    },
+
+                    {
+                        "cta" : {
+                            "label": "Legal",
+                            "url": "http://www.volkswagen.com.au/en/tools/navigation/footer/legal.html"
+                        }
+                    },
+
+                    {
+                        "cta" : {
+                            "label": "Volkswagen AG",
+                            "url": "http://www.volkswagenag.com/content/vwcorp/content/en/homepage.html"
+                        }
+                    },
+
+                    {
+                        "cta" : {
+                            "label": "Volkswagen International",
+                            "url": "http://www.volkswagen.com/de.html"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

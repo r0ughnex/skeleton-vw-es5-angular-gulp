@@ -1,0 +1,239 @@
+// -------------------------------------
+//   Component - Api Tester
+// -------------------------------------
+/**
+    * @name api-tester
+    * @desc Styles for the api tester component.
+**/
+
+.api-tester {
+    position: relative;
+    display: block;
+}
+
+// custom tag element used
+// in the angular template
+api-tester {
+    .api-tester { @extend %section--margin-top;  }
+    &:first-child { .api-tester { margin-top: 0; }}
+}
+
+// -------------------------------------
+//   Api Tester - Test
+// -------------------------------------
+$api_test_w: 100%;
+$api_test_size: 90px;
+$api_test_size_sm: 80px;
+
+$api_test_mgn: 20px;
+$api_test_pad: 20px;
+$api_test_darken: 6%;
+$api_test_border_rad: 8px;
+
+.api-tester__test {
+    display: block;
+    position: relative;
+    background-color: white;
+
+    width: $api_test_w;
+    min-height: $api_test_size;
+    max-width: $container_w_max_md;
+
+    margin: 0 auto;
+    border-radius: $api_test_border_rad;
+    box-shadow: 0px 15px 10px -15px $color_grey_soft;
+
+    & + & {
+        margin-top: $api_test_mgn;
+        &:first-child { margin-top: 0; }
+    }
+
+    @include tablet-sm {
+        width: $api_test_w;
+        min-height: $api_test_size_sm;
+    }
+}
+
+// -------------------------------------
+//   Api Tester - Test - Status
+// -------------------------------------
+.api-tester__test__status {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    height: 100%;
+    width: $api_test_size;
+
+    @include tablet-sm {
+        height: 100%;
+        width: $api_test_size_sm;
+    }
+
+    &__link {
+        @include transitions(background-color);
+        @extend %font-size-h3;
+
+        // link is not linked to
+        // a specific url or action
+        cursor: default !important;
+        position: absolute;
+        overflow: hidden;
+        left: 0;
+        top: 0;
+
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: $api_test_border_rad;
+        border-bottom-left-radius: $api_test_border_rad;
+
+        background-color: $color_grey_soft;
+        &:hover { background-color: darken($color_grey_soft, $api_test_darken); }
+
+        // on api loading
+        &[title*="oading"] {
+            background-color: $color_blue_volkswagen;
+            &:hover { background-color: darken($color_blue_volkswagen, $api_test_darken); }
+        }
+
+        // on api success
+        &[title*="uccess"] {
+            background-color: $color_green_success;
+            &:hover { background-color: darken($color_green_success, $api_test_darken); }
+        }
+
+        // on api error
+        &[title*="rror"] {
+            background-color: $color_red_warning;
+            &:hover { background-color: darken($color_red_warning, $api_test_darken); }
+        }
+    }
+
+    &__icon,
+    &__loader {
+        color: white;
+        position: absolute;
+        &:hover { color: white; }
+
+        margin-top: -0.5em;
+        margin-left: -0.5em;
+        top: 50%; left: 50%;
+    }
+}
+
+// -------------------------------------
+//   Api Tester - Test - Status - Loader
+// -------------------------------------
+$api_test_loader_opcty_deft: 1;
+$api_test_loader_opcty_load: 0.5;
+
+$api_test_loader_scale_deft: 1;
+$api_test_loader_scale_load: 0.8;
+
+// note: the minimal rotation set
+// on the transform is to make the
+// scale animations smoother in IE
+@keyframes api_tldr_pulse { to {
+    opacity: $api_test_loader_opcty_load;
+    transform: scale($api_test_loader_scale_load) rotate(0.1deg);
+}}
+
+.api-tester__test__status__loader {
+    font-size: 1.5em;
+    line-height: 1em;
+    font-weight: bold;
+    font-family: Consolas, Menlo, Monaco, monospace;
+
+    // note: the minimal rotation set
+    // on the transform is to make the
+    // scale animations smoother in IE
+    margin-top: -0.65em;
+    opacity: $api_test_loader_opcty_deft;
+    transform: scale($api_test_loader_scale_deft) rotate(0.1deg);
+
+    span {
+        line-height: 1em;
+        display: inline-block;
+        vertical-align: middle;
+
+        animation-name: none;
+        &:nth-child(even) { animation-delay: $anim_delay_none; }
+        &:nth-child(odd)  { animation-delay: $anim_delay_fast; }
+    }
+
+    &--is-loading {
+        span {
+            animation-name: api_tldr_pulse;
+            animation-direction: alternate;
+
+            animation-duration: $anim_time_fast;
+            animation-iteration-count: infinite;
+            animation-timing-function: $ease_in_out_quad;
+        }
+    }
+}
+
+// -------------------------------------
+//   Api Tester - Test - Content
+// -------------------------------------
+.api-tester__test__content {
+    display: block;
+    position: relative;
+
+    padding: $api_test_pad;
+    margin-left: $api_test_size;
+    padding-right: ($btn_w + ($api_test_pad * 2));
+
+    @include tablet-sm {
+        margin-left: $api_test_size_sm;
+        padding-right: (0 + $api_test_pad * 1);
+    }
+
+    &__title, &__copy {
+        @include transitions(opacity);
+        text-align: left !important;
+        margin: 0 auto;
+    }
+
+    &__title {
+        margin-top: ($api_test_mgn * 0.0);
+        line-height: 1.12em;
+    }
+
+    &__copy  {
+        margin-top: ($api_test_mgn * 0.2);
+        line-height: 1.32em;
+    }
+
+    span {
+        position: relative;
+        display: inline-block;
+    }
+}
+
+// -------------------------------------
+//   Api Tester - Test - State
+// -------------------------------------
+$api_test_btn_opcty: 0.8;
+
+.api-tester__test__state {
+    @extend %transform-center-v;
+    right: $api_test_pad;
+
+    display: block;
+    min-width: $btn_w;
+    @include tablet-sm { display: none; }
+
+    &__button {
+        @extend %button--disabled;
+
+        // button is not linked to
+        // a specific url or action
+        cursor: default !important;
+        opacity: $api_test_btn_opcty;
+
+        &[title*="oading"] { @extend %button--primary; } // on api loading
+        &[title*="uccess"] { @extend %button--success; } // on api success
+        &[title*="rror"]   { @extend %button--error;   } // on api error
+    }
+}

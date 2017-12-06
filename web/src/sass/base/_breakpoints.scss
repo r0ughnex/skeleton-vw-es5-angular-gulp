@@ -1,0 +1,111 @@
+// -------------------------------------
+//   Base - Breakpoints
+// -------------------------------------
+/**
+    * @name breakpoints
+    * @desc Used for setting breakpoint mixins
+            used with all elements that spread
+            across the entire app.
+**/
+
+// max widths
+$mobile_w_sm: 480px;
+$mobile_w:    768px;
+
+$tablet_w_sm: 1024px;
+$tablet_w:    1280px;
+
+// min widths
+$desktop_w_lg: 1920px;
+
+// -------------------------------------
+//   Breakpoints - Mixins
+// -------------------------------------
+// upto small mobiles
+@mixin mobile-sm {
+    @media (max-width: #{$mobile_w_sm - 1px}) {
+        @content;
+    }
+}
+
+// upto standard mobiles
+@mixin mobile {
+    @media (max-width: #{$mobile_w - 1px}) {
+        @content;
+    }
+}
+
+// upto small tablets ( potrait )
+@mixin tablet-sm {
+    @media (max-width: #{$tablet_w_sm - 1px}) {
+        @content;
+    }
+}
+
+// upto standard tablets ( landscape )
+@mixin tablet {
+    @media (max-width: #{$tablet_w - 1px}) {
+        @content;
+    }
+}
+
+// upto large desktops
+@mixin desktop-lg {
+    @media (max-width: #{$desktop_w_lg - 1px}) {
+        @content;
+    }
+}
+// -------------------------------------
+//   Breakpoints - Min Width Mixins
+// -------------------------------------
+// above small mobiles
+@mixin mobile-sm-up {
+    @media (min-width: #{$mobile_w_sm}) {
+        @content;
+    }
+}
+
+// above standard mobiles
+@mixin mobile-up {
+    @media (min-width: #{$mobile_w}) {
+        @content;
+    }
+}
+
+// above small tablets ( potrait )
+@mixin tablet-sm-up {
+    @media (min-width: #{$tablet_w_sm}) {
+        @content;
+    }
+}
+
+// above standard tablets ( landscape )
+@mixin tablet-up {
+    @media (min-width: #{$tablet_w}) {
+        @content;
+    }
+}
+
+// above large desktops
+@mixin desktop-lg-up {
+    @media (min-width: #{$desktop_w_lg}) {
+        @content;
+    }
+}
+
+// -------------------------------------
+//   Breakpoints- Content
+// -------------------------------------
+// These values will not show up in content,
+// but can be queried by JavaScript to know
+// which breakpoint is currently active.
+body:before {
+    content: "desktop"; display: none;
+    @include desktop-lg-up { content: "desktop-lg-up"; }
+
+    @include tablet    { content: "tablet";    }
+    @include tablet-sm { content: "tablet-sm"; }
+
+    @include mobile    { content: "mobile";    }
+    @include mobile-sm { content: "mobile-sm"; }
+}

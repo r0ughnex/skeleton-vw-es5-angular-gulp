@@ -1,0 +1,114 @@
+{
+    "user": {
+        "firstname": "Pradeep",
+        "lastname": "Sekar",
+        "brand": "PV"
+    },
+
+    "content": { },
+
+    "template": {
+        "options": { },
+
+        "content": [
+            {
+                "id": "teaser-image-small-alt-top",
+                "template": "teaser-image-small-alt",
+
+                "headline": "API Tests",
+                "attr": { "align": "top" },
+
+                "image": {
+                    "desktop": "/home/home-1920x540.jpg",
+                    "mobile": "/home/home-800x225.jpg"
+                }
+            },
+
+
+
+            {
+                "id": "api-tester",
+                "template": "api-tester",
+
+                "headline": "API Tester",
+                "copy": "This is an internal page to prototype and <br class='all'/> test the shipping and content APIs.",
+                "attr": { },
+
+                "apis": [
+                    { "type": "content", "server": "all", "id": "test-m1"  },
+                    { "type": "content", "server": "all", "id": "test-m2a" },
+                    { "type": "content", "server": "all", "id": "test-m2b" },
+                    { "type": "content", "server": "all", "id": "test-m3a" },
+                    { "type": "content", "server": "all", "id": "test-m3b" },
+                    { "type": "content", "server": "all", "id": "test-m4"  },
+                    { "type": "content", "server": "all", "id": "test-m5a" },
+
+                    { "type": "content", "server": "all", "id": "test-m5b-golf"            },
+                    { "type": "content", "server": "all", "id": "test-m5b-golf-alltrack"   },
+                    { "type": "content", "server": "all", "id": "test-m5b-passat-alltrack" },
+                    { "type": "content", "server": "all", "id": "test-m5b-polo"            },
+                    { "type": "content", "server": "all", "id": "test-m5b-scirocco-r"      },
+                    { "type": "content", "server": "all", "id": "test-m5b-touareg"         },
+
+                    { "type": "content", "server": "all", "id": "test-m6-golf"            },
+                    { "type": "content", "server": "all", "id": "test-m6-golf-alltrack"   },
+                    { "type": "content", "server": "all", "id": "test-m6-passat-alltrack" },
+                    { "type": "content", "server": "all", "id": "test-m6-polo"            },
+                    { "type": "content", "server": "all", "id": "test-m6-scirocco-r"      },
+                    { "type": "content", "server": "all", "id": "test-m6-touareg"         },
+
+
+                    { "type": "content", "server": "all", "id": "test-m7-nsw" },
+                    { "type": "content", "server": "all", "id": "test-m7-qld" },
+                    { "type": "content", "server": "all", "id": "test-m7-tas" },
+                    { "type": "content", "server": "all", "id": "test-m7-wa"  },
+
+                    { "type": "content", "server": "all", "id": "test-m8-nsw" },
+                    { "type": "content", "server": "all", "id": "test-m8-qld" },
+                    { "type": "content", "server": "all", "id": "test-m8-tas" },
+                    { "type": "content", "server": "all", "id": "test-m8-wa"  }
+                ]
+            },
+
+
+
+            {
+                "id": "footer",
+                "template": "footer",
+
+                "subline": "Follow us on social media",
+                "copy": "The information, pictures, colours, and specifications contained within the Volkswagen Group Australia website are presented as a general guide to the products and accessories offered by Volkswagen Group Australia. Any Innovative Technologies shown are a combination of standard and/or optional extras per model. For further information, please contact your local Volkswagen dealer. Although every effort has been made to ensure that such information is correct and up to date, no warranty is provided that all such information is reliable, complete, accurate or without error. In some cases pictures of overseas models may be shown as a guide. Therefore, Volkswagen Group Australia does not accept liability for damages of any kind resulting from the access or use of this site and its contents.",
+
+                "children": [
+                    {
+                        "cta" : {
+                            "label": "Privacy Policy",
+                            "url": "http://www.volkswagen.com.au/en/tools/navigation/footer/privacy.html"
+                        }
+                    },
+
+                    {
+                        "cta" : {
+                            "label": "Legal",
+                            "url": "http://www.volkswagen.com.au/en/tools/navigation/footer/legal.html"
+                        }
+                    },
+
+                    {
+                        "cta" : {
+                            "label": "Volkswagen AG",
+                            "url": "http://www.volkswagenag.com/content/vwcorp/content/en/homepage.html"
+                        }
+                    },
+
+                    {
+                        "cta" : {
+                            "label": "Volkswagen International",
+                            "url": "http://www.volkswagen.com/de.html"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

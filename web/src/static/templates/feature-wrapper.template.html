@@ -1,0 +1,48 @@
+<!-- feature wrapper -->
+<div class="teaser-content feature-wrapper">
+
+    <!-- row -->
+    <div class="teaser-content__row teaser-content__row--{{::$ctrl.type}}" ng-repeat="rowItem in ::$ctrl.data.children">
+
+        <!-- column -->
+        <div class="teaser-content__col" ng-repeat="colItem in ::rowItem.data" ng-class="::{'teaser-content__col--empty': colItem.isEmpty, 'teaser-content__col--empty-before': rowItem.data[$index + 1].isEmpty}">
+
+            <!-- basic -->
+            <div class="teaser-content__basic" ng-class="::{'teaser-content__basic--{{::$ctrl.data.attr.align}}': $ctrl.type == 'x1'}">
+                <!-- image -->
+                <div class="image feature-wrapper__image" ng-if="::(!colItem.video && colItem.image.desktop && colItem.image.mobile)">
+                    <!-- image layout - desktop -->
+                    <img class="image__layout image__layout--desktop" ng-src="{{::($ctrl.CONFIG.path.images + 'layout_16_9.png')}}" alt="" dominant-color="{{::colItem.image.desktop}}" ng-if="::!$ctrl.CONFIG.device.isPhone">
+
+                    <!-- image layout - mobile -->
+                    <img class="image__layout image__layout--mobile" ng-src="{{::($ctrl.CONFIG.path.images + 'layout_16_9.png')}}" alt="" dominant-color="{{::colItem.image.mobile}}">
+
+                    <!-- image cover - desktop -->
+                    <div class="image__cover image__cover--desktop" ng-style="::{'background-image':'url({{::colItem.image.desktop}})'}" dominant-color="{{::colItem.image.desktop}}" ng-if="::!$ctrl.CONFIG.device.isPhone"></div>
+
+                    <!-- image cover - mobile -->
+                    <div class="image__cover image__cover--mobile" ng-style="::{'background-image':'url({{::colItem.image.mobile}})'}" dominant-color="{{::colItem.image.mobile}}"></div>
+                </div><!--
+
+             --><div class="feature-wrapper__video" ng-if="::(colItem.video && colItem.image.desktop && colItem.image.mobile)">
+                <!-- video -->
+                    <media-player-inline ng-if="::(!colItem.template || colItem.template == 'media-player-inline')" data="::colItem" start-at="{{::colItem['start-at']}}"></media-player-inline>
+                    <media-player-inline ng-if="::(colItem.template == 'media-player-inline-alt')" data="::colItem" start-at="{{::colItem['start-at']}}" type="alt"></media-player-inline>
+                </div><!--
+
+             --><div class="feature-wrapper__content" ng-if="::(colItem.headline || colItem.copy || colItem.cta)" ng-class="::{'feature-wrapper__content--no-padding': !colItem.cta}">
+                <!-- content -->
+                    <h3 ng-if="::colItem.headline" ng-bind-html="::colItem.headline"> </h3>
+                    <p ng-if="::colItem.copy" ng-bind-html="::colItem.copy"> </p>
+
+                    <a class="button" ng-if="::(colItem.cta && !$ctrl.shareTo.length)" href="{{::colItem.cta.url}}" target="{{::colItem.cta.target}}" title="{{::colItem.cta.title}}"><span ng-cloak> {{::colItem.cta.label}} </span></a>
+
+                    <a class="button" ng-if="::(colItem.cta && $ctrl.shareTo.length)" href="{{::colItem.cta.url}}" target="_blank" title="{{::colItem.cta.title}}"" share-to="facebook" share-caption="{{::colItem.cta.caption}}" share-copy="{{::colItem.cta.copy}}" share-image={{::colItem.image.desktop}}><span ng-cloak> {{::colItem.cta.label}} </span></a>
+                </div><!-- content end -->
+            </div><!-- basic end -->
+
+        </div><!-- column end -->
+
+    </div><!-- row end -->
+
+</div><!-- feature wrapper end -->

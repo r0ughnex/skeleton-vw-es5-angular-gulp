@@ -1,0 +1,1024 @@
+﻿{
+    "options": { },
+
+    "content": [
+        {
+            "id": "header-pv",
+            "template": "teaser-image-small",
+
+            "headline": "Hi {{user.firstname}},",
+            "copy": "It's me your new Volkswagen {{user.vehicle.model_name}}. <br> Congratulations and welcome to your very own website.",
+
+            "image": {
+                "desktop": "/m5/m5-header-desktop.jpg",
+                "mobile": "/m5/m5-header-mobile.jpg"
+            },
+
+            "visible": {
+                "DEFAULT": false,
+                "UB:PV": true
+            }
+        },
+
+        {
+            "id": "connect",
+            "template": "media-player-inline",
+
+            "headline": "Connecting Together",
+            "copy": "Let's take it to the next level. Watch this video to see how my App-Connect <br> lets you interact with selected apps while you're driving.",
+
+            "visible": {
+                "DEFAULT": true,
+                "MN:Touareg": false,
+                "MN:Amarok": false,
+                "MN:Amarok Atacama": false
+            },
+
+            "image": {
+                "desktop": "/m5/m5-app-connect-desktop.jpg",
+                "mobile": "/m5/m5-app-connect-mobile.jpg"
+            },
+
+            "video": {
+                "desktop": "U6aO0UZE3z0",
+                "mobile": "U6aO0UZE3z0"
+            }
+        },
+
+        {
+            "id": "connect",
+            "template": "media-player-inline",
+
+            "headline": "Connecting Together",
+            "copy": "Let's take it to the next level. Watch this video to see how my App-Connect <br> lets you interact with selected apps while you're driving.",
+
+            "visible": {
+                "DEFAULT": false,
+                "MN:Touareg": true
+            },
+
+            "image": {
+                "desktop": "/m5/m5-bluetooth-desktop.jpg",
+                "mobile": "/m5/m5-bluetooth-mobile.jpg"
+            },
+
+            "video": {
+                "desktop": "bO5Ga-fMXBY",
+                "mobile": "bO5Ga-fMXBY"
+            }
+        },
+
+        {
+            "id": "connect",
+            "template": "media-player-inline",
+
+            "headline": "Off-road mode",
+            "copy": "In addition to the conventional anti-lock bracking system, the Amarok is also equipped with Off-road ABS, which has been specially developed for use off the beaten track. As soon as this function has been activated- by pressing a button- the braking interval is increased. The wheels lock up in a controlled manner so that small wedges of material from the ground (such as gravel or sand) build up in front of each wheel. This can substantially reduce the stopping distance of the vehicle.",
+
+            "visible": {
+                "DEFAULT": false,
+                "MN:Amarok": true,
+                "MN:Amarok Atacama": true
+            },
+
+            "image": {
+                "desktop": "/m5/m5-bluetooth-desktop.jpg",
+                "mobile": "/m5/m5-bluetooth-mobile.jpg"
+            },
+
+            "video": {
+                "desktop": "3I_x3j4nhy0",
+                "mobile": "3I_x3j4nhy0"
+            }
+        },
+
+        {
+            "id": "volkswagen-magazine",
+            "template": "teaser-next-steps-x1",
+            "attr": { "align": "left" },
+
+            "children": [
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Explore the world of Volkswagen with our interactive magazine",
+                    "copy": "You'll find news from here in Australia and overseas, plus meet the people behind our world famous vehicles and read their exclusive insider stories.",
+
+                    "cta": {
+                        "label": "Discover the Volkswagen Magazine",
+                        "title": "Discover the Volkswagen Magazine",
+                        "url": "http://magazine.volkswagen.com.au"
+                    },
+
+                    "image": {
+                        "desktop": "/m5/m5-volkswagen-magazine.jpg",
+                        "mobile": "/m5/m5-volkswagen-magazine.jpg"
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "moments_polo",
+            "template": "teaser-next-steps-x3",
+            "headline": "Shhhh, here's some insider info",
+
+            "visible": {
+                "DEFAULT": false,
+                "MN:Polo": true
+            },
+
+            "children": [
+                {
+                    "id": "moment1",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Carsales Car of the Year",
+                    "copy": "I was voted best City Car: Polo 2014",
+
+                    "image": {
+                        "desktop": "/m5/m5-carsales-best-city-car-2014-icon-desktop.png",
+                        "mobile": "/m5/m5-carsales-best-city-car-2014-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment2",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Safety",
+                    "copy": "I have a 5 Star ANCAP Safety Rating 2014",
+
+                    "image": {
+                        "desktop": "/m5/m5-safety-icon-desktop.png",
+                        "mobile": "/m5/m5-safety-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment3",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Efficiency",
+                    "copy": "I'm fitted with I'm fitted with a range of innovations and intelligent technologies such as BlueMotion Technology have been designed to achieve greater fuel efficiency",
+
+                    "image": {
+                        "desktop": "/m5/m5-efficiency-icon-desktop.png",
+                        "mobile": "/m5/m5-efficiency-icon-mobile.png"
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "moments_polo_gti",
+            "template": "teaser-next-steps-x3",
+            "headline": "Shhhh, here's some insider info",
+
+            "visible": {
+                "DEFAULT": false,
+                "MN:Polo GTI": true
+            },
+
+            "children": [
+                {
+                    "id": "moment1",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Motor Magazine",
+                    "copy": "I was voted consecutive Bang-For-Your-Buck award winner",
+
+                    "image": {
+                        "desktop": "/m5/m5-award-icon-desktop.png",
+                        "mobile": "/m5/m5-award-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment2",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Safety",
+                    "copy": "I have a 5 Star ANCAP Safety Rating 2014",
+
+                    "image": {
+                        "desktop": "/m5/m5-safety-icon-desktop.png",
+                        "mobile": "/m5/m5-safety-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment3",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Efficiency",
+                    "copy": "I'm fitted with a range of innovations and intelligent technologies such as BlueMotion Technology have been designed to achieve greater fuel efficiency",
+
+                    "image": {
+                        "desktop": "/m5/m5-efficiency-icon-desktop.png",
+                        "mobile": "/m5/m5-efficiency-icon-mobile.png"
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "moments_golf",
+            "template": "teaser-next-steps-x3",
+            "headline": "Shhhh, here's some insider info",
+
+            "visible": {
+                "DEFAULT": false,
+                "MN:Golf": true
+            },
+
+            "children": [
+                {
+                    "id": "moment1",
+                    "template": "teaser-content-basic",
+
+                    "headline": "CarSales",
+                    "copy": "I was voted best Family Car under 30k: Golf 2015",
+
+                    "image": {
+                        "desktop": "/m5/m5-carsales-best-family-car-2014-icon-desktop.png",
+                        "mobile": "/m5/m5-carsales-best-family-car-2014-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment2",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Safety",
+                    "copy": "I have a 5 Star ANCAP Safety Rating 2013",
+
+                    "image": {
+                        "desktop": "/m5/m5-safety-icon-desktop.png",
+                        "mobile": "/m5/m5-safety-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment3",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Efficiency",
+                    "copy": "I'm fitted with a range of innovations and intelligent technologies such as BlueMotion Technology have been designed to achieve greater fuel efficiency",
+
+                    "image": {
+                        "desktop": "/m5/m5-efficiency-icon-desktop.png",
+                        "mobile": "/m5/m5-efficiency-icon-mobile.png"
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "moments_golf_gti",
+            "template": "teaser-next-steps-x3",
+            "headline": "Shhhh, here's some insider info",
+
+            "visible": {
+                "DEFAULT": false,
+                "MN:Golf GTI": true
+            },
+
+            "children": [
+                {
+                    "id": "moment1",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Australia's Best Car Awards",
+                    "copy": "I was voted best Sports Car under $50k: Golf GTI 2014",
+
+                    "image": {
+                        "desktop": "/m5/m5-award-icon-desktop.png",
+                        "mobile": "/m5/m5-award-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment2",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Safety",
+                    "copy": "I have a 5 Star ANCAP Safety Rating 2013",
+
+                    "image": {
+                        "desktop": "/m5/m5-safety-icon-desktop.png",
+                        "mobile": "/m5/m5-safety-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment3",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Efficiency",
+                    "copy": "I'm fitted with a range of innovations and intelligent technologies such as BlueMotion Technology have been designed to achieve greater fuel efficiency",
+
+                    "image": {
+                        "desktop": "/m5/m5-efficiency-icon-desktop.png",
+                        "mobile": "/m5/m5-efficiency-icon-mobile.png"
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "moments_golf_r",
+            "template": "teaser-next-steps-x3",
+            "headline": "Shhhh, here's some insider info",
+
+            "visible": {
+                "DEFAULT": false,
+                "MN:Golf R": true
+            },
+
+            "children": [
+                {
+                    "id": "moment1",
+                    "template": "teaser-content-basic",
+
+                    "headline": "2015 Drive Car of the Year",
+                    "copy": "I was voted best Performaance car under $60k",
+
+                    "image": {
+                        "desktop": "/m5/m5-award-icon-desktop.png",
+                        "mobile": "/m5/m5-award-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment2",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Safety",
+                    "copy": "I have a 5 Star ANCAP Safety Rating 2013",
+
+                    "image": {
+                        "desktop": "/m5/m5-safety-icon-desktop.png",
+                        "mobile": "/m5/m5-safety-icon-mobile.png"
+                    }
+                },
+
+                {
+
+                    "id": "moment3",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Efficiency",
+                    "copy": "I'm fitted with a range of innovations and intelligent technologies such as BlueMotion Technology have been designed to achieve greater fuel efficiency",
+
+                    "image": {
+                        "desktop": "/m5/m5-efficiency-icon-desktop.png",
+                        "mobile": "/m5/m5-efficiency-icon-mobile.png"
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "moments_golf_wagon",
+            "template": "teaser-next-steps-x1",
+
+            "headline": "Shhhh, here's some insider info",
+            "attr": { "align": "right" },
+
+            "visible": {
+                "DEFAULT": false,
+                "MN:Golf Wagon": true
+            },
+
+            "children": [
+                {
+                    "id": "moment1",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Automobile Magazine",
+                    "copy": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+
+                    "image": {
+                        "desktop": "/m5/m5-award-icon-desktop.png",
+                        "mobile": "/m5/m5-award-icon-mobile.png"
+                    },
+
+                    "visible": { "DEFAULT": false }
+                },
+
+                {
+                    "id": "moment2",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Safety",
+                    "copy": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+
+                    "image": {
+                        "desktop": "/m5/m5-safety-icon-desktop.png",
+                        "mobile": "/m5/m5-safety-icon-mobile.png"
+                    },
+
+                    "visible": { "DEFAULT": false }
+                },
+
+                {
+                    "id": "moment3",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Efficiency",
+                    "copy": "I'm fitted with a range of innovations and intelligent technologies such as BlueMotion Technology have been designed to achieve greater fuel efficiency",
+
+                    "image": {
+                        "desktop": "/m5/m5-efficiency-icon-desktop.png",
+                        "mobile": "/m5/m5-efficiency-icon-desktop.png"
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "moments_golf_alltrack",
+            "template": "teaser-next-steps-x2",
+            "headline": "Shhhh, here's some insider info",
+
+            "visible": {
+                "DEFAULT": false,
+                "MN:Golf Alltrack": true
+            },
+
+            "children": [
+                {
+                    "id": "moment1",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Drive",
+                    "copy": "2016 Small SUV of the Year Award",
+
+                    "image": {
+                        "desktop": "/m5/m5-award-icon-desktop.png",
+                        "mobile": "/m5/m5-award-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment2",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Safety",
+                    "copy": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+
+                    "image": {
+                        "desktop": "/m5/m5-safety-icon-desktop.png",
+                        "mobile": "/m5/m5-safety-icon-mobile.png"
+                    },
+
+                    "visible": { "DEFAULT": false }
+                },
+
+                {
+                    "id": "moment3",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Efficiency",
+                    "copy": "I'm fitted with a range of innovations and intelligent technologies such as BlueMotion Technology have been designed to achieve greater fuel efficiency",
+
+                    "image": {
+                        "desktop": "/m5/m5-efficiency-icon-desktop.png",
+                        "mobile": "/m5/m5-efficiency-icon-mobile.png"
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "moments_beetle",
+            "template": "teaser-next-steps-x3",
+            "headline": "Shhhh, here's some insider info",
+
+            "visible": {
+                "DEFAULT": false,
+                "MN:Beetle": true
+            },
+
+            "children": [
+                {
+                    "id": "moment1",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Record Breaking Beetle",
+                    "copy": "I was part of the 2,728 Volkswagen Beetles took part in the world's longest single model vehicle parade in Brazil, 1995",
+
+                    "image": {
+                        "desktop": "/m5/m5-award-icon-desktop.png",
+                        "mobile": "/m5/m5-award-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment2",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Safety",
+                    "copy": "I have a 5 Star ANCAP Safety Rating 2013",
+
+                    "image": {
+                        "desktop": "/m5/m5-safety-icon-desktop.png",
+                        "mobile": "/m5/m5-safety-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment3",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Efficiency",
+                    "copy": "I'm fitted with a range of innovations and intelligent technologies such as BlueMotion Technology have been designed to achieve greater fuel efficiency",
+
+                    "image": {
+                        "desktop": "/m5/m5-efficiency-icon-desktop.png",
+                        "mobile": "/m5/m5-efficiency-icon-mobile.png"
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "moments_scirocco_r",
+            "template": "teaser-next-steps-x1",
+
+            "headline": "Shhhh, here's some insider info",
+            "attr": { "align": "right" },
+
+            "visible": {
+                "DEFAULT": false,
+                "MN:Scirocco R": true
+            },
+
+            "children": [
+                {
+                    "id": "moment1",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Top Gear",
+                    "copy": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+
+                    "image": {
+                        "desktop": "/m5/m5-award-icon-desktop.png",
+                        "mobile": "/m5/m5-award-icon-mobile.png"
+                    },
+
+                    "visible": { "DEFAULT": false }
+                },
+
+                {
+                    "id": "moment2",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Safety",
+                    "copy": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+
+                    "image": {
+                        "desktop": "/m5/m5-safety-icon-desktop.png",
+                        "mobile": "/m5/m5-safety-icon-mobile.png"
+                    },
+
+                    "visible": { "DEFAULT": false }
+                },
+
+                {
+                    "id": "moment3",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Efficiency",
+                    "copy": "I'm fitted with a range of innovations and intelligent technologies such as BlueMotion Technology have been designed to achieve greater fuel efficiency",
+
+                    "image": {
+                        "desktop": "/m5/m5-efficiency-icon-desktop.png",
+                        "mobile": "/m5/m5-efficiency-icon-desktop.png"
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "moments_jetta",
+            "template": "teaser-next-steps-x3",
+            "headline": "Shhhh, here's some insider info",
+
+            "visible": {
+                "DEFAULT": false,
+                "MN:Jetta": true
+            },
+
+            "children": [
+                {
+                    "id": "moment1",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Wheels Magazine",
+                    "copy": "Wheels Magazine Gold Star Value Awards",
+
+                    "image": {
+                        "desktop": "/m5/m5-award-icon-desktop.png",
+                        "mobile": "/m5/m5-award-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment2",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Safety",
+                    "copy": "5 Star ANCAP Safety Rating 2011",
+
+                    "image": {
+                        "desktop": "/m5/m5-safety-icon-desktop.png",
+                        "mobile": "/m5/m5-safety-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment3",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Efficiency",
+                    "copy": "I'm fitted with a range of innovations and intelligent technologies such as BlueMotion Technology have been designed to achieve greater fuel efficiency",
+
+                    "image": {
+                        "desktop": "/m5/m5-efficiency-icon-desktop.png",
+                        "mobile": "/m5/m5-efficiency-icon-mobile.png"
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "moments_passat_sedan",
+            "template": "teaser-next-steps-x3",
+            "headline": "Shhhh, here's some insider info",
+
+            "visible": {
+                "DEFAULT": false,
+                "MN:Passat Sedan": true
+            },
+
+            "children": [
+                {
+                    "id": "moment1",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Record breaking Passat",
+                    "copy": "I was part of the greatest distance driven on a single standard tank of fuel is 2,545.80km by a Volkswagen Passat 1.6 TDI BlueMotion in Croatia, 2011",
+
+                    "image": {
+                        "desktop": "/m5/m5-award-icon-desktop.png",
+                        "mobile": "/m5/m5-award-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment2",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Safety",
+                    "copy": "I have a 5 Star ANCAP Safety Rating 2015",
+
+                    "image": {
+                        "desktop": "/m5/m5-safety-icon-desktop.png",
+                        "mobile": "/m5/m5-safety-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment3",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Efficiency",
+                    "copy": "I'm fitted with a range of innovations and intelligent technologies such as BlueMotion Technology have been designed to achieve greater fuel efficiency",
+
+                    "image": {
+                        "desktop": "/m5/m5-efficiency-icon-desktop.png",
+                        "mobile": "/m5/m5-efficiency-icon-mobile.png"
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "moments_passat wagon",
+            "template": "teaser-next-steps-x3",
+            "headline": "Shhhh, here's some insider info",
+
+            "visible": {
+                "DEFAULT": false,
+                "MN:Passat Wagon": true
+            },
+
+            "children": [
+                {
+                    "id": "moment1",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Record breaking Passat",
+                    "copy": "I was part of the greatest distance driven on a single standard tank of fuel is 2,545.80km by a Volkswagen Passat 1.6 TDI BlueMotion in Croatia, 2011",
+
+                    "image": {
+                        "desktop": "/m5/m5-award-icon-desktop.png",
+                        "mobile": "/m5/m5-award-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment2",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Safety",
+                    "copy": "I have a 5 Star ANCAP Safety Rating 2015",
+
+                    "image": {
+                        "desktop": "/m5/m5-safety-icon-desktop.png",
+                        "mobile": "/m5/m5-safety-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment3",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Efficiency",
+                    "copy": "I'm fitted with a range of innovations and intelligent technologies such as BlueMotion Technology have been designed to achieve greater fuel efficiency",
+
+                    "image": {
+                        "desktop": "/m5/m5-efficiency-icon-desktop.png",
+                        "mobile": "/m5/m5-efficiency-icon-mobile.png"
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "moments_passat_alltrack",
+            "template": "teaser-next-steps-x1",
+            "headline": "Shhhh, here's some insider info",
+
+            "visible": {
+                "DEFAULT": false,
+                "MN:Passat Alltrack": true
+            },
+
+            "children": [
+                {
+                    "id": "moment1",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Wheels Magazine",
+                    "copy": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+
+                    "image": {
+                        "desktop": "/m5/m5-award-icon-desktop.png",
+                        "mobile": "/m5/m5-award-icon-mobile.png"
+                    },
+
+                    "visible": { "DEFAULT": false }
+                },
+
+                {
+                    "id": "moment2",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Safety",
+                    "copy": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+
+                    "image": {
+                        "desktop": "/m5/m5-safety-icon-desktop.png",
+                        "mobile": "/m5/m5-safety-icon-mobile.png"
+                    },
+
+                    "visible": { "DEFAULT": false }
+                },
+
+                {
+                    "id": "moment3",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Efficiency",
+                    "copy": "I'm fitted with a range of innovations and intelligent technologies such as BlueMotion Technology have been designed to achieve greater fuel efficiency",
+
+                    "image": {
+                        "desktop": "/m5/m5-efficiency-icon-desktop.png",
+                        "mobile": "/m5/m5-efficiency-icon-desktop.png"
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "moments_tiguan",
+            "template": "teaser-next-steps-x2",
+            "headline": "Shhhh, here's some insider info",
+
+            "visible": {
+                "DEFAULT": false,
+                "MN:Tiguan": true
+            },
+
+            "children": [
+                {
+                    "id": "moment1",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Wheels Magazine",
+                    "copy": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+
+                    "image": {
+                        "desktop": "/m5/m5-award-icon-desktop.png",
+                        "mobile": "/m5/m5-award-icon-mobile.png"
+                    },
+
+                    "visible": { "DEFAULT": false }
+                },
+
+                {
+                    "id": "moment2",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Safety",
+                    "copy": "5 star ANCAP Safety Rating",
+
+                    "image": {
+                        "desktop": "/m5/m5-safety-icon-desktop.png",
+                        "mobile": "/m5/m5-safety-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment3",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Efficiency",
+                    "copy": "I'm fitted with a range of innovations and intelligent technologies such as BlueMotion Technology have been designed to achieve greater fuel efficiency",
+
+                    "image": {
+                        "desktop": "/m5/m5-efficiency-icon-desktop.png",
+                        "mobile": "/m5/m5-efficiency-icon-mobile.png"
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "moments_touareg",
+            "template": "teaser-next-steps-x2",
+            "headline": "Shhhh, here's some insider info",
+
+            "visible": {
+                "DEFAULT": false,
+                "MN:Touareg": true
+            },
+
+            "children": [
+                {
+                    "id": "moment1",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Australia's Best Card Awards",
+                    "copy": "Best AWD SUV $65-$125K: Touareg 2014",
+
+                    "image": {
+                        "desktop": "/m5/m5-award-icon-desktop.png",
+                        "mobile": "/m5/m5-award-icon-mobile.png"
+                    }
+                },
+
+                {
+                    "id": "moment2",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Safety",
+                    "copy": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+
+                    "image": {
+                        "desktop": "/m5/m5-safety-icon-desktop.png",
+                        "mobile": "/m5/m5-safety-icon-mobile.png"
+                    },
+
+                    "visible": { "DEFAULT": false }
+                },
+
+                {
+                    "id": "moment3",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Efficiency",
+                    "copy": "I'm fitted with a range of innovations and intelligent technologies such as BlueMotion Technology have been designed to achieve greater fuel efficiency",
+
+                    "image": {
+                        "desktop": "/m5/m5-efficiency-icon-desktop.png",
+                        "mobile": "/m5/m5-efficiency-icon-mobile.png"
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "moments_caddy",
+            "template": "teaser-next-steps-x1",
+            "headline": "Shhhh, here's some insider info",
+
+            "visible": {
+                "DEFAULT": false,
+                "MN:Caddy": true
+            },
+
+            "children": [
+                {
+                    "id": "moment1",
+                    "template": "teaser-content-basic",
+
+                    "headline": "TBC",
+                    "copy": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+
+                    "image": {
+                        "desktop": "/m5/m5-award-icon-desktop.png",
+                        "mobile": "/m5/m5-award-icon-mobile.png"
+                    },
+
+                    "visible": { "DEFAULT": false }
+                },
+
+                {
+                    "id": "moment2",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Safety",
+                    "copy": "Lorem Ipsum is simply dummy text of the printing and typesetting",
+
+                    "image": {
+                        "desktop": "/m5/m5-safety-icon-desktop.png",
+                        "mobile": "/m5/m5-safety-icon-mobile.png"
+                    },
+
+                    "visible": { "DEFAULT": false }
+                },
+
+                {
+                    "id": "moment3",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Efficiency",
+                    "copy": "I'm fitted with a range of innovations and intelligent technologies such as BlueMotion Technology have been designed to achieve greater fuel efficiency",
+
+                    "image": {
+                        "desktop": "/m5/m5-efficiency-icon-desktop.png",
+                        "mobile": "/m5/m5-efficiency-icon-desktop.png"
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "volkswagen-dealer",
+            "template": "dealer-info",
+
+            "copy": "Of course, <b>{{user.dealer.dealer_name}}</b> know just about everything there is to know about me <br> and are always there to help. If you have any questions call them on <b>{{user.dealer.dealer_phone}}</b>. <br class='all'><br class='all'> Or, you can always say hello at <br class='all'> {{user.dealer.dealer_address}}, {{user.dealer.dealer_city}}, {{user.dealer.dealer_postcode}}"
+        },
+
+        {
+            "id": "footer",
+            "template": "footer",
+
+            "subline": "Follow us on social media",
+            "copy": "The information, pictures, colours, and specifications contained within the Volkswagen Group Australia website are presented as a general guide to the products and accessories offered by Volkswagen Group Australia. Any Innovative Technologies shown are a combination of standard and/or optional extras per model. For further information, please contact your local Volkswagen dealer. Although every effort has been made to ensure that such information is correct and up to date, no warranty is provided that all such information is reliable, complete, accurate or without error. In some cases pictures of overseas models may be shown as a guide. Therefore, Volkswagen Group Australia does not accept liability for damages of any kind resulting from the access or use of this site and its contents.",
+
+            "children": [
+                {
+                    "cta": {
+                        "label": "Privacy Policy",
+                        "url": "http://www.volkswagen.com.au/en/tools/navigation/footer/privacy.html"
+                    }
+                },
+
+                {
+                    "cta": {
+                        "label": "Legal",
+                        "url": "http://www.volkswagen.com.au/en/tools/navigation/footer/legal.html"
+                    }
+                },
+
+                {
+                    "cta": {
+                        "label": "Volkswagen AG",
+                        "url": "http://www.volkswagenag.com/content/vwcorp/content/en/homepage.html"
+                    }
+                },
+
+                {
+                    "cta": {
+                        "label": "Volkswagen International",
+                        "url": "http://www.volkswagen.com/de.html"
+                    }
+                }
+            ]
+        }
+    ]
+}

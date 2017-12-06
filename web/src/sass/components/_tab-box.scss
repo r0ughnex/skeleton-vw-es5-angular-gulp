@@ -1,0 +1,80 @@
+// -------------------------------------
+//   Component - Tab Box
+// -------------------------------------
+/**
+  	* @name tab-box
+  	* @desc Styles for the tab box component.
+**/
+
+.tab-box {
+	overflow: hidden;
+	position: relative;
+}
+
+// custom element tag
+// used by angular template
+tab-box {
+	.tab-box {
+		@extend %section--margin-top;
+	}
+
+	&:first-child {
+		.tab-box {
+			 margin-top: 0;
+		}
+	}
+}
+
+// -------------------------------------
+//   Tab Box - Wrapper, Container
+// -------------------------------------
+.tab-box__wrapper,
+.tab-box__container {
+	overflow: hidden;
+	position: relative;
+}
+
+.tab-box__wrapper {
+	&:first-of-type {
+		text-align: center;
+	}
+}
+
+// -------------------------------------
+//   Tab Box - Tab
+// -------------------------------------
+$tb_tab_padding: (5.5% / 2);
+$tb_tab_padding-bottom: (5.5% / 4);
+
+.tab-box__tab {
+	display: inline-block;
+	@include tablet-sm { display: none; }
+
+	margin: 0;
+	padding: 0 $tb_tab_padding;
+	padding-bottom: $tb_tab_padding-bottom;
+	@include tablet-sm { padding-bottom: $tb_tab_padding; }
+
+	&--is-active &__link {
+		color: $color_grey_night;
+		&:hover, &:active { color: $color_grey_night; }
+	}
+}
+
+// -------------------------------------
+//   Tab Box - Content
+// -------------------------------------
+.tab-box__content {
+	display: block;
+	@include tablet-sm { display: none; }
+}
+
+// -------------------------------------
+//   Tab Box - Accordion
+// -------------------------------------
+.tab-box__accordion {
+	display: none;
+	margin-top: 0;
+	accordion & { margin-top: 0; }
+	@include tablet-sm { display: block; }
+}

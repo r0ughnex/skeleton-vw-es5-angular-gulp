@@ -1,0 +1,280 @@
+// -------------------------------------
+//   Component - Shipping Carousel
+// -------------------------------------
+/**
+  	* @name shipping-carousel
+  	* @desc Styles for the shipping carousel component.
+**/
+
+.shpg-carousel-outer {
+    position: relative;
+    display: block;
+    height: auto;
+    width: 100%;
+
+    // note: the component only contains padding
+    // and maximum width restrictions above mobile
+    @include mobile-up {
+        @include container;
+    }
+}
+
+.shpg-carousel {
+	@include section--padding-v(0.5);
+    padding-bottom: 0 !important;
+	z-index: ($zi_overlay + 1);
+
+	position: absolute;
+    display: block;
+    height: auto;
+    width: 100%;
+    bottom: 0;
+
+    // note: the component only contains padding
+    // and maximum width restrictions above mobile
+    @include mobile-up {
+		@include section--padding-h(2);
+    }
+}
+
+// -------------------------------------
+//   Shipping Carousel - Container
+// -------------------------------------
+$shpg_card_w_max:     355px;
+$shpg_card_w_max_tab: 320px;
+$shpg_card_w_max_mob: 280px;
+
+$shpg_card_h_min:     325px;
+$shpg_card_h_min_tab: 285px;
+$shpg_card_h_min_mob: 285px;
+
+$shpg_card_mrgn:     20px;
+$shpg_card_mrgn_tab: 15px;
+$shpg_card_mrgn_mob: 10px;
+
+$shpg_card_bg_color: white;
+$shpg_card_bx_shadow: 0px 3px 12px 0px rgba($color_grey_midnight, 0.1);
+
+// note: also contains the
+// class .swiper-container
+.shpg-carousel__container {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+
+// -------------------------------------
+//   Shipping Carousel - Wrapper
+// -------------------------------------
+// note: also contains the
+// class .swiper-wrapper
+.shpg-carousel__wrapper {
+    /* empty block */
+}
+
+// -------------------------------------
+//   Shipping Carousel - Slide
+// -------------------------------------
+// note: also contains the
+// class .swiper-slide
+.shpg-carousel__slide {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+
+	box-shadow: $shpg_card_bx_shadow;
+    background-color: $shpg_card_bg_color;
+
+	margin-top:    $shpg_card_mrgn_mob !important;
+	margin-bottom: $shpg_card_mrgn_mob !important;
+
+    max-width:  $shpg_card_w_max_mob;
+    min-height: $shpg_card_h_min_mob;
+
+    margin-left:  ($shpg_card_mrgn_mob / 2);
+    margin-right: ($shpg_card_mrgn_mob / 2);
+
+    @include tablet-sm-up {
+        max-width:  $shpg_card_w_max_tab;
+        min-height: $shpg_card_h_min_tab;
+
+        margin-left:  ($shpg_card_mrgn_tab / 2);
+        margin-right: ($shpg_card_mrgn_tab / 2);
+    }
+
+    @include tablet-up {
+        max-width:  $shpg_card_w_max;
+        min-height: $shpg_card_h_min;
+
+        margin-left:  ($shpg_card_mrgn / 2);
+        margin-right: ($shpg_card_mrgn / 2);
+    }
+}
+
+// -------------------------------------
+//   Shipping Carousel - Slide - Inner
+// -------------------------------------
+$shpg_card_inner_pad:    8px;
+$shpg_card_inner_mrgn:  16px;
+$shpg_card_inner_space: 10px;
+
+.shpg-carousel__slide__inner {
+    display: block;
+    position: relative;
+    padding: $shpg_card_inner_pad;
+}
+
+// -------------------------------------
+//   Shipping Carousel - Slide - Image
+// -------------------------------------
+.shpg-carousel__slide__image {
+    user-select: none;
+}
+
+// ---------------------------------------
+//   Shipping Carousel - Slide - Content
+// ---------------------------------------
+$shpg_card_head_color: black;   // rgb( 0, 0, 0)
+$shpg_card_copy_color: #4a4a4a; // rgb(74,74,74)
+
+.shpg-carousel__slide__content {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    padding: 0 $shpg_card_inner_pad;
+
+    // headline and copy
+    &__headline, &__copy {
+        user-select: none;
+        font-family: "VWText-Regular", sans-serif;
+    }
+
+    // headline
+    &__headline {
+        margin-top: $shpg_card_inner_mrgn;
+        margin-bottom: $shpg_card_inner_space;
+        &:first-child { margin-top: $shpg_card_inner_mrgn; }
+        &:last-child  { margin-bottom: 0; }
+
+        color: $shpg_card_head_color;
+        text-align: left !important;
+    }
+
+    // copy
+    &__copy {
+        margin-top: $shpg_card_inner_space;
+        margin-bottom: $shpg_card_inner_mrgn;
+        &:first-child { margin-top: $shpg_card_inner_space; }
+        &:last-child  { margin-bottom: $shpg_card_inner_pad; }
+
+        color: $shpg_card_copy_color;
+        text-align: left !important;
+
+        font-size: 0.875em; // 14px
+        @include tablet-sm-up { font-size: 0.875em; } // 14px
+        @include tablet-up    { font-size: 0.938em; } // 15px
+    }
+}
+
+// ---------------------------------------
+//   Shipping Carousel - Slide - Overlay
+// ---------------------------------------
+$shpg_anim_slide_load_durtn: $shpwy_anim_mrkr_durtn_pulse;
+$shpg_anim_slide_load_delay: $shpg_anim_slide_load_durtn / 2.5;
+
+$shpg_anim_slide_load_opcty_min: 0.7;
+$shpg_anim_slide_load_opcty_max: 1;
+
+$shpg_anim_slide_load_head_mrgn: 1.15em;
+$shpg_anim_slide_load_copy_mrgn: 0.95em;
+
+$shpg_anim_slide_load_head_line_h: 0.70em;
+$shpg_anim_slide_load_copy_line_h: 0.65em;
+
+// animation placeholder - slide - overlay - loading
+%shpg__animation__slide-overlay--loading {
+    animation-duration: $shpg_anim_slide_load_durtn;
+    animation-timing-function: $ease_in_out_quad;
+    animation-iteration-count: infinite;
+
+    animation-name: anim__slide-overlay--loading;
+    animation-direction: normal;
+    animation-fill-mode: both;
+}
+
+// animation keyframe - slide - overlay - loading
+@keyframes anim__slide-overlay--loading {
+    0%   { opacity: $shpg_anim_slide_load_opcty_max; }
+    50%  { opacity: $shpg_anim_slide_load_opcty_min; }
+    100% { opacity: $shpg_anim_slide_load_opcty_max; }
+}
+
+// shipping carousel - slide - overlay
+.shpg-carousel__slide__overlay {
+    z-index: $zi_overlay;
+    position: absolute;
+    top: 0; left: 0;
+    display: block;
+
+    height: 100%;
+    max-width: 100%;
+    background-color: white;
+
+    padding: 0 $shpg_card_inner_pad;
+    width: calc(100% - #{$shpg_card_inner_pad * 2});
+
+    &__span {
+        display: block;
+        border-radius: 1em;
+    }
+
+    &__span[type="headline"] {
+        @extend %shpg__animation__slide-overlay--loading;
+        animation-delay: 0;
+
+        margin: $shpg_anim_slide_load_head_mrgn 0;
+        line-height: $shpg_anim_slide_load_head_line_h;
+        background-color: rgba($shpg_card_head_color, 0.3);
+    }
+
+    &__span[type="copy"] {
+        @extend %shpg__animation__slide-overlay--loading;
+        animation-delay: $shpg_anim_slide_load_delay;
+
+        margin: $shpg_anim_slide_load_copy_mrgn 0;
+        line-height: $shpg_anim_slide_load_copy_line_h;
+        background-color: rgba($shpg_card_copy_color, 0.2);
+        @include tablet-sm-up { &:last-child { display: none; }}
+    }
+}
+
+// ---------------------------------------
+//   Shipping Carousel - Pager
+// ---------------------------------------
+$shpg_pager_color_disabled: #d8d8d8; // rgb(216, 216, 216);
+$shpg_pager_color_active:   $color_blue_volkswagen;
+$shpg_pager_size: 12px;
+
+.shpg-carousel__pager {
+    @include section--margin-top(0.45);
+    position: relative;
+    text-align: center;
+    display: block;
+
+    &__item {
+        @include transitions(background-color);
+        user-select: none;
+
+        display: inline-block;
+        position: relative;
+        height: $shpg_pager_size;
+        width: $shpg_pager_size;
+
+        margin: 0 ($shpg_pager_size / 2);
+        border-radius: $shpg_pager_size;
+        background-color: $shpg_pager_color_disabled;
+        &--active { background-color: $shpg_pager_color_active; }
+        &--active, &--disabled { cursor: default; pointer-events: none; }
+    }
+}

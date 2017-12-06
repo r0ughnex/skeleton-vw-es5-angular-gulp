@@ -1,0 +1,57 @@
+// -------------------------------------
+//   Component - Loader
+// -------------------------------------
+/**
+  	* @name loader
+  	* @desc Styles for the loader component.
+**/
+
+$loader_h: 4px;
+$loader_h_mob: 4px;
+$loader_opacity: 0.3;
+
+.loader-wrapper {
+	display: block;
+	position: fixed;
+	left: 0; top: 0;
+
+	z-index: $zi_loader;
+	overflow: hidden;
+
+	height: $loader_h;
+	width: 100%;
+
+	// only as a default when js animations
+	// haven't run on the component yet, and
+	// will be overwitten by the js animation
+	&:not([style]) { opacity: 0; }
+}
+
+.loader {
+	// overwriting the default css
+	// styles added by the nanobar
+	position: relative !important;
+	display: block;
+
+	width: 100%;
+	height: $loader_h;
+	@include mobile { height: $loader_h_mob; }
+	background-color: rgba($color_grey_night, $loader_opacity);
+
+	// modifier - visible
+	&--visible { /* empty block */ }
+
+	// modifer - loading
+	&--loading { /* empty block */ }
+}
+
+// -------------------------------------
+//   Loader - Bar
+// -------------------------------------
+.loader .bar {
+	// overwriting the default css
+	// styles added by the nanobar
+	width: 0; height: 100%; /*
+	transition: none !important; */
+	background-color: $color_blue_volkswagen;
+}

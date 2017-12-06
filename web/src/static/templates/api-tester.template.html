@@ -1,0 +1,68 @@
+<!-- api tester -->
+<div class="api-tester">
+
+    <!-- api tester - test -->
+    <div class="api-tester__test" ng-repeat="api in $ctrl.data.apis">
+
+
+
+        <!-- test - status -->
+        <div class="api-tester__test__status">
+
+            <!-- test - status -->
+            <a class="api-tester__test__status__link" title="{{($ctrl.getApiStatus(api) | titleCase)}}">
+
+                <!-- test - status - loader -->
+                <div class="api-tester__test__status__loader animate-slide-up-out" ng-if="api.isLoading || (!api.isSuccess && !api.isError)" animate-slide-up-in enter-speed="fast" enter-delay="0.3" leave-speed="fast" leave-delay="0" ng-class="{'api-tester__test__status__loader--is-loading': api.isLoading}">
+                  <span>{</span><span>}</span>
+                </div>
+
+                <!-- test - status - icon -->
+                <i class="icon icon-tick  api-tester__test__status__icon animate-slide-up-out" ng-if="!api.isLoading && api.isSuccess" animate-slide-up-in enter-speed="fast" enter-delay="0.3" leave-speed="fast" leave-delay="0"></i>
+
+                <!-- test - status - icon -->
+                <i class="icon icon-close api-tester__test__status__icon animate-slide-up-out" ng-if="!api.isLoading && api.isError" animate-slide-up-in enter-speed="fast" enter-delay="0.3" leave-speed="fast" leave-delay="0"></i>
+
+            </a>
+
+        </div><!-- test - status end -->
+
+
+
+        <!-- test - content -->
+        <div class="api-tester__test__content">
+
+            <!-- test - content - title -->
+            <h4 class="api-tester__test__content__title">
+                <span ng-cloak>{{::api.type}}:&nbsp;&nbsp;</span><!--
+             --><span ng-cloak>{{::api.id}}</span>
+            </h4><!-- test - content - title end -->
+
+            <!-- test - content - copy -->
+            <p class="api-tester__test__content__copy" ng-style="{'opacity': (api.time ? '1' : '0.65')}">
+                <span ng-cloak>running test on the&nbsp;</span><!--
+             --><span ng-cloak>{{::api.server}}&nbsp;</span><!--
+             --><span ng-cloak>server:&nbsp;&nbsp;</span><!--
+
+            --><span ng-cloak>{{(api.time ? api.time : 0) | number: 2}}&nbsp;seconds</span>
+            </p><!-- test - content - copy end -->
+
+        </div><!-- test - content end -->
+
+
+
+        <!-- test - state -->
+        <div class="api-tester__test__state">
+
+            <!-- test - state - button -->
+            <a class="button api-tester__test__state__button" title="{{($ctrl.getApiStatus(api) | titleCase)}}">
+                <span ng-bind="($ctrl.getApiStatus(api) | titleCase)"></span>
+            </a><!-- test - state - button end -->
+
+        </div><!-- test - state end -->
+
+
+
+    </div><!-- api tester - test end -->
+
+</div><!-- api tester end -->

@@ -1,0 +1,10 @@
+<!-- tab icons -->
+<div class="tab-icons">
+
+    <!-- tab icons - wrapper -->
+    <div class="tab-icons__wrapper" ng-repeat="icon in ::$ctrl.data.children">
+        <i class="icon icon-{{::icon.attr.name}}" ng-style="::{color: $ctrl.data.attr.color}" ng-cloak></i>
+        <p ng-if="::icon.copy" ng-cloak> {{::icon.copy}} </p>
+    </div>
+
+</div><!-- tab icons end -->

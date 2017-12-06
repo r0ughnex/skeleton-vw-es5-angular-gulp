@@ -1,0 +1,289 @@
+{
+    "markers": [
+        {
+            "id": 1,
+            "name": "Wolfsburg, Germany",
+            "type": "Factory",
+
+            "coords": {
+                "dot": { "lat": 52.42265, "lng": 10.78654 },
+                "pin": { "lat": 52.42265, "lng": 10.78654 }
+            },
+
+            "content": {
+                "headline": "Wolfsburg, Germany",
+                "copy": "Welcome to the home of Volkswagen HQ, and the factory where the Tiguan and legendary Golf are made. This state of the art facility is one of the largest car factories in the world, at over 6sqkm.",
+
+                "image": {
+                    "desktop": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/desktop/shipping_factory_germany-wolfsburg_1250x570.jpg",
+                    "mobile": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/mobile/shipping_factory_germany-wolfsburg_800x365.jpg"
+                }
+            }
+        },
+
+
+
+        {
+            "id": 2,
+            "name": "Bremerhaven, Germany",
+            "type": "Port",
+            "isEast": true,
+
+            "coords": {
+                "dot": { "lat": 53.53958, "lng": 8.58094 },
+                "pin": { "lat": 54.21024, "lng": 6.6687  }
+            },
+
+            "content": {
+                "headline": "Bremerhaven, Germany",
+                "copy": "This port in northern Germany is where all the European-made Volkswagens start their journey to Australia. Impressively, the port has the capacity to process over two million cars per year.",
+
+                "image": {
+                    "desktop": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/desktop/shipping_port_germany-bremmerhaven_1250x570.jpg",
+                    "mobile": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/mobile/shipping_port_germany-bremmerhaven_800x365.jpg"
+                }
+            },
+
+            "routes": [
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 54.01422, "lng": 4.62524 },
+                        "pin": { "lat": 54.01422, "lng": 4.62524 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 52.96187, "lng": 3.50463 },
+                        "pin": { "lat": 52.96187, "lng": 3.50463 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 51.70660, "lng": 2.68066 },
+                        "pin": { "lat": 51.70660, "lng": 2.68066 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 50.56928, "lng": 0.79101 },
+                        "pin": { "lat": 50.56928, "lng": 0.79101 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 49.10983, "lng": -6.37207 },
+                        "pin": { "lat": 49.10983, "lng": -6.37207 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 47.65064, "lng": -12.76595 },
+                        "pin": { "lat": 47.65064, "lng": -12.76595 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 44.63364, "lng": -24.43979 },
+                        "pin": { "lat": 44.63364, "lng": -24.43979 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 34.45221, "lng": -30.67382 },
+                        "pin": { "lat": 34.45221, "lng": -30.67382 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 19.97334, "lng": -29.53125 },
+                        "pin": { "lat": 19.97334, "lng": -29.53125 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat":-12.89748, "lng": -10.01953 },
+                        "pin": { "lat":-12.89748, "lng": -10.01953 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat":-28.45903, "lng": 1.49414 },
+                        "pin": { "lat":-28.45903, "lng": 1.49414 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -35.88905, "lng": 11.51367 },
+                        "pin": { "lat": -35.88905, "lng": 11.51367 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -36.94989, "lng": 20.30273 },
+                        "pin": { "lat": -36.94989, "lng": 20.30273 }
+                    }
+                }
+            ]
+        },
+
+
+
+        {
+            "id": 3,
+            "name": "Port Elizabeth, South Africa",
+            "type": "Port",
+
+            "coords": {
+                "dot": { "lat": -33.71392, "lng": 25.52072 },
+                "pin": { "lat": -33.71392, "lng": 25.52072 }
+            },
+
+            "content": {
+                "headline": "Port Elizabeth, South Africa",
+                "copy": "Along its journey, your car will stop in South Africa at Port Elizabeth. It's also where the Volkswagens made at our factory in Uitenhage join the journey.",
+
+                "image": {
+                    "desktop": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/desktop/shipping_port_south-africa-elizabeth_1250x570.jpg",
+                    "mobile": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/mobile/shipping_port_south-africa-elizabeth_800x365.jpg"
+                }
+            },
+
+            "routes": [
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -35.10193, "lng": 29.88281 },
+                        "pin": { "lat": -35.10193, "lng": 29.88281 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -36.52774, "lng": 39.37612 },
+                        "pin": { "lat": -36.52774, "lng": 39.37612 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -37.71812, "lng": 52.4053 },
+                        "pin": { "lat": -37.71812, "lng": 52.4053 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -38.00798, "lng": 65.80265 },
+                        "pin": { "lat": -38.00798, "lng": 65.80265 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -37.37336, "lng": 78.02312 },
+                        "pin": { "lat": -37.37336, "lng": 78.02312 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -36.44448, "lng": 90.00949 },
+                        "pin": { "lat": -36.44448, "lng": 90.00949 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -35.14407, "lng": 100.45096 },
+                        "pin": { "lat": -35.14407, "lng": 100.45096 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -33.64827, "lng": 108.30309 },
+                        "pin": { "lat": -33.64827, "lng": 108.30309 }
+                    }
+                }
+            ]
+        },
+
+
+
+        {
+            "id": 4,
+            "name": "Fremantle, Australia",
+            "type": "Port",
+
+            "coords": {
+                "dot": { "lat": -32.05690, "lng": 115.74388 },
+                "pin": { "lat": -36.97026, "lng":  83.23375 }
+            },
+
+            "content": {
+                "headline": "Arrival in Australia",
+                "copy": "After weeks at sea your new Volkswagen arrives home in Australia. From here it's unloaded, inspected and delivered to your dealer, and awaits your pick up.",
+
+                "image": {
+                    "desktop": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/desktop/shipping_port_australia-freemantle_1250x570.jpg",
+                    "mobile": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/mobile/shipping_port_australia-freemantle_800x365.jpg"
+                }
+            }
+        },
+
+
+
+        {
+            "id": 5,
+            "name": "Albany Volkswagen",
+            "type": "Dealership",
+
+            "coords": {
+                "dot": { "lat": -34.99907, "lng": 117.8618 },
+                "pin": { "lat": -34.99907, "lng": 117.8618 }
+            },
+
+            "content": {
+                "headline": "Ready for collection",
+                "copy": "The wait is finally over, and your new Golf is now ready and waiting for you to collect at Albany Volkswagen. We look forward to seeing you soon!",
+
+                "image": {
+                    "desktop": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/desktop/shipping_dealer_australia-generic_1250x570.jpg",
+                    "mobile": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/mobile/shipping_dealer_australia-generic_800x365.jpg"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,117 @@
+// -------------------------------------
+//   Component - Header
+// --------------------	-----------------
+/**
+  	* @name header
+  	* @desc Styles for the header component.
+**/
+
+// obtained from base/layout
+$header_w: $header_w;
+$header_h: $header_h;
+$header_w_mob: $header_w_mob;
+$header_h_mob: $header_h_mob;
+
+$header_shadow_dim: 5px -10px 20px;
+$header_shadow_dim_mob: 5px 4px 20px;
+$header_shadow_color: rgba(black, 0.1);
+
+.header {
+	position: fixed;
+	z-index: $zi_header;
+	left: 0;
+	top: 0;
+
+	width: $header_w;
+	height: $header_h;
+	background-color: white;
+	box-shadow: $header_shadow_dim $header_shadow_color;
+
+	@include mobile {
+		width: $header_w_mob;
+		height: $header_h_mob;
+		box-shadow: $header_shadow_dim_mob $header_shadow_color;
+	}
+}
+
+// -------------------------------------
+//   Header - Link
+// -------------------------------------
+$header_link_w: $header_w;
+$header_link_h: $header_w;
+
+$header_link_w_mob: ($header_h_mob * 1.45);
+$header_link_h_mob: $header_h_mob;
+
+.header__link {
+	display: block;
+	width: $header_link_w;
+	height: $header_link_h;
+
+	text-align: center;
+	text-transform: none;
+
+	@include mobile {
+		width: $header_link_w_mob;
+		height:$header_link_h_mob;
+	}
+}
+
+// -------------------------------------
+//   Header - Logo
+// -------------------------------------
+$header_logo_w: 50px;
+$header_logo_h: 65px;
+
+$header_logo_w_mob: 32px;
+$header_logo_h_mob: 32px;
+
+.header__logo {
+	display: inline-block;
+	vertical-align: middle;
+
+	// desktop
+	&--desktop {
+		width: $header_logo_w;
+		height: $header_logo_h;
+		margin: (($header_link_h - $header_logo_h) / 2) (($header_link_w - $header_logo_w) / 2);
+
+		@include mobile {
+			display: none;
+		}
+	}
+
+	// mobile
+	&--mobile {
+		width: $header_logo_w_mob;
+		height: $header_logo_h_mob;
+		margin: (($header_link_h_mob - $header_logo_h_mob) / 2) (($header_link_w_mob - $header_logo_w_mob) / 2);
+
+		@include mobile-up {
+			display: none;
+		}
+	}
+}
+
+// -------------------------------------
+//   Header - Overrides
+// -------------------------------------
+header {
+	@include mobile {
+		position: absolute;
+		z-index: $zi_header;
+		left: 0; top: 0;
+
+		height: $header_h_mob;
+		width: $header_w_mob;
+	}
+}
+
+#vw-template-header {
+	@include mobile {
+		.vw-template-header__mobilelist {
+			height: calc(100vh - 40px) !important;
+		}
+	}
+}
+

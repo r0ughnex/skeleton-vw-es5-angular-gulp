@@ -1,0 +1,202 @@
+// -------------------------------------
+//   Module - Button
+// -------------------------------------
+/**
+  	* @name button
+  	* @desc Styles for the button module.
+**/
+
+$btn_h: 48px;
+$btn_w: 200px;
+$btn_w_mob: 280px;
+$btn_w_mob_sm: 260px;
+
+$btn_w_tab: 200px;
+$btn_w_tab_sm: 170px;
+
+$btn_margin: 2em;
+$btn_padding: 9px;
+
+$btn_font_size: 14px;
+$btn_font_height: 1.143em;
+
+$btn-border_w: 1px;
+$btn-border_r: 4px;
+
+.button {
+	cursor: pointer;
+	display: table;
+
+	height: $btn_h;
+	min-width: $btn_w;
+	max-width: $btn_w;
+
+	@include mobile {
+		min-width: $btn_w_mob;
+		max-width: $btn_w_mob;
+	}
+
+	@include mobile-sm {
+		min-width: $btn_w_mob_sm;
+	}
+
+	margin: $btn_margin 0;
+	&:first-child { margin-top: 0; }
+	&:last-child { margin-bottom: 0; }
+
+	padding: $btn_padding;
+	padding-top: ($btn_padding * 1.286);
+	box-sizing: border-box;
+
+	font-family: "VWHead-Bold", sans-serif;
+	line-height: $btn_font_height;
+	font-size: $btn_font_size;
+	text-align: center;
+
+	border-width: $btn-border_w;
+	border-radius: $btn-border_r;
+	border-style: solid;
+
+	span {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+// -------------------------------------
+//   Button - Types / States
+// -------------------------------------
+$btn_disabled_opacity: 0.5;
+$btn_alternate_darken: 12%;
+$btn_success_darken: 6%;
+$btn_error_darken: 6%;
+
+// modifier - primary
+%button--primary {
+	border-color: $color_blue_volkswagen;
+	background-color: $color_blue_volkswagen;
+
+	color: white;
+	&:hover, &:active { color: white; }
+
+	&:hover {
+		border-color: $color_blue_ocean;
+		background-color: $color_blue_ocean;
+	}
+}
+
+// modifier - secondary
+%button--secondary {
+	border-color: $color_grey_calm;
+	background-color: white;
+
+	color: $color_blue_volkswagen;
+	&:hover, &:active { color: white; }
+
+	&:hover {
+		border-color: $color_blue_ocean;
+		background-color: $color_blue_ocean;
+	}
+}
+
+// modifier - alternate
+%button--alternate {
+	border-color: $color_grey_warm;
+	background-color: $color_grey_warm;
+
+	color: white;
+	&:hover, &:active { color: white; }
+
+	&:hover {
+		border-color: darken($color_grey_warm, $btn_alternate_darken);
+		background-color: darken($color_grey_warm, $btn_alternate_darken);
+	}
+}
+
+// modifier - disabled
+%button--disabled {
+	cursor: not-allowed;
+	border-color: $color_grey_warm;
+	background-color: $color_grey_soft;
+
+	color: rgba($color_grey_midnight, $btn_disabled_opacity);
+	&:hover, &:active { color: rgba($color_grey_midnight, $btn_disabled_opacity); }
+
+	&:hover {
+		border-color: $color_grey_warm;
+		background-color: $color_grey_soft;
+	}
+}
+
+// modifier - success
+%button--success {
+	border-color: $color_green_success;
+	background-color: $color_green_success;
+
+	color: white;
+	&:hover, &:active { color: white; }
+
+	&:hover {
+		border-color: darken($color_green_success, $btn_success_darken);
+		background-color: darken($color_green_success, $btn_success_darken);
+	}
+}
+
+// modifier - error
+%button--error {
+	border-color: $color_red_warning;
+	background-color: $color_red_warning;
+
+	color: white;
+	&:hover, &:active { color: white; }
+
+	&:hover {
+		border-color: darken($color_red_warning, $btn_success_darken);
+		background-color: darken($color_red_warning, $btn_success_darken);
+	}
+}
+
+// button
+.button {
+	@extend %button--primary;
+	&--primary   { @extend %button--primary;   } // modifier - primary
+	&--secondary { @extend %button--secondary; } // modifier - secondary
+	&--alternate { @extend %button--alternate; } // modifier - alternate
+	&--disabled  { @extend %button--disabled;  } // modifier - disabled
+
+	&--success { @extend %button--success; } // modifier - success
+	&--error   { @extend %button--error;   } // modifier - error
+
+	&:hover, &:active, &:focus {
+		text-decoration: none;
+		span, i { text-decoration: none; }
+	}
+
+	span, i { transition: none !important; }
+	@include transitions(color, background-color, border-color);
+}
+
+// -------------------------------------
+//   Button - Inside Sections
+// -------------------------------------
+.section {
+	// modifer - blue
+	&--color-blue {
+		// the alt colored section can
+		// only have secondary or disabled
+		// button types / states
+		.button:not(.button--disabled) {
+			@extend %button--secondary;
+		}
+	}
+}
+
+.section,
+.container {
+	> .button,
+	> .button-wrapper {
+		margin: ($btn_margin * 1.5) auto;
+		&:last-child { margin-bottom: 0; }
+		&:first-child { margin-top: 0; }
+	}
+}

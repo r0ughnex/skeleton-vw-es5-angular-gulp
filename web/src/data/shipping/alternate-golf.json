@@ -1,0 +1,369 @@
+{
+    "markers": [
+        {
+            "id": 1,
+            "name": "Wolfsburg, Germany",
+            "type": "Factory",
+
+            "coords": {
+                "dot": { "lat": 52.42265, "lng": 10.78654 },
+                "pin": { "lat": 52.42265, "lng": 10.78654 }
+            },
+
+            "content": {
+                "headline": "Wolfsburg, Germany",
+                "copy": "Welcome to the home of Volkswagen HQ, and the factory where the Tiguan and legendary Golf are made. This state of the art facility is one of the largest car factories in the world, at over 6sqkm.",
+
+                "image": {
+                    "desktop": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/desktop/shipping_factory_germany-wolfsburg_1250x570.jpg",
+                    "mobile": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/mobile/shipping_factory_germany-wolfsburg_800x365.jpg"
+                }
+            }
+        },
+
+
+
+        {
+            "id": 2,
+            "name": "Bremerhaven, Germany",
+            "type": "Port",
+            "isWest": true,
+
+            "coords": {
+                "dot": { "lat": 53.53958, "lng": 8.58094 },
+                "pin": { "lat": 54.21024, "lng": 6.6687  }
+            },
+
+            "content": {
+                "headline": "Bremerhaven, Germany",
+                "copy": "This port in northern Germany is where all the European-made Volkswagens start their journey to Australia. Impressively, the port has the capacity to process over two million cars per year.",
+
+                "image": {
+                    "desktop": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/desktop/shipping_port_germany-bremmerhaven_1250x570.jpg",
+                    "mobile": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/mobile/shipping_port_germany-bremmerhaven_800x365.jpg"
+                }
+            },
+
+            "routes": [
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 54.01422, "lng": 4.62524 },
+                        "pin": { "lat": 54.01422, "lng": 4.62524 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 52.96187, "lng": 3.50463 },
+                        "pin": { "lat": 52.96187, "lng": 3.50463 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 51.70660, "lng": 2.68066 },
+                        "pin": { "lat": 51.70660, "lng": 2.68066 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 50.56928, "lng": 0.79101 },
+                        "pin": { "lat": 50.56928, "lng": 0.79101 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 49.10983, "lng": -6.37207 },
+                        "pin": { "lat": 49.10983, "lng": -6.37207 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 47.65064, "lng": -12.76595 },
+                        "pin": { "lat": 47.65064, "lng": -12.76595 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 45.34747, "lng": -23.8905 },
+                        "pin": { "lat": 45.34747, "lng": -23.8905 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 42.55307, "lng": -34.0143 },
+                        "pin": { "lat": 42.55307, "lng": -34.0143 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 38.75408, "lng": -44.38476 },
+                        "pin": { "lat": 38.75408, "lng": -44.38476 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 34.66935, "lng": -53.70117 },
+                        "pin": { "lat": 34.66935, "lng": -53.70117 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 31.65338, "lng": -58.79882 },
+                        "pin": { "lat": 31.65338, "lng": -58.79882 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 27.78073, "lng": -64.68748 },
+                        "pin": { "lat": 27.78073, "lng": -64.68748 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 24.24696, "lng": -69.08203 },
+                        "pin": { "lat": 24.24696, "lng": -69.08203 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 19.95269, "lng": -73.80615 },
+                        "pin": { "lat": 19.95269, "lng": -73.80615 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 17.66495, "lng": -75.87158 },
+                        "pin": { "lat": 17.66495, "lng": -75.87158 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 15.24175, "lng": -77.47559 },
+                        "pin": { "lat": 15.24175, "lng": -77.47559 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 12.25949, "lng": -78.84613 },
+                        "pin": { "lat": 12.25949, "lng": -78.84613 }
+                    }
+                }
+            ]
+        },
+
+
+
+        {
+            "id": 3,
+            "name": "Panama Canal, Panama",
+            "type": "Port",
+
+            "coords": {
+                "dot": { "lat": 9.14380, "lng": -79.72851 },
+                "pin": { "lat": 9.14380, "lng": -79.72851 }
+            },
+
+            "content": {
+                "headline": "Panama Canal, Panama",
+                "copy": "After making its way across the Atlantic, your Volkswagen winds through the Panama Canal. Made in Argentina, our Amaroks are trucked up to the Panama Canal, before being loaded onto the ship.",
+
+                "image": {
+                    "desktop": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/desktop/shipping_port_panama-panama-canal_1250x570.jpg",
+                    "mobile": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/mobile/shipping_port_panama-panama-canal_800x365.jpg"
+                }
+            },
+
+            "routes": [
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 7.58032, "lng": -79.10156 },
+                        "pin": { "lat": 7.58032, "lng": -79.10156 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 6.51181, "lng": -79.25536 },
+                        "pin": { "lat": 6.51181, "lng": -79.25536 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": 2.72358, "lng": -82.4414 },
+                        "pin": { "lat": 2.72358, "lng": -82.4414 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -1.49397, "lng": -88.0664 },
+                        "pin": { "lat": -1.49397, "lng": -88.0664 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -5.79089, "lng": -95.27343 },
+                        "pin": { "lat": -5.79089, "lng": -95.27343 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -9.96886, "lng": -102.12833 },
+                        "pin": { "lat": -9.96886, "lng": -102.12833 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -14.26453, "lng": -111.53368 },
+                        "pin": { "lat": -14.26453, "lng": -111.53368 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -19.45822, "lng": -125.48646 },
+                        "pin": { "lat": -19.45822, "lng": -125.48646 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -23.88583, "lng": -141.5039 },
+                        "pin": { "lat": -23.88583, "lng": -141.5039 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -27.68352, "lng": -157.23607 },
+                        "pin": { "lat": -27.68352, "lng": -157.23607 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -30.67578, "lng": -173.51806 },
+                        "pin": { "lat": -30.67578, "lng": -173.51806 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -32.65772, "lng": 172.79315 },
+                        "pin": { "lat": -32.65772, "lng": 172.79315 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -33.88983, "lng": 161.89388 },
+                        "pin": { "lat": -33.88983, "lng": 161.89388 }
+                    }
+                },
+
+                {
+                    "type": "Route",
+                    "coords": {
+                        "dot": { "lat": -34.41594, "lng": 154.23681 },
+                        "pin": { "lat": -34.41594, "lng": 154.23681 }
+                    }
+                }
+            ]
+        },
+
+
+
+        {
+            "id": 4,
+            "name": "Kembla, Australia",
+            "type": "Port",
+
+            "coords": {
+                "dot": { "lat": -34.48539, "lng":  150.89957 },
+                "pin": { "lat": -25.12539, "lng": -145.59082 }
+            },
+
+            "content": {
+                "headline": "Arrival in Australia",
+                "copy": "After weeks at sea your new Volkswagen arrives home in Australia. From here it's unloaded, inspected and delivered to your dealer, and awaits your pick up.",
+
+                "image": {
+                    "desktop": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/desktop/shipping_port_australia-kembla_1250x570.jpg",
+                    "mobile": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/mobile/shipping_port_australia-kembla_800x365.jpg"
+                }
+            }
+        },
+
+
+
+        {
+            "id": 5,
+            "name": "Sydney City Volkswagen",
+            "type": "Dealership",
+
+            "coords": {
+                "dot": { "lat": -33.94123, "lng": 151.19387 },
+                "pin": { "lat": -33.94123, "lng": 151.19387 }
+            },
+
+            "content": {
+                "headline": "Ready for collection",
+                "copy": "The wait is finally over, and your new Golf is now ready and waiting for you to collect at Sydney City Volkswagen. We look forward to seeing you soon!",
+
+                "image": {
+                    "desktop": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/desktop/shipping_dealer_australia-generic_1250x570.jpg",
+                    "mobile": "https://au.volkswagen.tribalstage.com/welcome/assets/images/shipping/mobile/shipping_dealer_australia-generic_800x365.jpg"
+                }
+            }
+        }
+    ]
+}

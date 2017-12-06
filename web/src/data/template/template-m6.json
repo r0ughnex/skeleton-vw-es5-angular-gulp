@@ -1,0 +1,465 @@
+﻿{
+    "options": { },
+
+    "content": [
+        {
+            "id": "header",
+            "template": "teaser-image-small-alt",
+            "headline": "Handy Tips",
+
+            "image": {
+                "desktop": "/m6/m6-header-desktop.jpg",
+                "mobile": "/m6/m6-header-mobile.jpg"
+            },
+
+            "attr": { "align": "top" }
+        },
+
+        {
+            "id": "mfd",
+            "template": "media-player-inline",
+
+            "headline": "Volkswagen Multi-Function Display",
+            "copy": "In the centre of my driving console is my Multi-Function Display. It's good <br> to learn about everything that it does – from showing you the mileage, fuel <br> efficiency, distance and time. Check it out.",
+
+            "image": {
+                "desktop": "/m6/m6-multidisplay-video-desktop.jpg",
+                "mobile": "/m6/m6-multidisplay-video-mobile.jpg"
+            },
+
+            "video": {
+                "desktop": "o9bF-NRqeIE",
+                "mobile": "o9bF-NRqeIE"
+            }
+        },
+
+        {
+            "id": "bluetooth",
+            "template": "media-player-inline",
+
+            "headline": "Play music via Bluetooth®",
+            "copy": "Stream music directly from your phone through Volkswagen Bluetooth® connectivity so you always have your favourite music playing.",
+
+            "image": {
+                "desktop": "/m6/m6-bluetooth-video-desktop.jpg",
+                "mobile": "/m6/m6-bluetooth-video.jpg"
+            },
+
+            "video": {
+                "desktop": "Dqg8iX-mM-8",
+                "mobile": "Dqg8iX-mM-8"
+            },
+
+            "visible": {
+                "DEFAULT": true,
+                "MN:Polo": false,
+                "MN:Polo Beats": false,
+                "MN:Polo GTI": false,
+                "MN:Golf GTI": false,
+                "MN:Golf": false,
+                "MN:Golf R": false,
+                "MN:Golf Wagon": false,
+                "MN:Golf Alltrack": false,
+                "MN:Passat": false,
+                "MN:Passat Wagon": false,
+                "MN:Passat Alltrack": false,
+                "MN:Scirocco R": false,
+                "MN:Beetle": false,
+                "MN:Jetta": false,
+                "MN:Tiguan": false,
+                "MN:Touareg": false
+            }
+        },
+
+        {
+            "id": "basics",
+            "template": "feature-wrapper-x3",
+
+            "headline": "Back to basics.",
+            "copy": "Follow these basic care tips – like checking the wiper fluid, oil and <br> tyre pressure – for the optimal performance, fuel efficiency and safety.",
+
+            "children": [
+                {
+                    "id": "basics_fluid",
+                    "template": "media-player-inline",
+
+                    "headline": "Check my washer fluid",
+                    "copy": "There's nothing worse than not being able to see where you're going. Keep my reservoir filled with Volkswagen Genuine washer fluid – it's been designed to clean and protect my windscreen.",
+
+                    "image": {
+                        "desktop": "/m6/m6-basics-fluid-video.jpg",
+                        "mobile": "/m6/m6-basics-fluid-video.jpg"
+                    },
+
+                    "video": {
+                        "desktop": "2S1kQKrrlhM",
+                        "mobile": "2S1kQKrrlhM"
+                    }
+                },
+
+                {
+                    "id": "basics_oil",
+                    "template": "media-player-inline",
+
+                    "headline": "Check my engine oil",
+                    "copy": "I won't drive smoothly if I don't have the right amount of oil in my engine. Locate the yellow dipstick to test the level and top me up with Volkswagen approved oil if you need to.",
+
+                    "image": {
+                        "desktop": "/m6/m6-basics-oil-video.jpg",
+                        "mobile": "/m6/m6-basics-oil-video.jpg"
+                    },
+
+                    "video": {
+                        "desktop": "yd9CnjpEShA",
+                        "mobile": "yd9CnjpEShA"
+                    }
+                },
+
+                {
+                    "id": "basics_pressure",
+                    "template": "media-player-inline",
+
+                    "headline": "Check my tyre pressure",
+                    "copy": "The ride will be smoother and you'll save on petrol when my tyres are properly inflated. You'll find the correct setting printed inside my petrol cap or driver's door pillar.",
+
+                    "image": {
+                        "desktop": "/m6/m6-basics-pressure-video.jpg",
+                        "mobile": "/m6/m6-basics-pressure-video.jpg"
+                    },
+
+                    "video": {
+                        "desktop": "b6IG3gzWTfE",
+                        "mobile": "b6IG3gzWTfE"
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "features",
+            "template": "feature-wrapper-x2",
+            "headline": "Shhhh, here's some insider info.",
+
+            "visible": {
+                "DEFAULT": false,
+                "MN:Polo": true,
+                "MN:Polo Beats": true,
+                "MN:Polo GTI": true,
+                "MN:Golf GTI": true,
+                "MN:Golf": true,
+                "MN:Golf R": true,
+                "MN:Golf Wagon": true,
+                "MN:Golf Alltrack": true,
+                "MN:Passat": true,
+                "MN:Passat Wagon": true,
+                "MN:Passat Alltrack": true,
+                "MN:Scirocco R": true,
+                "MN:Beetle": true,
+                "MN:Jetta": true,
+                "MN:Tiguan": false,
+                "MN:Touareg": true
+            },
+
+            "children": [
+                {
+                    "id": "feature_bluetooth",
+                    "template": "media-player-inline",
+
+                    "headline": "Play music via Bluetooth®",
+                    "copy": "Stream music directly from your phone through Volkswagen Bluetooth® connectivity so you always have your favourite music playing.",
+
+                    "image": {
+                        "desktop": "/m6/m6-bluetooth-video.jpg",
+                        "mobile": "/m6/m6-bluetooth-video.jpg"
+                    },
+
+                    "video": {
+                        "desktop": "Dqg8iX-mM-8",
+                        "mobile": "Dqg8iX-mM-8"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "MN:Polo": true,
+                        "MN:Polo Beats": true,
+                        "MN:Polo GTI": true,
+                        "MN:Golf GTI": true,
+                        "MN:Golf": true,
+                        "MN:Golf R": true,
+                        "MN:Golf Wagon": true,
+                        "MN:Golf Alltrack": true,
+                        "MN:Passat": true,
+                        "MN:Passat Wagon": true,
+                        "MN:Passat Alltrack": true,
+                        "MN:Scirocco R": true,
+                        "MN:Beetle": true,
+                        "MN:Jetta": true,
+                        "MN:Tiguan": false,
+                        "MN:Touareg": false
+                    }
+                },
+
+                {
+                    "id": "feature_rear_view_camera",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Rear view camera",
+                    "copy": "The rear view camera keeps an extra eye out for when you're in a tricky spot- or just reversing out of the driveway.",
+
+                    "image": {
+                        "desktop": "/m6/m6-rear-view-camera-polo.png",
+                        "mobile": "/m6/m6-rear-view-camera-polo.png"
+                    },
+
+                    "video_archived": {
+                        "desktop": "T2LHOlUtsNo",
+                        "mobile": "T2LHOlUtsNo"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "MN:Polo": true,
+                        "MN:Polo Beats": true
+                    }
+                },
+
+                {
+                    "id": "feature_extended_differential_lock",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Extended Differential Lock",
+                    "copy": "When cornering, this valuable safety system responds to the load relief at the front wheel on the inside of a corner, which improves traction and reduces the tendency to understeer.",
+
+                    "image": {
+                        "desktop": "/m6/m6-differential-lock.jpg",
+                        "mobile": "/m6/m6-differential-lock.jpg"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "MN:Polo GTI": true,
+                        "MN:Golf GTI": true,
+                        "MN:Golf R": true
+                    }
+                },
+
+                {
+                    "id": "feature_driver_fatigue_detection_system",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Driver Fatigue Detection System*",
+                    "copy": "I'll help you stay alert. The Driver Fatigue Detection System, monitors your responsiveness and recommends when to take a break. <br class='all'><br class='all'> *Safety technologies are not substitute for the driver's responsibility for the vehicle.",
+
+                    "image": {
+                        "desktop": "/m6/m6-fatigue-detection.jpg",
+                        "mobile": "/m6/m6-fatigue-detection.jpg"
+                    },
+
+                    "video_archived": {
+                        "desktop": "f-8OV33ydzw",
+                        "mobile": "f-8OV33ydzw"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "MN:Golf": true,
+                        "MN:Jetta": true,
+                        "MN:Touareg": true
+                    }
+                },
+
+                {
+                    "id": "feature_blind_spot_monitor",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Blind Spot Monitor",
+                    "copy": "Using radar sensors in the rear bumper, this genius feature informs you with flashing symbols on each of your side mirrors when there's a vehicle in your blind spot.",
+
+                    "image": {
+                        "desktop": "/m6/m6-blind-spot-monitor.jpg",
+                        "mobile": "/m6/m6-blind-spot-monitor.jpg"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "MN:Golf Wagon": true
+                    }
+                },
+
+                {
+                    "id": "feature_4motion",
+                    "template": "teaser-content-basic",
+
+                    "headline": "4MOTION",
+                    "copy": "Designed to save petrol when coasting, the rear axle is ready and waiting to spring into action when needed providing great traction.",
+
+                    "image": {
+                        "desktop": "/m6/m6-4motion.jpg",
+                        "mobile": "/m6/m6-4motion.jpg"
+                    },
+
+                    "video_archived": {
+                        "desktop": "C3zlRbw8zcE",
+                        "mobile": "C3zlRbw8zcE"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "MN:Golf Alltrack": true
+                    }
+                },
+
+                {
+                    "id": "feature_side_assist",
+                    "template": "media-player-inline",
+
+                    "headline": "Side Assist",
+                    "copy": "When changing lanes, Side Assist detects vehicles on the right and left hand side of the lane, in the blind spot and vehicles coming up from the rear and alerts the driver.",
+
+                    "image": {
+                        "desktop": "/m6/m6-side-assist.jpg",
+                        "mobile": "/m6/m6-side-assist.jpg"
+                    },
+
+                    "video": {
+                        "desktop": "I4Cw-eXBVbE",
+                        "mobile": "I4Cw-eXBVbE"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "MN:Passat": true,
+                        "MN:Passat Wagon": true
+                    }
+                },
+
+                {
+                    "id": "feature_sponsorship_content",
+                    "template": "media-player-inline",
+
+                    "headline": "City Adventures",
+                    "copy": "Join Aussie taste legend Ben O'Donoghue, as he takes the new Passat Alltrack on a city adventure to his favourite foodie spots.",
+
+                    "image": {
+                        "desktop": "/m6/m6-sponsorship-passat-alltrack.jpg",
+                        "mobile": "/m6/m6-sponsorship-passat-alltrack.jpg"
+                    },
+
+                    "video": {
+                        "desktop": "c_mjzc_OfXA",
+                        "mobile": "c_mjzc_OfXA"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "MN:Passat Alltrack": true
+                    }
+                },
+
+                {
+                    "id": "feature_extended_differential_lock",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Extended Differential Lock",
+                    "copy": "When cornering, this valuable safety system responds to the load relief at the front wheel on the inside of a corner, which improves traction and reduces the tendency to understeer.",
+
+                    "image": {
+                        "desktop": "/m6/m6-differential-lock.jpg",
+                        "mobile": "/m6/m6-differential-lock.jpg"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "MN:Scirocco R": true
+                    }
+                },
+
+                {
+                    "id": "feature_more_than_a_car",
+                    "template": "teaser-content-basic",
+
+                    "headline": "More than a car",
+                    "copy": "Discover the rich history of owning a Volkswagen and why Volkswagen  owners believe owning one is an experience not just a car.",
+
+                    "image": {
+                        "desktop": "/m6/m6-more-than-a-car.jpg",
+                        "mobile": "/m6/m6-more-than-a-car.jpg"
+                    },
+
+                    "video_archived": {
+                        "desktop": "xDFWVLN1vro",
+                        "mobile": "xDFWVLN1vro"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "MN:Beetle": true
+                    }
+                },
+
+                {
+                    "id": "feature_rear_view_camera",
+                    "template": "teaser-content-basic",
+
+                    "headline": "Rear view camera",
+                    "copy": "The rear view camera keeps an extra eye out for when you're in a tricky spot- or just reversing out of the driveway.",
+
+                    "image": {
+                        "desktop": "/m6/m6-rear-view-camera-touareg.jpg",
+                        "mobile": "/m6/m6-rear-view-camera-touareg.jpg"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "MN:Touareg": true
+                    }
+                }
+            ]
+        },
+
+        {
+            "id": "volkswagen-dealer",
+            "template": "dealer-info",
+
+            "copy": "Of course, <b>{{user.dealer.dealer_name}}</b> know just about everything there is to know about me <br> and are always there to help. If you have any questions call them on <b>{{user.dealer.dealer_phone}}</b>. <br class='all'><br class='all'> Or, you can always say hello at <br class='all'> {{user.dealer.dealer_address}}, {{user.dealer.dealer_city}}, {{user.dealer.dealer_postcode}}"
+        },
+
+        {
+            "id": "footer",
+            "template": "footer",
+
+            "subline": "Follow us on social media",
+            "copy": "The information, pictures, colours, and specifications contained within the Volkswagen Group Australia website are presented as a general guide to the products and accessories offered by Volkswagen Group Australia. Any Innovative Technologies shown are a combination of standard and/or optional extras per model. For further information, please contact your local Volkswagen dealer. Although every effort has been made to ensure that such information is correct and up to date, no warranty is provided that all such information is reliable, complete, accurate or without error. In some cases pictures of overseas models may be shown as a guide. Therefore, Volkswagen Group Australia does not accept liability for damages of any kind resulting from the access or use of this site and its contents.",
+
+            "children": [
+                {
+                    "cta": {
+                        "label": "Privacy Policy",
+                        "url": "http://www.volkswagen.com.au/en/tools/navigation/footer/privacy.html"
+                    }
+                },
+
+                {
+                    "cta": {
+                        "label": "Legal",
+                        "url": "http://www.volkswagen.com.au/en/tools/navigation/footer/legal.html"
+                    }
+                },
+
+                {
+                    "cta": {
+                        "label": "Volkswagen AG",
+                        "url": "http://www.volkswagenag.com/content/vwcorp/content/en/homepage.html"
+                    }
+                },
+
+                {
+                    "cta": {
+                        "label": "Volkswagen International",
+                        "url": "http://www.volkswagen.com/de.html"
+                    }
+                }
+            ]
+        }
+    ]
+}

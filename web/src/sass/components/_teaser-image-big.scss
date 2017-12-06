@@ -1,0 +1,127 @@
+// -------------------------------------
+//   Component - Teaser Image Big
+// -------------------------------------
+/**
+ 	* @name teaser-image-big
+  	* @desc Styles for the teaser image big component.
+**/
+
+$tsr_img_lg_content_w_max: $tsr_img_sm_content_w_max;
+
+.teaser-image-big {
+	position: relative;
+	overflow: hidden;
+}
+
+// -------------------------------------
+//   Teaser Image Big - Image
+// -------------------------------------
+.teaser-image-big__image {
+	/* empty block */
+}
+
+// -------------------------------------
+//   Teaser Image Big - Content
+// -------------------------------------
+$tsr_img_lg_content_icon_spacing: $tsr_img_sm_content_icon_spacing;
+
+.teaser-image-big__content {
+	position: relative;
+	z-index: $zi_overlay;
+
+	// extend the default
+	// section padding
+	@extend %section;
+	box-sizing: content-box;
+	max-width: $container_w_max_sm;
+
+	h1, h2 { margin-bottom: 0; }
+
+	p a {
+		display: inline-block;
+		i { margin-right: $tsr_img_lg_content_icon_spacing; }
+		&:first-of-type { margin-top: $tsr_img_lg_content_icon_spacing; }
+	}
+}
+
+// -------------------------------------
+//   Teaser Image Big - Modifiers
+// -------------------------------------
+// default, alternate
+.teaser-image-big--default,
+.teaser-image-big--alt {
+	.teaser-image-big__content {
+		// align content position
+		// vertically on bigger devices
+		@include mobile-up {
+			position: absolute;
+			max-width: $tsr_img_lg_content_w_max;
+
+			// modifiers for position of content
+			// ( default content position is left )
+			&--left, &--right { @include transform-center-v(false); }
+			&--right { right: 0; }
+
+			h2, p { color: white; }
+			.button { margin-bottom: 0; }
+		}
+
+		// align content elements
+		// horizontally on smaller devices
+		@include mobile {
+			@include center(false);
+			text-align: center;
+
+			.button {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+}
+
+$tsr_img_lg_alt_btn_spacing: 3%;
+$tsr_img_lg_alt_btn_w: ((100% - $tsr_img_lg_alt_btn_spacing) / 2);
+
+// alternate
+.teaser-image-big--alt {
+	.teaser-image-big__content {
+		// align both cta buttons
+		// horizontally on bigger devices
+		@include mobile-up {
+			min-width: ($btn_w * 2.125);
+
+			.button {
+				float: left;
+				+ .button { margin-left: $tsr_img_lg_alt_btn_spacing; }
+			}
+		}
+
+		@include tablet {
+			min-width: auto;
+
+			.button {
+				min-width: $tsr_img_lg_alt_btn_w;
+				max-width: $tsr_img_lg_alt_btn_w;
+			}
+		}
+
+		// align both cta buttons
+		// vertically on smaller devices
+		@include mobile {
+			.button {
+				float: none;
+				margin-bottom: 0;
+				min-width: $btn_w_mob;
+				max-width: $btn_w_mob;
+				+ .button { margin-top: 1em; }
+			}
+		}
+
+		@include mobile-sm {
+			.button {
+				min-width: $btn_w_mob_sm;
+			}
+		}
+	}
+}

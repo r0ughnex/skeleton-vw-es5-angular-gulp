@@ -1,0 +1,51 @@
+﻿{
+    "base": {
+    "DEFAULT": "value",
+        "ST:CP1": "value",
+        "OC:ZC3": "value",
+        "MC:6C12EV": "value",
+        "ST:CP1|MC:6C12EV/17|OC:ZC3": "value"
+    },
+
+    "m1-welcome-header": {
+        "DEFAULT": "You're now part of a family",
+        "UCS:New": "You're now part of a family",
+        "UCS:Existing": "Part of a family"
+    },
+
+    "m1-welcome-copy": {
+        "DEFAULT": "Check out the brand film featuring many Volkswagen fans – who knows, we could be part of the next one.",
+        "UB:PV": "Check out the brand film featuring many Volkswagen fans – who knows, we could be part of the next one.",
+        "UB:CV": "Check out some of the fans in the brand film."
+    },
+
+    "m2-welcome-header": {
+        "DEFAULT": "A car is born",
+        "UCS:New": "A car is born",
+        "UCS:Existing": "A car is born"
+    },
+
+    "m2-welcome-copy": {
+        "DEFAULT": "See how I have been brought to life in one of our state of the art factories like this one. In here you'll find Volkswagen's smart production method known as Modular Transversal Toolkit (MQB). It allows greater standardisation in the production line and will enable Volkswagen to produce up to 5 million MQB cars by 2018. Take a look at how it works.",
+        "UCS:New": "See how I have been brought to life in one of our state of the art factories like this one. In here you'll find Volkswagen's smart production method known as Modular Transversal Toolkit (MQB). It allows greater standardisation in the production line and will enable Volkswagen to produce up to 5 million MQB cars by 2018. Take a look at how it works.",
+        "UUCS:Existing": "See how I have been brought to life in one of our state of the art factories. In here you'll find Volkswagen's smart production method known as Modular Transversal Toolkit (MQB). It allows greater standardisation in the production line and will enable Volkswagen to produce up to 5 million MQB cars by 2018. Take a look at how it works."
+    },
+
+    "m2-header-copy": {
+        "DEFAULT": "It's me your new Volkswagen {{user.vehicle.model_name}}. <br> Congratulations and welcome to your very own website.",
+        "UB:PV": "It's me your new Volkswagen {{user.vehicle.model_name}}. <br> Congratulations and welcome to your very own website.",
+        "UB:CV": "Congratulations and welcome to your very own website."
+    },
+
+    "m5-welcome-header": {
+        "DEFAULT": "You're now part of a family",
+        "UCS:New": "You're now part of a family",
+        "UCS:Existing": "Part of a family"
+    },
+
+    "m5-welcome-copy": {
+        "DEFAULT": "Check out the brand film featuring many Volkswagen fans – who knows, we could be part of the next one.",
+        "UB:PV": "Check out the brand film featuring many Volkswagen fans – who knows, we could be part of the next one.",
+        "UB:CV": "Check out some of the fans in the brand film."
+    }
+}

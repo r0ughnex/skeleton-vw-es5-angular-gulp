@@ -1,0 +1,235 @@
+// -------------------------------------
+//   Module - Teaser Content
+// -------------------------------------
+/**
+  	* @name teaser-content
+  	* @desc Styles for the content teaser module.
+**/
+
+.teaser-content {
+	// table layout
+	position: relative;
+	display: table;
+	width: 100%;
+
+	&__row {
+		// table tr layout
+		position: relative;
+		display: table-row;
+		width: 100%;
+	}
+
+	&__col {
+		// table td layout
+		position: relative;
+		display: table-cell;
+		vertical-align: top;
+		width: 100%;
+	}
+}
+
+// -------------------------------------
+//   Teaser Content - Basic
+// -------------------------------------
+.teaser-content__basic {
+	text-align: center;
+
+	.button {
+		margin-left: auto;
+    	margin-right: auto;
+
+    	@include tablet-sm { min-width: $btn_w_tab_sm; }
+		@include mobile    { min-width: $btn_w_mob; }
+	}
+}
+
+// -------------------------------------
+//   Teaser Content - Rows, Columns
+// -------------------------------------
+$tsr_content_col_spacing: 5.5%;
+
+.teaser-content__row {
+	// modifiers - x1, x2, x3
+	&--x1 { .teaser-content__col { width: (100% / 1); }}
+	&--x2 { .teaser-content__col { width: (100% / 2) - ($tsr_content_col_spacing * 1); }}
+	&--x3 { .teaser-content__col { width: (100% / 3) - ($tsr_content_col_spacing * 2); }}
+
+	// modifier - x3, x2
+	&--x3, &--x2 {
+		.teaser-content__col {
+			padding: ($tsr_content_col_spacing / 4);
+			padding-top: ($tsr_content_col_spacing / 3);
+			padding-bottom: ($tsr_content_col_spacing / 3);
+
+			&:first-child {
+				padding-right: ($tsr_content_col_spacing / 2);
+				padding-left: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+				padding-left: ($tsr_content_col_spacing / 2);
+			}
+		}
+	}
+
+	// modifier - x1
+	&--x1 {
+		.teaser-content__col {
+			padding-top: ($tsr_content_col_spacing / 3);
+			padding-bottom: ($tsr_content_col_spacing / 3);
+		}
+	}
+
+	@include mobile-up {
+		&:first-child { .teaser-content__col { padding-top: 0; }}
+		&:last-child  { .teaser-content__col { padding-bottom: 0; }}
+	}
+
+	// tablet layout is reset
+	// on smaller devices
+	@include mobile {
+		display: block;
+
+		.teaser-content__col {
+			display: block;
+
+			width: (100% / 1);
+			padding: $section_pad_mob_sm 0;
+
+			&:first-child, &:last-child {
+				padding-right: 0;
+				padding-left: 0;
+			}
+
+			// when the column is empty and is
+			// only in there to fill the gap
+			// in layout on desktop
+			&--empty { display: none; }
+			&--empty-before { padding-bottom: 0; }
+		}
+
+		&:first-child { .teaser-content__col:first-child { padding-top: 0; }}
+		&:last-child  { .teaser-content__col:last-child { padding-bottom: 0; }}
+	}
+}
+
+// ------------------------------------------
+//   Teaser Content - Rows, Columns - X3, X2
+// ------------------------------------------
+.teaser-content__row--x3,
+.teaser-content__row--x2 {
+	@include mobile-up {
+		.teaser-content__col {
+			.feature-wrapper__content .button {
+				bottom: $tsr_content_col_spacing;
+			}
+		}
+
+		&:last-child { .teaser-content__col {
+			.feature-wrapper__content .button {
+				bottom: 0;
+			}
+		}}
+	}
+}
+
+// ---------------------------------------
+//   Teaser Content - Rows, Columns - X3
+// ---------------------------------------
+.teaser-content__row--x3 {
+	@include mobile-up {
+		.teaser-content__col {
+			&:first-child { .feature-wrapper__content .button {
+				left: 50% - ($tsr_content_col_spacing / 1.25);
+			}}
+
+			&:last-child { .feature-wrapper__content .button {
+				left: 50% + ($tsr_content_col_spacing / 1.25);
+			}}
+		}
+	}
+}
+
+// ---------------------------------------
+//   Teaser Content - Rows, Columns - X2
+// ---------------------------------------
+.teaser-content__row--x2 {
+	@include mobile-up {
+		.teaser-content__col {
+			&:first-child { .feature-wrapper__content .button {
+				left: 50% - ($tsr_content_col_spacing / 1.75);
+			}}
+
+			&:last-child { .feature-wrapper__content .button {
+				left: 50% + ($tsr_content_col_spacing / 1.75);
+			}}
+		}
+	}
+}
+
+// ---------------------------------------
+//   Teaser Content - Rows, Columns - X1
+// ---------------------------------------
+.teaser-content__row--x1 {
+	@include mobile-up {
+		.teaser-content__col {
+			.teaser-content__basic {
+				text-align: left;
+
+				> div,
+				> div + div {
+					display: inline-block;
+					vertical-align: middle;
+
+					width: ((100% - $tsr_content_col_spacing) / 2);
+					min-width: ((100% - $tsr_content_col_spacing) / 2);
+					box-sizing: border-box;
+				}
+
+				> div {
+					margin-left: 0;
+					margin-right: ($tsr_content_col_spacing / 2);
+				}
+
+				> div + div {
+					margin-right: 0;
+					margin-left: ($tsr_content_col_spacing / 2);
+					padding-right: ($tsr_content_col_spacing / 2);
+					padding-left: 0;
+				}
+
+				&--right {
+					display: flex;
+					align-items: center;
+					flex-direction: row-reverse;
+					justify-content: space-between;
+
+					> div,
+					> div + div {
+						flex: 1;
+					}
+
+					> div {
+						margin-right: 0;
+						margin-left: ($tsr_content_col_spacing / 2);
+					}
+
+					> div + div {
+						margin-left: 0;
+						margin-right: ($tsr_content_col_spacing / 2);
+						padding-left: ($tsr_content_col_spacing / 2);
+						padding-right: 0;
+					}
+				}
+
+				.button {
+					margin-left: 0;
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
+
+

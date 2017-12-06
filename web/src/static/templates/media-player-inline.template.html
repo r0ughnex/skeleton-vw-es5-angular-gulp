@@ -1,0 +1,32 @@
+<!-- media player inline -->
+<div class="media-player-inline media-player-inline--{{::$ctrl.type}}" ng-class="::{'media-player-inline--mobile' : $ctrl.CONFIG.device.isMobile}">
+
+    <!-- video -->
+    <div class="media-player-inline__video" ng-if="$ctrl.isReady && ($ctrl.isPlaying || $ctrl.CONFIG.device.isMobile)">
+        <youtube-video class="media-player-inline__youtube" video-id="::$ctrl.data.video" player-vars="::$ctrl.options"></youtube-video>
+    </div>
+
+    <!-- overlay -->
+    <div class="media-player-inline__overlay animate-fade-out" leave-delay="0.5" ng-show="!$ctrl.isPlaying"></div>
+
+    <!-- image -->
+    <a class="image media-player-inline__image animate-fade-in animate-fade-out needsclick" ng-show="!$ctrl.isPlaying" enter-speed="slow" href="{{::$ctrl.data.cta.url}}" target="{{::$ctrl.data.cta.target}}" title="{{::$ctrl.data.cta.title}}" ng-click="$ctrl.playVideo($event)">
+        <!-- image layout - desktop -->
+        <img class="image__layout image__layout--desktop" ng-src="{{::($ctrl.CONFIG.path.images + 'layout_16_9.png')}}" alt="" dominant-color="{{::$ctrl.data.image.desktop}}" ng-if="::!$ctrl.CONFIG.device.isPhone">
+
+        <!-- image layout - mobile -->
+        <img class="image__layout image__layout--mobile" ng-src="{{::($ctrl.CONFIG.path.images + 'layout_16_9.png')}}" dominant-color="{{::$ctrl.data.image.mobile}}" alt="">
+
+        <!-- image cover - desktop -->
+        <div class="image__cover image__cover--desktop" ng-style="::{'background-image':'url({{::$ctrl.data.image.desktop}})'}" dominant-color="{{::$ctrl.data.image.desktop}}" ng-if="::!$ctrl.CONFIG.device.isPhone"></div>
+
+        <!-- image cover - mobile -->
+        <div class="image__cover image__cover--mobile" ng-style="::{'background-image':'url({{::$ctrl.data.image.mobile}})'}" dominant-color="{{::$ctrl.data.image.mobile}}"></div>
+
+        <!-- play -->
+        <span class="media-player-inline__play">
+            <i class="icon icon-play"></i>
+        </span> <!-- play end -->
+    </a><!-- image end -->
+
+</div><!-- media player inline end -->

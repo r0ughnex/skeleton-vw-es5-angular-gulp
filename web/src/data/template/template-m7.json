@@ -1,0 +1,937 @@
+﻿{
+    "options": { },
+
+    "content": [
+        {
+            "id": "header",
+            "template": "teaser-image-small",
+
+            "headline": "Hi {{user.firstname}},",
+            "copy": "it's me your {{user.vehicle.model_name}}. Let's drive!",
+
+            "image": {
+                "desktop": "/m7/m7-header-desktop.jpg",
+                "mobile": "/m7/m7-header-mobile.jpg"
+            },
+
+            "visible": {
+                "DEFAULT": true,
+                "US:NSW": false,
+                "US:VIC": false,
+                "US:QLD": false,
+                "US:SA": false,
+                "US:WA": false,
+                "US:NT": false,
+                "US:TAS": false
+            }
+        },
+
+        {
+            "id": "header",
+            "template": "teaser-image-small",
+
+            "headline": "Hi {{user.firstname}},",
+            "copy": "it's me your {{user.vehicle.model_name}}. Let's drive!",
+
+            "image": {
+                "desktop": "/m7/m7-nsw-header-desktop.jpg",
+                "mobile": "/m7/m7-nsw-header-mobile.jpg"
+            },
+
+            "visible": {
+                "DEFAULT": false,
+                "US:NSW": true
+            }
+        },
+
+        {
+            "id": "header",
+            "template": "teaser-image-small",
+
+            "headline": "Hi {{user.firstname}},",
+            "copy": "it's me your {{user.vehicle.model_name}}. Let's drive!",
+
+            "image": {
+                "desktop": "/m7/m7-vic-header-desktop.jpg",
+                "mobile": "/m7/m7-vic-header-mobile.jpg"
+            },
+
+            "visible": {
+                "DEFAULT": false,
+                "US:VIC": true
+            }
+        },
+
+        {
+            "id": "header",
+            "template": "teaser-image-small",
+
+            "headline": "Hi {{user.firstname}},",
+            "copy": "it's me your {{user.vehicle.model_name}}. Let's drive!",
+
+            "image": {
+                "desktop": "/m7/m7-qld-header-desktop.jpg",
+                "mobile": "/m7/m7-qld-header-mobile.jpg"
+            },
+
+            "visible": {
+                "DEFAULT": false,
+                "US:QLD": true
+            }
+        },
+
+        {
+            "id": "header",
+            "template": "teaser-image-small",
+
+            "headline": "Hi {{user.firstname}},",
+            "copy": "it's me your {{user.vehicle.model_name}}. Let's drive!",
+
+            "image": {
+                "desktop": "/m7/m7-sa-header-desktop.jpg",
+                "mobile": "/m7/m7-sa-header-mobile.jpg"
+            },
+
+            "visible": {
+                "DEFAULT": false,
+                "US:SA": true
+            }
+        },
+
+        {
+            "id": "header",
+            "template": "teaser-image-small",
+
+            "headline": "Hi {{user.firstname}},",
+            "copy": "it's me your {{user.vehicle.model_name}}. Let's drive!",
+
+            "image": {
+                "desktop": "/m7/m7-wa-header-desktop.jpg",
+                "mobile": "/m7/m7-wa-header-mobile.jpg"
+            },
+
+            "visible": {
+                "DEFAULT": false,
+                "US:WA": true
+            }
+        },
+
+        {
+            "id": "header",
+            "template": "teaser-image-small",
+
+            "headline": "Hi {{user.firstname}},",
+            "copy": "it's me your {{user.vehicle.model_name}}. Let's drive!",
+
+            "image": {
+                "desktop": "/m7/m7-nt-header-desktop.jpg",
+                "mobile": "/m7/m7-nt-header-mobile.jpg"
+            },
+
+            "visible": {
+                "DEFAULT": false,
+                "US:NT": true
+            }
+        },
+
+        {
+            "id": "header",
+            "template": "teaser-image-small",
+
+            "headline": "Hi {{user.firstname}},",
+            "copy": "it's me your {{user.vehicle.model_name}}. Let's drive!",
+
+            "image": {
+                "desktop": "/m7/m7-tas-header-desktop.jpg",
+                "mobile": "/m7/m7-tas-header-mobile.jpg"
+            },
+
+            "visible": {
+                "DEFAULT": false,
+                "US:TAS": true
+            }
+        },
+
+        {
+            "id": "places",
+            "template": "teaser-next-steps-x3",
+
+            "headline": "Keys in hand, wheels on the road&nbsp;-&nbsp;let's&nbsp;go.",
+            "copy": "The last few months have been amazing. We've shared fun times and many <br> memorable moments. What do you say, why don't we create a few more? <br class='all'><br class='all'> I'm itching to discover a slice of Australia and I know you are too - so let's hit the road and explore together. <br> I've even made it easy for you to navigate the journey ahead with tailored locations and easy-to-use Google maps. <br class='all'><br class='all'> From sweeping coastal routes to rugged roads, get ready because this is only the beginning.",
+
+            "visible": {
+                "DEFAULT": false,
+                "US:NSW": true,
+                "US:VIC": true,
+                "US:QLD": true,
+                "US:SA": true,
+                "US:WA": true,
+                "US:NT": true,
+                "US:TAS": true
+            },
+
+            "children": [
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "The Grand Pacific Drive",
+                    "copy": "Start in southern Sydney and head through Royal National Park towards the dramatic Sea Cliff Bridge. Stop off at one of the 17 patrolled beaches around Wollongong before heading for the dramatic Blowhole or Little Blowhole near Kiama. Continue south and finish up in the spectacular crystal white sands of Hyams beach by Jervis Bay.",
+
+                    "image": {
+                        "desktop": "/m7/m7-nsw-grand-pacific-drive-desktop.jpg",
+                        "mobile": "/m7/m7-nsw-grand-pacific-drive-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1YedApqICbeGR7sRrC4OYn7M1J-A&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:NSW": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Kosciuszko Alpine Way",
+                    "copy": "Take to the Snowy Mountains with this beautiful drive through the highlands of NSW. Start at Cooma and traverse around Mt Kosciuszcko via Lake Jindabyne, Thredbo, Geehi <br> Flats and Khancoban.",
+
+                    "image": {
+                        "desktop": "/m7/m7-nsw-kosciuszko-alpine-way-desktop.jpg",
+                        "mobile": "/m7/m7-nsw-kosciuszko-alpine-way-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1NckzzGbMDtIY4xJzR9O2r-mNVdA&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:NSW": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "The Legendary Pacific Coast",
+                    "copy": "Head north along the Pacific Ocean coastline, this scenic drive takes you through some of the most striking landscapes in NSW from Terrigal to Byron Bay.",
+
+                    "image": {
+                        "desktop": "/m7/m7-nsw-legendary-pacific-coast-desktop.jpg",
+                        "mobile": "/m7/m7-nsw-legendary-pacific-coast-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1H5b5QZTZu8LfMhSyJ4-tXjlZJVw&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:NSW": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Great Ocean Road",
+                    "copy": "One of Australia's great scenic routes. Drive along the south-eastern coast of Victoria between Torquay and Port Campbell. Wind around almost vertical cliffs, past the iconic 12 Apostles, through small coastal hamlets, rainforest and iconic surf breaks like Bells Beach and Torquay.",
+
+                    "image": {
+                        "desktop": "/m7/m7-vic-great-ocean-road-desktop.jpg",
+                        "mobile": "/m7/m7-vic-great-ocean-road-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1kPikC1a5azbJdRI9CfF5G40lims&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:VIC": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Lake Mountain Road",
+                    "copy": "Your ears might start popping just out of Marysville as you start the 22-kilometre climb. There are one or two hairpin bends, but mostly it's a calm ascent through the Yarra Ranges National Park. This area was burnt out during Black Saturday, and the porcupine-like spikes of dead trees in the distance are a spectacular sight.",
+
+                    "image": {
+                        "desktop": "/m7/m7-vic-lake-mountain-road-desktop.jpg",
+                        "mobile": "/m7/m7-vic-lake-mountain-road-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1MHK39r2YrQlFOhxOo0xjYo_gUWY&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:VIC": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Great Alpine road",
+                    "copy": "Have the camera handy while travelling along the Great Alpine stretch. This route oozes spectacular scenery, including the High Country, popular ski fields, and inviting lakeside locations. The colourful history of bushrangers, like Ned Kelly, is also captured along this route.",
+
+                    "image": {
+                        "desktop": "/m7/m7-vic-great-alpine-road-desktop.jpg",
+                        "mobile": "/m7/m7-vic-great-alpine-road-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1nt5_qh7jF1h-KaD8Hm9TwN7s8ik&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:VIC": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Springbrook National Park",
+                    "copy": "The hour and a half drive from the Brisbane CBD, travels through spectacular rainforest hinterland scenery and ends up at Springbrook National Park, which forms part of world heritage listed Gondwana Rainforest.",
+
+                    "image": {
+                        "desktop": "/m7/m7-qld-springbrook-national-park-desktop.jpg",
+                        "mobile": "/m7/m7-qld-springbrook-national-park-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1o2kOOJLQFh3ymeOoSaGuAjChIBo&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:QLD": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Great Tropical Drive",
+                    "copy": "Drive from Cairns in Tropical North Queensland and take in the reef and coastal townships along this remarkable coastal drive. Highlights include Trinity Beach, Palm Cove,  Ellis Beach <br> and Port Douglas.",
+
+                    "image": {
+                        "desktop": "/m7/m7-qld-great-tropical-drive-desktop.jpg",
+                        "mobile": "/m7/m7-qld-great-tropical-drive-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1CfQXyc_bQqP-IFPzrdto3VbFqq8&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:QLD": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Adventure Way",
+                    "copy": "Retrace the tracks of the Cobb and Co, the first people movers of the outback as you traverse the unique and fascinating Adventure Way. Bitumen roads now replace the rutted tracks once taken by horse drawn coaches of all but the last 150km, enabling those in a two-wheel drive to experience the richness of this route.",
+
+                    "image": {
+                        "desktop": "/m7/m7-qld-adventure-way-desktop.jpg",
+                        "mobile": "/m7/m7-qld-adventure-way-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=198FINTDH03WhwJylVPVUb9Fy6uc&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:QLD": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Barossa Valley Grape Vine Trail",
+                    "copy": "The Grape Vine Trail is a journey of immense appeal. An easy drive from the South Australian capital leads to the world-famous Barossa. If you've only heard of one Australian wine region, chances are it's the Barossa. It has a habit of hogging the limelight due to its ability to churn out world-class wine, year after year.",
+
+                    "image": {
+                        "desktop": "/m7/m7-sa-barossa-valley-trail-desktop.jpg",
+                        "mobile": "/m7/m7-sa-barossa-valley-trail-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1_KqvbrVvDvDLi7Yci0j0uIbXRJ4&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:SA": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Adelaide to Kangaroo Island",
+                    "copy": "Take a quick hop over to Kangaroo Island for a self drive tour way round Australia's third largest island. Enjoy views of mainland Australia from Penneshaw and loop round the island via lighthouses, swells and beaches.",
+
+                    "image": {
+                        "desktop": "/m7/m7-sa-adelaide-kangaroo-island-desktop.jpg",
+                        "mobile": "/m7/m7-sa-adelaide-kangaroo-island-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=14r7S-RkEMlrr2HR_McD_4e2T7-Q&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:SA": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Historical Trail",
+                    "copy": "With thriving heritage towns dotted along this route, the Historical Trail warrants its title. Coastal delights are scattered across the Yorke Peninsula with countless magnificent beaches, diving areas are plentiful and fishing opportunities galore.",
+
+                    "image": {
+                        "desktop": "/m7/m7-sa-historical-trail-desktop.jpg",
+                        "mobile": "/m7/m7-sa-historical-trail-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=14TFT1b-qCmkb_VSStI2h70uxyf4&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:SA": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Margaret River and Augusta Heritage Trail",
+                    "copy": "Margaret River is an easy 3 hour scenic drive from Perth with lots of natural wonders along the way including wide, white, sandy beaches, whale and dolphin watching and ancient forests.",
+
+                    "image": {
+                        "desktop": "/m7/m7-wa-margaret-river-augusta-desktop.jpg",
+                        "mobile": "/m7/m7-wa-margaret-river-augusta-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1pec2zxLo0ppnqgGU54NxdrvC8DE&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:WA": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Indian Ocean Drive",
+                    "copy": "Discover white beaches, coral reefs, salty fishing towns and rugged national parks on this spectacular journey along Western Australia's Coral Coast. Head north to taste fresh crayfish in Geraldton and mouth-watering tropical fruits in Carnarvon. Swim with the huge whale shark on Ningaloo Reef and four wheel drive through the canyons of nearby Cape <br> Range National Park.",
+
+                    "image": {
+                        "desktop": "/m7/m7-wa-indian-ocean-drive-desktop.jpg",
+                        "mobile": "/m7/m7-wa-indian-ocean-drive-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1n4uiIvr5HIk3z4-_87Z4Bhp5-0k&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:WA": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Nullarbor plain (Perth to Ceduna)",
+                    "copy": "Widen your horizons driving the Eyre Highway across the vast, treeless and mesmerising Nullarbor Plain. Visit vast cattle stations, historic homesteads and remote railway outposts.",
+
+                    "image": {
+                        "desktop": "/m7/m7-wa-nullarbor-plain-desktop.jpg",
+                        "mobile": "/m7/m7-wa-nullarbor-plain-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1mO8nmwY3GKIodI6NtLE3MBnQl1M&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:WA": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Litchfield National Park",
+                    "copy": "Adventure from Darwin to the beautiful Litchfield National Park for rugged rainforest and waterfalls.",
+
+                    "image": {
+                        "desktop": "/m7/m7-nt-litchfield-national-park-desktop.jpg",
+                        "mobile": "/m7/m7-nt-litchfield-national-park-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1i1QIgaET-l97eAqFILJ1Zr1SWsw&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:NT": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Nature's Way",
+                    "copy": "An epic adventure through Kakandu National Park, Pine Peak, Litchfield National Park and Berry Springs. This route takes you through some of the Northern Territories most beautiful parks with ample opportunity to do some nature spotting en route.",
+
+                    "image": {
+                        "desktop": "/m7/m7-nt-natures-way-desktop.jpg",
+                        "mobile": "/m7/m7-nt-natures-way-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1eBJp1G4lfa-5VyApvnJCcF50m5E&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:NT": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Arnhem Way",
+                    "copy": "Arnhem Land is just waiting to be discovered. The Central Arnhem Road starts 50km south of Katherine and finishes in Nhulunbuy on the Gove Peninsula.",
+
+                    "image": {
+                        "desktop": "/m7/m7-nt-arnhem-way-desktop.jpg",
+                        "mobile": "/m7/m7-nt-arnhem-way-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1CCU9Npy9nBeLOdSQBM3CXKvj1LI&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:NT": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "North West Coast",
+                    "copy": "From the abundant wildlife of Narawntapu National Park along 200 km of scenic coastal drive to the wild and remote far <br> North West Coast.",
+
+                    "image": {
+                        "desktop": "/m7/m7-tas-north-west-coast-desktop.jpg",
+                        "mobile": "/m7/m7-tas-north-west-coast-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1EWllzwJsHLc35wrgVZEKWJs_Cus&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:TAS": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "The Huon Trail",
+                    "copy": "The Huon Trail is a journey of discovery through a region of waterways and wilderness, art and craft, forests and fishing boats, orchards and vineyards. Rich in pioneer heritage, the region is noted for its exceptional variety of landscapes, from the still waters of the tranquil Huon River to the magnificent forests of the Hartz Mountains National Park.",
+
+                    "image": {
+                        "desktop": "/m7/m7-tas-huon-trail-desktop.jpg",
+                        "mobile": "/m7/m7-tas-huon-trail-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1cWngB_GYKariC_KIrTUX3MHQca8&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:TAS": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Great Eastern Drive",
+                    "copy": "One of Australia's most dramatic and beautiful coastal drives. You'll find spectacular national parks, beautiful beaches, wildlife and maritime experiences, all set in a temperate natural paradise.",
+
+                    "image": {
+                        "desktop": "/m7/m7-tas-great-eastern-drive-desktop.jpg",
+                        "mobile": "/m7/m7-tas-great-eastern-drive-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1JQqoRjV262Xb2iv2Ni8Tli6Go_c&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:TAS": true
+                    }
+                }
+            ],
+
+            "attrs": { "max": 3 }
+        },
+
+        {
+            "id": "travel",
+            "template": "teaser-next-steps-x3",
+
+            "headline": "Travelling Interstate?",
+            "copy": "Why not take me on an adventure a little further afield?",
+
+            "visible": {
+                "DEFAULT": false,
+                "US:NSW": true,
+                "US:VIC": true,
+                "US:QLD": true,
+                "US:SA": true,
+                "US:WA": true,
+                "US:NT": true
+            },
+
+            "children": [
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "New South Wales: The Grand <br> Pacific Drive",
+                    "copy": "Start in southern Sydney and head through Royal National Park towards the dramatic Sea Cliff Bridge. Stop off at one of the 17 patrolled beaches around Wollongong before heading for the dramatic Blowhole or Little Blowhole near Kiama. Continue south and finish up in the spectacular crystal white sands of Hyams beach by Jervis Bay.",
+
+                    "image": {
+                        "desktop": "/m7/m7-nsw-grand-pacific-drive-desktop.jpg",
+                        "mobile": "/m7/m7-nsw-grand-pacific-drive-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1YedApqICbeGR7sRrC4OYn7M1J-A&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:VIC": true,
+                        "US:QLD": true,
+                        "US:SA": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "New South Wales: Kosciuszko Alpine Way",
+                    "copy": "Take to the Snowy Mountains with this beautiful drive through the highlands of NSW. Start at Cooma and traverse around Mt Kosciuszcko via Lake Jindabyne, Thredbo, Geehi <br> Flats and Khancoban.",
+
+                    "image": {
+                        "desktop": "/m7/m7-nsw-kosciuszko-alpine-way-desktop.jpg",
+                        "mobile": "/m7/m7-nsw-kosciuszko-alpine-way-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1NckzzGbMDtIY4xJzR9O2r-mNVdA&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:VIC": true,
+                        "US:SA": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "New South Wales: The Legendary Pacific Coast",
+                    "copy": "Head north along the Pacific Ocean coastline, this scenic drive takes you through some of the most striking landscapes in NSW from Terrigal to Byron Bay.",
+
+                    "image": {
+                        "desktop": "/m7/m7-nsw-legendary-pacific-coast-desktop.jpg",
+                        "mobile": "/m7/m7-nsw-legendary-pacific-coast-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1H5b5QZTZu8LfMhSyJ4-tXjlZJVw&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:QLD": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Victoria: Great Ocean Road",
+                    "copy": "One of Australia's great scenic routes. Drive along the south-eastern coast of Victoria between Torquay and Port Campbell. Wind around almost vertical cliffs, past the iconic 12 Apostles, through small coastal hamlets, rainforest and iconic surf breaks like Bells Beach and Torquay.",
+
+                    "image": {
+                        "desktop": "/m7/m7-vic-great-ocean-road-desktop.jpg",
+                        "mobile": "/m7/m7-vic-great-ocean-road-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1kPikC1a5azbJdRI9CfF5G40lims&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:NSW": true,
+                        "US:SA": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Victoria: Lake Mountain Road",
+                    "copy": "Your ears might start popping just out of Marysville as you start the 22-kilometre climb. There are one or two hairpin bends, but mostly it's a calm ascent through the Yarra Ranges National Park. This area was burnt out during Black Saturday, and the porcupine-like spikes of dead trees in the distance are a spectacular sight.",
+
+                    "image": {
+                        "desktop": "/m7/m7-vic-lake-mountain-road-desktop.jpg",
+                        "mobile": "/m7/m7-vic-lake-mountain-road-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1MHK39r2YrQlFOhxOo0xjYo_gUWY&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:NSW": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Queensland: Springbrook <br> National Park",
+                    "copy": "The hour and a half drive from the Brisbane CBD, travels through spectacular rainforest hinterland scenery and ends up at Springbrook National Park, which forms part of world heritage listed Gondwana Rainforest.",
+
+                    "image": {
+                        "desktop": "/m7/m7-qld-springbrook-national-park-desktop.jpg",
+                        "mobile": "/m7/m7-qld-springbrook-national-park-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1o2kOOJLQFh3ymeOoSaGuAjChIBo&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:NSW": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Queensland: Great Tropical Drive",
+                    "copy": "Drive from Cairns in Tropical North Queensland and take in the reef and coastal townships along this remarkable coastal drive. Highlights include Trinity Beach, Palm Cove,  Ellis Beach <br> and Port Douglas.",
+
+                    "image": {
+                        "desktop": "/m7/m7-qld-great-tropical-drive-desktop.jpg",
+                        "mobile": "/m7/m7-qld-great-tropical-drive-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1CfQXyc_bQqP-IFPzrdto3VbFqq8&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:NT": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Queensland: Adventure Way",
+                    "copy": "Retrace the tracks of the Cobb and Co, the first people movers of the outback as you traverse the unique and fascinating Adventure Way. Bitumen roads now replace the rutted tracks once taken by horse drawn coaches of all but the last 150km, enabling those in a two-wheel drive to experience the richness of this route.",
+
+                    "image": {
+                        "desktop": "/m7/m7-qld-adventure-way-desktop.jpg",
+                        "mobile": "/m7/m7-qld-adventure-way-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=198FINTDH03WhwJylVPVUb9Fy6uc&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:NT": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Western Australia: Margaret River and Augusta Heritage Trail",
+                    "copy": "Margaret River is an easy 3 hour scenic drive from Perth with lots of natural wonders along the way including wide, white, sandy beaches, whale and dolphin watching and ancient forests.",
+
+                    "image": {
+                        "desktop": "/m7/m7-wa-margaret-river-augusta-desktop.jpg",
+                        "mobile": "/m7/m7-wa-margaret-river-augusta-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1pec2zxLo0ppnqgGU54NxdrvC8DE&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:VIC": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "South Australia: Barossa Valley Grape Vine Trail",
+                    "copy": "The Grape Vine Trail is a journey of immense appeal. An easy drive from the South Australian capital leads to the world-famous Barossa. If you've only heard of one Australian wine region, chances are it's the Barossa. It has a habit of hogging the limelight due to its ability to churn out world-class wine, year after year.",
+
+                    "image": {
+                        "desktop": "/m7/m7-sa-barossa-valley-trail-desktop.jpg",
+                        "mobile": "/m7/m7-sa-barossa-valley-trail-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1_KqvbrVvDvDLi7Yci0j0uIbXRJ4&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:WA": true,
+                        "US:NT": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "South Australia: Adelaide to Kangaroo Island",
+                    "copy": "Take a quick hop over to Kangaroo Island for a self drive tour way round Australia's third largest island. Enjoy views of mainland Australia from Penneshaw and loop round the island via lighthouses, swells and beaches.",
+
+                    "image": {
+                        "desktop": "/m7/m7-sa-adelaide-kangaroo-island-desktop.jpg",
+                        "mobile": "/m7/m7-sa-adelaide-kangaroo-island-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=14r7S-RkEMlrr2HR_McD_4e2T7-Q&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:WA": true
+                    }
+                },
+
+                {
+                    "template": "teaser-content-basic",
+                    "headline": "Northern Territory: Nature's Way",
+                    "copy": "An epic adventure through Kakandu National Park, Pine Peak, Litchfield National Park and Berry Springs. This route takes you through some of the Northern Territories most beautiful parks with ample opportunity to do some nature spotting en route.",
+
+                    "image": {
+                        "desktop": "/m7/m7-nt-natures-way-desktop.jpg",
+                        "mobile": "/m7/m7-nt-natures-way-mobile.jpg"
+                    },
+
+                    "cta": {
+                        "label": "View Route",
+                        "url": "https://www.google.com/maps/d/viewer?mid=1eBJp1G4lfa-5VyApvnJCcF50m5E&usp=sharing"
+                    },
+
+                    "visible": {
+                        "DEFAULT": false,
+                        "US:QLD": true,
+                        "US:WA": true
+                    }
+                }
+            ],
+
+            "attrs": { "max": 3 }
+        },
+
+        {
+            "id": "footer",
+            "template": "footer",
+
+            "subline": "Follow us on social media",
+            "copy": "The information, pictures, colours, and specifications contained within the Volkswagen Group Australia website are presented as a general guide to the products and accessories offered by Volkswagen Group Australia. Any Innovative Technologies shown are a combination of standard and/or optional extras per model. For further information, please contact your local Volkswagen dealer. Although every effort has been made to ensure that such information is correct and up to date, no warranty is provided that all such information is reliable, complete, accurate or without error. In some cases pictures of overseas models may be shown as a guide. Therefore, Volkswagen Group Australia does not accept liability for damages of any kind resulting from the access or use of this site and its contents.",
+
+            "children": [
+                {
+                    "cta": {
+                        "label": "Privacy Policy",
+                        "url": "http://www.volkswagen.com.au/en/tools/navigation/footer/privacy.html"
+                    }
+                },
+
+                {
+                    "cta": {
+                        "label": "Legal",
+                        "url": "http://www.volkswagen.com.au/en/tools/navigation/footer/legal.html"
+                    }
+                },
+
+                {
+                    "cta": {
+                        "label": "Volkswagen AG",
+                        "url": "http://www.volkswagenag.com/content/vwcorp/content/en/homepage.html"
+                    }
+                },
+
+                {
+                    "cta": {
+                        "label": "Volkswagen International",
+                        "url": "http://www.volkswagen.com/de.html"
+                    }
+                }
+            ]
+        }
+    ]
+}

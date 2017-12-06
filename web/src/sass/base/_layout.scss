@@ -1,0 +1,246 @@
+// -------------------------------------
+//   Base - Layout
+// -------------------------------------
+/**
+    * @name layout
+    * @desc Used for specifying basic layout styles
+            used with common elements that spread
+            spread across the entire app.
+**/
+
+// base paths for the url
+// used in the sass files
+$base_path_images: "../assets/images/";
+$base_html_w_min: 320px;
+$base_html_h_min: 100vh;
+
+// html, body
+html, body {
+    position: relative;
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    // this will ensure that the page does
+    // not appear to clip when components are
+    // removed from view ( the clip can be
+    // ignored older browsers )
+    min-width: $base_html_w_min;
+    min-height: $base_html_h_min;
+
+    box-sizing: border-box;
+    background-color: white;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+// image
+img {
+    position: relative;
+    display: block;
+
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    // to prevent alt text
+    // from displayed while
+    // the img is loaded
+    color: transparent;
+}
+
+// fallback styles for browsers
+// that do not support tempaltes
+template { display: none !important; }
+
+// br tags are not visible on
+// smaller devices unless
+// explicitly specified
+br {
+    &:not(.mobile):not(.tablet):not(.all) {
+        @include tablet-sm { display: none; }
+    }
+
+    &.tablet:not(.all) {
+        @include tablet-sm-up { display: none; }
+        @include mobile { display: none; }
+    }
+
+    &.mobile:not(.all) {
+        @include mobile-up { display: none; }
+    }
+}
+
+// -------------------------------------
+//   App
+// -------------------------------------
+.app {
+	&__html, &__body,
+	&__view, &__page,
+	&__scroll {
+		box-sizing: border-box;
+		position: relative;
+		display: block;
+	}
+}
+
+// -------------------------------------
+//   App - Scroll
+// -------------------------------------
+.app__scroll {
+	width: 100%;
+	height: $base_html_h_min;
+
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+
+	// modifier - disabled
+	&--disabled {
+		overflow: hidden;
+		-webkit-overflow-scrolling: none;
+	}
+}
+
+// -------------------------------------
+//   App - View
+// -------------------------------------
+.app__view {
+	// modifier - main
+	&--main { /* rmpty block */ }
+
+	// modifier - page
+	&--page { /* rmpty block */ }
+}
+
+// -------------------------------------
+//   App - Page
+// -------------------------------------
+$page_loader_size: 80px;
+$page_loader_size_mob: 70px;
+
+$header_w: 96px;
+$header_h: 100vh;
+$header_w_mob: 100vw;
+$header_h_mob: 50px;
+
+.app__page {
+	&--device-mobile {
+		.device-desktop  {
+			display: none !important;
+		}
+	}
+
+	&--device-desktop {
+		.device-mobile  {
+			display: none !important;
+		}
+	}
+}
+
+// -------------------------------------
+//   App - Page - Content
+// -------------------------------------
+.app__page__content {
+	position: relative;
+
+	display: block;
+	padding-left: $header_w;
+	box-sizing: border-box;
+
+	@include mobile {
+		padding-left: 0;
+		padding-top: $header_h_mob;
+	}
+
+	// error
+	&--error { min-height: $base_html_h_min; }
+}
+
+// -------------------------------------
+//   App - Page - Loader
+// -------------------------------------
+.app__page__loader {
+	position: absolute;
+	z-index: $zi_loader;
+	left: 50vw; top: 50vh;
+
+	display: block;
+	box-sizing: border-box;
+	width: $page_loader_size;
+	height: $page_loader_size;
+	margin-top: -($page_loader_size / 2);
+	margin-left: -($page_loader_size / 2);
+
+	@include mobile {
+		top: 40vh;
+		width: $page_loader_size_mob;
+		height: $page_loader_size_mob;
+		margin-top: -($page_loader_size_mob / 2);
+		margin-left: -($page_loader_size_mob / 2);
+	}
+
+	// app page loader - image
+	img { z-index: $zi_loader; }
+
+	// app page loader - pulse
+	img + span {
+		position: absolute;
+		z-index: $zi_loader - 1;
+		left: -$page_loader_size;
+		top: -$page_loader_size;
+
+		opacity: 0;
+		display: block;
+		width: $page_loader_size;
+		height: $page_loader_size;
+
+		border-width: ($page_loader_size * 1.5);
+		border-color: $color_blue_volkswagen;
+		border-style: solid;
+		border-radius: 100%;
+
+		animation: app__page__loader;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		animation-duration: 2s;
+
+		@include mobile {
+			left: -$page_loader_size_mob;
+			top: -$page_loader_size_mob;
+
+			border-width: ($page_loader_size_mob * 1.5);
+			height: $page_loader_size_mob;
+			width: $page_loader_size_mob;
+		}
+	}
+}
+
+//  app page loader - animation
+@keyframes app__page__loader {
+	0% {
+		transform: scale(0);
+		opacity: 0.0;
+	}
+
+	25% {
+		transform: scale(0.2);
+		opacity: 0.05;
+	}
+
+	50% {
+		transform: scale(0.3);
+		opacity: 0.1;
+	}
+
+	75% {
+		transform: scale(0.5);
+		opacity: 0.15;
+	}
+
+	100% {
+		transform: scale(0.6);
+		opacity: 0.0;
+	}
+}

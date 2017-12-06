@@ -1,0 +1,94 @@
+// -------------------------------------
+//   Module - Image
+// -------------------------------------
+/**
+  	* @name image
+  	* @desc Styles for the image module.
+**/
+
+.image {
+	position: relative;
+	display: block;
+
+	width: 100%;
+	height: auto;
+	max-width: 100%;
+	box-sizing: border-box;
+
+	// to prevent alt text
+	// from displayed while
+	// the img is loaded
+	color: transparent;
+}
+
+// -------------------------------------
+//   Image - Layout
+// -------------------------------------
+// images used purely for the purpose of
+// layout in html ( also the elements that
+// contain the dominant-color of the image )
+.image__layout {
+	@extend .image;
+	/* background-color: black; */
+
+	// modifiers for switching of
+	// responsive images with CSS
+	&--desktop, &--mobile {
+		/* empty block */
+	}
+
+	// modifier - desktop
+	&--desktop {
+		@include mobile {
+			display: none !important;
+		}
+	}
+
+	// modifier - mobile
+	&--mobile {
+		@include mobile-up {
+			display: none !important;
+		}
+	}
+}
+
+// -------------------------------------
+//   Image - Cover
+// -------------------------------------
+// images used purely for the purpose of
+// covering an entrire parent element in
+// html ( used along with layout images )
+.image__cover {
+	position: absolute;
+	z-index: $zi_default;
+	left: 0;
+	top: 0;
+
+	width: 100%;
+	height: 100%;
+
+	@extend %background-image;
+	/* background-color: black; */
+
+	// modifiers for switching of
+	// responsive images with CSS
+	&--desktop, &--mobile {
+		/* empty block */
+	}
+
+	// modifier - desktop
+	&--desktop {
+		@include mobile {
+			display: none !important;
+			background-image: none !important;
+		}
+	}
+
+	// modifier - mobile
+	&--mobile {
+		@include mobile-up {
+			display: none !important;
+			background-image: none !important;
+		}
+	}
+}

@@ -1,0 +1,56 @@
+// -------------------------------------
+//   Component - Inline Video
+// -------------------------------------
+/**
+  	* @name inline-video
+  	* @desc Styles for the inline video component.
+**/
+
+
+.inline-video {
+	background-color: $color_grey_midnight;
+
+	.inline-video__gif,
+	.inline-video__video,
+	.inline-video__canvas {
+		@include tablet {
+			width: auto;
+			height: 100%;
+		}
+	}
+
+	.inline-video__canvas {
+		background-size: contain;
+	}
+
+	.inline-video__image {
+		background-color: $color_grey_midnight;
+	}
+}
+
+// -------------------------------------
+//   Inline Video - Content
+// -------------------------------------
+.inline-video__content {
+	@extend .teaser-image-big__content;
+	h2, p { color: white; }
+
+	// align content position
+	// vertically on bigger devices
+	@include mobile-up {
+		@include transform-center-v(false);
+		max-width: $tsr_img_lg_content_w_max;
+		left: 0;
+	}
+
+	// align content elements
+	// horizontally on smaller devices
+	@include mobile {
+		@include transform-center-h(false);
+		max-width: 100%;
+		width: 100%;
+		top: 0;
+
+		text-align: center;
+	}
+}
