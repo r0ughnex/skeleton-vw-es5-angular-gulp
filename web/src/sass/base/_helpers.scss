@@ -75,9 +75,26 @@
     }
 }
 
+// mixin to create the center placeholder
+// to overcome when used inside media queries
+// e.g. @input @include center(false);
+// e.g. @output ..content of @else block comes here..
+@mixin center-table($extend: true) {
+    @if $extend { @extend %center-table; }
 
-%clear { @include clear(false); } // clear
-%center { @include center(false);  } // center
+    // styles extended by
+    // this placeholder
+    @else {
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+%clear  { @include clear(false);  } // clear
+%center { @include center(false); } // center
+%center-table { @include center-table(false);  } // center table
 
 // mixin to create the transform-center-h placeholder
 // to overcome when used inside media queries

@@ -214,8 +214,7 @@ require("../base/query");
             clearTimeout(_timer);
 
             // reset all references to objects and arrays
-            _el.main = null; _el.loader = null;
-            _nanobar = null;
+            _el.main = _el.loader = _nanobar = null;
 
             // reset all indices to their default values
             _percent.current = 0;

@@ -220,9 +220,14 @@ require("../base/debounce");
         // deregister all registered listeners, clear set timers
         // and set intervals when the current scope is destroyed
         $scope.$on("$destroy", function() {
-            // remove footer show and hide
-            // listener from the page scroll
+            // remove the listeners in the component
             _removeScrollListener();
+
+            // reset all references to objects and arrays
+            _el = _elPage = ctrl.year = ctrl.disclaimer = null;
+
+            // reset all flags to their default values
+            ctrl.isToTopVisible = false;
         });
 
         // ---------------------------------------------

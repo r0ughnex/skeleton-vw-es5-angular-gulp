@@ -63,7 +63,7 @@ require("../base/raf");
         // ---------------------------------------------
         // @name _onInit
         // @desc function for on init
-        function _onInit() {
+        function _onInit() { try {
             // get the saved from and to state
             // objects from the parent controller
             var fromState = ctrl.parent.fromState;
@@ -79,6 +79,23 @@ require("../base/raf");
                     ctrl.isVisible = true;
                     ScopeService.digest($scope);
                 }
+            }}
+
+            // on parent state object errors
+            catch(error) { console.log(error); }
+
+            // get the parent data for the page
+            var parentData = ctrl.parent.data;
+
+            // only proceed if parent data is valid
+            if(typeof parentData !== "object") {
+                return false; // exit otherwise
+            }
+
+            // only proceed if footer data is valid
+            if(typeof parentData.footer === "object") {
+                // make a local copy of the parent footer data
+                ctrl.data.footer = angular.copy(parentData.footer);
             }
         }
 
@@ -137,6 +154,12 @@ require("../base/raf");
             _registeredListeners.forEach(function(deregisterListener) {
                 deregisterListener();
             });
+
+            // reset all references to objects and arrays
+            ctrl.data = { };
+
+            // reset all flags to their default values
+            ctrl.isVisible = ctrl.hasErrors = false;
         });
 
         // ---------------------------------------------

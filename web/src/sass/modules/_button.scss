@@ -177,14 +177,27 @@ $btn_error_darken: 6%;
 }
 
 // -------------------------------------
+//   Button - Inside Wrapper
+// -------------------------------------
+.button-wrapper {
+	display: block;
+	position: relative;
+
+	width: 100%;
+	height: auto;
+	max-width: 100%;
+	> .button { @extend %center-table; }
+}
+
+// -------------------------------------
 //   Button - Inside Sections
 // -------------------------------------
 .section {
 	// modifer - blue
 	&--color-blue {
-		// the alt colored section can
-		// only have secondary or disabled
-		// button types / states
+		// the blue colored sections
+		// can only have secondary or
+		// disabled button types, states
 		.button:not(.button--disabled) {
 			@extend %button--secondary;
 		}
@@ -193,10 +206,15 @@ $btn_error_darken: 6%;
 
 .section,
 .container {
-	> .button,
-	> .button-wrapper {
-		margin: ($btn_margin * 1.5) auto;
+	> .button-wrapper { @extend %center; }
+	> .button { @extend %center-table; }
+
+	> .button-wrapper,
+	> .button {
+		margin-bottom: ($btn_margin * 1.5);
 		&:last-child { margin-bottom: 0; }
+
+		margin-top: ($btn_margin * 1.5);
 		&:first-child { margin-top: 0; }
 	}
 }
