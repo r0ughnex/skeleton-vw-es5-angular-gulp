@@ -24,7 +24,7 @@ $loader_opacity: 0.3;
 	// only as a default when js animations
 	// haven't run on the component yet, and
 	// will be overwitten by the js animation
-	&:not([style]) { opacity: 0; }
+	&:not(.ng-hide), &:not([style]) { opacity: 0; }
 }
 
 .loader {

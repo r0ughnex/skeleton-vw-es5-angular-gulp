@@ -7,6 +7,7 @@
     * @plugins
     * require("mobile-detect");
     * require("velocity");
+    * require("nanobar");
 
     * require("lory");
     * require("swiper");
@@ -109,8 +110,8 @@ console.log(CONFIG);
         // use the html5 history mode (except when running on aws s3 environemnt)
         $locationProvider.html5Mode(CONFIG.environment.isAmazonHost ? false : true);
 
-        // default state is app.home (if no state has been set)
-        $urlRouterProvider.otherwise(CONFIG.path.url + "/home");
+        // default state is app.modules (if no state has been set)
+        $urlRouterProvider.otherwise(CONFIG.path.url + "/modules");
 
         // remove the preset location hash prefix
         $locationProvider.hashPrefix("");
@@ -135,11 +136,11 @@ console.log(CONFIG);
                 }
             })
 
-            // state - app - home
-            .state("app.home", {
+            // state - app - modules
+            .state("app.modules", {
                 // the app route url for
                 // this configured state
-                url: CONFIG.path.url + "/home",
+                url: CONFIG.path.url + "/modules",
 
                 // options configured for
                 // views within this state
@@ -147,9 +148,28 @@ console.log(CONFIG);
                     // the nested
                     // child view
                     "page@app":   {
-                        templateUrl: CONFIG.path.views + "home/page.view.html"/*,
-                        controller: "HomeController",
-                        contollerAs: "$ctrl_home"*/
+                        templateUrl: CONFIG.path.views + "page_modules.view.html"/*,
+                        controller: "ModulesController",
+                        contollerAs: "$ctrl_page"*/
+                    }
+                }
+            })
+
+            // state - app - samples
+            .state("app.samples", {
+                // the app route url for
+                // this configured state
+                url: CONFIG.path.url + "/samples",
+
+                // options configured for
+                // views within this state
+                views: {
+                    // the nested
+                    // child view
+                    "page@app":   {
+                        templateUrl: CONFIG.path.views + "page_samples.view.html"/*,
+                        controller: "SamplesController",
+                        contollerAs: "$ctrl_page"*/
                     }
                 }
             });
@@ -173,29 +193,16 @@ require("./filters/strip-html.filter");
 require("./filters/title-case.filter");
 
 // factories
-require("./factories/animation.factory"); /*
-require("./factories/line.factory");
-require("./factories/dot.factory");
-require("./factories/pin.factory");
-require("./factories/map.factory");
+require("./factories/animation.factory");
 
 // services
-require("./services/listener.service"); */
 require("./services/scope.service");
 require("./services/data.service");
 require("./services/page.service");
 
-require("./services/dominant-color.service");
+require("./services/loader.service");
 require("./services/animation.service");
-require("./services/loader.service"); /*
-require("./services/header.service");
-
-require("./services/google-maps.service");
-require("./services/shipping.service");
-require("./services/logger.service");
-require("./services/fb.service");
-require("./services/ga.service");
-require("./services/ce.service"); */
+require("./services/dominant-color.service");
 
 // animations
 require("./animations/fade.animation");
@@ -206,34 +213,16 @@ require("./animations/translate.animation");
 
 // controllers
 require("./controllers/app.controller");
-require("./controllers/home.controller");
+require("./controllers/modules.controller");
+require("./controllers/samples.controller");
 
 // directives
-require("./directives/dominant-color.directive"); /*
-require("./directives/share-to.directive"); */
+require("./directives/dominant-color.directive");
 
 // components
-require("./components/loader.component"); /*
-require("./components/header.component"); */
+require("./components/loader.component");
 require("./components/footer.component");
-
-require("./components/teaser-image-small.component"); /*
-require("./components/teaser-image-big.component");
-
-require("./components/teaser-next-steps.component");
-require("./components/feature-wrapper.component");
-
-require("./components/media-player-inline.component");
-require("./components/inline-video.component");
-require("./components/carousel.component");
-
-require("./components/api-tester.component");
-require("./components/shipping-pathway.component");
-require("./components/shipping-carousel.component");
-
-require("./components/ming-zing-tiles.component");
-require("./components/tab-icons.component");
-require("./components/tab-box.component"); */
+require("./components/teaser-image-small.component");
 
 // complete
 console.warn("app.js: Loading require() script modules complete.");

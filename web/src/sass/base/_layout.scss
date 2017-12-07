@@ -111,7 +111,19 @@ br {
 	&--main { /* rmpty block */ }
 
 	// modifier - page
-	&--page { /* rmpty block */ }
+	&--page {
+        position: absolute;
+        left: 0; top: 0;
+
+        z-index: $zi_overlay;
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+
+    &--page + &--page {
+        z-index: $zi_default;
+    }
 }
 
 // -------------------------------------

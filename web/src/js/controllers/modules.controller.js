@@ -7,32 +7,35 @@
     * @plugins
 **/
 
+// base
+require("../base/raf");
+
 // -------------------------------------
-//   Controller - App
+//   Controller - Modules
 // -------------------------------------
 /**
-    * @name app.controller
-    * @desc The app controller for the app,
+    * @name modules.controller
+    * @desc The modules controller for the app,
             declared inline as directive or
             in the state CONFIG as a controller.
 **/
 (function() {
-    console.log("controllers/app.controller.js loaded.");
+    console.log("controllers/modules.controller.js loaded.");
 
     /**
-        * @name AppController
-        * @desc Class for the app controller.
+        * @name ModulesController
+        * @desc Class for the modules controller.
         * @param {Service} $scope - Service in module
         * @param {Service} $state - Service in module
-        * @param {Service} $transitions - Service in module
         * @param {Constant} CONFIG - The app config constant
         * @param {Service} ScopeService - The custom scope service
         * @param {Service} DataService - the custom data service
-        * @param {Service} DominantColorService - The custom dominant color service
+        * @param {Service} PageService - The custom page service
+        * @param {Service} LoaderService - the custom loader service
         * @return {Object} - The instance of the controller class
     **/
-    function AppController($scope, $state, $transitions, CONFIG, ScopeService, DataService, DominantColorService) {
-        "ngInject"; // tag this function for dependency injection
+    function ModulesController($scope, $state, CONFIG, ScopeService, DataService, PageService, LoaderService) {
+        "ngInject"; // tag this function for dependancy injection
 
         // ---------------------------------------------
         //   Private members
@@ -47,53 +50,73 @@
         var ctrl    = this;   // to capture the context of this
         ctrl.CONFIG = CONFIG; // reference to the config constant
 
-        ctrl.fromState = { }; // reference to the from state transition object
-        ctrl.toState   = { }; // reference to the next state transition object
+        ctrl.isVisible = false; // flag to indicate page is visible
+        ctrl.hasErrors = false; // flag to indicate page has errors
+
+        ctrl.data = { // reference to the data for the page
+            // TO-DO add data that is
+            // used on the page here
+        };
 
         // ---------------------------------------------
         //   Private methods
         // ---------------------------------------------
         // @name _onInit
         // @desc function for on init
-        function _onInit() { /* empty block */ }
+        function _onInit() {
+            // get the saved from and to state
+            // objects from the parent controller
+            var fromState = ctrl.parent.fromState;
+            var toState   = ctrl.parent.toState;
+
+            // if the from state name is valid
+            if(typeof fromState.name === "string"
+               && fromState.name.includes("app.")) {
+
+                // show the current page, since it
+                // is coming from a previous page
+                if(!ctrl.isVisible) {
+                    ctrl.isVisible = true;
+                    ScopeService.digest($scope);
+                }
+            }
+        }
 
         // @name _onPostLink
         // @desc function for on post link
-        function _onPostLink() { /* empty block */ }
+        function _onPostLink() {
+            setTimeout(function() {
+                LoaderService.showLoader().then(function() {
+
+                    // TO-DO: add code to request
+                    // the data for the page here
+                    // (the timeout is a simulation)
+
+                    setTimeout(function() {
+                        // show the current page,
+                        // once data is available
+                        if(!ctrl.isVisible) {
+                            ctrl.isVisible = true;
+                            ScopeService.digest($scope);
+                        }
+
+                        setTimeout(function() {
+                            LoaderService.hideLoader().then(function() {
+
+                                // TO-DO: add code to do something
+                                // with the obtained page data here
+                                // (the timeout is just a simulation)
+
+                            });
+                        }, (CONFIG.timeout.scope * 6));
+                    }, (CONFIG.timeout.animation * 1));
+                });
+            }, 1);
+        }
 
         // @name _onChanges
         // @desc function for on binding changes
         function _onChanges() { /* empty block */ }
-
-        // @name _registerDigestListener
-        // @desc internal function to count the no.of times
-        //       $rootScope.$digest is called, for the purpose
-        //       of optimizing performance on the app. The less
-        //       it"s called, the better. ( only works in dev mode )
-        function _registerDigestListener() {
-            // reset the digest count
-            // and set a digest timer
-            var digestCount = 0;
-            var digestTimer = null;
-
-            // this watch will be triggered
-            // everytime $scope.$apply is triggered
-            _registeredListeners.push($scope.$watch(function() {
-                // clear any previous timers
-                // increase the digest count
-                clearTimeout(digestTimer);
-                digestTimer = null;
-                digestCount++;
-
-                // set a reset timer
-                digestTimer = setTimeout(function(){
-                    // print the current total digest count
-                    // and reset the digest count
-                    console.log("app.controller.js: $rootScope.$digest() calls triggered on this cycle: " + digestCount);
-                    digestCount = 0;
-                }, CONFIG.timeout.scope);
-            }));
-        }
 
         // ---------------------------------------------
         //   Public methods
@@ -106,20 +129,6 @@
         ctrl.$onInit    = _onInit;     // function for on init
         ctrl.$postLink  = _onPostLink; // function for on post link
         ctrl.$onChanges = _onChanges;  // function for on binding changes
-
-        // only register digest listener if this is not production mode
-        if(!CONFIG.environment.isProd) { _registerDigestListener(); }
-
-        // this watch will be triggered everytime
-        // a $state view transition is triggered
-        _registeredListeners.push(
-            // when $state view change transition on start is triggered
-            // note: from https://ui-router.github.io/guide/transitionhooks
-            $transitions.onStart({ /* criteria object */ }, function(transition) {
-                ctrl.fromState = transition.$from(); // save the from state object
-                ctrl.toState   = transition.$to();   // save the next state object
-            })
-        );
 
         // deregister all registered listeners, clear set timers
         // and set intervals when the current scope is destroyed
@@ -137,26 +146,26 @@
     }
 
     /**
-        * @name appLink
-        * @desc Function for post link on the app controller directive.
+        * @name modulesLink
+        * @desc Function for post link on the modules controller directive.
         * @param {Object} scope - The scope within which the directive exists
         * @param {Object} element - The wrapped element to which the directive is attached
         * @param {Object} attrs - The attributes of the element that contains the directive
         * @param {Object} ctrl - The instance of controller which is used in the directive
         * @return {Object} - The instance of the link function
     **/
-    var appLink = function(scope, element, attrs, ctrl) { /* empty block */ };
+    var modulesLink = function(scope, element, attrs, ctrl) { /* empty block */ };
 
     /**
-        * @name appController
-        * @desc Function for the app controller directive.
+        * @name modulesController
+        * @desc Function for the modules controller directive.
         * @return {Object} - The instance of the controller function
     **/
-    var appController = function() {
+    var modulesController = function() {
         return {
-        require:  { /* empty block */ },
-            retrict: "A", scope: true, controller: AppController,
-            controllerAs: "$ctrl_app", bindToController: true, link: appLink
+            require:  { parent: '^^appController' },
+            retrict: "A", scope: true, controller: ModulesController,
+            controllerAs: "$ctrl_page", bindToController: true, link: modulesLink
         };
     };
 
@@ -165,7 +174,7 @@
     // ---------------------------------------------
     // get the app module
     angular.module("volkswagen.app")
-        .directive("appController", appController)   // set directive
-        .controller("AppController", AppController); // set controller
+        .directive("modulesController", modulesController)   // set directive
+        .controller("ModulesController", ModulesController); // set controller
 
 })();

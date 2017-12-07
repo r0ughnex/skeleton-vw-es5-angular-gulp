@@ -81,6 +81,10 @@ require("../base/debounce");
             }, CONFIG.timeout.scope * 6);
         }
 
+        // @name _onChanges
+        // @desc function for on binding changes
+        function _onChanges() { /* empty block */ }
+
         // @name _addScrollListener
         // @desc function to add a scroll listener to the page
         function _addScrollListener() {
@@ -209,8 +213,9 @@ require("../base/debounce");
         // ---------------------------------------------
         //   Constructor block
         // ---------------------------------------------
-        ctrl.$onInit   = _onInit;     // function for on init
-        ctrl.$postLink = _onPostLink; // function for on post link
+        ctrl.$onInit    = _onInit;     // function for on init
+        ctrl.$postLink  = _onPostLink; // function for on post link
+        ctrl.$onChanges = _onChanges;  // function for on binding changes
 
         // deregister all registered listeners, clear set timers
         // and set intervals when the current scope is destroyed

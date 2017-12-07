@@ -93,6 +93,10 @@ require("../base/query");
         // @desc function for on post link
         function _onPostLink() { /* empty block */ }
 
+        // @name _onChanges
+        // @desc function for on binding changes
+        function _onChanges() { /* empty block */ }
+
         // @name _progress
         // @desc function to increase the loader progress
         function _progress() {
@@ -187,8 +191,9 @@ require("../base/query");
         // ---------------------------------------------
         //   Constructor block
         // ---------------------------------------------
-        ctrl.$onInit   = _onInit;     // function for on init
-        ctrl.$postLink = _onPostLink; // function for on post link
+        ctrl.$onInit    = _onInit;     // function for on init
+        ctrl.$postLink  = _onPostLink; // function for on post link
+        ctrl.$onChanges = _onChanges;  // function for on binding changes
 
         // get the main parent wrapper element
         _el.main = query("." + _class.wrapper, $element[0])[0];

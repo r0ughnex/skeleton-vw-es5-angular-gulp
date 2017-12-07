@@ -53,6 +53,10 @@
         // @desc function for on post link
         function _onPostLink() { /* empty block */ }
 
+        // @name _onChanges
+        // @desc function for on binding changes
+        function _onChanges() { /* empty block */ }
+
         // @name _parseAttributes
         // @desc function to parse the bound attributes and
         //       replace any missing information with default values
@@ -102,8 +106,9 @@
         // ---------------------------------------------
         //   Constructor block
         // ---------------------------------------------
-        ctrl.$onInit   = _onInit;     // function for on init
-        ctrl.$postLink = _onPostLink; // function for on post link
+        ctrl.$onInit    = _onInit;     // function for on init
+        ctrl.$postLink  = _onPostLink; // function for on post link
+        ctrl.$onChanges = _onChanges;  // function for on binding changes
 
         // deregister all registered listeners, clear set timers
         // and set intervals when the current scope is destroyed
