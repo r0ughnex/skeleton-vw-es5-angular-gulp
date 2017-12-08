@@ -1,0 +1,116 @@
+@font-face {
+	font-family: "icons-volkswagen-app";
+	src: url('../assets/fonts/icons-volkswagen-app.eot');
+	src: url('../assets/fonts/icons-volkswagen-app.eot?#iefix') format('eot'),
+		 url('../assets/fonts/icons-volkswagen-app.woff') format('woff'),
+		 url('../assets/fonts/icons-volkswagen-app.ttf') format('truetype'),
+		 url('../assets/fonts/icons-volkswagen-app.svg#icons-volkswagen-app') format('svg');
+}
+
+.icon:before {
+	font-family: "icons-volkswagen-app";
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+
+	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+	text-transform: none;
+	text-decoration: none;
+}
+
+
+.icon-chevron-double-up:before {
+	content: "\E001";
+}
+
+.icon-chevron-left:before {
+	content: "\E002";
+}
+
+.icon-chevron-right:before {
+	content: "\E003";
+}
+
+.icon-close-thin:before {
+	content: "\E004";
+}
+
+.icon-close:before {
+	content: "\E005";
+}
+
+.icon-download:before {
+	content: "\E006";
+}
+
+.icon-facebook:before {
+	content: "\E007";
+}
+
+.icon-google-plus:before {
+	content: "\E008";
+}
+
+.icon-help:before {
+	content: "\E009";
+}
+
+.icon-instagram:before {
+	content: "\E00A";
+}
+
+.icon-link-arrow:before {
+	content: "\E00B";
+}
+
+.icon-linkedin:before {
+	content: "\E00C";
+}
+
+.icon-location:before {
+	content: "\E00D";
+}
+
+.icon-menu:before {
+	content: "\E00E";
+}
+
+.icon-minus:before {
+	content: "\E00F";
+}
+
+.icon-mouse-scroll:before {
+	content: "\E010";
+}
+
+.icon-pinterest:before {
+	content: "\E011";
+}
+
+.icon-play:before {
+	content: "\E012";
+}
+
+.icon-plus:before {
+	content: "\E013";
+}
+
+.icon-share:before {
+	content: "\E014";
+}
+
+.icon-tick:before {
+	content: "\E015";
+}
+
+.icon-twitter:before {
+	content: "\E016";
+}
+
+.icon-youtube:before {
+	content: "\E017";
+}
+

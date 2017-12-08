@@ -1,0 +1,169 @@
+// -------------------------------------
+//   Base - Helpers
+// -------------------------------------
+/**
+    * @name helpers
+    * @desc SASS helper classes that can be
+            extended to apply basic styles
+**/
+
+// reset
+%reset {
+    width: auto;
+    height: auto;
+
+    min-width: 0;
+    min-height: 0;
+    max-width: auto;
+    max-height: auto;
+
+    margin: 0;
+    padding: 0;
+
+    font-weight: normal;
+    text-decoration: none;
+
+    border: 0;
+    outline: 0;
+
+    appearance: none;
+    box-shadow: none;
+    background-image: none;
+    background-color: none;
+
+    &:hover, &:focus,
+    &:active, &:visited {
+      outline: 0;
+      font-weight: normal;
+      text-decoration: none;
+    }
+}
+
+// mixin to create the clear placeholder
+// to overcome when used inside media queries
+// e.g. @input @include clear(false);
+// e.g. @output ..content of @else block comes here..
+@mixin clear($extend: true) {
+    @if $extend { @extend %clear; }
+
+    @else {
+        &:before,
+        &:after {
+            content: "";
+            display: table;
+        }
+
+        &:after {
+            clear: both;
+        }
+    }
+}
+
+// mixin to create the center placeholder
+// to overcome when used inside media queries
+// e.g. @input @include center(false);
+// e.g. @output ..content of @else block comes here..
+@mixin center($extend: true) {
+    @if $extend { @extend %center; }
+
+    // styles extended by
+    // this placeholder
+    @else {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+// mixin to create the center placeholder
+// to overcome when used inside media queries
+// e.g. @input @include center(false);
+// e.g. @output ..content of @else block comes here..
+@mixin center-table($extend: true) {
+    @if $extend { @extend %center-table; }
+
+    // styles extended by
+    // this placeholder
+    @else {
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+%clear  { @include clear(false);  } // clear
+%center { @include center(false); } // center
+%center-table { @include center-table(false);  } // center table
+
+// mixin to create the transform-center-h placeholder
+// to overcome when used inside media queries
+// e.g. @input @include transform-center-h(false);
+// e.g. @output ..content of @else block comes here..
+@mixin transform-center-h($extend: true) {
+    @if $extend { @extend %transform-center-h; }
+
+    // styles extended by
+    // this placeholder
+    @else {
+        transform: translateX(-50%);
+        position: absolute;
+        left: 50%;
+    }
+}
+
+// mixin to create the transform-center-v placeholder
+// to overcome when used inside media queries
+// e.g. @input @include transform-center-v(false);
+// e.g. @output ..content of @else block comes here..
+@mixin transform-center-v($extend: true) {
+    @if $extend { @extend %transform-center-v; }
+
+    // styles extended by
+    // this placeholder
+    @else {
+        transform: translateY(-50%);
+        position: absolute;
+        top: 50%;
+    }
+}
+
+// mixin to create the transform-center placeholder
+// to overcome when used inside media queries
+// e.g. @input @include transform-center(false);
+// e.g. @output ..content of @else block comes here..
+@mixin transform-center($extend: true) {
+    @if $extend { @extend %transform-center; }
+
+    // styles extended by
+    // this placeholder
+    @else {
+        transform: translate(-50%, -50%);
+        position: absolute;
+        left: 50%; top: 50%;
+    }
+}
+
+
+%transform-center-h { @include transform-center-h(false); } // center horizontally
+%transform-center-v { @include transform-center-v(false); } // center vertically
+%transform-center   { @include transform-center(false);   } // center both
+
+// mixin to create the background-image placeholder
+// to overcome when used inside media queries
+// e.g. @input @include background-image(false);
+// e.g. @output ..content of @else block comes here..
+@mixin background-image($extend: true) {
+    @if $extend { @extend %background-image; }
+
+    // styles extended by
+    // this placeholder
+    @else {
+        background-position: center top;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+%background-image { @include background-image(false); } // background image

@@ -1,0 +1,287 @@
+// -------------------------------------
+//   Base - Typography
+// -------------------------------------
+/**
+    * @name typography
+    * @desc Used for setting various font properties
+            used with common elements that spread
+            across the entire app.
+**/
+
+// font sizes
+$font_size_rt:        1em;     // 16px
+$font_size_rt_tab_sm: 0.938em; // 15px
+
+$font_size_h1:        3.75rem; // 60px
+$font_size_h1_tab_sm: 3rem;    // 45px
+$font_size_h1_mob:    2.40rem; // 36px
+$font_size_h1_mob_sm: 2rem;    // 30px
+
+$font_size_h2:        2.812rem; // 45px
+$font_size_h2_tab_sm: 2.333rem; // 35px
+$font_size_h2_mob:    1.733rem; // 26px
+$font_size_h2_mob_sm: 1.533rem; // 23px
+
+$font_size_h3:        1.72rem; // 28px
+$font_size_h3_tab_sm: 1.40rem; // 21px
+
+$font_size_h4:        1.125rem; // 18px
+$font_size_h4_tab_sm: 1.133rem; // 17px
+
+$font_size_p:         1rem; // 16px
+$font_size_p_tab_sm:  1rem; // 15px
+
+// line heights
+$line_hght_rt: 1.5625em;
+$line_hght_h1: 1.12em;
+$line_hght_h2: 1.12em;
+$line_hght_h3: 1.12em;
+$line_hght_h4: 1.12em;
+$line_hght_p:  1.5625em;
+
+// letter spacings
+$letter_sp_rt: normal;
+$letter_sp_h1: -0.02em;
+$letter_sp_h2: -0.02em;
+$letter_sp_h3: -0.02em;
+$letter_sp_h4: -0.02em;
+$letter_sp_p:  normal;
+
+// -------------------------------------
+//   Typography - Mixins - Styles
+// -------------------------------------
+// mixin to create the font-size-root placeholder
+// to overcome when used inside media queries
+// e.g. @input @include font-size-root(false);
+// e.g. @output ..content of @else block comes here..
+@mixin font-size-root($extend: true) {
+    @if $extend { @extend %font-size-root; }
+
+    @else {
+        line-height: $line_hght_rt;
+        letter-spacing: $letter_sp_rt;
+        font-family: sans-serif, Arial;
+
+        font-size: $font_size_rt;
+        @include tablet-sm { font-size: $font_size_rt_tab_sm; }
+    }
+}
+
+// mixin to create the font-size-h1 placeholder
+// to overcome when used inside media queries
+// e.g. @input @include font-size-h1(false);
+// e.g. @output ..content of @else block comes here..
+@mixin font-size-h1($extend: true) {
+    @if $extend { @extend %font-size-h1; }
+
+    @else {
+        line-height: $line_hght_h1;
+        letter-spacing: $letter_sp_h1;
+        font-family: "VWHead-Bold", sans-serif;
+
+        font-size: $font_size_h1;
+        @include tablet-sm { font-size: $font_size_h1_tab_sm; }
+        @include mobile    { font-size: $font_size_h1_mob;    }
+        @include mobile-sm { font-size: $font_size_h1_mob_sm; }
+    }
+}
+
+// mixin to create the font-size-h2 placeholder
+// to overcome when used inside media queries
+// e.g. @input @include font-size-h2(false);
+// e.g. @output ..content of @else block comes here..
+@mixin font-size-h2($extend: true) {
+    @if $extend { @extend %font-size-h2; }
+
+    @else {
+        line-height: $line_hght_h2;
+        letter-spacing: $letter_sp_h2;
+        font-family: "VWHead-Bold", sans-serif;
+
+        font-size: $font_size_h2;
+        @include tablet-sm { font-size: $font_size_h2_tab_sm; }
+        @include mobile    { font-size: $font_size_h2_mob;    }
+        @include mobile-sm { font-size: $font_size_h2_mob_sm; }
+    }
+}
+
+// mixin to generate the font-size-h3 placeholder
+// to overcome when used inside media queries
+// e.g. @input @include font-size-h3(false);
+// e.g. @output ..content of @else block comes here..
+@mixin font-size-h3($extend: true) {
+    @if $extend { @extend %font-size-h3; }
+
+    @else {
+        line-height: $line_hght_h3;
+        letter-spacing: $letter_sp_h3;
+        font-family: "VWHead-Bold", sans-serif;
+
+        font-size: $font_size_h3;
+        @include tablet-sm { font-size: $font_size_h3_tab_sm; }
+    }
+}
+
+// mixin to create the font-size-h4 placeholder
+// to overcome when used inside media queries
+// e.g. @input @include font-size-h4(false);
+// e.g. @output ..content of @else block comes here..
+@mixin font-size-h4($extend: true) {
+    @if $extend { @extend %font-size-h4; }
+
+    @else {
+        line-height: $line_hght_h4;
+        letter-spacing: $letter_sp_h4;
+        font-family: "VWHead-Bold", sans-serif;
+
+        font-size: $font_size_h4;
+        @include tablet-sm { font-size: $font_size_h4_tab_sm; }
+    }
+}
+
+// mixin to create the font-size-p placeholder
+// to overcome when used inside media queries
+// e.g. @input @include font-size-p(false);
+// e.g. @output ..content of @else block comes here..
+@mixin font-size-p($extend: true) {
+    @if $extend { @extend %font-size-p; }
+
+    @else {
+        line-height: $line_hght_p;
+        letter-spacing: $letter_sp_p;
+        font-family: "VWText-Regular", sans-serif;
+
+        font-size: $font_size_p;
+        @include tablet-sm { font-size: $font_size_p_tab_sm; }
+    }
+}
+
+%font-size-root { @include font-size-root (false); }
+%font-size-h1   { @include font-size-h1(false); }
+%font-size-h2   { @include font-size-h2(false); }
+%font-size-h3   { @include font-size-h3(false); }
+%font-size-h4   { @include font-size-h4(false); }
+%font-size-p    { @include font-size-p (false); }
+
+// -------------------------------------
+//   Typography - Sizes & Colors
+// -------------------------------------
+html { @extend %font-size-root; }
+body { @extend %font-size-root; }
+h1   { @extend %font-size-h1; }
+h2   { @extend %font-size-h2; }
+h3   { @extend %font-size-h3; }
+h4   { @extend %font-size-h4; }
+
+html, body { color: $color_grey_midnight; }
+
+h1, h2, h3, h4 {
+    color: $color_grey_night;
+    &:first-child { margin-top: 0; }
+    &:last-child  { margin-bottom: 0; }
+    @include mobile { text-align: center; }
+}
+
+ul, ol, li, p, a {
+    @extend %font-size-p;
+    &:first-child { margin-top: 0; }
+    &:last-child  { margin-bottom: 0; }
+}
+
+ul, ol {
+    padding-left: 1em;
+
+    li {
+        margin-top: 0.25em;
+        padding-left: 0.25em;
+        &:first-child { margin-top: 0; }
+        &:last-child { margin-bottom: 0; }
+    }
+}
+
+a {
+    text-decoration: none;
+    @include transitions(color);
+
+    color:  $color_blue_volkswagen;
+    outline: 0;
+
+    &:hover, &:active, { color: $color_blue_ocean; }
+    &:hover, &:focus, &:active { outline: 0; }
+}
+
+p.disclaimer {
+    font-size: 0.75rem;
+    color: $color_grey_warm;
+}
+
+// -------------------------------------
+//   Typography - Icons
+// -------------------------------------
+// icon margin spacings
+$icon_sp_content: 0.65em;
+$icon_sp_header:  0.5em;
+
+i, .icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+h1, h2, h3, h4, p, a {
+    font-weight: normal;
+
+    span, a, i, .icon {
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    span, a {
+        font-family: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+    }
+}
+
+
+h1, h2, h3, h4 {
+    span, a {
+        & + i, & + .icon {
+            margin-left: $icon_sp_header;
+
+            @include mobile {
+                display: block;
+                margin-left: 0;
+                margin-top: $icon_sp_header;
+            }
+        }
+    }
+
+    i, .icon {
+        & + a, & + span {
+            margin-left: $icon_sp_header;
+
+            @include mobile {
+                display: block;
+                margin-left: 0;
+                margin-top: $icon_sp_header;
+            }
+        }
+    }
+}
+
+
+li, p, a {
+    span, a {
+        & + i, & + .icon {
+            margin-left: $icon_sp_content;
+        }
+    }
+
+    i, .icon {
+        /* @include transitions(color); */
+
+        & + a, & + span {
+            margin-left: $icon_sp_content;
+        }
+    }
+}

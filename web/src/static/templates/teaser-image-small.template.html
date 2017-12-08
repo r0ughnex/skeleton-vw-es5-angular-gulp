@@ -1,0 +1,36 @@
+<!-- teaser image small -->
+<div class="teaser-image-small teaser-image-small--{{::$ctrl.type}}">
+
+    <!-- image -->
+    <div class="image teaser-image-small__image">
+        <!-- image layout - desktop -->
+        <img class="image__layout image__layout--desktop" ng-src="{{::($ctrl.CONFIG.path.images + 'layout_32_9.png')}}" alt="" dominant-color="{{::$ctrl.data.image.desktop}}" ng-if="::!$ctrl.CONFIG.device.isPhone">
+
+        <!-- image layout - mobile -->
+        <img class="image__layout image__layout--mobile" ng-src="{{::($ctrl.CONFIG.path.images + 'layout_32_9.png')}}" alt="" dominant-color="{{::$ctrl.data.image.mobile}}">
+
+        <!-- image cover - desktop -->
+        <div class="image__cover image__cover--desktop" ng-style="::{'background-image':'url({{::$ctrl.data.image.desktop}})'}" dominant-color="{{::$ctrl.data.image.desktop}}" ng-if="::!$ctrl.CONFIG.device.isPhone"></div>
+
+        <!-- image cover - mobile -->
+        <div class="image__cover image__cover--mobile" ng-style="::{'background-image':'url({{::$ctrl.data.image.mobile}})'}" dominant-color="{{::$ctrl.data.image.mobile}}"></div>
+    </div><!-- image end -->
+
+    <!-- content default -->
+    <div ng-if="::(($ctrl.type == 'default') && ($ctrl.data.headline || $ctrl.data.copy || $ctrl.data.cta))" class="teaser-image-small__content teaser-image-small__content--{{::$ctrl.data.attr.align}}">
+
+        <h2 ng-if="::$ctrl.data.headline" ng-bind-html="::$ctrl.data.headline"> </h2>
+        <p ng-if="::$ctrl.data.copy" ng-bind-html="::$ctrl.data.copy"> </p>
+
+        <a class="button" ng-if="::$ctrl.data.cta" ng-href="{{::$ctrl.data.cta.url}}" target="{{::$ctrl.data.cta.target}}" title="{{::$ctrl.data.cta.title}}"><span ng-cloak> {{::$ctrl.data.cta.label}} </span></a>
+
+    </div><!-- content default end -->
+
+    <!-- content alt -->
+    <div ng-if="::(($ctrl.type == 'alt') && $ctrl.data.headline)" class="teaser-image-small__content teaser-image-small__content--{{::$ctrl.data.attr.align}}">
+
+        <h1 ng-if="::$ctrl.data.headline" ng-bind-html="::$ctrl.data.headline"> </h1>
+
+    </div><!-- content alt end -->
+
+</div><!-- teaser image small end -->

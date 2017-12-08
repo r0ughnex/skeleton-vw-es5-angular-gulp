@@ -1,0 +1,45 @@
+// -------------------------------------
+//   Component - Header
+// --------------------	-----------------
+/**
+  	* @name header
+  	* @desc Styles for the header component.
+**/
+
+/*
+// note: variables imported from
+// the file sass/base/_layout.scss
+$header_w: $header_w;
+$header_h: $header_h;
+$header_w_mob: $header_w_mob;
+$header_h_mob: $header_h_mob; */
+
+$header_shdw_dim: 5px -10px 20px;
+$header_shdw_dim_mob: 5px 4px 20px;
+$header_shdw_color: rgba(black, 0.1);
+
+// -------------------------------------
+//   Header - Overrides
+// -------------------------------------
+// note: overriding the css styles
+// from the vw-integrator-template
+header {
+	@include mobile {
+		position: absolute;
+		z-index: $zi_header;
+		left: 0; top: 0;
+
+		display: block;
+		width: $header_w_mob;
+		height: $header_h_mob;
+	}
+}
+
+#vw-template-header {
+	@include mobile {
+		.vw-template-header__mobilelist {
+			height: calc(100vh - 40px) !important;
+		}
+	}
+}
+

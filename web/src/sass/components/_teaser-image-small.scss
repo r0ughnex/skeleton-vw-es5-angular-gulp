@@ -1,0 +1,113 @@
+// -------------------------------------
+//   Component - Teaser Image Small
+// -------------------------------------
+/**
+  	* @name teaser-image-small
+  	* @desc Styles for the teaser image small component.
+**/
+
+$tsr_img_sm_content_w_max: 38%;
+
+.teaser-image-small {
+	position: relative;
+	overflow: hidden;
+}
+
+// -------------------------------------
+//   Teaser Image Small - Image
+// -------------------------------------
+.teaser-image-small__image {
+	/* empty block */
+}
+
+// -------------------------------------
+//   Teaser Image Small - Content
+// -------------------------------------
+$tsr_img_sm_content_icon_spacing: 0.3em;
+
+.teaser-image-small__content {
+	position: relative;
+	z-index: $zi_overlay;
+
+	// extend the default
+	// section padding
+	@extend %section;
+	box-sizing: content-box;
+	max-width: $container_w_max_sm;
+
+	h1, h2 { margin-bottom: 0; }
+
+	p a {
+		display: inline-block;
+		i { margin-right: $tsr_img_sm_content_icon_spacing; }
+		&:first-of-type { margin-top: $tsr_img_sm_content_icon_spacing; }
+	}
+}
+
+// -------------------------------------
+//   Teaser Image Small - Modifiers
+// -------------------------------------
+// default
+.teaser-image-small--default {
+	.teaser-image-small__content {
+		// align content position
+		// vertically on bigger devices
+		@include mobile-up {
+			position: absolute;
+			max-width: $tsr_img_sm_content_w_max;
+
+			// modifiers for position of content
+			// ( default content position is center )
+			&--top { top: 0; transform: translateY(0); }
+			&--center { @include transform-center-v(false); }
+
+			h2, p { color: white; }
+			.button { margin-bottom: 0; }
+		}
+
+		// align content elements
+		// horizontally on smaller devices
+		@include mobile {
+			@include center(false);
+			text-align: center;
+
+			.button {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+}
+
+// alternate
+.teaser-image-small--alt {
+	.teaser-image-small__content {
+		// align content position
+		// vertically on all devices
+		position: absolute;
+		max-width: 100%;
+
+		// modifiers for position of content
+		// ( default content position is top )
+		&--top { top: 0; transform: translateY(0); }
+		&--center { @include transform-center-v(false); }
+
+		// on smaller devices content is
+		// always positioned at the center
+		@include mobile {
+			&--top { @include transform-center-v(false); }
+		}
+
+
+		h1 {
+			color: white;
+			text-align: left;
+
+			font-size: 5.312rem; // 85px
+			@include tablet    { font-size: 3.75rem;  } // 60px
+			@include tablet-sm { font-size: 2.666rem; } // 40px
+			@include mobile    { font-size: 2rem;     } // 30px
+			@include mobile-sm { font-size: 1.333rem; } // 20px
+		}
+	}
+}

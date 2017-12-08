@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<!-- html -->
+<!-- main app configuration -->
+<!-- ( scroll bar is disbaled on the html ) -->
+<html lang="en" class="app app__html app__scroll app__scroll--disabled" ng-app="volkswagen.app" app-controller>
+
+<!-- head -->
+<head>
+
+    <!-- meta:template -->
+    @@include("./static/templates/meta.template.html")
+    <!-- endmeta -->
+
+    <!-- bower:css -->
+    <!-- endbower -->
+
+    <!-- inject:css -->
+    <!-- endinject -->
+
+    <!-- custom:css -->
+    <!-- styles for the global vw-integrator-template header and footer (note: only header is used here) -->
+    <link rel="stylesheet" href="https://au.volkswagen.com.au/integrator-template/css/vw-integrator-template.min.css">
+    <!-- endcustom -->
+
+</head><!-- head end -->
+
+<!-- body -->
+<!-- ( scroll bar is disbaled on the body ) -->
+<body class="app__body app__scroll app__scroll--disabled">
+
+    <!-- loader -->
+    <loader></loader>
+
+    <!-- header -->
+    <header animate-fade-in enter-delay="3" enter-speed="slow" style="opacity: 0;" ng-style="::{'transition':'none'}"></header>
+
+    <!--  view - main -->
+    <div class="app__view app__view--main" ui-view="main">
+
+        <!-- page loader -->
+        <div class="app__page__loader">
+            <img src="src/assets/images/page_loader.png" alt=""/>
+            <span></span>
+        </div><!-- page loader end -->
+
+        <!-- dummy section for style -->
+        <!-- before the CSS loads -->
+        <!-- page loader style -->
+        <style type="text/css">.app__page__loader{position:absolute;z-index:7;left:50vw;top:50vh;display:block;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;width:80px;height:80px;margin-top:-40px;margin-left:-40px}@media (max-width:767px){.app__page__loader{top:40vh;width:70px;height:70px;margin-top:-35px;margin-left:-35px}}.app__page__loader img{z-index:7}.app__page__loader img+span{position:absolute;z-index:6;left:-80px;top:-80px;opacity:0;display:block;width:80px;height:80px;border-width:120px;border-color:#0099da;border-style:solid;-webkit-border-radius:100%;-moz-border-radius:100%;border-radius:100%}@media (max-width:767px){.app__page__loader img+span{left:-70px;top:-70px;border-width:105px;height:70px;width:70px}}</style><!-- page loader style end -->
+
+        <!-- dummy section to trigger -->
+        <!-- download of web fonts / icons -->
+        <section class="section section--reset" style="visibility: hidden; overflow: hidden; width: 0; height: 0;">
+            <h2> <i class="icon icon-download"></i><span> Volkswagen </span> </h2>
+            <p> <i class="icon icon-download"></i><span> Volkswagen </span> </p>
+        </section><!-- dummy section end -->
+
+        <!-- dummy section to trigger -->
+        <!-- download of layout images -->
+        <section class="section section--reset" style="visibility: hidden; overflow: hidden; width: 0; height: 0;">
+            <img src="src/assets/images/layout_32_9.png" alt=""/><img src="src/assets/images/layout_16_9.png" alt=""/>
+            <img src="src/assets/images/layout_11_5.png" alt=""/><img src="src/assets/images/layout_4_3.png" alt=""/>
+        </section><!-- dummy section end -->
+
+    </div><!--  view - main end -->
+
+    <!-- custom:js -->
+    <!-- scripts for the global vw-integrator-template header and footer (note: only header is used here) -->
+    <script src="https://au.volkswagen.com.au/integrator-template/js/vw-integrator-template.min.js"></script>
+    <!-- endcustom -->
+
+    <!-- bower:js -->
+    <!-- endbower -->
+
+    <!-- inject:js -->
+    <!-- endinject -->
+
+</body><!-- body end -->
+</html><!-- html end -->

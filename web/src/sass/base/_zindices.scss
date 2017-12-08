@@ -1,0 +1,17 @@
+// -------------------------------------
+//   Base - ZIndices
+// -------------------------------------
+/**
+    * @name zindices
+    * @desc Used for management for z-index to be
+            used with all elements that spread
+            across the entire app.
+**/
+
+$zi_modal_content: 1009;
+$zi_modal_overlay: 1008;
+$zi_loader: 1001;
+$zi_header: 1000;
+
+$zi_overlay: 1;
+$zi_default: 0;

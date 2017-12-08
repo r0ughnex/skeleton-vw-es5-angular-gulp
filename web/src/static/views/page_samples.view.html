@@ -1,0 +1,69 @@
+<!-- page -->
+<div class="app__page app__scroll" ng-class="::{'app__page--device-mobile': $ctrl_page.CONFIG.device.isMobile, 'app__page--device-desktop': !$ctrl_page.CONFIG.device.isMobile}" samples-controller>
+
+    <!-- page loader -->
+    <div class="app__page__loader animate-fade-out" ng-if="!$ctrl_page.isVisible" leave-speed="slow" style="opacity: 1;">
+        <img ng-src="{{::($ctrl_page.CONFIG.path.images + 'page_loader.png')}}" alt=""/>
+        <span></span>
+    </div><!-- page loader end -->
+
+    <!-- page content -->
+    <div class="app__page__content" ng-if="$ctrl_page.isVisible" ng-class="::{'app__page__content--error': $ctrl_page.hasErrors}">
+
+        <!-- section / container -->
+        <section class="section section--color-dark" animate-fade-in enter-delay="3" enter-speed="slow">
+            <div class="container" animate-fade-in enter-delay="4" enter-speed="slow">
+
+                <h2> Lorem ipsum dolor sit amet, <br> consectetur adipiscing&nbsp;elit. </h2>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porta augue dui, ac convallis ex tempor sed. Sed <br> consequat posuere rutrum. Aenean nec euismod elit. Sed velit est, congue egestas mollis eu, volutpat&nbsp;id&nbsp;quam.
+                </p>
+
+            </div><!-- container end -->
+        </section><!-- section end -->
+
+        <!-- section / container -->
+        <section class="section section--color-light" animate-fade-in enter-delay="5" enter-speed="slow">
+            <div class="container" animate-slide-up-in enter-delay="6" enter-speed="slow">
+
+                <h2> Lorem ipsum dolor sit amet, <br> consectetur adipiscing&nbsp;elit. </h2>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porta augue dui, ac convallis ex tempor sed. Sed <br> consequat posuere rutrum. Aenean nec euismod elit. Sed velit est, congue egestas mollis eu, volutpat&nbsp;id&nbsp;quam.
+                </p>
+
+            </div><!-- container end -->
+        </section><!-- section end -->
+
+        <!-- section / container -->
+        <section class="section section--color-blue" animate-fade-in enter-delay="7" enter-speed="slow">
+            <div class="container" animate-slide-up-in enter-delay="8" enter-speed="slow">
+
+                <h2> Module Styles </h2>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porta augue dui, ac convallis ex tempor sed. Sed <br> consequat posuere rutrum. Aenean nec euismod elit. Sed velit est, congue egestas mollis eu, volutpat&nbsp;id&nbsp;quam.
+                </p>
+
+                <!-- button - primary -->
+                <a class="button button--secondary" ui-sref="app.modules" title="View More Modules"><span>
+                    View More Modules
+                </span></a>
+
+            </div><!-- container end -->
+        </section><!-- section end -->
+
+        <!-- section / container -->
+        <section class="section section--color-default" ng-show="$ctrl_page.data.footer" animate-fade-in enter-delay="9" enter-speed="slow"><!--
+            <div class="container" animate-slide-up-in enter-delay="10" enter-speed="slow">-->
+
+                <!-- footer -->
+                <footer data="::$ctrl_page.data.footer"></footer><!--
+
+         --></div><!-- container end -->
+        </section><!-- section end -->
+
+    </div><!-- page content end -->
+
+</div><!-- page end -->
