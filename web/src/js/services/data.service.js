@@ -35,7 +35,10 @@ require("../base/promise");
         // ---------------------------------------------
         //   Private members
         // ---------------------------------------------
-        var _dataURL = { }; // reference to the data api urls
+        var _dataURL = { // reference to the api urls for get the required data
+            staging:    CONFIG.path.data + "{{id}}.json", // api url for staging
+            production: CONFIG.path.data + "{{id}}.json"  // api url for production
+        };
 
         // ---------------------------------------------
         //   Public members
@@ -68,7 +71,7 @@ require("../base/promise");
         //        replacing any missing information with default values
         // @param {Object} data - the data to be parsed and checked for missing information
         // @return {Object} cdata - a copy of the parsed and modifed data once parsing is complete
-        function _parseData(data) {
+        function _parseData(data) { try {
             // make a local copy of the data
             var cdata = angular.copy(data);
 
@@ -77,7 +80,10 @@ require("../base/promise");
 
             // return the parsed
             // and replaced data
-            return cdata;
+            return cdata; }
+
+            // return null if there are any errors on parsing
+            catch(error) { console.log(error); return null; }
         }
 
         // ---------------------------------------------
@@ -89,11 +95,32 @@ require("../base/promise");
         // @return {Promise(Object)} - the promise with the json data as response
         function getData(id) {
             return new Promise(function(resolve, reject) {
+                // get the staging data api url
+                var dataURL = _dataURL.staging;
+
+                // check if this the vw production server
+                if(CONFIG.environment.isVolkswagenProd) {
+                    // get the production api url
+                    dataURL = dataURL.production;
+                }
 
                 // TO-DO: add code to get the
                 // data for the given id here
-                return resolve(true);
 
+                // get the data that corresponds to the given id (from the param)
+                $http.get(dataURL.replace("{{id}}", id)).then(
+                    // on api success
+                    function(response) {
+                        // parse the data and resolve the promise
+                        return resolve (_parseData(response.data));
+                    },
+
+                    // on api error
+                    function(error) {
+                        // return null if there are any errors
+                        console.log(error); return resolve(null);
+                    }
+                );
             });
         }
 

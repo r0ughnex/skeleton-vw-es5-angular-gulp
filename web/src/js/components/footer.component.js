@@ -167,9 +167,11 @@ require("../base/debounce");
                     var enterCompleteClass = elTop.getAttribute("enter-complete-class");
 
                     if(!elTop.classList.contains(enterCompleteClass)) {
-                        elTop.classList.add(enterCompleteClass); }}
+                        elTop.classList.add(enterCompleteClass);
+                    }}
 
-                    catch(error) { console.log(error); /* do nothing */ }
+                    // do nothing when any errors occur
+                    catch(error) { console.log(error); }
                 }, CONFIG.timeout.animation * 2);
             }
 
@@ -203,11 +205,28 @@ require("../base/debounce");
                 event.stopPropagation();
             }
 
+            if(CONFIG.device.isMobile) { try {
+                var elTop = query(".footer__back-to-top", _el)[0];
+                var enterCompleteClass = elTop.getAttribute("enter-complete-class");
+
+                if(elTop.classList.contains(enterCompleteClass)) {
+                    elTop.classList.remove(enterCompleteClass);
+                }}
+
+                // do nothing when any errors occur
+                catch(error) { console.log(error); }
+            }
+
             // set visibility flag as false
             ctrl.isToTopVisible = false;
 
             // scroll to the top
-            PageService.scrollToTop();
+            setTimeout(function() {
+                // the timeout is to ensure that
+                // the footer leave animation
+                // has a smoother transition
+                PageService.scrollToTop();
+            }, CONFIG.timeout.scope / 10);
         }
 
         // ---------------------------------------------

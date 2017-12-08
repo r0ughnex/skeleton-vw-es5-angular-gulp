@@ -73,13 +73,12 @@ $btn_error_darken: 6%;
 
 // modifier - primary
 %button--primary {
+	color: white;
 	border-color: $color_blue_volkswagen;
 	background-color: $color_blue_volkswagen;
 
-	color: white;
-	&:hover, &:active { color: white; }
-
-	&:hover {
+	&:hover, &:active, &:focus {
+		color: white;
 		border-color: $color_blue_ocean;
 		background-color: $color_blue_ocean;
 	}
@@ -87,13 +86,12 @@ $btn_error_darken: 6%;
 
 // modifier - secondary
 %button--secondary {
+	color: $color_blue_volkswagen;
 	border-color: $color_grey_calm;
 	background-color: white;
 
-	color: $color_blue_volkswagen;
-	&:hover, &:active { color: white; }
-
-	&:hover {
+	&:hover, &:active, &:focus {
+		color: white;
 		border-color: $color_blue_ocean;
 		background-color: $color_blue_ocean;
 	}
@@ -101,13 +99,12 @@ $btn_error_darken: 6%;
 
 // modifier - alternate
 %button--alternate {
+	color: white;
 	border-color: $color_grey_warm;
 	background-color: $color_grey_warm;
 
-	color: white;
-	&:hover, &:active { color: white; }
-
-	&:hover {
+	&:hover, &:active, &:focus {
+		color: white;
 		border-color: darken($color_grey_warm, $btn_alternate_darken);
 		background-color: darken($color_grey_warm, $btn_alternate_darken);
 	}
@@ -118,25 +115,23 @@ $btn_error_darken: 6%;
 	cursor: not-allowed;
 	border-color: $color_grey_warm;
 	background-color: $color_grey_soft;
-
 	color: rgba($color_grey_midnight, $btn_disabled_opacity);
-	&:hover, &:active { color: rgba($color_grey_midnight, $btn_disabled_opacity); }
 
-	&:hover {
+	&:hover, &:active, &:focus {
 		border-color: $color_grey_warm;
 		background-color: $color_grey_soft;
+		color: rgba($color_grey_midnight, $btn_disabled_opacity);
 	}
 }
 
 // modifier - success
 %button--success {
+	color: white;
 	border-color: $color_green_success;
 	background-color: $color_green_success;
 
-	color: white;
-	&:hover, &:active { color: white; }
-
-	&:hover {
+	&:hover, &:active, &:focus {
+		color: white;
 		border-color: darken($color_green_success, $btn_success_darken);
 		background-color: darken($color_green_success, $btn_success_darken);
 	}
@@ -144,13 +139,12 @@ $btn_error_darken: 6%;
 
 // modifier - error
 %button--error {
+	color: white;
 	border-color: $color_red_warning;
 	background-color: $color_red_warning;
 
-	color: white;
-	&:hover, &:active { color: white; }
-
-	&:hover {
+	&:hover, &:active, &:focus {
+		color: white;
 		border-color: darken($color_red_warning, $btn_success_darken);
 		background-color: darken($color_red_warning, $btn_success_darken);
 	}
@@ -172,8 +166,8 @@ $btn_error_darken: 6%;
 		span, i { text-decoration: none; }
 	}
 
-	span, i { transition: none !important; }
 	@include transitions(color, background-color, border-color);
+	span, i { transition: none !important; }
 }
 
 // -------------------------------------

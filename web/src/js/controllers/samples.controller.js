@@ -54,8 +54,10 @@ require("../base/raf");
         ctrl.hasErrors = false; // flag to indicate page has errors
 
         ctrl.data = { // reference to the data for the page
-            // TO-DO add data that is
+
+            // TO-DO: add data to be
             // used on the page here
+
         };
 
         // ---------------------------------------------
@@ -83,20 +85,6 @@ require("../base/raf");
 
             // on parent state object errors
             catch(error) { console.log(error); }
-
-            // get the parent data for the page
-            var parentData = ctrl.parent.data;
-
-            // only proceed if parent data is valid
-            if(typeof parentData !== "object") {
-                return false; // exit otherwise
-            }
-
-            // only proceed if footer data is valid
-            if(typeof parentData.footer === "object") {
-                // make a local copy of the parent footer data
-                ctrl.data.footer = angular.copy(parentData.footer);
-            }
         }
 
         // @name _onPostLink
@@ -108,6 +96,11 @@ require("../base/raf");
                     // TO-DO: add code to request
                     // the data for the page here
                     // (the timeout is a simulation)
+
+                    // get the data for the footer component on the page
+                    DataService.getData("footer").then(function(footerData) {
+                        ctrl.data.footer = footerData; // set footer data
+                    });
 
                     setTimeout(function() {
                         // show the current page,

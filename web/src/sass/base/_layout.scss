@@ -112,16 +112,19 @@ br {
 
 	// modifier - page
 	&--page {
+        z-index: $zi_overlay;
         position: absolute;
         left: 0; top: 0;
 
-        z-index: $zi_overlay;
         display: block;
         height: 100%;
         width: 100%;
     }
 
     &--page + &--page {
+        // will be overwitten
+        // by the js animation
+        // when ui view renders
         z-index: $zi_default;
     }
 }

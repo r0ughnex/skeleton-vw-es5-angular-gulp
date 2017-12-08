@@ -12,6 +12,8 @@ footer {
     opacity: 1 !important;
 }
 
+.footer { /* empty block */ }
+
 // -------------------------------------
 //   Footer - Row
 // -------------------------------------
@@ -158,7 +160,8 @@ $footer_social_font_size_sm: 24px;
     .icon {
         display: inline-block;
         vertical-align: bottom;
-        width: $footer_social_size;
+
+        width:  $footer_social_size;
         height: $footer_social_size;
 
         font-size: $footer_social_font_size;
@@ -166,13 +169,14 @@ $footer_social_font_size_sm: 24px;
         text-align: center;
         border-radius: 100%;
 
-        color: $color-grey-midnight;
-        background-color: $color-grey-calm;
         @include transitions(color, background-color);
+        background-color: $color-grey-calm;
+        color: $color-grey-midnight;
 
         @include mobile-up {
-            width: $footer_social_size_sm;
+            width:  $footer_social_size_sm;
             height: $footer_social_size_sm;
+
             font-size: $footer_social_font_size_sm;
             line-height: $footer_social_size_sm;
         }
@@ -191,7 +195,7 @@ $footer_social_font_size_sm: 24px;
 // -------------------------------------
 $footer_cell_li_pad_r: 6px;
 $footer_cell_li_pad_l: 5px;
-$footer_cell_link_h: 50px;
+$footer_cell_link_h:   50px;
 
 .footer__cell__links--inline {
     li {
@@ -228,7 +232,7 @@ $footer_btt_opacity: 0.5;
 
 .footer__back-to-top {
     position: fixed;
-    width: $footer_btt_size;
+    width:  $footer_btt_size;
     height: $footer_btt_size;
     bottom: ($footer_btt_size / 2);
 
@@ -240,11 +244,14 @@ $footer_btt_opacity: 0.5;
     @include tablet-sm-up { right: ($footer_btt_size / 1.3); }
 
     @include transitions(opacity, background-color);
-    opacity: $footer_btt_opacity !important;
     background-color: $color-blue-volkswagen;
+    opacity: $footer_btt_opacity !important;
+
     transition-duration: $trans_time_slow;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
 
     i, .icon { color: white; vertical-align: top; }
-    &:hover { background-color: $color-blue-ocean; }
+    &:hover, &:active, &:focus { background-color: $color-blue-ocean; }
     &:not(&--is-visible) { opacity: 0 !important; pointer-events: none; }
 }
