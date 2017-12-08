@@ -1,0 +1,28 @@
+{
+    "name": "whitewater",
+    "version": "2.0.0",
+    "private": true,
+
+    "homepage": "http://github.com/samiare/whitewater-mobile-video",
+
+    "authors": [
+        { "name": "Samir Zahran" },
+        { "name": "Pradeep Sekar" }
+    ],
+
+    "description": "Decodes video files created by Whitewater Encoder. Custom version with web worker issues fixed.",
+    "main": [ "build/whitewater.js"],
+
+    "keywords": [],
+    "license": "MIT",
+
+    "ignore": [
+        "*.json",
+        "!/bower.json",
+        "LICENSE",
+        "*.md"
+    ],
+
+    "dependencies": {},
+    "repository": {}
+}

@@ -1,0 +1,309 @@
+// -------------------------------------
+//   Module - Section
+// -------------------------------------
+/**
+  	* @name section
+  	* @desc Styles for the section module.
+**/
+
+// -------------------------------------
+//   Section - Padding
+// -------------------------------------
+$section_pad: 80px;
+
+$section_pad_tab:    60px;
+$section_pad_tab_sm: 50px;
+
+$section_pad_mob:    40px;
+$section_pad_mob_sm: 20px;
+
+$container_w_max:    $tablet_w + ($section_pad * 2);
+$container_w_max_md: $tablet_w_sm - ($section_pad_tab_sm * 0);
+$container_w_max_sm: $mobile_w_sm + ($section_pad_mob_sm * 2);
+
+// mixin - padding - top
+@mixin section--padding-top($mult: 1) {
+	padding-top: $section_pad * $mult;
+	@include tablet    { padding-top: $section_pad_tab    * $mult; }
+	@include tablet-sm { padding-top: $section_pad_tab_sm * $mult; }
+
+	@include mobile    { padding-top: $section_pad_mob * $mult; }
+	@include mobile-sm { padding-top: $section_pad_mob * $mult; }
+}
+
+// mixin - padding - bottom
+@mixin section--padding-bottom($mult: 1) {
+	padding-bottom: $section_pad * $mult;
+	@include tablet    { padding-bottom: $section_pad_tab    * $mult; }
+	@include tablet-sm { padding-bottom: $section_pad_tab_sm * $mult; }
+
+	@include mobile    { padding-bottom: $section_pad_mob * $mult; }
+	@include mobile-sm { padding-bottom: $section_pad_mob * $mult; }
+}
+
+// mixin - padding - left
+@mixin section--padding-left($mult: 1) {
+	padding-left: $section_pad * $mult;
+	@include tablet    { padding-left: $section_pad_tab    * $mult; }
+	@include tablet-sm { padding-left: $section_pad_tab_sm * $mult; }
+
+	@include mobile    { padding-left: $section_pad_mob_sm * $mult; }
+	@include mobile-sm { padding-left: $section_pad_mob_sm * $mult; }
+}
+
+
+// mixin - padding - right
+@mixin section--padding-right($mult: 1) {
+	padding-right: $section_pad * $mult;
+	@include tablet    { padding-right: $section_pad_tab    * $mult; }
+	@include tablet-sm { padding-right: $section_pad_tab_sm * $mult; }
+
+	@include mobile    { padding-right: $section_pad_mob_sm * $mult; }
+	@include mobile-sm { padding-right: $section_pad_mob_sm * $mult; }
+}
+
+// mixin - padding - vertical
+@mixin section--padding-v($mult: 1) {
+	@include section--padding-top($mult);
+	@include section--padding-bottom($mult);
+}
+
+// mixin - padding - horizontal
+@mixin section--padding-h($mult: 1) {
+	@include section--padding-left($mult);
+	@include section--padding-right($mult);
+}
+
+// mixin - padding
+@mixin section--padding($mult: 1) {
+	@include section--padding-v($mult);
+	@include section--padding-h($mult);
+}
+
+
+// modifiers - padding
+%section--padding-top    { @include section--padding-top;    }
+%section--padding-bottom { @include section--padding-bottom; }
+
+%section--padding-left  { @include section--padding-left;  }
+%section--padding-right { @include section--padding-right; }
+
+%section--padding-v { @include section--padding-v; }
+%section--padding-h { @include section--padding-h; }
+%section--padding   { @include section--padding;   }
+
+// -------------------------------------
+//   Section - Margin
+// -------------------------------------
+$section_margin: $section_pad;
+
+$section_margin_tab:    $section_pad_tab;
+$section_margin_tab_sm: $section_pad_tab_sm;
+
+$section_margin_mob:    $section_pad_mob;
+$section_margin_mob_sm: $section_pad_mob_sm;
+
+// mixin - margin - top
+@mixin section--margin-top($mult: 1) {
+	margin-top: $section_margin * $mult;
+	@include tablet    { margin-top: $section_margin_tab    * $mult; }
+	@include tablet-sm { margin-top: $section_margin_tab_sm * $mult; }
+
+	@include mobile    { margin-top: $section_margin_mob * $mult; }
+	@include mobile-sm { margin-top: $section_margin_mob * $mult; }
+}
+
+// mixin - margin - bottom
+@mixin section--margin-bottom($mult: 1) {
+	margin-bottom: $section_margin * $mult;
+	@include tablet    { margin-bottom: $section_margin_tab    * $mult; }
+	@include tablet-sm { margin-bottom: $section_margin_tab_sm * $mult; }
+
+	@include mobile    { margin-bottom: $section_margin_mob * $mult; }
+	@include mobile-sm { margin-bottom: $section_margin_mob * $mult; }
+}
+
+// mixin - margin - left
+@mixin section--margin-left($mult: 1) {
+	margin-left: $section_margin * $mult;
+	@include tablet    { margin-left: $section_margin_tab    * $mult; }
+	@include tablet-sm { margin-left: $section_margin_tab_sm * $mult; }
+
+	@include mobile    { margin-left: $section_margin_mob_sm * $mult; }
+	@include mobile-sm { margin-left: $section_margin_mob_sm * $mult; }
+}
+
+
+// mixin - margin - right
+@mixin section--margin-right($mult: 1) {
+	margin-right: $section_margin * $mult;
+	@include tablet    { margin-right: $section_margin_tab    * $mult; }
+	@include tablet-sm { margin-right: $section_margin_tab_sm * $mult; }
+
+	@include mobile    { margin-right: $section_margin_mob_sm * $mult; }
+	@include mobile-sm { margin-right: $section_margin_mob_sm * $mult; }
+}
+
+// mixin - margin - vertical
+@mixin section--margin-v($mult: 1) {
+	@include section--margin-top($mult);
+	@include section--margin-bottom($mult);
+}
+
+// mixin - margin - horizontal
+@mixin section--margin-h($mult: 1) {
+	@include section--margin-left($mult);
+	@include section--margin-right($mult);
+}
+
+// mixin - margin
+@mixin section--margin($mult: 1) {
+	@include section--margin-v($mult);
+	@include section--margin-h($mult);
+}
+
+
+// modifiers - margin
+%section--margin-top    { @include section--margin-top;    }
+%section--margin-bottom { @include section--margin-bottom; }
+
+%section--margin-left  { @include section--margin-left;  }
+%section--margin-right { @include section--margin-right; }
+
+%section--margin-v { @include section--margin-v; }
+%section--margin-h { @include section--margin-h; }
+%section--margin   { @include section--margin;   }
+
+// -------------------------------------
+//   Section - Classes
+// -------------------------------------
+// section
+%section {
+	@extend %section--padding-v;
+	@extend %section--padding-h;
+	box-sizing: border-box;
+}
+
+// section
+.section {
+	// extend default section
+	@extend %section;
+
+	// default background color
+	background-color: white;
+	> .section:not([class*="--color-"]) {
+		background-color: transparent;
+	}
+
+	// modifiers - color
+	&--color-default { background-color: white; } // modifier - color default
+	&--color-light { background-color: $color_grey_sky; }  // modifier - color light
+	&--color-dark  { background-color: $color_grey_midnight; }  // modifier - color dark
+	&--color-blue  { background-color: $color_blue_volkswagen; }  // modifier - color alt
+
+	// modifiers - reset
+	&--reset   { padding: 0 !important; overflow-y: hidden; } // modifier - reset both
+	&--reset-v { padding-top: 0 !important; padding-bottom: 0 !important; overflow-y: hidden; }  // modifier - reset vertical
+	&--reset-h { padding-left: 0 !important; padding-right: 0 !important; overflow-x: hidden; }  // modifier - reset horizontal
+
+	// adjescent sections
+	& + & { padding-top: 0; }
+
+	// adjescent sections ( with modifiers - color )
+	& + &--color-light, & + &--color-dark,
+	& + &--color-blue { @include section--padding-top; }
+
+	&--color-light + &, &--color-dark + &,
+	&--color-blue  + & { @include section--padding-top; }
+
+	&--color-light + &--color-light { padding-top: 0; }
+	&--color-dark  + &--color-dark  { padding-top: 0; }
+	&--color-blue  + &--color-blue  { padding-top: 0; }
+
+	// adjescent sections ( with modifiers - reset )
+	&--reset + &   { @include section--padding-top; }
+	&--reset-v + & { @include section--padding-top; }
+}
+
+// -------------------------------------
+//   Container - Classes
+// -------------------------------------
+// mixin - container
+@mixin container {
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+
+	box-sizing: border-box;
+	max-width: $container_w_max;
+	background-color: transparent;
+	@include mobile { max-width: $container_w_max_sm; }
+}
+
+// container
+%container { @include container; }
+
+// modifer - reset
+%container--reset {
+	max-width: 100%;
+	@include mobile { max-width: 100%; }
+}
+
+// container
+.container {
+	@extend %container;
+	&--reset { @extend %container--reset; }
+}
+
+// --------------------------------------------
+//    Sections, Container - Typography
+// --------------------------------------------
+.section,
+.container {
+	> h1, > h2, > h3, > h4,
+	> ul li, > ol li, > p, > a {
+		/* @include tablet-sm {
+			br { display: none; }
+		} */
+	}
+
+	> h1, > h2, > h3, > h4, > p {
+		@extend %center;
+		text-align: center;
+		max-width: $container_w_max_md;
+	}
+
+	> p ul, p ol {
+		@extend %center;
+		list-style: none;
+		max-width: $container_w_max_sm;
+
+		padding-left: 0;
+		padding-right: 0;
+		li { padding-left: 0; }
+		/* + br { display: none; } */
+	}
+}
+
+.section {
+	// modifiers - color
+	&--color-blue,
+	&--color-dark,
+	&--color-blue .container,
+	&--color-dark .container {
+		> h1, > h2, > h3, > h4,
+		> ul li, > ol li, > p,
+		> a:not(.button) {
+			color: white;
+		}
+
+		> ul li a, > ol li a,
+		> p a, > a:not(.button)  {
+			color: white;
+			text-decoration: underline;
+
+			&:visited { color: white; }
+			&:hover, &:active { color: white; }
+		}
+	}
+}

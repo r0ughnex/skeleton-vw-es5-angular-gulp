@@ -1,0 +1,16 @@
+// -------------------------------------
+//   Directive - Dominant Color
+// -------------------------------------
+/**
+    * @name dominant-color
+    * @desc Styles for the dominant color directive.
+**/
+
+[dominant-color] {
+	// setting a default background color
+	// for all the elements for which a
+	// a valid dominant color cannot be
+	// obtained from the json data
+	background-color: transparent;
+}
+

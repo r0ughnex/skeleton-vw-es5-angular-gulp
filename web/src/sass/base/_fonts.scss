@@ -1,0 +1,56 @@
+// -------------------------------------
+//   Base - Fonts
+// -------------------------------------
+/**
+    * @name fonts
+    * @desc Used for setting available font types
+            used with all elements that spread
+            across the entire app.
+**/
+
+// base paths for the url
+// used in the sass files
+$base_path_fonts: "../assets/fonts/";
+$base_path_icons: "../assets/icons/";
+
+// vw-text - regular
+@font-face {
+    font-family: "VWText-Regular";
+    src: url($base_path_fonts + "VWTextWeb-Regular.eot");
+    src: url($base_path_fonts + "VWTextWeb-Regular.eot?#iefix") format("embedded-opentype"),
+         url($base_path_fonts + "VWTextWeb-Regular.woff") format("woff"),
+         url($base_path_fonts + "VWTextWeb-Regular.ttf") format("truetype"),
+         url($base_path_fonts + "VWTextWeb-Regular.svg#VWTextWeb-Regular") format("svg");
+
+    font-style: normal;
+    font-weight: normal;
+    font-smoothing: antialiased;
+}
+
+// vw-head - bold
+@font-face {
+    font-family: "VWHead-Bold";
+    src: url($base_path_fonts + "VWHeadWeb-Bold.eot");
+    src: url($base_path_fonts + "VWHeadWeb-Bold.eot?#iefix") format("embedded-opentype"),
+         url($base_path_fonts + "VWHeadWeb-Bold.woff") format("woff"),
+         url($base_path_fonts + "VWHeadWeb-Bold.ttf") format("truetype"),
+         url($base_path_fonts + "VWHeadWeb-Bold.svg#VWHeadWeb-Bold") format("svg");
+
+    font-style: normal;
+    font-weight: normal;
+    font-smoothing: antialiased;
+}
+
+// vw-head - light
+@font-face {
+    font-family: "VWHead-Light";
+    src: url($base_path_fonts + "VWHeadWeb-Light.eot");
+    src: url($base_path_fonts + "VWHeadWeb-Light.eot?#iefix") format("embedded-opentype"),
+         url($base_path_fonts + "VWHeadWeb-Light.woff") format("woff"),
+         url($base_path_fonts + "VWHeadWeb-Light.ttf") format("truetype"),
+         url($base_path_fonts + "VWHeadWeb-Light.svg#VWHeadWeb-Light") format("svg");
+
+    font-style: normal;
+    font-weight: normal;
+    font-smoothing: antialiased;
+}

@@ -1,0 +1,49 @@
+// -------------------------------------
+//   App
+// -------------------------------------
+/**
+    * @name app
+    * @desc The main sass file that is used to
+            import and consolidate all the other
+            sass across the entire app in their
+            required order.
+**/
+
+// -------------------------------------
+//   App - Base
+// -------------------------------------
+@import "base/fonts";
+@import "base/icons";
+
+@import "base/colors";
+@import "base/helpers";
+@import "base/zindices";
+@import "base/breakpoints";
+
+@import "base/transitions";
+@import "base/animations";
+
+@import "base/typography";
+@import "base/layout";
+
+// -------------------------------------
+//   App - Modules
+// -------------------------------------
+@import "modules/image";
+@import "modules/button";
+@import "modules/section";
+@import "modules/teaser-content";
+
+// -------------------------------------
+//   App - Directives
+// -------------------------------------
+@import "directives/dominant-color";
+
+// -------------------------------------
+//   App - Components
+// -------------------------------------
+@import "components/loader";
+@import "components/header";
+@import "components/footer";
+@import "components/teaser-image-small";
+

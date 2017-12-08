@@ -1,0 +1,49 @@
+// -------------------------------------
+//   Base - Transitions
+// -------------------------------------
+/**
+    * @name tranisition
+    * @desc Used for management for transitions to be
+            used with all elements that spread
+            across the entire app.
+**/
+
+// -------------------------------------
+//   Transitions - Default
+// -------------------------------------
+// default transition times
+$trans_time:         (0.5s * 1);
+$trans_time_slow:    (0.5s * 1.3);
+$trans_time_fast:    (0.5s * 0.6);
+$trans_time_instant: (0.5s * 0.4);
+
+// default transition delays
+$trans_delay:      ($trans_time / 2);
+$trans_delay_slow: ($trans_time / 1);
+$trans_delay_fast: ($trans_time / 3);
+$trans_delay_none: (0);
+
+// default transition easings
+$ease: ease;
+$ease_linear: linear;
+$ease_in_out: ease-in-out;
+
+// custom transition easings
+$ease_in_out_quad: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+$ease_in_out_sine: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+
+// mixin to create default tranitions
+// e.g. @input @include transitions(color)
+// e.g. @output transition: color 0.35s ease
+@mixin transitions($props...) {
+    // create an emoty list
+    $transitions: ();
+
+    // append each property to list
+    @each $prop in $props {
+        $transitions: append($transitions, ($prop $trans_time_fast $ease_in_out_quad), comma);
+    }
+
+    // assign list to attribute
+    transition: $transitions;
+}

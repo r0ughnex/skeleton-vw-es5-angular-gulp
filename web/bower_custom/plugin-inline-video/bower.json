@@ -1,0 +1,31 @@
+{
+    "name": "plugin-inline-video",
+    "version": "2.0.0",
+    "private": true,
+
+    "author": "Pradeep Sekar",
+    "description": "Plugin Inline Video",
+    "license": "ISC",
+
+    "main": [
+        "./build/css/inline-video.styles.css",
+        "./build/js/dependencies/dependencies.js",
+        "./build/js/inline-video.plugin.js"
+    ],
+
+    "ignore": [
+        "node_modules",
+        "bower_components",
+        ".sass-cache/",
+        ".tmp/",
+        "dist/"
+    ],
+
+    "dependencies": {
+        "mobile-detect": "~1.3.6",
+        "whitewater": "./bower_custom/whitewater"
+    },
+
+    "devDependencies": {},
+    "ignoredDependencies": []
+}

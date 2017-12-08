@@ -1,0 +1,277 @@
+// -------------------------------------
+//   Base - Animations
+// -------------------------------------
+/**
+    * @name animations
+    * @desc Used for setting animations and animation
+            properties used with all elements that
+            spread across the entire app.
+**/
+
+// -------------------------------------
+//   Animations - JS
+// -------------------------------------
+// JS based animations
+// are prefixed with "animate-"
+
+// JS based animations are only meant
+// to be used with angular ngAnimate
+
+// -------------------------------------
+//   Animations - JS - In
+// -------------------------------------
+.animate-fade-in,
+.animate-height-in,
+.animate-expand-in,
+
+.animate-slide-up-in,
+.animate-slide-down-in,
+.animate-slide-left-in,
+.animate-slide-right-in,
+
+.animate-translate-in,
+.animate-translate-left-in,
+.animate-translate-right-in,
+
+[animate-fade-in],
+[animate-height-in],
+[animate-expand-in],
+
+[animate-slide-up-in],
+[animate-slide-down-in],
+[animate-slide-left-in],
+[animate-slide-right-in],
+
+[animate-translate-in],
+[animate-translate-left-in],
+[animate-translate-right-in] {
+    // to prevent jagged edges that are visible
+    // on certain browsers like chrome, firefox
+    //  after tranform animations are applied
+    outline: 1px solid transparent;
+}
+
+.animate-fade-in,
+.animate-height-in,
+.animate-expand-in,
+
+.animate-slide-up-in,
+.animate-slide-down-in,
+.animate-slide-left-in,
+.animate-slide-right-in {
+    // will be overwitten
+    // by the js animation
+    &.ng-enter-prepare,
+    &.velocity-animating {
+        &:not([class*="-out"]) {
+            opacity: 0;
+        }
+    }
+}
+
+.animate-translate-in[enter-direction="left"],
+.animate-translate-left-in {
+    // will be overwitten
+    // by the js animation
+    &.ng-enter-prepare,
+    &.velocity-animating {
+        &:not([class*="-out"]) {
+            transform: translateX(-100%);
+        }
+    }
+}
+
+.animate-translate-in[enter-direction="right"]
+.animate-translate-right-in {
+    // will be overwitten
+    // by the js animation
+    &.ng-enter-prepare,
+    &.velocity-animating {
+        &:not([class*="-out"]) {
+            transform: translateX(100%);
+        }
+    }
+}
+
+.animate-height-in {
+    // will be overwitten
+    // by the js animation
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+[animate-fade-in],
+[animate-height-in],
+[animate-expand-in],
+
+[animate-slide-up-in],
+[animate-slide-down-in],
+[animate-slide-left-in],
+[animate-slide-right-in] {
+    // will be overwitten
+    // by the js animation
+    opacity: 0;
+}
+
+[animate-height-in] {
+    // will be overwitten
+    // by the js animation
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+// will be overwitten
+// by the js animation
+[animate-translate-in][enter-direction="left"],
+[animate-translate-left-in]  { transform: translateX(-100%); }
+
+[animate-translate-in][enter-direction="right"],
+[animate-translate-right-in] { transform: translateX(100%);  }
+
+
+// -------------------------------------
+//   Animations - JS - Out
+// -------------------------------------
+.animate-fade-out,
+.animate-height-out,
+.animate-expand-out,
+
+.animate-slide-up-out,
+.animate-slide-down-out,
+.animate-slide-left-out,
+.animate-slide-right-out,
+
+.animate-translate-out,
+.animate-translate-left-out,
+.animate-translate-right-out,
+
+[animate-fade-out],
+[animate-height-out],
+[animate-expand-out],
+
+[animate-slide-up-out],
+[animate-slide-down-out],
+[animate-slide-left-out],
+[animate-slide-right-out],
+
+[animate-translate-out],
+[animate-translate-left-out],
+[animate-translate-right-out] {
+    // to prevent jagged edges that are visible
+    // on certain browsers like chrome, firefox
+    //  after tranform animations are applied
+    outline: 1px solid transparent;
+}
+
+.animate-fade-out,
+.animate-height-out,
+.animate-expand-out,
+
+.animate-slide-up-out,
+.animate-slide-down-out,
+.animate-slide-left-out,
+.animate-slide-right-out {
+    // will be overwitten
+    // by the js animation
+    &.ng-enter-prepare,
+    &.velocity-animating {
+        &:not([class*="-in"]) {
+            /* empty block */
+        }
+    }
+}
+
+.animate-translate-out[leave-direction="left"],
+.animate-translate-left-out  {
+    // will be overwitten
+    // by the js animation
+    &.ng-enter-prepare,
+    &.velocity-animating {
+        &:not([class*="-in"]) {
+            /* empty block */
+        }
+    }
+}
+
+.animate-translate-out[leave-direction="right"],
+.animate-translate-right-out {
+    // will be overwitten
+    // by the js animation
+    &.ng-enter-prepare,
+    &.velocity-animating {
+        &:not([class*="-in"]) {
+            /* empty block */
+        }
+    }
+}
+
+.animate-height-out {
+    // will be overwitten
+    // by the js animation
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+[animate-fade-out],
+[animate-height-out],
+[animate-expand-out],
+
+[animate-slide-up-out],
+[animate-slide-down-out],
+[animate-slide-left-out],
+[animate-slide-right-out] {
+    // will be overwitten
+    // by the js animation
+    /* empty block */
+}
+
+[animate-height-in] {
+    // will be overwitten
+    // by the js animation
+    /* empty block */
+}
+
+// will be overwitten
+// by the js animation
+[animate-translate-in][leave-direction="left"],
+[animate-translate-left-in]  { /* empty block */ }
+
+[animate-translate-in][leave-direction="right"],
+[animate-translate-right-in] { /* empty block */  }
+
+// -------------------------------------
+//   Animations - CSS
+// -------------------------------------
+// CSS based animations
+// are prefixed with "animation-"
+
+// -------------------------------------
+//   Animations - CSS - Vars
+// -------------------------------------
+// CSS based animations
+// are prefixed with "animation-"
+// default animation times
+$anim_time:         (0.5s * 1);
+$anim_time_slow:    (0.5s * 1.3);
+$anim_time_fast:    (0.5s * 0.6);
+$anim_time_instant: (0.5s * 0.4);
+
+// default animation delays
+$anim_delay:      ($anim_time / 2);
+$anim_delay_slow: ($anim_time / 1);
+$anim_delay_fast: ($anim_time / 3);
+$anim_delay_none: (0);
+
+// default animation easings
+$ease: ease;
+$ease_linear: linear;
+$ease_in_out: ease-in-out;
+
+/*
+// custom transition easings
+// note: variables imported from the
+// file sass/base/_transitions.scss
+$ease_in_out_quad: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+$ease_in_out_sine: cubic-bezier(0.445, 0.050, 0.550, 0.950); */
+
+
