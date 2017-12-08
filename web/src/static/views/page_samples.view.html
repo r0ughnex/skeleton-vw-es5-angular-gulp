@@ -10,9 +10,12 @@
     <!-- page content -->
     <div class="app__page__content" ng-if="$ctrl_page.isVisible" ng-class="::{'app__page__content--error': $ctrl_page.hasErrors}">
 
+
+
         <!-- section / container -->
-        <section class="section section--color-dark" animate-fade-in enter-delay="3" enter-speed="slow">
-            <div class="container" animate-fade-in enter-delay="4" enter-speed="slow">
+        <section class="section section--color-dark" animate-fade-in enter-delay="3" enter-speed="slow"><!--
+            <div class="container" animate-fade-in enter-delay="4" enter-speed="slow">-->
+            <div class="container">
 
                 <h2> Lorem ipsum dolor sit amet, <br> consectetur adipiscing&nbsp;elit. </h2>
 
@@ -22,6 +25,8 @@
 
             </div><!-- container end -->
         </section><!-- section end -->
+
+
 
         <!-- section / container -->
         <section class="section section--color-light" animate-fade-in enter-delay="5" enter-speed="slow">
@@ -35,6 +40,8 @@
 
             </div><!-- container end -->
         </section><!-- section end -->
+
+
 
         <!-- section / container -->
         <section class="section section--color-blue" animate-fade-in enter-delay="7" enter-speed="slow">
@@ -54,6 +61,8 @@
             </div><!-- container end -->
         </section><!-- section end -->
 
+
+
         <!-- section / container -->
         <section class="section section--color-default" ng-show="$ctrl_page.data.footer" animate-fade-in enter-delay="9" enter-speed="slow"><!--
             <div class="container" animate-slide-up-in enter-delay="10" enter-speed="slow">-->
@@ -63,6 +72,8 @@
 
          --></div><!-- container end -->
         </section><!-- section end -->
+
+
 
     </div><!-- page content end -->
 
