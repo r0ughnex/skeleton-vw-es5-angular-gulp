@@ -97,9 +97,9 @@ require("../base/raf");
                     // the data for the page here
                     // (the timeout is a simulation)
 
-                    // get the data for the footer component on the page
-                    DataService.getData("footer").then(function(footerData) {
-                        ctrl.data.footer = footerData; // set footer data
+                    // get the data for the modules and components on the page
+                    DataService.getData("page_samples").then(function(pageData) {
+                        ctrl.data = pageData; // set the response as page data
                     });
 
                     setTimeout(function() {

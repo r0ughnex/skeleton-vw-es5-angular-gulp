@@ -40,6 +40,8 @@ require("../base/promise");
             production: CONFIG.path.data + "{{id}}.json"  // api url for production
         };
 
+        var _savedData = { }; // reference to the api datas that have been saved
+
         // ---------------------------------------------
         //   Public members
         // ---------------------------------------------
@@ -107,12 +109,20 @@ require("../base/promise");
                 // TO-DO: add code to get the
                 // data for the given id here
 
-                // get the data that corresponds to the given id (from the param)
+                // check if a saved copy of the data exists
+                // and resolve promise with the saved data
+                if(Object.keys(_savedData).includes(id)) {
+                    return resolve(_savedData[id]);
+                }
+
+                // get the data that corresponds to the given id
                 $http.get(dataURL.replace("{{id}}", id)).then(
                     // on api success
                     function(response) {
-                        // parse the data and resolve the promise
-                        return resolve (_parseData(response.data));
+                        // save the data so as it can be re-used later
+                        // and resolve the promise with the parsed data
+                        _savedData[id] = _parseData(response.data);
+                        return resolve(_savedData[id]);
                     },
 
                     // on api error
