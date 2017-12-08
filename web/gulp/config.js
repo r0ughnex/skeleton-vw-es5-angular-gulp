@@ -137,9 +137,10 @@ var config = {
     // may require stripping and minification
     // (note: these can also contain filenames)
     bower_custom: [
-        "/lory/", "/swiper/",
-        "/whitewater/", "/youtube-iframe-api/",
-        "/plugin-inline-video/dependencies/", "/plugin-inline-video/"
+        "/swiper/",
+        "/whitewater/",
+        "/plugin-inline-video/",
+        "/plugin-inline-video/dependencies/"
     ],
 
     // folders that contain csutom json templates
