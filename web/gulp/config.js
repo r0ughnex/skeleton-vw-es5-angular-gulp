@@ -136,11 +136,11 @@ var config = {
     // injected while wiring dependencies that
     // may require stripping and minification
     // (note: these can also contain filenames)
-    bower_custom: [
+    bower_custom: [ /*
         "/swiper/",
         "/whitewater/",
         "/plugin-inline-video/",
-        "/plugin-inline-video/dependencies/"
+        "/plugin-inline-video/dependencies/" */
     ],
 
     // folders that contain csutom json templates
