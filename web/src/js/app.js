@@ -7,12 +7,9 @@
     * @plugins
     * require("mobile-detect");
     * require("velocity");
-    * require("nanobar");
 
-    * require("lory");
+    * require("nanobar");
     * require("swiper");
-    * require("youtube-iframe-api");
-    * require("plugin-inline-video");
 
     * require("angular");
     * require("angular-touch");
@@ -21,7 +18,6 @@
     * require("angular-ui-router");
 
     * require("ng-fastclick");
-    * require("angular-youtube-mb");
 **/
 
 // start

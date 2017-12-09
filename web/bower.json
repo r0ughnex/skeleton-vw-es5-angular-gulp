@@ -21,7 +21,9 @@
         "classlist-polyfill": "~1.2.0",
         "mobile-detect": "~1.3.7",
         "velocity": "~1.5.0",
-        "nanobar": "^0.4.2",
+
+        "nanobar": "./bower_custom/nanobar",
+        "swiper":  "./bower_custom/swiper",
 
         "angular": "~1.6.7",
         "angular-touch": "~1.6.7",
