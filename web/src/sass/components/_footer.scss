@@ -92,7 +92,7 @@ $footer_cell_pad: 1em;
 // -------------------------------------
 //   Footer - Cell - FollowUs
 // -------------------------------------
-.footer__cell__followus {
+.footer__cell__follow-us {
     margin: 0 auto;
     padding: 0;
     padding-bottom: 30px;
@@ -199,9 +199,9 @@ $footer_cell_link_h:   50px;
 
 .footer__cell__links--inline {
     li {
-        vertical-align: baseline;
-        padding: 0 $footer_cell_li_pad_r 0 $footer_cell_li_pad_l;
         line-height: 1;
+        vertical-align: middle;
+        padding: 0 $footer_cell_li_pad_r 0 $footer_cell_li_pad_l;
 
         &:not(:last-child) {
             border-right: 1px solid $color-grey-calm;

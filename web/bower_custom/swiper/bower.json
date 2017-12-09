@@ -5,12 +5,17 @@
         "url": "https://github.com/nolimits4web/Swiper.git"
     },
 
-    "description": "Most modern mobile touch slider and framework with hardware accelerated transitions. Custom version with csss compression bug fixes.",
     "version": "3.4.2",
+    "description": "Most modern mobile touch slider and framework. Custom version with css compression bug fixes.",
 
     "author": "Vladimir Kharlampidi",
     "homepage": "http://www.idangero.us/swiper/",
-    "keywords": ["swiper", "swipe", "slider", "touch", "ios", "mobile", "cordova", "phonegap", "app", "framework", "carousel", "gallery"],
+
+    "keywords": [
+        "swiper", "swipe", "slider", "touch", "ios",
+        "mobile", "cordova", "phonegap", "app",
+        "framework", "carousel", "gallery"
+    ],
 
     "dependencies": { },
 
@@ -18,16 +23,18 @@
         "build/js/swiper.js"
     ],
 
+    "styles": [
+        "build/css/swiper.css"
+    ],
+
     "main": [
         "build/js/swiper.js",
         "build/css/swiper.css"
     ],
 
-    "styles": [
-        "build/css/swiper.css"
-    ],
-
     "license": "MIT",
+
+    "bugs": { },
 
     "ignore": [
         ".*",

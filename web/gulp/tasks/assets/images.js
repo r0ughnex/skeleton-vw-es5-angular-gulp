@@ -118,13 +118,14 @@ gulp.task('images:color', function () {
     // @param {String} name - name of the image to be perform the check on
     // @params (Boolean} - true or false depending on validity of name given
     fs.isImage = function(name) {
-        // dominant colors should only ever be
-        // used as a background color on .jpg
-        // and non-transparent .png images
-        if(/*(*/name.indexOf('.jpg') != -1 /*
-             || name.indexOf('.png') != -1) */
-             && name.indexOf('layout') == -1
-             && name.indexOf('transparent') == -1) {
+        // dominant colors should only ever
+        // be used as a background color on
+        // non-transparent *.jpg, *.gif images
+        if((name.includes('.jpg') /* // is a *.jpg image
+         || name.includes('.png') */ // is a *.png image
+         || name.includes('.gif'))   // is a *.gif image
+         && !name.includes('layout') // image used for layout
+         && !name.includes('transparent')) { // is transparent
             return true;
         } else { return false; }
     }

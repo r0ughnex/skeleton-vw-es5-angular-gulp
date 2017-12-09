@@ -51,25 +51,24 @@
                 $http.get(_dataURL).then(
                     // on success callback
                     function(response) { try {
-                        // only proceed if the response is a valid json
+                        // only proceed if the response data is a valid json
                         var data = JSON.parse(JSON.stringify(response.data));
                         if(data != null && typeof data != "undefined") {
                             // resolve the promise with the new data
                             return resolve(data);
                         }} // try end
 
-                        // resolve the promise with null on error
+                        // on any errors
                         catch(error) {
-                            console.log(error);
-                            return resolve(null);
+                            // resolve the promise with null on error
+                            console.log(error); return resolve(null);
                         } // catch end
                     }, // success end
 
                     // on error callback
                     function(error) {
                         // resolve the promise with null on error
-                        console.log(error);
-                        return resolve(null);
+                        console.log(error); return resolve(null);
                     } // error end
                 ); // then end
             }); // Promise end
@@ -98,9 +97,8 @@
                     });
                 }
 
-                // else resolve the promise
-                // with the current data
                 else {
+                    // else resolve the promise with the current data
                     try { return resolve(_dominantColors[imageName]); }
                     catch(error) { console.log(error); return resolve(null); }
                 }
