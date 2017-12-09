@@ -1,7 +1,11 @@
 {
     "header": { },
 
+
+
     "form":   { },
+
+
 
     "footer": {
         "subline": "Follow us on social media",
@@ -12,28 +16,32 @@
             {
                 "cta" : {
                     "label": "Privacy Policy",
-                    "url": "http://www.volkswagen.com.au/en/tools/navigation/footer/privacy.html"
+                    "title": "Privacy Policy",
+                    "url":   "http://www.volkswagen.com.au/en/tools/navigation/footer/privacy.html"
                 }
             },
 
             {
                 "cta" : {
                     "label": "Legal",
-                    "url": "http://www.volkswagen.com.au/en/tools/navigation/footer/legal.html"
+                    "title": "Legal",
+                    "url":   "http://www.volkswagen.com.au/en/tools/navigation/footer/legal.html"
                 }
             },
 
             {
                 "cta" : {
                     "label": "Volkswagen AG",
-                    "url": "http://www.volkswagenag.com/content/vwcorp/content/en/homepage.html"
+                    "title": "Volkswagen AG",
+                    "url":   "http://www.volkswagenag.com/content/vwcorp/content/en/homepage.html"
                 }
             },
 
             {
                 "cta" : {
                     "label": "Volkswagen International",
-                    "url": "http://www.volkswagen.com/de.html"
+                    "title": "Volkswagen International",
+                    "url":   "http://www.volkswagen.com/de.html"
                 }
             }
         ]

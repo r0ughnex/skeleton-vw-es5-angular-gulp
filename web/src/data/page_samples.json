@@ -1,7 +1,26 @@
 {
-    "header": { },
+    "header": {
+        "headline": "Sample Header",
+        "copy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> In porta augue dui, ac convallis ex&nbsp;tempor&nbsp;sed.",
+        "attr": { "align": "center" },
+
+        "cta" : {
+            "label": "Button Primary",
+            "title": "Button Primary",
+            "url":   "#"
+        },
+
+        "image": {
+            "desktop": "/placeholders/placeholder_1920x540.jpg",
+            "mobile":  "/placeholders/placeholder_800x225.jpg"
+        }
+    },
+
+
 
     "form":   { },
+
+
 
     "footer": {
         "subline": "Follow us on social media",
@@ -12,28 +31,32 @@
             {
                 "cta" : {
                     "label": "Privacy Policy",
-                    "url": "http://www.volkswagen.com.au/en/tools/navigation/footer/privacy.html"
+                    "title": "Privacy Policy",
+                    "url":   "http://www.volkswagen.com.au/en/tools/navigation/footer/privacy.html"
                 }
             },
 
             {
                 "cta" : {
                     "label": "Legal",
-                    "url": "http://www.volkswagen.com.au/en/tools/navigation/footer/legal.html"
+                    "title": "Legal",
+                    "url":   "http://www.volkswagen.com.au/en/tools/navigation/footer/legal.html"
                 }
             },
 
             {
                 "cta" : {
                     "label": "Volkswagen AG",
-                    "url": "http://www.volkswagenag.com/content/vwcorp/content/en/homepage.html"
+                    "title": "Volkswagen AG",
+                    "url":   "http://www.volkswagenag.com/content/vwcorp/content/en/homepage.html"
                 }
             },
 
             {
                 "cta" : {
                     "label": "Volkswagen International",
-                    "url": "http://www.volkswagen.com/de.html"
+                    "title": "Volkswagen International",
+                    "url":   "http://www.volkswagen.com/de.html"
                 }
             }
         ]

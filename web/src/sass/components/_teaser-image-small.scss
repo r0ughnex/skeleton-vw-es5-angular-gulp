@@ -7,6 +7,11 @@
 **/
 
 $tsr_img_sm_content_w_max: 38%;
+$tsr_img_sm_content_w_max_mob: 100%;
+
+$tsr_img_sm_content_h_min: 240px;
+$tsr_img_sm_content_h_min_mob: 85px;
+$tsr_img_sm_content_icon_spacing: 0.3em;
 
 .teaser-image-small {
 	position: relative;
@@ -23,13 +28,11 @@ $tsr_img_sm_content_w_max: 38%;
 // -------------------------------------
 //   Teaser Image Small - Content
 // -------------------------------------
-$tsr_img_sm_content_icon_spacing: 0.3em;
-
 .teaser-image-small__content {
 	position: relative;
 	z-index: $zi_overlay;
 
-	// extend the default
+	// extend default
 	// section padding
 	@extend %section;
 	box-sizing: content-box;
@@ -49,8 +52,18 @@ $tsr_img_sm_content_icon_spacing: 0.3em;
 // -------------------------------------
 // default
 .teaser-image-small--default {
+	.teaser-image-small__image {
+		// give enough space on the
+		// component to as the copy
+		// is not cropped to fix it
+		.image__layout {
+			@include mobile-up { min-height: $tsr_img_sm_content_h_min; }
+			@include mobile    { min-height: $tsr_img_sm_content_h_min_mob; }
+		}
+	}
+
 	.teaser-image-small__content {
-		// align content position
+		// align all the content elements
 		// vertically on bigger devices
 		@include mobile-up {
 			position: absolute;
@@ -61,15 +74,18 @@ $tsr_img_sm_content_icon_spacing: 0.3em;
 			&--top { top: 0; transform: translateY(0); }
 			&--center { @include transform-center-v(false); }
 
-			h2, p { color: white; }
+			h2, p   { color: white; }
 			.button { margin-bottom: 0; }
 		}
 
-		// align content elements
+		// align all the content elements
 		// horizontally on smaller devices
 		@include mobile {
 			@include center(false);
+
+			position: relative;
 			text-align: center;
+			max-width: $tsr_img_sm_content_w_max_mob;
 
 			.button {
 				margin-left: auto;
@@ -82,23 +98,27 @@ $tsr_img_sm_content_icon_spacing: 0.3em;
 // alternate
 .teaser-image-small--alt {
 	.teaser-image-small__content {
-		// align content position
+		// align all content elements
 		// vertically on all devices
 		position: absolute;
 		max-width: 100%;
 
 		// modifiers for position of content
 		// ( default content position is top )
-		&--top { top: 0; transform: translateY(0); }
+		&--top    { top: 0; transform: translateY(0); }
 		&--center { @include transform-center-v(false); }
 
 		// on smaller devices content is
 		// always positioned at the center
 		@include mobile {
-			&--top { @include transform-center-v(false); }
+			&--top    { @include transform-center-v(false); }
+			&--center { /* empty block */ }
 		}
 
 
+		// the header typography style
+		// for the alternate variation
+		// is bigger than the default
 		h1 {
 			color: white;
 			text-align: left;

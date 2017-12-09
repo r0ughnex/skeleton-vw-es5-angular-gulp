@@ -6,9 +6,12 @@
 
         <!-- cell -->
         <div class="footer__cell">
-            <div class="footer__cell__followus" ng-cloak>
+
+            <!-- follow us -->
+            <div class="footer__cell__follow-us" ng-cloak>
                 {{::$ctrl.data.subline}}
-            </div>
+            </div><!-- follow us end -->
+
         </div><!-- cell end -->
 
     </div><!-- row end -->
@@ -18,16 +21,20 @@
 
         <!-- cell -->
         <div class="footer__cell">
+
             <!-- links -->
             <ul class="footer__cell__links footer__cell__links--social">
+
                 <li><a ng-href="https://www.facebook.com/VolkswagenAustralia/" target="_blank" title="Facebook"><!--
-                     --><i class="icon icon-facebook"></i><!--
+                 --><i class="icon icon-facebook"></i><!--
              --></a></li><!--
 
              --><li><a ng-href="https://www.instagram.com/vwaustralia/" target="_blank" title="Instagram"><!--
-                     --><i class="icon icon-instagram"></i><!--
+                 --><i class="icon icon-instagram"></i><!--
              --></a></li>
+
             </ul><!-- links end -->
+
         </div><!-- cell end -->
 
     </div><!-- row end -->
@@ -37,8 +44,10 @@
 
         <!-- cell -->
         <div class="footer__cell">
+
             <!-- links -->
             <ul class="footer__cell__links footer__cell__links--inline">
+
                 <li ng-repeat="link in ::$ctrl.data.children"><!--
                  --><a ng-href="{{::link.cta.url}}" target="_blank" title="{{::link.cta.title}}" ng-cloak>
                         {{::link.cta.label}}
@@ -48,7 +57,9 @@
              --><li ng-if="::$ctrl.year"><a ng-cloak>
                     &copy; {{::$ctrl.year}} Volkswagen Australia
                 </a></li>
+
             </ul><!-- links end -->
+
         </div><!-- cell end -->
 
     </div><!-- row end -->
@@ -60,9 +71,11 @@
         <div class="footer__cell footer__cell--6" ng-if="::$ctrl.disclaimer.left">
             <p ng-cloak> {{::$ctrl.disclaimer.left}} </p>
         </div><!--
+
      --><div class="footer__cell footer__cell--6" ng-if="::$ctrl.disclaimer.right">
             <p ng-cloak> {{::$ctrl.disclaimer.right}} </p>
         </div><!--
+
      --><div class="footer__cell footer__cell--12" ng-if="::$ctrl.disclaimer.length">
             <p ng-cloak> {{::$ctrl.disclaimer}} </p>
         </div><!-- cell end -->
@@ -72,4 +85,4 @@
 </div><!-- footer end -->
 
 <!-- back to top -->
-<a class="footer__back-to-top animate-fade-out needsclick" animate-fade-in ng-if="$ctrl.isToTopVisible" ng-href="#scroll-to-top" title="Back to top" ng-click="$ctrl.scrollToTop($event)" enter-speed="fast" leave-speed="fast" enter-complete-class="footer__back-to-top--is-visible"><i class="icon icon-chevron-double-up"></i></a><!-- back to top end -->
+<a class="footer__back-to-top animate-fade-out needsclick" animate-fade-in ng-if="$ctrl.isToTopVisible" ng-href="#back-to-top" title="Back to Top" ng-click="$ctrl.scrollToTop($event)" enter-speed="fast" leave-speed="fast" enter-complete-class="footer__back-to-top--is-visible"><i class="icon icon-chevron-double-up"></i></a><!-- back to top end -->

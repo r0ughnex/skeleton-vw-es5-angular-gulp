@@ -68,17 +68,81 @@ require("../base/promise");
             return !_isEven(number);
         }
 
+        // @name _parseImages
+        // @desc function to parse the given image data and fill gaps with default values
+        // @param {Object} images - the data to be parsed and checked for any missing information
+        // @return {Object} cimages - a copy of the parsed and modifed data once parsing is complete
+        function _parseImages(images) { try {
+            // make a local copy of the data
+            var cimages = angular.copy(images);
+
+            // loop through each image (desktop and mobile)
+            Object.keys(cimages).forEach(function(key, index) {
+                // get the current image
+                var image = cimages[key];
+
+                // set validity flag
+                var isValid = true;
+
+                // check if the image is a string of valid length
+                if(typeof image !== "string" || image.length <= 7 ||
+                  (!image.includes(".jpg") &&  // is a *.jpg image
+                   !image.includes(".png") &&  // is a *.png image
+                   !image.includes(".gif"))) { // is a *.gif image
+                    isValid = false; // set the validity flag to be false otherwise
+                    prompt("-------------------------------------------------------");
+                    prompt("data.service.js:", "Invalid " + key + " image detected:");
+                    prompt("data.service.js:", (image ? image : key + " image is not defined."));
+                    prompt("-------------------------------------------------------");
+                }
+
+                // note: the image can contain absolute or relative
+                // urls, so check if the image url path is relative
+                if(isValid && !image.includes("http://") && !image.includes("https://")) {
+                    // and add a prefix to the url path
+                    image = CONFIG.path.images + image;
+                    image = image.replace("//", "/");
+                }
+
+                // add image back to object
+                cimages[key] = image;
+            });}
+
+            // on error while parsing
+            catch(error) { console.log(error); }
+
+            // return the parsed and
+            // modified images object
+            return cimages;
+        }
+
         // @name _parseData
-        // @desc function to parse given data and modify it by
-        //        replacing any missing information with default values
-        // @param {Object} data - the data to be parsed and checked for missing information
+        // @desc function to parse the given response data and fill gaps with default values
+        // @param {Object} data - the data to be parsed and checked for any missing information
         // @return {Object} cdata - a copy of the parsed and modifed data once parsing is complete
         function _parseData(data) { try {
             // make a local copy of the data
             var cdata = angular.copy(data);
 
-            // TO-DO: add code to parse
-            // the obtained data here
+            // loop through each object in the response data
+            Object.keys(cdata).forEach(function(key, index) {
+                // get the current object
+                var obj = cdata[key];
+
+                // TO-DO: add code to parse
+                // the obtained data here
+
+                // parse and check any images in data
+                if(Object.keys(obj).includes("image")) {
+                    obj.image = _parseImages(obj.image);
+                }
+
+                // check if the data contains nested children
+                if(Object.keys(obj).includes("children")) {
+                    // then parse the nested children
+                    obj = _parseData(obj.children);
+                }
+            });
 
             // return the parsed
             // and replaced data
@@ -119,16 +183,24 @@ require("../base/promise");
                 $http.get(dataURL.replace("{{id}}", id)).then(
                     // on api success
                     function(response) {
+                        var responseData = _parseData(response.data); // parse the data
+                        if(responseData === null || typeof responseData === "undefined") {
+                            prompt("---------------------------------------------------");
+                            prompt("data.service.js:", "Invalid response data detected:");
+                            prompt("data.service.js:", (responseData ? responseData : "response data is not defined."));
+                            prompt("---------------------------------------------------");
+                        }
+
                         // save the data so as it can be re-used later
                         // and resolve the promise with the parsed data
-                        _savedData[id] = _parseData(response.data);
+                        _savedData[id] = responseData;
                         return resolve(_savedData[id]);
                     },
 
                     // on api error
                     function(error) {
-                        // return null if there are any errors
-                        console.log(error); return resolve(null);
+                        // return null if there are errors
+                        prompt(error); return resolve(null);
                     }
                 );
             });
