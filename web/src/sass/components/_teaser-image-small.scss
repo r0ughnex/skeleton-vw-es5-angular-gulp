@@ -7,8 +7,6 @@
 **/
 
 $tsr_img_sm_content_w_max: 38%;
-$tsr_img_sm_content_w_max_mob: 100%;
-
 $tsr_img_sm_content_h_min: 240px;
 $tsr_img_sm_content_h_min_mob: 85px;
 $tsr_img_sm_content_icon_spacing: 0.3em;
@@ -70,7 +68,7 @@ $tsr_img_sm_content_icon_spacing: 0.3em;
 			max-width: $tsr_img_sm_content_w_max;
 
 			// modifiers for position of content
-			// ( default content position is center )
+			// (default content position is center)
 			&--top { top: 0; transform: translateY(0); }
 			&--center { @include transform-center-v(false); }
 
@@ -82,10 +80,8 @@ $tsr_img_sm_content_icon_spacing: 0.3em;
 		// horizontally on smaller devices
 		@include mobile {
 			@include center(false);
-
 			position: relative;
 			text-align: center;
-			max-width: $tsr_img_sm_content_w_max_mob;
 
 			.button {
 				margin-left: auto;
@@ -104,7 +100,7 @@ $tsr_img_sm_content_icon_spacing: 0.3em;
 		max-width: 100%;
 
 		// modifiers for position of content
-		// ( default content position is top )
+		// (default content position is top)
 		&--top    { top: 0; transform: translateY(0); }
 		&--center { @include transform-center-v(false); }
 

@@ -17,10 +17,10 @@
     </div><!-- image end -->
 
     <!-- content default -->
-    <div ng-if="::(($ctrl.type == 'default') && ($ctrl.data.headline || $ctrl.data.copy || $ctrl.data.cta))" class="teaser-image-small__content teaser-image-small__content--{{::$ctrl.data.attr.align}}">
+    <div class="teaser-image-small__content teaser-image-small__content--{{::$ctrl.data.attr.align}}" ng-if="::(($ctrl.type == 'default') && ($ctrl.data.headline || $ctrl.data.copy || $ctrl.data.cta))">
 
         <h2 ng-if="::$ctrl.data.headline" ng-bind-html="::$ctrl.data.headline"> </h2>
-        <p ng-if="::$ctrl.data.copy" ng-bind-html="::$ctrl.data.copy"> </p>
+        <p  ng-if="::$ctrl.data.copy" ng-bind-html="::$ctrl.data.copy"> </p>
 
         <a class="button button--primary" ng-if="::$ctrl.data.cta" ng-href="{{::$ctrl.data.cta.url}}" target="{{::$ctrl.data.cta.target}}" title="{{::$ctrl.data.cta.title}}"><span ng-cloak> {{::$ctrl.data.cta.label}} </span></a>
 
