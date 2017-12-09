@@ -51,6 +51,7 @@ require("../base/raf");
         ctrl.CONFIG = CONFIG; // reference to the config constant
 
         ctrl.isVisible = false; // flag to indicate page is visible
+        ctrl.isLoading = true;  // flag to indicate page is loading
         ctrl.hasErrors = false; // flag to indicate page has errors
 
         ctrl.data = { // reference to the data for the page
@@ -75,10 +76,10 @@ require("../base/raf");
             if(typeof fromState.name === "string"
                && fromState.name.includes("app.")) {
 
-                // show the current page, since it
+                // hide the page loader, since it
                 // is coming from a previous page
-                if(!ctrl.isVisible) {
-                    ctrl.isVisible = true;
+                if(ctrl.isLoading) {
+                    ctrl.isLoading = false;
                     ScopeService.digest($scope);
                 }
             }}
@@ -97,31 +98,43 @@ require("../base/raf");
                     // the data for the page here
                     // (the timeout is a simulation)
 
-                    // get the data for the footer component on the page
-                    DataService.getData("footer").then(function(footerData) {
-                        ctrl.data.footer = footerData; // set footer data
-                    });
+                    // get the data for the modules and components on the page
+                    DataService.getData("page_modules").then(function(pageData) {
+                        ctrl.data = pageData; // set the response from the service as page data
+                        console.log("--------------------------------------------------------");
+                        console.log("modules.controller.js:", "Page data from the service is:");
+                        console.log("modules.controller.js:", (pageData ? pageData : "page data is not defined."));
+                        console.log("--------------------------------------------------------");
 
-                    setTimeout(function() {
-                        // show the current page,
-                        // once data is available
-                        if(!ctrl.isVisible) {
-                            ctrl.isVisible = true;
-                            ScopeService.digest($scope);
-                        }
+                        /*
+                        setTimeout(function() { */
+                            // hide the page loader,
+                            // once data is available
+                            if(ctrl.isLoading) {
+                                ctrl.isLoading = false;
+                                ScopeService.digest($scope);
+                            }
 
-                        setTimeout(function() {
-                            LoaderService.hideLoader().then(function() {
+                            // show the current page,
+                            // once data is available
+                            if(!ctrl.isVisible) {
+                                ctrl.isVisible = true;
+                                ScopeService.digest($scope);
+                            }
 
-                                // TO-DO: add code to do something
-                                // with the obtained page data here
-                                // (the timeout is just a simulation)
+                            setTimeout(function() {
+                                LoaderService.hideLoader().then(function() {
 
-                            });
-                        }, (CONFIG.timeout.scope * 6));
-                    }, (CONFIG.timeout.animation * 1));
-                });
-            }, 1);
+                                    // TO-DO: add code to do something
+                                    // with the obtained page data here
+                                    // (the timeout is just a simulation)
+
+                                });
+                            }, (CONFIG.timeout.scope * 6)); /* // setTimeout() end
+                        }, (CONFIG.timeout.animation * 1)); */ // setTimeout() end
+                    }); // getData() end
+                }); // showLoader() end
+            }, 1); // setTimeout() end
         }
 
         // @name _onChanges
@@ -148,11 +161,11 @@ require("../base/raf");
                 deregisterListener();
             });
 
+            // reset all flags to their default values
+            ctrl.isVisible = ctrl.isLoading = ctrl.hasErrors = false;
+
             // reset all references to objects and arrays
             ctrl.data = { };
-
-            // reset all flags to their default values
-            ctrl.isVisible = ctrl.hasErrors = false;
         });
 
         // ---------------------------------------------

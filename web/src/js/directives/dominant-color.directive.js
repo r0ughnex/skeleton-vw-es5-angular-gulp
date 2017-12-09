@@ -84,12 +84,12 @@
                         return true; // exit the function
                     }
 
-                     // exit the function
-                    return false;
+                    // exit the function
+                    return true;
                 },
 
-                // on error callback
-                function(error) { console.log(error); /* do nothing */ }
+                // on error callback, exit the function
+                function(error) { console.log(error); return false; }
             );
         }
 

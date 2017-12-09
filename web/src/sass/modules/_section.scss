@@ -189,8 +189,9 @@ $section_margin_mob_sm: $section_pad_mob_sm;
 	// extend default section
 	@extend %section;
 
-	// default background color
-	background-color: white;
+	// default parent background color
+	background-color: white; // parent
+	// default nested background color
 	> .section:not([class*="--color-"]) {
 		background-color: transparent;
 	}
