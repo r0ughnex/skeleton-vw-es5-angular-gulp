@@ -68,6 +68,53 @@ require("../base/promise");
             return !_isEven(number);
         }
 
+        // @name _parseCTA
+        // @desc function to parse the given cta data and fill gaps with default values
+        // @param {Object} cta - the data to be parsed and checked for any missing information
+        // @return {Object} ccta - a copy of the parsed and modifed data once parsing is complete
+        function _parseCTA(cta) { try {
+            // make a local copy of the data
+            var ccta = angular.copy(cta);
+
+            // check if the given cta contains
+            // valid url, title and target set
+            if(!ccta.url    || !ccta.url.length)    { ccta.url    = "#";        }  // default url
+            if(!ccta.title  || !ccta.title.length)  { ccta.title  = ccta.label; }  // default title
+            if(!ccta.target || !ccta.target.length) { ccta.target = "_self";    }  // default target
+
+            // make sure that internal '#'
+            // links have no default target
+            if(ccta.url === "#") { ccta.target = ""; }}
+
+            // on errors while parsing the data
+            catch(error) { console.log(error); }
+
+            // check if the the cta link is valid
+            // note: not applicable for test users
+            var link = ccta.url; // get the cta link
+            if(typeof link !== "string" || link.length < 7
+            || (!link.includes("http://") && !link.includes("https://"))) {
+                prompt("----------------------------------------------");
+                prompt("data.service.js:", "Invalid CTA link detected:");
+                prompt("data.service.js:", (link ? link : "CTA link is not defined."));
+                prompt("----------------------------------------------");
+            }
+
+            // check if the the cta label is valid
+            // note: not applicable for test users
+            var label = ccta.label; // get cta label
+            if(typeof label !== "string" || label.length < 5) {
+                prompt("-----------------------------------------------");
+                prompt("data.service.js:", "Invalid CTA label detected:");
+                prompt("data.service.js:", (label ? label : "CTA label is not defined."));
+                prompt("-----------------------------------------------");
+            }
+
+            // return the parsed and
+            // modified cta object
+            return ccta;
+        }
+
         // @name _parseImages
         // @desc function to parse the given image data and fill gaps with default values
         // @param {Object} images - the data to be parsed and checked for any missing information
@@ -85,7 +132,7 @@ require("../base/promise");
                 var isValid = true;
 
                 // check if the image is a string of valid length
-                if(typeof image !== "string" || image.length <= 7 ||
+                if(typeof image !== "string" || image.length < 7 ||
                   (!image.includes(".jpg") &&  // is a *.jpg image
                    !image.includes(".png") &&  // is a *.png image
                    !image.includes(".gif"))) { // is a *.gif image
@@ -127,20 +174,27 @@ require("../base/promise");
             // loop through each object in the response data
             Object.keys(cdata).forEach(function(key, index) {
                 // get the current object
-                var obj = cdata[key];
+                var obj  = cdata[key];
+                var keys = Object.keys(obj);
 
                 // TO-DO: add code to parse
                 // the obtained data here
 
-                // parse and check any images in data
-                if(Object.keys(obj).includes("image")) {
+                // parse any cta in data
+                if(keys.includes("cta")) {
+                    obj.cta = _parseCTA(obj.cta);
+                }
+
+                // parse any images in data
+                if(keys.includes("image")) {
                     obj.image = _parseImages(obj.image);
                 }
 
-                // check if the data contains nested children
-                if(Object.keys(obj).includes("children")) {
-                    // then parse the nested children
-                    obj = _parseData(obj.children);
+                // check if the given data
+                // contains nested children
+                if(keys.includes("children")) {
+                    // then parse nested children
+                    obj.children = _parseData(obj.children);
                 }
             });
 

@@ -19,17 +19,30 @@
     <!-- content default -->
     <div class="teaser-image-small__content teaser-image-small__content--{{::$ctrl.data.attr.align}}" ng-if="::(($ctrl.type == 'default') && ($ctrl.data.headline || $ctrl.data.copy || $ctrl.data.cta))">
 
-        <h2 ng-if="::$ctrl.data.headline" ng-bind-html="::$ctrl.data.headline"> </h2>
-        <p  ng-if="::$ctrl.data.copy" ng-bind-html="::$ctrl.data.copy"> </p>
+        <!-- headline -->
+        <h2 ng-if="::$ctrl.data.headline"
+            ng-bind-html="::$ctrl.data.headline">
+        </h2>
 
-        <a class="button button--primary" ng-if="::$ctrl.data.cta" ng-href="{{::$ctrl.data.cta.url}}" target="{{::$ctrl.data.cta.target}}" title="{{::$ctrl.data.cta.title}}"><span ng-cloak> {{::$ctrl.data.cta.label}} </span></a>
+        <!-- copy -->
+        <p ng-if="::$ctrl.data.copy"
+            ng-bind-html="::$ctrl.data.copy">
+        </p>
+
+        <!-- button -->
+        <a class="button button--primary" ng-if="::$ctrl.data.cta" ng-href="{{::$ctrl.data.cta.url}}" target="{{::$ctrl.data.cta.target}}" title="{{::($ctrl.data.cta.title | stripHtml)}}"><span
+            ng-bind-html="::$ctrl.data.cta.label">
+        </span></a>
 
     </div><!-- content default end -->
 
     <!-- content alt -->
     <div ng-if="::(($ctrl.type == 'alt') && $ctrl.data.headline)" class="teaser-image-small__content teaser-image-small__content--{{::$ctrl.data.attr.align}}">
 
-        <h1 ng-if="::$ctrl.data.headline" ng-bind-html="::$ctrl.data.headline"> </h1>
+        <!-- headline -->
+        <h1 ng-if="::$ctrl.data.headline"
+            ng-bind-html="::$ctrl.data.headline">
+        </h1>
 
     </div><!-- content alt end -->
 

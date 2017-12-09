@@ -8,8 +8,8 @@
         <div class="footer__cell">
 
             <!-- follow us -->
-            <div class="footer__cell__follow-us" ng-cloak>
-                {{::$ctrl.data.subline}}
+            <div class="footer__cell__follow-us"
+                ng-bind-html="::$ctrl.data.subline">
             </div><!-- follow us end -->
 
         </div><!-- cell end -->
@@ -49,8 +49,8 @@
             <ul class="footer__cell__links footer__cell__links--inline">
 
                 <li ng-repeat="link in ::$ctrl.data.children"><!--
-                 --><a ng-href="{{::link.cta.url}}" target="_blank" title="{{::link.cta.title}}" ng-cloak>
-                        {{::link.cta.label}}
+                 --><a ng-href="{{::link.cta.url}}" target="{{::link.cta.target}}" title="{{::(link.cta.title | stripHtml)}}"
+                        ng-bind-html="::link.cta.label">
                     </a><!--
              --></li><!--
 
@@ -69,15 +69,15 @@
 
         <!-- cell -->
         <div class="footer__cell footer__cell--6" ng-if="::$ctrl.disclaimer.left">
-            <p ng-cloak> {{::$ctrl.disclaimer.left}} </p>
+            <p ng-bind-html="::$ctrl.disclaimer.left"></p>
         </div><!--
 
      --><div class="footer__cell footer__cell--6" ng-if="::$ctrl.disclaimer.right">
-            <p ng-cloak> {{::$ctrl.disclaimer.right}} </p>
+            <p ng-bind-html="::$ctrl.disclaimer.right"></p>
         </div><!--
 
      --><div class="footer__cell footer__cell--12" ng-if="::$ctrl.disclaimer.length">
-            <p ng-cloak> {{::$ctrl.disclaimer}} </p>
+            <p ng-bind-html="::$ctrl.disclaimer"></p>
         </div><!-- cell end -->
 
     </div><!-- row end -->
