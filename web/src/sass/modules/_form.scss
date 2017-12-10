@@ -1,0 +1,616 @@
+// -------------------------------------
+//   Module - Form
+// -------------------------------------
+/**
+    * @name forms
+    * @desc Styles for the form module.
+**/
+
+$form_width_max: 640px;
+
+.form {
+    @extend %reset;
+
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 auto;
+    max-width: $form_width_max;
+}
+
+// -------------------------------------
+//   Form - Field Placeholders
+// -------------------------------------
+$input_height: 48px;
+$input_padding: 1rem;
+
+$input_border_width: 1px;
+$input_border_radius: 4px;
+$input_line_height: $input_height;
+$input_border-color: $color_grey_calm;
+
+$input_font_size: 1rem;
+$input_icon_size: 1.125rem;
+$input_icon_size_sm: (1.125rem * 0.55);
+$input_icon_size_lg: (1.125rem * 1.25);
+
+$checkbox_wrap_height: 1.875rem;
+$checkbox_wrap_width: 1.875rem;
+$checkbox_height: 2rem;
+$checkbox_width: 2rem;
+
+$input_span_height: 30px;
+$input_span_padding: 0.6667em;
+$input_span_font_size: 0.9375rem;
+$input_disabled_color: darken($color_grey_sky, 5%);
+
+// field parent
+%field {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+// field parent - checkbox
+%field--checkbox {
+    position: absolute;
+    top: 0; left: 0;
+
+    height: $checkbox_wrap_height;
+    width: $checkbox_wrap_width;
+    margin: 0;
+}
+
+// field child
+%field__elem {
+    @extend %reset;
+    @include transitions(color, border-color, background-color);
+
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: $input_height;
+
+    margin: 0 auto;
+    padding: 0 $input_padding;
+    padding-right: ($input_padding * 2) + $input_icon_size_lg;
+
+    border-style: solid;
+    border-color: $input_border-color;
+    border-width: $input_border_width;
+    border-radius: $input_border_radius;
+    background-color: white;
+
+    font-family: "VWText-Regular";
+    line-height: $input_line_height;
+    font-size: $input_font_size;
+    color: $color_grey_night;
+
+    &::-ms-clear { display: none; }
+    ::placeholder { color: $color_grey_warm; }
+    &[type=number] { appearance: textfield; }
+    &[type=number]::-webkit-inner-spin-button,
+    &[type=number]::-webkit-outer-spin-button {
+        appearance: none; margin: 0;
+    }
+
+    &:focus::-ms-value {
+        background-color: white;
+        color: $color_grey_night;
+    }
+
+    &.ng-invalid.ng-dirty:not([disabled]) {
+        border-color: $color_red_warning;
+    }
+
+    &[disabled] {
+        pointer-events: none;
+        background-color: $input_disabled_color;
+    }
+}
+
+// field child - checkbox
+%field__elem--checkbox {
+    @extend %reset;
+    @include transitions(color, border-color, background-color);
+
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    box-sizing: border-box;
+
+    left: 0; top: 0;
+    width: $checkbox_width;
+    height: $checkbox_height;
+
+    &[disabled] {
+        pointer-events: none;
+        background-color: $input_disabled_color;
+    }
+}
+
+// field icon
+%field__icon {
+    @include transitions(opacity, color, border-color, background-color);
+    opacity: 1;
+
+    display: block;
+    position: absolute;
+    z-index: $zi_overlay;
+    box-sizing: border-box;
+    @extend %transform-center-v;
+
+    height: 1em;
+    left: $input_padding;
+
+    color: $color_grey_soft;
+    font-size: $input_icon_size;
+    text-align: center;
+    line-height: 1em;
+}
+
+// field icon - input
+%field__icon--input {
+    opacity: 0;
+    left: auto;
+    right: $input_padding;
+    font-size: $input_icon_size_lg;
+
+    &:hover {
+        cursor: pointer;
+        color: $color_blue_volkswagen;
+    }
+}
+
+// field icon - checkbox
+%field__icon--checkbox {
+    @include transitions(color, border-color, background-color);
+    @extend %transform-center;
+    pointer-events: none;
+    overflow: hidden;
+    display: block;
+
+    height: $checkbox_height;
+    width: $checkbox_width;
+    opacity: 1;
+
+    color: transparent;
+    text-align: center;
+    font-size:  1.125rem;
+    line-height: 1.875rem;
+    background-color: white;
+
+    box-sizing: border-box;
+    border-radius: $input_border_radius;
+    border: $input_border_width solid $input_border-color;
+}
+
+// field icon - select
+%field__icon--select {
+    opacity: 1;
+    pointer-events: none;
+    left: auto; right: 0;
+
+    width: $input_height;
+    height: $input_height;
+
+    border-radius: $input_border_radius;
+    border-width: $input_border_width;
+    border-color: $input_border-color;
+    border-left-color: transparent;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-left-width: 0;
+    border-style: solid;
+
+    line-height: $input_height;
+    font-size: $input_icon_size_sm;
+    color: $color_blue_volkswagen;
+    background-color: white;
+}
+
+// field span
+%field__span {
+    opacity: 0;
+    display: block;
+    position: relative;
+
+    overflow: hidden;
+    visibility: hidden;
+    box-sizing: border-box;
+
+    max-height: 0;
+    padding: 0 auto;
+    padding-bottom: 0.12em;
+
+    line-height: 1.12em;
+    color: $color_red_warning;
+
+    font-family: "VWText-Regular";
+    font-size: $input_span_font_size;
+
+    @include transitions(opacity, visibility, max-height, padding-top, padding-bottom);
+    transition-duration: $trans_time;
+}
+
+// field error
+%field__span--error {
+    opacity: 1;
+    visibility: visible;
+
+    max-height: $input_span_height;
+    padding-top: $input_span_padding;
+}
+
+// -------------------------------------
+//   Form - Label
+// -------------------------------------
+$label_margin: 0.625em;
+$label_font_size: 1rem;
+$label_line_height: 1.5625rem;
+
+.label {
+    @extend %reset;
+
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    box-sizing: border-box;
+
+    width: auto;
+    margin: 0 auto;
+    padding: 0 auto;
+
+    font-family: "VWText-Regular";
+    line-height: $label_line_height;
+    font-size: $label_font_size;
+    color: $color_grey_night;
+
+    + input, + select,
+    + .input, + .select {
+        margin-top: $label_margin;
+    }
+}
+
+// -------------------------------------
+//   Form - Fieldset & Column
+// -------------------------------------
+$fieldset_margin: 1.875rem;
+
+// fieldset
+.fieldset {
+    @extend %reset;
+
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 auto;
+    text-align: left;
+
+    + fieldset, + .fieldset {
+        margin-top: $fieldset_margin;
+    }
+
+    > .button {
+        margin-left: auto;
+        margin-right: auto;
+
+        &:first-child {
+            margin-top: ($fieldset_margin / 1.125);
+        }
+    }
+}
+
+// fieldset - row
+// (note: this is not required)
+.fieldset__row { /* empty block */ }
+
+// fieldset - col
+.fieldset__col {
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    box-sizing: border-box;
+
+    width: (100% / 3);
+    text-align: left;
+
+    ~ span {
+        @extend %field__span;
+        padding-left: ($checkbox_width + $input_padding);
+    }
+
+    // modifier - center
+    &--center {
+        text-align: center;
+        ~ span { padding-left: 0; text-align: center; }
+    }
+
+    // modifier - disabled
+    // (note: this is not required)
+    &--disabled { /* empty block */ }
+
+    // modifier - error
+    &--error:not(&--disabled) ~ span {
+        @extend %field__span--error;
+    }
+}
+
+// -------------------------------------
+//   Form - Row & Column
+// -------------------------------------
+// form - col
+.form__col {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+}
+
+// form - row
+.form__row {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+
+    .form__col {
+        display: block;
+        width: (100% / 1);
+        margin-top: $fieldset_margin;
+        &:nth-child(1) { margin-top: 0; }
+    }
+
+    + .form__row {
+        margin-top: ($fieldset_margin * 1.5);
+    }
+}
+
+// modifier - x1
+// (note: this is not required)
+.form__row--x1 { /* empty block */ }
+
+// modifier - x2
+.form__row--x2 {
+    .form__col {
+        display: inline-block;
+        vertical-align: top;
+        width: (100% / 2);
+
+        margin-top: $fieldset_margin;
+        &:nth-child(1) { margin-top: 0; }
+        &:nth-child(2) { margin-top: 0; }
+
+        &[align="center"] { width: (100% / 1); }
+        &[align="right"]  { @include section--padding-left(1 / 2);  }
+        &[align="left"]   { @include section--padding-right(1 / 2); }
+
+        @include mobile {
+            display: block;
+            width: (100% / 1);
+
+            padding-right: 0 !important;
+            padding-left:  0 !important;
+            &:nth-child(1) { margin-top: 0; }
+            &:nth-child(2) { margin-top: $fieldset_margin; }
+        }
+    }
+}
+
+// -------------------------------------
+//   Form - Input
+// -------------------------------------
+.input {
+    @extend %field;
+
+  > i {
+        @extend %field__icon;
+
+        &[class*="clear"], &[class*="tick"] {
+            @extend %field__icon--input;
+            &:hover { cursor: default; }
+        }
+
+        &[class*="tick"] {
+            z-index: $zi_overlay;
+            pointer-events: none;
+
+            color: $color_green_success;
+            font-size: $input_icon_size;
+        }
+
+        &[class*="clear"] {
+            z-index: $zi_overlay + 1;
+        }
+   }
+
+    > input[type="tel"], > input[type="text"],
+    > input[type="email"], > input[type="number"],
+    > input[type="password"], > textarea {
+        @extend %field__elem;
+        resize: none;
+
+        line-height: ($input_height  / 1.8);
+        padding-top: ($input_padding / 1.5);
+        padding-bottom: ($input_padding / 1.5);
+
+        &:focus {
+            ~ i {
+                opacity: 1;
+
+                &[class*="clear"] {
+                    opacity: 1;
+                    &:hover { cursor: pointer; }
+                }
+
+                &[class*="tick"]  {
+                    opacity: 0;
+                    &:hover { cursor: default; }
+                }
+
+                &:not([class*="clear"]) {
+                    color: $color_blue_volkswagen;
+                }
+            }
+
+            &.ng-empty.ng-pristine {
+                ~ i { &[class*="clear"] { opacity: 0; }}
+            }
+        }
+
+        &.ng-valid.ng-dirty:not([disabled]) {
+            ~ i { &[class*="tick"] { opacity: 1; }}
+
+            &:focus {
+                ~ i { &[class*="tick"] { opacity: 0; }}
+            }
+        }
+
+        &.ng-invalid.ng-dirty:not([disabled]) {
+            ~ i {
+                &:not([class*="clear"]),
+                &[class*="clear"]:hover {
+                    color: $color_red_warning;
+                }
+            }
+        }
+    }
+
+    > textarea { height: auto; }
+
+    &--icon > input[type="tel"], &--icon > input[type="text"],
+    &--icon > input[type="email"], &--icon > input[type="number"],
+    &--icon > input[type="password"], &--icon > textarea {
+         padding-left: ($input_padding * 2) + $input_icon_size;
+    }
+
+    ~ span { @extend %field__span; }
+
+    &--error:not(&--disabled) ~ span {
+        @extend %field__span--error;
+    }
+}
+
+// -------------------------------------
+//   Form - Checkbox
+// -------------------------------------
+.checkbox {
+    @extend %field;
+    @extend %field--checkbox;
+    @include tablet { margin-left: 1px; }
+
+
+    > input[type="checkbox"] {
+        @extend %field__elem--checkbox;
+
+        + i { @extend %field__icon--checkbox; }
+
+        &:checked + i {
+            color: white;
+            border-color: $color_blue_volkswagen;
+            background-color: $color_blue_volkswagen;
+        }
+
+        &.ng-invalid.ng-dirty:not([disabled]) + i {
+            color: transparent;
+            background-color: white;
+            border-color: $color_red_warning;
+        }
+
+        &[disabled] + i {
+            color: transparent;
+            border-color: $input_border-color;
+            background-color: $input_disabled_color;
+        }
+
+    }
+
+    + label {
+        cursor: pointer;
+        min-height: $checkbox_height;
+        padding-left: ($checkbox_width + $input_padding);
+    }
+
+    &--disabled + label {
+        pointer-events: none;
+    }
+
+    .fieldset__col & {
+        + label {
+            padding-right: 1rem;
+        }
+    }
+
+    .fieldset__col--center & {
+        @extend %transform-center-h;
+
+        + label {
+            padding-top: ($checkbox_height + $input_padding);
+            padding-left: ($checkbox_width / 2);
+        }
+    }
+
+    ~ span {
+        padding-left: ($checkbox_width + $input_padding);
+    }
+}
+
+// -------------------------------------
+//   Form - Select
+// -------------------------------------
+.select {
+    @extend %field;
+
+    > i {
+        @extend %field__icon;
+        @extend %field__icon--select;
+    }
+
+    > select {
+        @extend %field__elem;
+        padding-right: $input_padding;
+
+        > option {
+            @extend %reset;
+            padding: $input_padding;
+            color: $color_grey_night;
+            &[value=""] { color: $color_grey_warm; }
+        }
+
+        &.ng-invalid {
+            color: $color_grey_warm;
+        }
+
+        &.ng-invalid.ng-dirty:not([disabled]) {
+            ~ i {
+                color: $color_red_warning;
+                border-color: $color_red_warning;
+                border-left-color: transparent;
+            }
+        }
+
+        &[disabled] {
+            ~ i {
+                color: $color_grey_soft;
+                background-color: $input_disabled_color;
+            }
+        }
+    }
+
+    ~ span { @extend %field__span; }
+
+    &--error:not(&--disabled) ~ span {
+        @extend %field__span--error;
+    }
+}
