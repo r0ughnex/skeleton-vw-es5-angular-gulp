@@ -1,0 +1,91 @@
+<!-- sample form -->
+<div class="sample-form">
+
+    <!-- form -->
+    <form class="form" name="$ctrl.form">
+
+
+
+        <!-- form row (one column) -->
+        <div class="form__row form__row--x1">
+            <!-- form col -->
+            <div class="form__col" align="center">
+
+                <!-- fieldset -->
+                <!-- (name) -->
+                <fieldset class="fieldset" ng-include="::($ctrl.CONFIG.path.templates + '/sample-form/_fieldset-name.template.html')">
+                </fieldset><!-- fieldset end -->
+
+            </div><!-- form col end -->
+        </div><!-- form row end -->
+
+
+
+        <!-- form row (one column) -->
+        <div class="form__row form__row--x1">
+            <!-- form col -->
+            <div class="form__col" align="center">
+
+                <!-- fieldset -->
+                <!-- (email) -->
+                <fieldset class="fieldset" ng-include="::($ctrl.CONFIG.path.templates + '/sample-form/_fieldset-email.template.html')">
+                </fieldset><!-- fieldset end -->
+
+            </div><!-- form col end -->
+        </div><!-- form row end -->
+
+
+
+        <!-- form row (two columns) -->
+        <div class="form__row form__row--x2">
+            <!-- form col -->
+            <div class="form__col" align="left">
+
+                <!-- fieldset -->
+                <!-- (phone) -->
+                <fieldset class="fieldset" ng-include="::($ctrl.CONFIG.path.templates + '/sample-form/_fieldset-phone.template.html')">
+                </fieldset><!-- fieldset end -->
+
+            </div><!-- form col end --><!--
+
+         --><!-- form col --><!--
+         --><div class="form__col" align="right">
+
+                <!-- fieldset -->
+                <!-- (postcode) -->
+                <fieldset class="fieldset" ng-include="::($ctrl.CONFIG.path.templates + '/sample-form/_fieldset-postcode.template.html')">
+                </fieldset><!-- fieldset end -->
+
+            </div><!-- form col end -->
+        </div><!-- form row end -->
+
+
+
+        <!-- form row (two columns) -->
+        <div class="form__row form__row--x2">
+            <!-- form col -->
+            <div class="form__col" align="left">
+
+                <!-- fieldset -->
+                <!-- (country) -->
+                <fieldset class="fieldset" ng-include="::($ctrl.CONFIG.path.templates + '/sample-form/_fieldset-country.template.html')">
+                </fieldset><!-- fieldset end -->
+
+            </div><!-- form col end --><!--
+
+         --><!-- form col --><!--
+         --><div class="form__col" align="right">
+
+                <!-- fieldset -->
+                <!-- (state) -->
+                <fieldset class="fieldset" ng-include="::($ctrl.CONFIG.path.templates + '/sample-form/_fieldset-state.template.html')">
+                </fieldset><!-- fieldset end -->
+
+            </div><!-- form col end -->
+        </div><!-- form row end -->
+
+
+
+    </form><!-- form end -->
+
+</div><!-- sample form end -->

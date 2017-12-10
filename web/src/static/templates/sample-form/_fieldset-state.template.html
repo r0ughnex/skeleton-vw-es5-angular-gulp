@@ -1,0 +1,32 @@
+<!-- fieldset -->
+<!-- (state) --><!--
+<fieldset class="fieldset">-->
+
+    <!-- label -->
+    <label class="label"> State * </label>
+
+    <!-- select -->
+    <a class="select" ng-class="{'select--disabled': ($ctrl.form.postcode.$invalid || $ctrl.form.country.$invalid), 'select--error': ($ctrl.form.state.$invalid && $ctrl.form.state.$dirty)}">
+
+        <!-- select - dropdown -->
+        <select name="state" ng-model="$ctrl.data.state" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" ng-init="$ctrl.data.state = '';" ng-disabled="($ctrl.form.postcode.$invalid || $ctrl.form.country.$invalid)" ng-required="true">
+
+            <!-- select - dropdown - options -->
+            <option value="" hidden disabled selected> Please select your state </option>
+            <option value="NSW"> NSW </option>
+            <option value="QLD"> QLD </option>
+            <option value="VIC"> VIC </option>
+            <option value="TAS"> TAS </option>
+            <option value="WA">  WA  </option>
+            <option value="SA">  SA  </option>
+
+        </select><!-- select - dropdown end -->
+
+        <!-- select - arrow -->
+        <i class="icon icon-arrow-down"></i>
+    </a>
+
+    <!-- error -->
+    <span> Please select a valid state </span><!--
+
+</fieldset>--><!-- fieldset end -->

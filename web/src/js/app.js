@@ -218,6 +218,8 @@ require("./directives/dominant-color.directive");
 // components
 require("./components/loader.component");
 require("./components/footer.component");
+
+require("./components/sample-form.component");
 require("./components/teaser-image-small.component");
 
 // complete

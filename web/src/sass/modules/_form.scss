@@ -97,11 +97,18 @@ $input_disabled_color: darken($color_grey_sky, 5%);
     color: $color_grey_night;
 
     &::-ms-clear { display: none; }
-    ::placeholder { color: $color_grey_warm; }
+    &::placeholder { color: $color_grey_warm; }
+    &::-ms-input-placeholder { color: $color_grey_warm; }
+    &::-webkit-input-placeholder { color: $color_grey_warm; }
+
     &[type=number] { appearance: textfield; }
     &[type=number]::-webkit-inner-spin-button,
     &[type=number]::-webkit-outer-spin-button {
         appearance: none; margin: 0;
+    }
+
+    &:focus {
+        border-color: $color_blue_volkswagen;
     }
 
     &:focus::-ms-value {
@@ -213,10 +220,10 @@ $input_disabled_color: darken($color_grey_sky, 5%);
     border-left-width: 0;
     border-style: solid;
 
+    background-color: white;
     line-height: $input_height;
     font-size: $input_icon_size_sm;
     color: $color_blue_volkswagen;
-    background-color: white;
 }
 
 // field span
@@ -373,7 +380,7 @@ $fieldset_margin: 1.875rem;
     }
 
     + .form__row {
-        margin-top: ($fieldset_margin * 1.5);
+        margin-top: $fieldset_margin;
     }
 }
 
@@ -386,24 +393,30 @@ $fieldset_margin: 1.875rem;
     .form__col {
         display: inline-block;
         vertical-align: top;
-        width: (100% / 2);
+        width: (100% / 1);
 
         margin-top: $fieldset_margin;
         &:nth-child(1) { margin-top: 0; }
-        &:nth-child(2) { margin-top: 0; }
+        &:nth-child(2) { &[align]:not([align="center"]) {
+            margin-top: 0;
+        }}
 
         &[align="center"] { width: (100% / 1); }
-        &[align="right"]  { @include section--padding-left(1 / 2);  }
-        &[align="left"]   { @include section--padding-right(1 / 2); }
+        &[align="right"]  { width: (100% / 2); @include section--padding-left(1 / 2);  }
+        &[align="left"]   { width: (100% / 2); @include section--padding-right(1 / 2); }
 
         @include mobile {
             display: block;
             width: (100% / 1);
 
-            padding-right: 0 !important;
-            padding-left:  0 !important;
             &:nth-child(1) { margin-top: 0; }
-            &:nth-child(2) { margin-top: $fieldset_margin; }
+            &:nth-child(2) { &[align]:not([align="center"]) {
+                margin-top: $fieldset_margin;
+            }}
+
+            &[align="center"] { width: (100% / 1); }
+            &[align="right"]  { width: (100% / 1); padding-left:  0 !important; }
+            &[align="left"]   { width: (100% / 1); padding-right: 0 !important; }
         }
     }
 }
@@ -580,6 +593,7 @@ $fieldset_margin: 1.875rem;
     > select {
         @extend %field__elem;
         padding-right: $input_padding;
+        line-height: ($input_height  / 1.8);
 
         > option {
             @extend %reset;
@@ -597,6 +611,12 @@ $fieldset_margin: 1.875rem;
                 color: $color_red_warning;
                 border-color: $color_red_warning;
                 border-left-color: transparent;
+            }
+        }
+
+        &:focus {
+            ~ i {
+                border-color: $color_blue_volkswagen;
             }
         }
 

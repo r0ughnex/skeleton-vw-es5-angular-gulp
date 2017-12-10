@@ -1,0 +1,20 @@
+<!-- fieldset -->
+<!-- (email) --><!--
+<fieldset class="fieldset">-->
+
+    <!-- label -->
+    <label class="label"> Email address * </label>
+
+    <!-- input -->
+    <a class="input" ng-class="{'input--error': ($ctrl.form.email.$invalid && $ctrl.form.email.$dirty)}">
+        <input name="email" type="email" ng-model="$ctrl.data.email" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" placeholder="Enter your email" autocomplete="off" spellcheck="false" ng-minlength="5" maxlength="50" ng-maxlength="50" ng-pattern="::$ctrl.pattern.email" ng-required="true"/>
+
+        <!-- input - clear / tick -->
+        <i class="icon icon-clear needsclick" ng-click="$ctrl.form.email.$setPristine(); $ctrl.data.email = '';"></i>
+        <i class="icon icon-tick"></i>
+    </a>
+
+    <!-- error -->
+    <span> Please enter a valid email </span><!--
+
+</fieldset>--><!-- fieldset end -->

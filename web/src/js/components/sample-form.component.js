@@ -8,24 +8,24 @@
 **/
 
 // -------------------------------------
-//   Component - Teaser Image Small
+//   Component - Sample Form
 // -------------------------------------
 /**
-    * @name teaser-image-small.component
-    * @desc The teaser image small component for the app.
+    * @name sample-form.component
+    * @desc The sample form component for the app.
 **/
 (function() {
-    console.log("components/teaser-image-small.component.js loaded.");
+    console.log("components/sample-form.component.js loaded.");
 
     /**
-        * @name TeaserImageSmallController
-        * @desc Class for the teaser image small controller.
+        * @name SampleFormController
+        * @desc Class for the sample form controller.
         * @param {Service} $scope - Service in module
         * @param {Service} $element - Service in module
         * @param {Constant} CONFIG - The app config constant
         * @return {Object} - The instance of the controller class
     **/
-    function TeaserImageSmallController($scope, $element, CONFIG) {
+    function SampleFormController($scope, $element, CONFIG) {
         "ngInject"; // tag this function for dependancy injection
 
         // ---------------------------------------------
@@ -38,6 +38,17 @@
         // ---------------------------------------------
         var ctrl    = this;   // to capture the context of this
         ctrl.CONFIG = CONFIG; // reference to the config constant
+
+        ctrl.pattern = { // reference to the patterns used on the input fields for validation
+            email: /^([a-zA-Z0-9_\-\.]+)@([a-z0-9-]{2,6})+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/, // email - a slightly more stricter version of email
+            name : /^(?=^[^\s'-]*[\s'-]?[^\s'-]*$)[a-zA-Z\s'-]{2,}$/, // name - only alphabets with one space, apostrophe (or) dash
+            phone: /^\+?\d{10,13}$/, // phone - only australia mobiles and phones
+            postcode: /^\d+$/ // post - only numbers without spaces
+        };
+
+        ctrl.data    = { }; // reference to the data bound to the form
+        ctrl.form    = { }; // reference to the form containing the bound data
+        ctrl.options = { }; // reference to the available options for the form data
 
         // ---------------------------------------------
         //   Private methods
@@ -60,13 +71,7 @@
         // @name _parseAttributes
         // @desc function to parse the bound attributes and fill gaps with default values
         // @params {Object} ctrl - the controller that the attributes have been bound to
-        function _parseAttributes(ctrl) {
-            // parse the component type
-            switch(ctrl.type) {
-                case "alt": { ctrl.type = "alt";     break; } // type - alt
-                default:    { ctrl.type = "default"; break; } // type - default
-            }
-        }
+        function _parseAttributes(ctrl) { /* empty block */ }
 
         // @name _parseData
         // @desc function to parse the bound data and fill gaps with default values
@@ -76,22 +81,6 @@
             // make a local copy of the data
             // (note: only if copy is required)
             var cdata = angular.copy(data);
-
-            // check if data attributes exist else
-            // create a empty data attribute object
-            if(!cdata.attr) {  cdata.attr = {}; }
-
-            // parse the data attributes
-            switch(cdata.attr.align) {
-                case "top":    { cdata.attr.align = "top";    break; } // top aligned (v)
-                case "center": { cdata.attr.align = "center"; break; } // center aligned (v)
-
-                default: {
-                    if(ctrl.type == "alt") { cdata.attr.align = "top"; } // type alt - top aligned (v)
-                    else { cdata.attr.align = "center"; } // type default - default center aligned (v)
-                    break;
-                }
-            }
 
             // return the parsed data
             return cdata;
@@ -111,7 +100,11 @@
 
         // deregister all registered listeners, clear set timers
         // and set intervals when the current scope is destroyed
-        $scope.$on("$destroy", function() { /* empty block */ });
+        $scope.$on("$destroy", function() {
+
+            // reset all references to objects and arrays
+            ctrl.data = ctrl.form = ctrl.options = { };
+        });
 
         // ---------------------------------------------
         //   Instance block
@@ -120,26 +113,26 @@
     }
 
     /**
-        * @name TeaserImageSmallTemplate
-        * @desc Class for the teaser image small template.
+        * @name SampleFormTemplate
+        * @desc Class for the sample form template.
         * @param {Constant} CONFIG - The app config constant
         * @return {Object} - The instance of the template class
     **/
-    function TeaserImageSmallTemplate(CONFIG) {
+    function SampleFormTemplate(CONFIG) {
         "ngInject"; // tag this function for dependancy injection
-        return CONFIG.path.templates + "teaser-image-small.template.html";
+        return CONFIG.path.templates + "sample-form.template.html";
     }
 
     /**
-        * @name teaserImageSmall
-        * @desc Function for the teaser image small component.
+        * @name sampleForm
+        * @desc Function for the sample form component.
         * @return {Object} - The instance of the component function
     **/
-    var teaserImageSmall = function() {
+    var sampleForm = function() {
         return {
-            controller: TeaserImageSmallController,
-            templateUrl: TeaserImageSmallTemplate,
-            bindings: { data: "<", type: "@" }
+            controller: SampleFormController,
+            templateUrl: SampleFormTemplate,
+            bindings: { data: "<", options: "@" }
         };
     }();
 
@@ -148,5 +141,5 @@
     // ---------------------------------------------
     // get the app module
     angular.module("volkswagen.app")
-        .component("teaserImageSmall", teaserImageSmall); // set component
+        .component("sampleForm", sampleForm); // set component
 })();

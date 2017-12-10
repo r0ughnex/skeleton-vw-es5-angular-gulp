@@ -1,0 +1,27 @@
+<!-- fieldset -->
+<!-- (country) --><!--
+<fieldset class="fieldset">-->
+
+    <!-- label -->
+    <label class="label"> Country * </label>
+
+    <!-- select -->
+    <a class="select" ng-class="{'select--disabled': true, 'select--error': ($ctrl.form.country.$invalid && $ctrl.form.country.$dirty)}">
+
+        <!-- select - dropdown -->
+        <select name="country" ng-model="$ctrl.data.country" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" ng-init="$ctrl.data.country = 'Australia';" ng-disabled="true" ng-required="true">
+
+            <!-- select - dropdown -->
+            <option value="" hidden disabled selected> Please select your country </option>
+            <option value="Australia"> Australia </option>
+
+        </select><!-- select - dropdown end -->
+
+        <!-- select - arrow -->
+        <i class="icon icon-arrow-down"></i>
+    </a>
+
+    <!-- error -->
+    <span> Please select a valid country </span><!--
+
+</fieldset>--><!-- fieldset end -->

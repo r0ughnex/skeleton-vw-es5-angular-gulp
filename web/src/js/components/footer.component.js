@@ -100,19 +100,19 @@ require("../base/debounce");
         }
 
         // @name _parseData
-        // @desc function to parse the bound data and
-        //       replace any missing information with default values
-        // @params {Object} data - the bound data that needs to parsed
-        // @return {Object} - the copy of the bound data after being parsed
+        // @desc function to parse the bound data and fill gaps with default values
+        // @params {Object} data - the bound data that needs to parsed and checked
+        // @return {Object} cdata - the copy of the bound data after being parsed
         function _parseData(data) {
             // make a local copy of the data
-            var data = angular.copy(data);
+            // (note: only if copy is required)
+            var cdata = angular.copy(data);
 
             var date = new Date(); // create a new date object
             ctrl.year = date.getFullYear(); // set the current year
 
-            // split the data copy into sentances
-            var sentances = data.copy ? data.copy.split(". ") : [];
+            // split the copy in data into sentances (left, right)
+            var sentances = cdata.copy ? cdata.copy.split(". ") : [];
 
             // check if the sentances can  be split into two columns
             if(sentances.length > 1) {
@@ -137,11 +137,12 @@ require("../base/debounce");
                 ctrl.disclaimer = disclaimer;
             }
 
-            // if the sentances cannot be split into 2 columns
-            else { ctrl.disclaimer = data.copy; }
+            // if the sentances cannot be split
+            // into 2 columns, then combine them
+            else { ctrl.disclaimer = cdata.copy; }
 
             // return the parsed data
-            return data;
+            return cdata;
         }
 
         // @name _onScrollListener

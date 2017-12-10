@@ -1,0 +1,20 @@
+<!-- fieldset -->
+<!-- (name) --><!--
+<fieldset class="fieldset">-->
+
+    <!-- label -->
+    <label class="label"> Full name * </label>
+
+    <!-- input -->
+    <a class="input" ng-class="{'input--error': ($ctrl.form.name.$invalid && $ctrl.form.name.$dirty)}">
+        <input name="name" type="text" ng-model="$ctrl.data.name" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" placeholder="Enter your full name" autocomplete="off" spellcheck="false" ng-minlength="2" maxlength="20" ng-maxlength="20" ng-pattern="::$ctrl.pattern.name" ng-required="true"/>
+
+        <!-- input - clear / tick -->
+        <i class="icon icon-clear needsclick" ng-click="$ctrl.form.name.$setPristine(); $ctrl.data.name = '';"></i>
+        <i class="icon icon-tick"></i>
+    </a>
+
+    <!-- error -->
+    <span> Please enter a valid full name </span><!--
+
+</fieldset>--><!-- fieldset end -->

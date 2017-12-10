@@ -72,9 +72,11 @@ require("../base/promise");
         // @desc function to parse the given cta data and fill gaps with default values
         // @param {Object} cta - the data to be parsed and checked for any missing information
         // @return {Object} ccta - a copy of the parsed and modifed data once parsing is complete
-        function _parseCTA(cta) { try {
+        function _parseCTA(cta) { try { /*
             // make a local copy of the data
-            var ccta = angular.copy(cta);
+            // (note: only if copy is required)
+            var ccta = angular.copy(cta); */
+            var ccta = cta;
 
             // check if the given cta contains
             // valid url, title and target set
@@ -119,9 +121,11 @@ require("../base/promise");
         // @desc function to parse the given image data and fill gaps with default values
         // @param {Object} images - the data to be parsed and checked for any missing information
         // @return {Object} cimages - a copy of the parsed and modifed data once parsing is complete
-        function _parseImages(images) { try {
+        function _parseImages(images) { try { /*
             // make a local copy of the data
-            var cimages = angular.copy(images);
+            // (note: only if copy is required)
+            var cimages = angular.copy(images); */
+            var cimages = images;
 
             // loop through each image (desktop and mobile)
             Object.keys(cimages).forEach(function(key, index) {
@@ -167,9 +171,11 @@ require("../base/promise");
         // @desc function to parse the given response data and fill gaps with default values
         // @param {Object} data - the data to be parsed and checked for any missing information
         // @return {Object} cdata - a copy of the parsed and modifed data once parsing is complete
-        function _parseData(data) { try {
+        function _parseData(data) { try { /*
             // make a local copy of the data
-            var cdata = angular.copy(data);
+            // (note: only if copy is required)
+            var cdata = angular.copy(data); */
+            var cdata = data;
 
             // loop through each object in the response data
             Object.keys(cdata).forEach(function(key, index) {
