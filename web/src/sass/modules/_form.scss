@@ -617,6 +617,7 @@ $fieldset_margin: 1.875rem;
         &:focus {
             ~ i {
                 border-color: $color_blue_volkswagen;
+                border-left-color: transparent;
             }
         }
 
