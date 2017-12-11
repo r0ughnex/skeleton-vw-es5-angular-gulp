@@ -6,19 +6,19 @@
     <label class="label"> Country * </label>
 
     <!-- select -->
-    <a class="select" ng-class="{'select--disabled': ($ctrl.form.postcode.$invalid || true), 'select--error': ($ctrl.form.country.$invalid && $ctrl.form.country.$dirty)}">
+    <a class="select" ng-class="{'select--error': ($ctrl.form.country.$invalid && $ctrl.form.country.$dirty), 'select--disabled': ($ctrl.form.postcode.$invalid || true)}">
 
-        <!-- select - dropdown -->
+        <!-- select - element -->
         <select name="country" ng-model="$ctrl.data.country" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" ng-options="option.value as option.name for option in ::$ctrl.options.country" ng-init="$ctrl.data.country = $ctrl.options.country[0].value" ng-disabled="($ctrl.form.postcode.$invalid || true)" ng-required="true">
 
-            <!-- select - dropdown -->
+            <!-- select - element - options -->
             <option value="" hidden disabled selected> Please select your country </option>
 
-        </select><!-- select - dropdown end -->
+        </select><!-- select - element end -->
 
         <!-- select - arrow -->
         <i class="icon icon-arrow-down"></i>
-    </a>
+    </a><!-- select end -->
 
     <!-- error -->
     <span> Please select a valid country </span><!--

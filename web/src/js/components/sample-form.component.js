@@ -106,18 +106,24 @@
         }
 
         // @name _getState
-        // @desc To-DO: TBC
-        // @param To-DO: TBC
-        // @return To-DO: TBC
+        // @desc function to get the state for the given postcode
+        // @param {Number} postcode - the given postcode to get the state for
+        // @return {String} state - the state that corresponds to the given postcode
         function _getState(postcode) {
+            // convert postcode to integer
             postcode = parseInt(postcode);
 
+            // only proceed if the given
+            // postcode is a valid integer
             if(
                typeof postcode !== "number"
                || isNaN(postcode)) {
                 return null;
             }
 
+            // match given postcode to
+            // the corresponding state
+            // postcode checks for ACT
             else if(
                (postcode >=  200 && postcode <=  299) ||
                (postcode >= 2600 && postcode <= 2618) ||
@@ -125,6 +131,7 @@
                 return "ACT";
             }
 
+            // postcode checks for NSW
             else if(
                 (postcode >= 1000 && postcode <= 1999) ||
                 (postcode >= 2000 && postcode <= 2599) ||
@@ -133,42 +140,49 @@
                 return "NSW";
             }
 
+            // postcode checks for NT
             else if(
                (postcode >=  800 && postcode <=  899) ||
                (postcode >=  900 && postcode <=  999)) {
                 return "NT";
             }
 
+            // postcode checks for QLD
             else if(
                (postcode >= 4000 && postcode <= 4999) ||
                (postcode >= 9000 && postcode <= 9999)) {
                 return "QLD";
             }
 
+            // postcode checks for SA
             else if(
                (postcode >= 5000 && postcode <= 5799) ||
                (postcode >= 5800 && postcode <= 5999)) {
                 return "SA";
             }
 
+            // postcode checks for TAS
             else if(
                (postcode >= 7000 && postcode <= 7799) ||
                (postcode >= 7800 && postcode <= 7999)) {
                 return "TAS";
             }
 
+            // postcode checks for VIC
             else if(
                (postcode >= 3000 && postcode <= 3999) ||
                (postcode >= 8000 && postcode <= 8999)) {
                 return "VIC";
             }
 
+            // postcode checks for WA
             else if(
                (postcode >= 6000 && postcode <= 6797) ||
                (postcode >= 6800 && postcode <= 6999)) {
                 return "WA";
             }
 
+            // if no match was found
             else { return null; }
         }
 
@@ -176,17 +190,21 @@
         //   Public methods
         // ---------------------------------------------
         // @name onPostcodeChange
-        // @desc To-DO: TBC
-        // @param To-DO: TBC
-        // @param To-DO: TBC
-        // @return To-DO: TBC
+        // @desc function triggered when the postcode is changed
+        // @param {Number} postcode - the changed value of the postcode
+        // @param {Boolean} isValid - flag indicating if the postcode is valid
+        // @return {Boolean} isSuccess - flag indicating on change success or failure
         function onPostcodeChange(postcode, isValid) {
+            // check if the given
+            // postcode is valid
             if(isValid) {
+                // set state if the postcode is valid
                 ctrl.data.state = _getState(postcode);
                 return true;
             }
 
             else {
+                // set null if the postcode is invalid
                 ctrl.data.state = _getState(null);
                 return false;
             }
@@ -210,7 +228,7 @@
         // ---------------------------------------------
         //   Instance block
         // ---------------------------------------------
-        ctrl.onPostcodeChange = onPostcodeChange; // To-DO: TBC
+        ctrl.onPostcodeChange = onPostcodeChange; // function triggered when the postcode is changed
     }
 
     /**

@@ -7,12 +7,15 @@
 
     <!-- input -->
     <a class="input" ng-class="{'input--error': ($ctrl.form.phone.$invalid && $ctrl.form.phone.$dirty)}">
+
+        <!-- input - element -->
         <input name="phone" type="tel" ng-model="$ctrl.data.phone" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" placeholder="Enter your phone number" autocomplete="off" spellcheck="false" ng-minlength="8" maxlength="20" ng-maxlength="20" ng-pattern="::$ctrl.pattern.phone" ng-required="true"/>
 
         <!-- input - clear / tick -->
-        <i class="icon__skoda icon__skoda-clear needsclick" ng-click="$ctrl.form.phone.$setPristine(); $ctrl.data.phone = ''"></i>
-        <i class="icon__skoda icon__skoda-tick"></i>
-    </a>
+        <i class="icon icon-clear needsclick" ng-click="$ctrl.form.phone.$setPristine(); $ctrl.data.phone = ''"></i>
+        <i class="icon icon-tick"></i>
+
+    </a><!-- input end -->
 
     <!-- error -->
     <span> Please enter a valid phone number </span><!--

@@ -1,0 +1,80 @@
+<!-- fieldset -->
+<!-- (type) --><!--
+<fieldset class="fieldset">-->
+
+    <!-- fieldset - row (three columns) -->
+    <!-- (note: similar markup to be used -->
+    <!-- for rows with a two column layout -->
+    <div class="fieldset__row fieldset__row--x3">
+        <!-- fieldset - col -->
+        <div class="fieldset__col" align="left" ng-class="{'fieldset__col--error': (($ctrl.form.type_pv.$invalid || $ctrl.form.type_cv.$invalid || $ctrl.form.type_none.$invalid) && ($ctrl.form.type_pv.$dirty || $ctrl.form.type_cv.$dirty || $ctrl.form.type_none.$dirty)), 'fieldset__col--disabled': ($ctrl.data.type.none)}">
+
+            <!-- input -->
+            <div class="input checkbox" ng-class="{'input--error': ($ctrl.form.type_pv.$invalid && $ctrl.form.type_pv.$dirty), 'input-disabled': ($ctrl.data.type.none)}">
+
+                <!-- input - element -->
+                <input id="type_pv" name="type_pv" type="checkbox" ng-model="$ctrl.data.type.pv" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" ng-true-value="::true" ng-false-value="::false" ng-required="(!$ctrl.data.type.pv && !$ctrl.data.type.cv && !$ctrl.data.type.none)" ng-disabled="($ctrl.data.type.none)"/>
+
+                <!-- input - tick -->
+                <i class="icon icon-tick"></i>
+
+            </div><!-- input end -->
+
+            <!-- label -->
+            <label class="label" for="type_pv">
+                I own a Volkswagen <br> personal vehicle
+            </label>
+
+        </div><!-- fieldset - col end --><!--
+
+     --><!-- fieldset - col --><!--
+     --><div class="fieldset__col" align="center" ng-class="{'fieldset__col--error': (($ctrl.form.type_pv.$invalid || $ctrl.form.type_cv.$invalid || $ctrl.form.type_none.$invalid) && ($ctrl.form.type_pv.$dirty || $ctrl.form.type_cv.$dirty || $ctrl.form.type_none.$dirty)), 'fieldset__col--disabled': ($ctrl.data.type.none)}">
+
+            <!-- input -->
+            <div class="input checkbox" ng-class="{'input--error': ($ctrl.form.type_cv.$invalid && $ctrl.form.type_cv.$dirty), 'input-disabled': ($ctrl.data.type.none)}">
+
+                <!-- input - element -->
+                <input id="type_cv" name="type_cv" type="checkbox" ng-model="$ctrl.data.type.cv" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" ng-true-value="::true" ng-false-value="::false" ng-required="(!$ctrl.data.type.pv && !$ctrl.data.type.cv && !$ctrl.data.type.none)" ng-disabled="($ctrl.data.type.none)"/>
+
+                <!-- input - tick -->
+                <i class="icon icon-tick"></i>
+
+            </div><!-- input end -->
+
+            <!-- label -->
+            <label class="label" for="type_cv">
+                I own a Volkswagen <br> commercial vehicle
+            </label>
+
+        </div><!-- fieldset - col end --><!--
+
+     --><!-- fieldset - col --><!--
+     --><div class="fieldset__col" align="right" ng-class="{'fieldset__col--error': (($ctrl.form.type_pv.$invalid || $ctrl.form.type_cv.$invalid || $ctrl.form.type_none.$invalid) && ($ctrl.form.type_pv.$dirty || $ctrl.form.type_cv.$dirty || $ctrl.form.type_none.$dirty)), 'fieldset__col--disabled': ($ctrl.data.type.pv || $ctrl.data.type.cv)}">
+
+            <!-- input -->
+            <div class="input checkbox" ng-class="{'input--error': ($ctrl.form.type_none.$invalid && $ctrl.form.type_none.$dirty), 'input--disabled': ($ctrl.data.type.pv || $ctrl.data.type.cv)}">
+
+                <!-- input - element -->
+                <input id="type_none" name="type_none" type="checkbox" ng-model="$ctrl.data.type.none" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" ng-true-value="::true" ng-false-value="::false" ng-required="(!$ctrl.data.type.pv && !$ctrl.data.type.cv && !$ctrl.data.type.none)" ng-disabled="($ctrl.data.type.pv || $ctrl.data.type.cv)"/>
+
+                <!-- input - tick -->
+                <i class="icon icon-tick"></i>
+
+            </div><!-- input end -->
+
+            <!-- label -->
+            <label class="label" for="type_none">
+                I do not own any <br> Volkswagen vehicles
+            </label>
+
+        </div><!-- fieldset - col end -->
+
+        <!-- error -->
+        <!-- note: the set data-lines attribute indicates -->
+        <!-- that the error might span over x no.of lines -->
+        <!-- (only available to be set on mobile devices) -->
+        <span data-lines="2">
+            Please select at least one type of Volkswagen vehicle you own  </span>
+    </div><!-- fieldset - row end --><!--
+
+</fieldset>--><!-- fieldset end -->

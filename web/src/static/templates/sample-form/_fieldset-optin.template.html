@@ -1,0 +1,36 @@
+<!-- fieldset -->
+<!-- (optin) --><!--
+<fieldset class="fieldset">-->
+
+    <!-- fieldset - row (one column) -->
+    <!-- (note: x1 is not required) -->
+    <div class="fieldset__row fieldset__row--x1">
+        <!-- fieldset - col -->
+        <!-- (note: align is not required) -->
+        <div class="fieldset__col" align="center" ng-class="{'fieldset__col--error': ($ctrl.form.optin.$invalid && $ctrl.form.optin.$dirty)}">
+
+            <!-- input -->
+            <div class="input checkbox" ng-class="{'input--error': ($ctrl.form.optin.$invalid && $ctrl.form.optin.$dirty)}">
+
+                <!-- input - element -->
+                <input id="optin" name="optin" type="checkbox" ng-model="$ctrl.data.optin" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" ng-true-value="::true" ng-false-value="::false" ng-required="true"/>
+
+                <!-- input - tick -->
+                <i class="icon icon-tick"></i>
+
+            </div><!-- input end -->
+
+            <!-- label -->
+            <label class="label" for="optin">
+                Deals, upgrade offers, innovations, sponsorships,
+                news&nbsp;-&nbsp;I'm happy for Volkswagen Australia
+                to update me with an occasional&nbsp;email.
+            </label>
+
+            <!-- error -->
+            <span> Please agree to receive occasional emails </span>
+
+        </div><!-- fieldset - col end -->
+    </div><!-- fieldset - row end --><!--
+
+</fieldset>--><!-- fieldset end -->

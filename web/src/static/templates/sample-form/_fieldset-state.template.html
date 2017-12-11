@@ -6,15 +6,15 @@
     <label class="label"> State * </label>
 
     <!-- select -->
-    <a class="select" ng-class="{'select--disabled': ($ctrl.form.postcode.$invalid || $ctrl.form.country.$invalid), 'select--error': ($ctrl.form.state.$invalid && $ctrl.form.state.$dirty)}">
+    <a class="select" ng-class="{'select--error': ($ctrl.form.state.$invalid && $ctrl.form.state.$dirty), 'select--disabled': ($ctrl.form.postcode.$invalid || $ctrl.form.country.$invalid)}">
 
-        <!-- select - dropdown -->
+        <!-- select - element -->
         <select name="state" ng-model="$ctrl.data.state" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" ng-options="option.value as option.name for option in ::$ctrl.options.state" ng-init="$ctrl.data.state = null" ng-disabled="($ctrl.form.postcode.$invalid || $ctrl.form.country.$invalid)" ng-required="true">
 
-            <!-- select - dropdown - options -->
+            <!-- select - element - options -->
             <option value="" hidden disabled selected> Please select your state </option>
 
-        </select><!-- select - dropdown end -->
+        </select><!-- select - element end -->
 
         <!-- select - arrow -->
         <i class="icon icon-arrow-down"></i>

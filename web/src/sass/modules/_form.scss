@@ -137,11 +137,12 @@ $input_disabled_color: darken($color_grey_sky, 5%);
     @extend %reset;
     @include transitions(color, border-color, background-color);
 
-    display: block;
-    visibility: hidden;
+    display: block; /*
+    visibility: hidden; */
     position: absolute;
     box-sizing: border-box;
 
+    opacity: 0;
     left: 0; top: 0;
     width: $checkbox_width;
     height: $checkbox_height;
@@ -267,6 +268,15 @@ $input_disabled_color: darken($color_grey_sky, 5%);
 
     max-height: $input_span_height;
     padding-top: $input_span_padding;
+
+    // note: the set data-lines attribute indicates
+    // that the error might span over x no.of lines
+    // (only available to be set on mobile devices)
+    @include mobile {
+        &[data-lines="2"] { max-height: ($input_span_height * 1); }
+        &[data-lines="2"] { max-height: ($input_span_height * 2); }
+        &[data-lines="3"] { max-height: ($input_span_height * 3); }
+    }
 }
 
 // -------------------------------------
@@ -293,7 +303,7 @@ $label_line_height: 1.5625rem;
     font-size: $label_font_size;
     color: $color_grey_night;
 
-    + input, + select,
+    +  input, +  select,
     + .input, + .select {
         margin-top: $label_margin;
     }
@@ -331,29 +341,21 @@ $fieldset_margin: 1.875rem;
     }
 }
 
-// fieldset - row
-// (note: this is not required)
-.fieldset__row { /* empty block */ }
-
 // fieldset - col
+// (note: used only for
+// checkboxes and radios)
 .fieldset__col {
     position: relative;
     vertical-align: top;
     display: inline-block;
     box-sizing: border-box;
 
-    width: (100% / 3);
+    width: (100% / 1);
     text-align: left;
 
     ~ span {
         @extend %field__span;
         padding-left: ($checkbox_width + $input_padding);
-    }
-
-    // modifier - center
-    &--center {
-        text-align: center;
-        ~ span { padding-left: 0; text-align: center; }
     }
 
     // modifier - disabled
@@ -366,10 +368,85 @@ $fieldset_margin: 1.875rem;
     }
 }
 
+// fieldset - row
+// (note: used only for
+// checkboxes and radios)
+.fieldset__row {
+    display: block;
+    position: relative;
+
+    width: 100%;
+    height: auto;
+    margin-top: ($label_margin * 1.20);
+    &--x1 { margin-top: ($label_margin * 1.20); } // modifier - x1
+    &--x2 { margin-top: ($label_margin * 1.65); } // modifier - x2
+    &--x3 { margin-top: ($label_margin * 1.65); } // modifier - x3
+
+    .fieldset__col {
+        margin-top: $fieldset_margin;
+        &:nth-child(1) { margin-top: 0; }
+    }
+
+    // modifier - x1 (one column)
+    // (note: this is not required)
+    &--x1 .fieldset__col { /* empty block */ }
+
+    // modifier - x2 (two columns)
+    // modifier - x3 (three columns)
+    &--x2 .fieldset__col,
+    &--x3 .fieldset__col {
+        display: inline-block;
+        vertical-align: middle;
+
+        @include mobile {
+            display: block;
+            margin-top: ($fieldset_margin / 2);
+            &:nth-child(1) { margin-top: 0; }
+        }
+
+        // label comes below
+        // but only on devices
+        // with bigger screens
+        @include mobile-up {
+            text-align: center;
+            ~ span { padding-left: 0; text-align: center; }
+        }
+    }
+
+    // modifier - x2 (two columns)
+    &--x2 .fieldset__col {
+        width: (100% / 2);
+        &:nth-child(2) { margin-top: 0; }
+
+        @include mobile {
+            width: (100% / 1);
+            &:nth-child(2) {
+                margin-top: ($fieldset_margin / 2);
+            }
+        }
+    }
+
+    // modifier - x3 (three columns)
+    &--x3 .fieldset__col {
+        width: (100% / 3);
+        &:nth-child(2),
+        &:nth-child(3) { margin-top: 0; }
+
+        @include mobile {
+            width: (100% / 1);
+            &:nth-child(2), &:nth-child(3) {
+                margin-top: ($fieldset_margin / 2);
+            }
+        }
+    }
+}
+
 // -------------------------------------
 //   Form - Row & Column
 // -------------------------------------
 // form - col
+// (note: used for
+// all elements types)
 .form__col {
     display: block;
     position: relative;
@@ -377,6 +454,8 @@ $fieldset_margin: 1.875rem;
 }
 
 // form - row
+// (note: used for
+// all elements types)
 .form__row {
     display: block;
     position: relative;
@@ -392,15 +471,13 @@ $fieldset_margin: 1.875rem;
     + .form__row {
         margin-top: $fieldset_margin;
     }
-}
 
-// modifier - x1
-// (note: this is not required)
-.form__row--x1 { /* empty block */ }
+    // modifier - x1 (one column)
+    // (note: this is not required)
+    &--x1 .form__col { /* empty block */ }
 
-// modifier - x2
-.form__row--x2 {
-    .form__col {
+    // modifier - x2 (two columns)
+    &--x2 .form__col {
         display: inline-block;
         vertical-align: top;
         width: (100% / 1);
@@ -533,11 +610,15 @@ $fieldset_margin: 1.875rem;
     @extend %field--checkbox;
     @include tablet { margin-left: 1px; }
 
-
     > input[type="checkbox"] {
         @extend %field__checkbox;
 
         + i { @extend %field__icon--checkbox; }
+
+        &:focus + i {
+            color: white;
+            border-color: $color_blue_volkswagen;
+        }
 
         &:checked + i {
             color: white;
@@ -545,6 +626,7 @@ $fieldset_margin: 1.875rem;
             background-color: $color_blue_volkswagen;
         }
 
+        .fieldset__col--error & + i,
         &.ng-invalid.ng-dirty:not([disabled]) + i {
             color: transparent;
             background-color: white;
@@ -569,18 +651,22 @@ $fieldset_margin: 1.875rem;
         pointer-events: none;
     }
 
-    .fieldset__col & {
-        + label {
-            padding-right: 1rem;
-        }
+    .fieldset__col & + label {
+        padding-right: 1rem;
     }
 
-    .fieldset__col--center & {
-        @extend %transform-center-h;
+    .fieldset__row--x2 &,
+    .fieldset__row--x3 & {
+        // label comes below
+        // but only on devices
+        // with bigger screens
+        @include mobile-up {
+            @include transform-center-h(false);
 
-        + label {
-            padding-top: ($checkbox_height + $input_padding);
-            padding-left: ($checkbox_width / 2);
+            + label {
+                padding-top: ($checkbox_height + $input_padding);
+                padding-left: ($checkbox_width / 2);
+            }
         }
     }
 
