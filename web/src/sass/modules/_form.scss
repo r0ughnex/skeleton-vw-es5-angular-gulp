@@ -47,7 +47,7 @@ $input_span_padding: 0.6667em;
 $input_span_font_size: 0.9375rem;
 $input_disabled_color: darken($color_grey_sky, 5%);
 
-// field parent
+// field (parent)
 %field {
     display: block;
     position: relative;
@@ -59,7 +59,8 @@ $input_disabled_color: darken($color_grey_sky, 5%);
     padding: 0 auto;
 }
 
-// field parent - checkbox
+// field (parent)
+// modifier - checkbox
 %field--checkbox {
     position: absolute;
     top: 0; left: 0;
@@ -69,8 +70,11 @@ $input_disabled_color: darken($color_grey_sky, 5%);
     margin: 0;
 }
 
-// field child
-%field__elem {
+// field - element
+// (note: used for
+// all elements except
+// checkboxes and radios)
+%field__element {
     @extend %reset;
     @include transitions(color, border-color, background-color);
 
@@ -126,8 +130,10 @@ $input_disabled_color: darken($color_grey_sky, 5%);
     }
 }
 
-// field child - checkbox
-%field__elem--checkbox {
+// field - checkbox
+// (note: only used
+// for checkboxes)
+%field__checkbox {
     @extend %reset;
     @include transitions(color, border-color, background-color);
 
@@ -146,7 +152,7 @@ $input_disabled_color: darken($color_grey_sky, 5%);
     }
 }
 
-// field icon
+// field - icon
 %field__icon {
     @include transitions(opacity, color, border-color, background-color);
     opacity: 1;
@@ -166,7 +172,8 @@ $input_disabled_color: darken($color_grey_sky, 5%);
     line-height: 1em;
 }
 
-// field icon - input
+// field - icon
+// modifier - input
 %field__icon--input {
     opacity: 0;
     left: auto;
@@ -179,7 +186,8 @@ $input_disabled_color: darken($color_grey_sky, 5%);
     }
 }
 
-// field icon - checkbox
+// field - icon
+// modifier - checkbox
 %field__icon--checkbox {
     @include transitions(color, border-color, background-color);
     @extend %transform-center;
@@ -202,7 +210,8 @@ $input_disabled_color: darken($color_grey_sky, 5%);
     border: $input_border_width solid $input_border-color;
 }
 
-// field icon - select
+// field - icon
+// modifier - select
 %field__icon--select {
     opacity: 1;
     pointer-events: none;
@@ -226,7 +235,7 @@ $input_disabled_color: darken($color_grey_sky, 5%);
     color: $color_blue_volkswagen;
 }
 
-// field span
+// field - span
 %field__span {
     opacity: 0;
     display: block;
@@ -250,7 +259,8 @@ $input_disabled_color: darken($color_grey_sky, 5%);
     transition-duration: $trans_time;
 }
 
-// field error
+// field - span
+// modifier - error
 %field__span--error {
     opacity: 1;
     visibility: visible;
@@ -451,7 +461,7 @@ $fieldset_margin: 1.875rem;
     > input[type="tel"], > input[type="text"],
     > input[type="email"], > input[type="number"],
     > input[type="password"], > textarea {
-        @extend %field__elem;
+        @extend %field__element;
         resize: none;
 
         line-height: ($input_height  / 1.8);
@@ -525,7 +535,7 @@ $fieldset_margin: 1.875rem;
 
 
     > input[type="checkbox"] {
-        @extend %field__elem--checkbox;
+        @extend %field__checkbox;
 
         + i { @extend %field__icon--checkbox; }
 
@@ -591,7 +601,7 @@ $fieldset_margin: 1.875rem;
     }
 
     > select {
-        @extend %field__elem;
+        @extend %field__element;
         padding-right: $input_padding;
         line-height: ($input_height  / 1.8);
 

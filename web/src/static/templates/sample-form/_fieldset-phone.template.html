@@ -10,7 +10,7 @@
         <input name="phone" type="tel" ng-model="$ctrl.data.phone" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" placeholder="Enter your phone number" autocomplete="off" spellcheck="false" ng-minlength="8" maxlength="20" ng-maxlength="20" ng-pattern="::$ctrl.pattern.phone" ng-required="true"/>
 
         <!-- input - clear / tick -->
-        <i class="icon__skoda icon__skoda-clear needsclick" ng-click="$ctrl.form.phone.$setPristine(); $ctrl.data.phone = '';"></i>
+        <i class="icon__skoda icon__skoda-clear needsclick" ng-click="$ctrl.form.phone.$setPristine(); $ctrl.data.phone = ''"></i>
         <i class="icon__skoda icon__skoda-tick"></i>
     </a>
 

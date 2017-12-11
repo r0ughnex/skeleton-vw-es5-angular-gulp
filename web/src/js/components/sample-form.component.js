@@ -48,7 +48,26 @@
 
         ctrl.data    = { }; // reference to the data bound to the form
         ctrl.form    = { }; // reference to the form containing the bound data
-        ctrl.options = { }; // reference to the available options for the form data
+        ctrl.options = {    // reference to the available options for the form data
+            // options available
+            // for the countries
+            country: [
+                { value: "AUS", name: "Australia" }
+            ],
+
+            // options available
+            // for the states
+            state: [
+                { value: "ACT", name: "Australian Capital Territory" },
+                { value: "NSW", name: "New South Wales"    },
+                { value: "NT" , name: "Northern Territory" },
+                { value: "QLD", name: "Queensland"         },
+                { value: "SA" , name: "South Australia"    },
+                { value: "TAS", name: "Tasmania"           },
+                { value: "VIC", name: "Victoria"           },
+                { value: "WA" , name: "Western Australia"  }
+            ]
+        };
 
         // ---------------------------------------------
         //   Private methods
@@ -86,10 +105,92 @@
             return cdata;
         }
 
+        // @name _getState
+        // @desc To-DO: TBC
+        // @param To-DO: TBC
+        // @return To-DO: TBC
+        function _getState(postcode) {
+            postcode = parseInt(postcode);
+
+            if(
+               typeof postcode !== "number"
+               || isNaN(postcode)) {
+                return null;
+            }
+
+            else if(
+               (postcode >=  200 && postcode <=  299) ||
+               (postcode >= 2600 && postcode <= 2618) ||
+               (postcode >= 2900 && postcode <= 2920)) {
+                return "ACT";
+            }
+
+            else if(
+                (postcode >= 1000 && postcode <= 1999) ||
+                (postcode >= 2000 && postcode <= 2599) ||
+                (postcode >= 2619 && postcode <= 2898) ||
+                (postcode >= 2921 && postcode <= 2999)) {
+                return "NSW";
+            }
+
+            else if(
+               (postcode >=  800 && postcode <=  899) ||
+               (postcode >=  900 && postcode <=  999)) {
+                return "NT";
+            }
+
+            else if(
+               (postcode >= 4000 && postcode <= 4999) ||
+               (postcode >= 9000 && postcode <= 9999)) {
+                return "QLD";
+            }
+
+            else if(
+               (postcode >= 5000 && postcode <= 5799) ||
+               (postcode >= 5800 && postcode <= 5999)) {
+                return "SA";
+            }
+
+            else if(
+               (postcode >= 7000 && postcode <= 7799) ||
+               (postcode >= 7800 && postcode <= 7999)) {
+                return "TAS";
+            }
+
+            else if(
+               (postcode >= 3000 && postcode <= 3999) ||
+               (postcode >= 8000 && postcode <= 8999)) {
+                return "VIC";
+            }
+
+            else if(
+               (postcode >= 6000 && postcode <= 6797) ||
+               (postcode >= 6800 && postcode <= 6999)) {
+                return "WA";
+            }
+
+            else { return null; }
+        }
+
         // ---------------------------------------------
         //   Public methods
         // ---------------------------------------------
-        /* empty block */
+        // @name onPostcodeChange
+        // @desc To-DO: TBC
+        // @param To-DO: TBC
+        // @param To-DO: TBC
+        // @return To-DO: TBC
+        function onPostcodeChange(postcode, isValid) {
+            if(isValid) {
+                ctrl.data.state = _getState(postcode);
+                return true;
+            }
+
+            else {
+                ctrl.data.state = _getState(null);
+                return false;
+            }
+        }
 
         // ---------------------------------------------
         //   Constructor block
@@ -109,7 +210,7 @@
         // ---------------------------------------------
         //   Instance block
         // ---------------------------------------------
-        /* empty block */
+        ctrl.onPostcodeChange = onPostcodeChange; // To-DO: TBC
     }
 
     /**
@@ -132,7 +233,7 @@
         return {
             controller: SampleFormController,
             templateUrl: SampleFormTemplate,
-            bindings: { data: "<", options: "@" }
+            bindings: { data: "<" }
         };
     }();
 
