@@ -190,7 +190,7 @@
         //   Public methods
         // ---------------------------------------------
         // @name onPostcodeChange
-        // @desc function triggered when the postcode is changed
+        // @desc function triggered when the input postcode is changed
         // @param {Number} postcode - the changed value of the postcode
         // @param {Boolean} isValid - flag indicating if the postcode is valid
         // @return {Boolean} isSuccess - flag indicating on change success or failure
@@ -200,14 +200,118 @@
             if(isValid) {
                 // set state if the postcode is valid
                 ctrl.data.state = _getState(postcode);
-                return true;
+                return true; // exit the function
             }
 
             else {
                 // set null if the postcode is invalid
                 ctrl.data.state = _getState(null);
-                return false;
+                return false; // exit the function
             }
+        }
+
+        // @name isTypeRequired
+        // @desc function to determine if the given vehicle type is required or not
+        // @param {String} type - the vehicle type to be determined as required or not
+        // @return {Boolean} isRequired - the boolean flag indicating if it is required
+        function isTypeRequired(type) { try {
+            var data = ctrl.data;
+
+            switch(type) {
+                // all vehicle types
+                // are treated same
+                case "pv": case "cv":
+                case "no": default: {
+                    return (
+                    !data.type.pv &&
+                    !data.type.cv &&
+                    !data.type.no);
+                }
+            }}
+
+            // return false on any errors
+            catch(error) { return false; }
+        }
+
+        // @name isTypeDisabled
+        // @desc function to determine if the given vehicle type is disabled or not
+        // @param {String} type - the vehicle type to be determined as disabled or not
+        // @return {Boolean} isDisabled - the boolean flag indicating if it is disabled
+        function isTypeDisabled(type) { try {
+            var data = ctrl.data;
+
+            switch(type) {
+                // for when the user owns either
+                // personal / commercial vehicles
+                case "pv": case "cv": {
+                    return data.type.no;
+                }
+
+                // when the user does
+                // not own a vehicle
+                case "no": {
+                    return (data.type.pv ||
+                            data.type.cv);
+                }
+
+                // for all other cases
+                default: { return false; }
+            }}
+
+            // return false on any errors
+            catch(error) { return false; }
+        }
+
+        // @name isTypeError
+        // @desc function to determine if the given vehicle type has errored or not
+        // @param {String} type - the vehicle type to be determined as errored or not
+        // @return {Boolean} isError - the boolean flag indicating if it has errored
+        function isTypeError(type) { try {
+            var form = ctrl.form;
+
+            switch(type) {
+                // all vehicle types
+                // are treated same
+                case "pv": case "cv":
+                case "no": default: {
+                    return ((form.type_pv.$invalid  ||
+                             form.type_cv.$invalid  ||
+                             form.type_no.$invalid) &&
+
+                            (form.type_pv.$dirty ||
+                             form.type_cv.$dirty ||
+                             form.type_no.$dirty));
+                }
+            }}
+
+            // return false on any errors
+            catch(error) { return false; }
+        }
+
+        // @name submitForm
+        // @desc function to submit the form with the given data
+        // @param {Object} data - the given form data to be submitted
+        function submitForm(data, isValid, event) {
+            if(event) { try {
+                // stop event propogation
+                event.preventDefault();
+                event.stopPropagation();
+
+                // blur the focussed button
+                event.target.blur(); // <span>
+                event.target.parentNode.blur(); // <a>
+                } catch(error) { console.log(error); }
+            }
+
+            print("------------------------------------------------------------------------------------");
+            print("sample-form.controller.js: This submitted form is", (isValid ? "valid." : "invalid."));
+            print("sample-form.controller.js: This submitted form data is:");
+            print("data:", data ? data : "data is not defined.");
+            print("------------------------------------------------------------------------------------");
+
+            // only proceed if the data is
+            // not empty and form is valid
+            if(!data || !isValid) { return false; }
         }
 
         // ---------------------------------------------
@@ -228,7 +332,11 @@
         // ---------------------------------------------
         //   Instance block
         // ---------------------------------------------
-        ctrl.onPostcodeChange = onPostcodeChange; // function triggered when the postcode is changed
+        ctrl.onPostcodeChange = onPostcodeChange; // function triggered when the input postcode is changed
+        ctrl.isTypeRequired   = isTypeRequired;   // function to determine if the given vehicle type is required or not
+        ctrl.isTypeDisabled   = isTypeDisabled;   // function to determine if the given vehicle type is disabled or not
+        ctrl.isTypeError      = isTypeError;      // function to determine if the given vehicle type has errored or not
+        ctrl.submitForm       = submitForm;
     }
 
     /**

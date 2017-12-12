@@ -3,7 +3,7 @@
 <fieldset class="fieldset">-->
 
     <!-- fieldset - row (one column) -->
-    <!-- (note: x1 is not required) -->
+    <!-- (note: -x1 is not required) -->
     <div class="fieldset__row fieldset__row--x1">
         <!-- fieldset - col -->
         <!-- (note: align is not required) -->
@@ -28,7 +28,10 @@
             </label>
 
             <!-- error -->
-            <span> Please agree to receive occasional emails </span>
+            <!-- note: the set data-lines attribute indicates -->
+            <!-- that the error might span over x no.of lines -->
+            <!-- (only available to be set on mobile devices) -->
+            <span data-lines=2> Please agree to receive occasional email&nbsp;updates </span>
 
         </div><!-- fieldset - col end -->
     </div><!-- fieldset - row end --><!--
