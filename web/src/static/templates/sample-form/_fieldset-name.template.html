@@ -9,7 +9,7 @@
     <a class="input" ng-class="{'input--error': ($ctrl.form.name.$invalid && $ctrl.form.name.$dirty)}">
 
         <!-- input - element -->
-        <input name="name" type="text" ng-model="$ctrl.data.name" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" placeholder="Enter your full name" autocomplete="off" spellcheck="false" ng-minlength="2" maxlength="20" ng-maxlength="20" ng-pattern="::$ctrl.pattern.name" ng-required="true"/>
+        <input name="name" type="text" ng-model="$ctrl.data.name" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" placeholder="Enter your full name" autocomplete="off" spellcheck="false" ng-minlength="2" maxlength="50" ng-maxlength="50" ng-pattern="::$ctrl.pattern.name" ng-required="true"/>
 
         <!-- input - clear / tick -->
         <i class="icon icon-clear needsclick" ng-click="$ctrl.form.name.$setPristine(); $ctrl.data.name = ''"></i>

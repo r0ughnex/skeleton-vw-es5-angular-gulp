@@ -92,7 +92,11 @@ require("../base/raf");
         // @desc function for on post link
         function _onPostLink() {
             setTimeout(function() {
-                LoaderService.showLoader().then(function() {
+                LoaderService.showLoader().then(function(isShowSuccess) { /*
+                    console.log("--------------------------------------------------");
+                    console.log("modules.controller.js: Showing the default loader:");
+                    console.log("isShowSuccess:", isShowSuccess);
+                    console.log("--------------------------------------------------");*/
 
                     // TO-DO: add code to request
                     // the data for the page here
@@ -123,7 +127,11 @@ require("../base/raf");
                             }
 
                             setTimeout(function() {
-                                LoaderService.hideLoader().then(function() {
+                                LoaderService.hideLoader().then(function(isHideSuccess) { /*
+                                    console.log("-------------------------------------------------");
+                                    console.log("modules.controller.js: Hiding the default loader:");
+                                    console.log("isHideSuccess:", isHideSuccess);
+                                    console.log("-------------------------------------------------");*/
 
                                     // TO-DO: add code to do something
                                     // with the obtained page data here

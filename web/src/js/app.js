@@ -220,6 +220,7 @@ require("./components/loader.component");
 require("./components/footer.component");
 
 require("./components/sample-form.component");
+require("./components/overlay-loader.component");
 require("./components/teaser-image-small.component");
 
 // complete

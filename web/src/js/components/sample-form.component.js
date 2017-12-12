@@ -23,9 +23,11 @@
         * @param {Service} $scope - Service in module
         * @param {Service} $element - Service in module
         * @param {Constant} CONFIG - The app config constant
+        * @param {Service} ScopeService - The custom scope service
+        * @param {Service} LoaderService - the custom loader service
         * @return {Object} - The instance of the controller class
     **/
-    function SampleFormController($scope, $element, CONFIG) {
+    function SampleFormController($scope, $element, CONFIG, ScopeService, LoaderService) {
         "ngInject"; // tag this function for dependancy injection
 
         // ---------------------------------------------
@@ -312,6 +314,29 @@
             // only proceed if the data is
             // not empty and form is valid
             if(!data || !isValid) { return false; }
+
+            // show the loader when the form is started (to disable user interaction)
+            LoaderService.showOverlayLoader("sample-form").then(function(isShowSuccess) {
+                console.log("------------------------------------------------------");
+                console.log("sample-form.controller.js: Showing the overlay loader:");
+                console.log("isShowSuccess:", isShowSuccess);
+                console.log("------------------------------------------------------");
+
+                // TO-DO: add code to submit the form
+                // here and hide the loader when done
+                // (the timeout is jsut a simulation)
+
+                // hide the loader when the form submit
+                // finishes (to allow user interaction)
+                setTimeout(function() {
+                    LoaderService.hideOverlayLoader("sample-form").then(function(isHideSuccess) {
+                        console.log("-----------------------------------------------------");
+                        console.log("sample-form.controller.js: Hiding the overlay loader:");
+                        console.log("isHideSuccess:", isHideSuccess);
+                        console.log("-----------------------------------------------------");
+                    });  // showOverlayLoader() end
+                }, (CONFIG.timeout.scope * 6));
+            }); // showOverlayLoader() end
         }
 
         // ---------------------------------------------
@@ -324,7 +349,6 @@
         // deregister all registered listeners, clear set timers
         // and set intervals when the current scope is destroyed
         $scope.$on("$destroy", function() {
-
             // reset all references to objects and arrays
             ctrl.data = ctrl.form = ctrl.options = { };
         });
