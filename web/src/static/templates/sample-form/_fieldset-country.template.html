@@ -9,7 +9,7 @@
     <a class="select" ng-class="{'select--error': ($ctrl.form.country.$invalid && $ctrl.form.country.$dirty), 'select--disabled': ($ctrl.form.postcode.$invalid || true)}">
 
         <!-- select - element -->
-        <select name="country" ng-model="$ctrl.data.country" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" ng-options="option.value as option.name for option in ::$ctrl.options.country" ng-init="$ctrl.data.country = $ctrl.options.country[0].value" ng-disabled="($ctrl.form.postcode.$invalid || true)" ng-required="true">
+        <select name="country" ng-model="$ctrl.data.country" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" ng-options="option.value as option.name for option in ::$ctrl.options.country" ng-init="(!$ctrl.data.country ? ($ctrl.data.country = $ctrl.options.country[0].value) : null)" ng-disabled="($ctrl.form.postcode.$invalid || true)" ng-required="true">
 
             <!-- select - element - options -->
             <option value="" hidden disabled selected> Please select your country </option>

@@ -99,7 +99,6 @@ require("../base/promise");
                 prompt("----------------------------------------------");
                 prompt("data.service.js:", "Invalid CTA link detected:");
                 prompt("data.service.js:", (link ? link : "CTA link is not defined."));
-                prompt("----------------------------------------------");
             }
 
             // check if the the cta label is valid
@@ -109,7 +108,6 @@ require("../base/promise");
                 prompt("-----------------------------------------------");
                 prompt("data.service.js:", "Invalid CTA label detected:");
                 prompt("data.service.js:", (label ? label : "CTA label is not defined."));
-                prompt("-----------------------------------------------");
             }
 
             // return the parsed and
@@ -144,7 +142,6 @@ require("../base/promise");
                     prompt("-------------------------------------------------------");
                     prompt("data.service.js:", "Invalid " + key + " image detected:");
                     prompt("data.service.js:", (image ? image : key + " image is not defined."));
-                    prompt("-------------------------------------------------------");
                 }
 
                 // note: the image can contain absolute or relative
@@ -181,7 +178,12 @@ require("../base/promise");
             Object.keys(cdata).forEach(function(key, index) {
                 // get the current object
                 var obj  = cdata[key];
-                var keys = Object.keys(obj);
+                var keys = [ ];
+
+                // get the nested keys for this key
+                // (note: the try is to avoid null)
+                try { keys = Object.keys(obj); }
+                catch(error) { keys = [ ]; }
 
                 // TO-DO: add code to parse
                 // the obtained data here
@@ -248,7 +250,6 @@ require("../base/promise");
                             prompt("---------------------------------------------------");
                             prompt("data.service.js:", "Invalid response data detected:");
                             prompt("data.service.js:", (responseData ? responseData : "response data is not defined."));
-                            prompt("---------------------------------------------------");
                         }
 
                         // save the data so as it can be re-used later

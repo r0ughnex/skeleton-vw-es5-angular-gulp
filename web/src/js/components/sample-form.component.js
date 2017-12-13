@@ -83,7 +83,59 @@
 
         // @name _onPostLink
         // @desc function for on post link
-        function _onPostLink() { /* empty block */ }
+        function _onPostLink() {
+            // check if the form data is empty
+            // or contains any pre-filled data
+            // (note: the timeout is to ensure
+            // that the form bindings update)
+            setTimeout(function() {
+                // loop through each pre-filled item in the form data
+                Object.keys(ctrl.data).forEach(function(field, index) {
+                    var value   = ctrl.data[field]; // get the value
+                    var element = ctrl.form[field]; // get teh element
+
+                    /*
+                    console.log("-------------");
+                    console.log("field:", field);
+                    console.log("value:", value); */
+
+                    // set the form field as dirty
+                    // (for the errors to be visible)
+                    if(typeof element !== "undefined" &&
+                       typeof element.$setDirty === "function") {
+                        element.$setDirty(true); // set field dirty
+                    }
+
+                    // if there are nested items
+                    // in the parent form data
+                    else {
+                        // loop through each nested item in the parent form data
+                        Object.keys(value).forEach(function(ifield, iindex) {
+                            // note: this is specifically meant
+                            // for type_pv, type_cv and type_no
+                            ifield = field + "_" + ifield;    // get the inner key
+                            var ivalue   = ctrl.data[ifield]; // get the inner value
+                            var ielement = ctrl.form[ifield]; // get the inner element
+
+                            /*
+                            console.log("---------------");
+                            console.log("ifield:", ifield);
+                            console.log("ivalue:", ivalue); */
+
+                            // set the inner form field as dirty
+                            // (for the inner errors to be visible)
+                            if(typeof ielement !== "undefined" &&
+                               typeof ielement.$setDirty === "function") {
+                                ielement.$setDirty(true); // set field dirty
+                            }
+                        });
+                    }
+                });
+
+                // update the component scope
+                ScopeService.digest($scope);
+            }, CONFIG.timeout.scope);
+        }
 
         // @name _onChanges
         // @desc function for on binding changes
@@ -102,6 +154,10 @@
             // make a local copy of the data
             // (note: only if copy is required)
             var cdata = angular.copy(data);
+
+            // TO-DO: Check if the form select
+            // data, if given are valid and
+            // are in the list of options
 
             // return the parsed data
             return cdata;
@@ -305,11 +361,28 @@
                 } catch(error) { console.log(error); }
             }
 
+            // TO-DO: convert these snippets into
+            // a separate function to print the
+            // form data as individual items
+
             print("------------------------------------------------------------------------------------");
             print("sample-form.controller.js: This submitted form is", (isValid ? "valid." : "invalid."));
             print("sample-form.controller.js: This submitted form data is:");
-            print("data:", data ? data : "data is not defined.");
-            print("------------------------------------------------------------------------------------");
+            Object.keys(data).forEach(function(key, index) {
+                var value = data[key];
+                if(typeof value !== "object") {
+                    print(key + ": " + value);
+                }
+
+                else {
+                    Object.keys(value).forEach(function(ikey, iindex) {
+                        var ivalue = data[key][ikey];
+                        if(typeof ivalue !== "object") {
+                            print(key + "." + ikey + ": " + ivalue);
+                        }
+                    });
+                }
+            });
 
             // only proceed if the data is
             // not empty and form is valid
@@ -320,7 +393,6 @@
                 console.log("------------------------------------------------------");
                 console.log("sample-form.controller.js: Showing the overlay loader:");
                 console.log("isShowSuccess:", isShowSuccess);
-                console.log("------------------------------------------------------");
 
                 // TO-DO: add code to submit the form
                 // here and hide the loader when done
@@ -333,7 +405,6 @@
                         console.log("-----------------------------------------------------");
                         console.log("sample-form.controller.js: Hiding the overlay loader:");
                         console.log("isHideSuccess:", isHideSuccess);
-                        console.log("-----------------------------------------------------");
                     });  // showOverlayLoader() end
                 }, (CONFIG.timeout.scope * 6));
             }); // showOverlayLoader() end

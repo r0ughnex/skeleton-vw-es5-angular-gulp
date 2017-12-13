@@ -133,8 +133,6 @@ require("../base/promise");
             && typeof oscope.$digest === "function") { // digest function
                 _oscopes[name] = oscope;
             }
-
-            console.log("_oscopes:", _oscopes);
         }
 
         // @name addOverlayLoader
@@ -150,8 +148,6 @@ require("../base/promise");
             && typeof oloader.hide === "function") { // hide function
                 _oloaders[name] = oloader;
             }
-
-            console.log("_oloaders:", _oloaders);
         }
 
         // @name showOverlayLoader

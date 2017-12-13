@@ -95,8 +95,7 @@ require("../base/raf");
                 LoaderService.showLoader().then(function(isShowSuccess) { /*
                     console.log("--------------------------------------------------");
                     console.log("samples.controller.js: Showing the default loader:");
-                    console.log("isShowSuccess:", isShowSuccess);
-                    console.log("--------------------------------------------------");*/
+                    console.log("isShowSuccess:", isShowSuccess); */
 
                     // TO-DO: add code to request
                     // the data for the page here
@@ -108,7 +107,6 @@ require("../base/raf");
                         console.log("--------------------------------------------------------");
                         console.log("samples.controller.js:", "Page data from the service is:");
                         console.log("samples.controller.js:", (pageData ? pageData : "page data is not defined."));
-                        console.log("--------------------------------------------------------");
 
                         /*
                         setTimeout(function() { */
@@ -130,8 +128,7 @@ require("../base/raf");
                                 LoaderService.hideLoader().then(function(isHideSuccess) { /*
                                     console.log("-------------------------------------------------");
                                     console.log("samples.controller.js: Hiding the default loader:");
-                                    console.log("isHideSuccess:", isHideSuccess);
-                                    console.log("-------------------------------------------------");*/
+                                    console.log("isHideSuccess:", isHideSuccess); */
 
                                     // TO-DO: add code to do something
                                     // with the obtained page data here
