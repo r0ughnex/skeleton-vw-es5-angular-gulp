@@ -103,10 +103,10 @@ require("../base/raf");
 
                     // get the data for the modules and components on the page
                     DataService.getData("page_samples").then(function(pageData) {
-                        ctrl.data = pageData; // set the response from the service as page data
-                        console.log("--------------------------------------------------------");
-                        console.log("samples.controller.js:", "Page data from the service is:");
-                        console.log("samples.controller.js:", (pageData ? pageData : "page data is not defined."));
+                        ctrl.data = pageData;  // set response from service as page data
+                        print("--------------------------------------------------------");
+                        print("samples.controller.js:", "Page data from the service is:");
+                        print("samples.controller.js:", (pageData ? pageData : "page data is not defined."));
 
                         /*
                         setTimeout(function() { */

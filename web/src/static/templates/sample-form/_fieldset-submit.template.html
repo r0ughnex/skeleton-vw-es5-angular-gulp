@@ -2,16 +2,6 @@
 <!-- (submit) --><!--
 <fieldset class="fieldset">-->
 
-    <!-- TO:DO: convert this dummy button fix -->
-    <!-- and use ng-keypress event on the form -->
-
-    <!-- button - dummy -->
-    <!-- (note: this is a dummy button and is only used -->
-    <!-- to enable form submit via keyboard enter click) -->
-    <button type="submit" style="display: none;" ng-disabled="($ctrl.form.$invalid || $ctrl.isLoading)">
-        Show Overlay Loader
-    </button>
-
     <!-- button - primary -->
     <!-- (note: -primary is not requiured) -->
     <a class="button button--primary" ng-class="{'button--disabled': ($ctrl.form.$invalid || $ctrl.isLoading)}" ng-href="#show-overlay-loader" title="Show Overlay Loader" ng-click="$ctrl.submitForm($ctrl.data, $ctrl.form.$valid, $event)"><span>

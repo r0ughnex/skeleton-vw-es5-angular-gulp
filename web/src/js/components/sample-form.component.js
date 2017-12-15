@@ -409,19 +409,47 @@
             catch(error) { return false; }
         }
 
+        // @name onKeyPress
+        // @desc function triggered when keyboard is used on the form
+        // @param {Object} data - the given data from the form to be submitted
+        // @param {Boolean} isValid - flag to indicate if the given form is valid
+        // @param {Event} event - the DOM event that triggered a call to this function
+        var onKeyPress = debounce(function(data, isValid, event) { try {
+            // determine action based on the
+            // key that triggred this function
+            switch (event.key.toLowerCase()) {
+                // when the enter
+                // key is pressed
+                case "enter": {
+                    // manually tirgger a form submit
+                    submitForm(data, isValid, event);
+                    break;
+                }
+
+                // default action on key press
+                default: { /* empty block */ }
+            }}
+
+            // action on any key press errors
+            catch(error) { console.log(error); }
+        }, CONFIG.timeout.scope);
+
         // @name submitForm
-        // @desc function to submit the form with the given data
-        // @param {Object} data - the given form data to be submitted
+        // @desc function to submit the form with the given form data
+        // @param {Object} data - the given data from the form to be submitted
+        // @param {Boolean} isValid - flag to indicate if the given form is valid
+        // @param {Event} event - the DOM event that triggered a call to this function
         function submitForm(data, isValid, event) {
             if(event) { try {
                 // stop event propogation
                 event.preventDefault();
                 event.stopPropagation();
 
-                // blur the focussed button
-                event.target.blur(); // <span>
-                event.target.parentNode.blur(); // <a>
-                } catch(error) { console.log(error); }
+                // blur the focussed element
+                // and it's immediate parent
+                event.target.blur(); // <span>, <input>
+                event.target.parentNode.blur(); // <a>, <form>
+                } catch(error) { console.log(error); } // on error
             }
 
             // only proceed if the form
@@ -484,10 +512,13 @@
         //   Instance block
         // ---------------------------------------------
         ctrl.onPostcodeChange = onPostcodeChange; // function triggered when the input postcode is changed
-        ctrl.isTypeRequired   = isTypeRequired;   // function to determine if the given vehicle type is required or not
-        ctrl.isTypeDisabled   = isTypeDisabled;   // function to determine if the given vehicle type is disabled or not
-        ctrl.isTypeError      = isTypeError;      // function to determine if the given vehicle type has errored or not
-        ctrl.submitForm       = submitForm;
+
+        ctrl.isTypeRequired = isTypeRequired; // function to determine if the given vehicle type is required or not
+        ctrl.isTypeDisabled = isTypeDisabled; // function to determine if the given vehicle type is disabled or not
+        ctrl.isTypeError    = isTypeError;    // function to determine if the given vehicle type has errored or not
+
+        ctrl.onKeyPress = onKeyPress; // function triggered when keyboard is used on the form
+        ctrl.submitForm = submitForm; // function to submit the form with the given form data
     }
 
     /**

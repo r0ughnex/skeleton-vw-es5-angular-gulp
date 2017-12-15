@@ -8,7 +8,7 @@
     <!-- form -->
     <!-- (note: the novalidate is required to prevent the default browser validation -->
     <!-- on the form, and ng-submit is required to prevent the default submit action) -->
-    <form class="form" name="$ctrl.form" novalidate ng-submit="$ctrl.submitForm($ctrl.data, $ctrl.form.$valid, $event)">
+    <form class="form" name="$ctrl.form" novalidate ng-submit="$ctrl.submitForm($ctrl.data, $ctrl.form.$valid, $event)" ng-keypress="$ctrl.onKeyPress($ctrl.data, $ctrl.form.$valid, $event)">
 
 
 

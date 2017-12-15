@@ -688,6 +688,10 @@ $fieldset_margin: 1.875rem;
 
     > select {
         @extend %field__element;
+        // note: the color has been removed from the transitions
+        // so as the :-moz-focusring does not cause a transition
+        @include transitions(border-color, background-color);
+
         padding-right: $input_padding;
         line-height: ($input_height  / 1.8);
 
@@ -695,11 +699,20 @@ $fieldset_margin: 1.875rem;
             @extend %reset;
             padding: $input_padding;
             color: $color_grey_night;
+            font-family: "VWText-Regular";
             &[value=""] { color: $color_grey_warm; }
         }
 
-        &.ng-invalid {
-            color: $color_grey_warm;
+        &.ng-invalid { color: $color_grey_warm; }
+
+        &:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 $color_grey_night;
+
+            &.ng-invalid {
+                color: transparent;
+                text-shadow: 0 0 0 $color_grey_warm;
+            }
         }
 
         &.ng-invalid.ng-dirty:not([disabled]) {
