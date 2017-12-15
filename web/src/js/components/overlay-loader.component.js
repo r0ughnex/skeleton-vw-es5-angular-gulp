@@ -171,6 +171,9 @@ require("../base/promise");
             // clear the timers in the component
             clearTimeout(_showTimer);
             clearTimeout(_hideTimer);
+
+            // reset all flags to their default values
+            ctrl.isLoading = false;
         });
 
         // ---------------------------------------------

@@ -216,6 +216,9 @@ require("../base/promise");
             // reset all references to objects and arrays
             _el.main = _el.loader = _nanobar = null;
 
+            // reset all flags to their default values
+            ctrl.isLoading = false;
+
             // reset all indices to their default values
             _percent.current = 0;
         });

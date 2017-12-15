@@ -82,8 +82,8 @@ require("../base/promise");
         function showLoader() {
             return new Promise(function(resolve, reject) { try {
                 // show the default loader with the animation
-                // note: the error function is not required because
-                // the loader always uses resolve instead of reject
+                // (note: the error function is not required because
+                // the loader always uses resolve instead of reject)
                 _loader.show().then(function(isShowSuccess) {
                     // update the component scope
                     ScopeService.digest(_scope);
@@ -104,8 +104,8 @@ require("../base/promise");
         function hideLoader() {
             return new Promise(function(resolve, reject) { try {
                 // hide the default loader with the animation
-                // note: the error function is not required because
-                // the loader always uses resolve instead of reject
+                // (note: the error function is not required because
+                // the loader always uses resolve instead of reject)
                 _loader.hide().then(function(isHideSuccess) {
                     // update the component scope
                     ScopeService.digest(_scope);
@@ -160,8 +160,8 @@ require("../base/promise");
                 var oscope  = _oscopes[name];  // get the loader scope
 
                 // show the overlay loader with the animation
-                // note: the error function is not required because
-                // the loader always uses resolve instead of reject
+                // (note: the error function is not required because
+                // the loader always uses resolve instead of reject)
                 oloader.show().then(function(isShowSuccess) {
                     // update the component scope
                     ScopeService.digest(oscope);
@@ -186,8 +186,8 @@ require("../base/promise");
                 var oscope  = _oscopes[name];  // get the loader scope
 
                 // hide the overlay loader with the animation
-                // note: the error function is not required because
-                // the loader always uses resolve instead of reject
+                // (note: the error function is not required because
+                // the loader always uses resolve instead of reject)
                 oloader.hide().then(function(isHideSuccess) {
                     // update the component scope
                     ScopeService.digest(oscope);
