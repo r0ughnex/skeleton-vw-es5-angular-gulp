@@ -468,9 +468,9 @@
             // show the loader when the form is started (to disable user interaction)
             ctrl.isLoading = true; // set the loading flag to true (before loader show)
             LoaderService.showOverlayLoader("sample-form").then(function(isShowSuccess) {
-                console.log("------------------------------------------------------");
-                console.log("sample-form.controller.js: Showing the overlay loader:");
-                console.log("isShowSuccess:", isShowSuccess);
+                print("------------------------------------------------------");
+                print("sample-form.controller.js: Showing the overlay loader:");
+                print("isShowSuccess:", isShowSuccess);
 
                 // TO-DO: add code to submit the form
                 // here and hide the loader when done
@@ -480,9 +480,9 @@
                 // finishes (to allow user interaction)
                 setTimeout(function() {
                     LoaderService.hideOverlayLoader("sample-form").then(function(isHideSuccess) {
-                        console.log("-----------------------------------------------------");
-                        console.log("sample-form.controller.js: Hiding the overlay loader:");
-                        console.log("isHideSuccess:", isHideSuccess);
+                        print("-----------------------------------------------------");
+                        print("sample-form.controller.js: Hiding the overlay loader:");
+                        print("isHideSuccess:", isHideSuccess);
 
                         // set the loading flag to false (after loader hide)
                         ctrl.isLoading = false; ScopeService.digest($scope);
