@@ -1,0 +1,72 @@
+// -------------------------------------
+//   Component - Overlay Loader
+// -------------------------------------
+/**
+    * @name overlay-loader
+    * @desc Styles for the overlay loader component.
+**/
+
+.overlay-loader {
+    display: block;
+    position: absolute;
+    z-index: $zi_overlay;
+    box-sizing: border-box;
+
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: transparent;
+}
+
+// -------------------------------------
+//   Overlay Loader - Spinner
+// -------------------------------------
+$ol_spinner_size: 60px;
+
+.overlay-loader__spinner {
+    z-index: $zi_default;
+    height: $ol_spinner_size;
+    width:  $ol_spinner_size;
+    fill: $color_blue_volkswagen;
+
+    // spinner center aligned
+    // horizontally by default
+    @extend %transform-center-h;
+
+    // modifier - top
+    // (vertical alignment)
+    &--top {
+        top: 0;
+        @include section--margin-top(2);
+        @include mobile { @include section--margin-top(3); }
+    }
+
+    // modifier - center
+    // (vertical alignment)
+    &--center {
+        @extend %transform-center;
+    }
+
+    // modifier - bottom
+    // (vertical alignment)
+    &--bottom {
+        bottom: 0;
+        @include section--margin-bottom(2);
+        @include mobile { @include section--margin-bottom(3); }
+    }
+
+    // loader - spinner - keyframe
+    @keyframes ol-ldr-spinning {
+        0%   { opacity: 1; }
+        100% { opacity: 0; }
+    }
+
+    // loader - spinner - animation
+    .a { animation: ol-ldr-spinning 1s steps(8)   0ms infinite; }
+    .b { animation: ol-ldr-spinning 1s steps(8) 875ms infinite; }
+    .c { animation: ol-ldr-spinning 1s steps(8) 750ms infinite; }
+    .d { animation: ol-ldr-spinning 1s steps(8) 625ms infinite; }
+    .e { animation: ol-ldr-spinning 1s steps(8) 500ms infinite; }
+    .f { animation: ol-ldr-spinning 1s steps(8) 375ms infinite; }
+    .g { animation: ol-ldr-spinning 1s steps(8) 250ms infinite; }
+    .h { animation: ol-ldr-spinning 1s steps(8) 125ms infinite; }
+}

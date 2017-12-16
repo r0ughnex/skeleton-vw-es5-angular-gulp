@@ -32,6 +32,8 @@
 @import "modules/image";
 @import "modules/button";
 @import "modules/section";
+
+@import "modules/form";
 @import "modules/teaser-content";
 
 // -------------------------------------
@@ -45,5 +47,7 @@
 @import "components/loader";
 @import "components/header";
 @import "components/footer";
-@import "components/teaser-image-small";
 
+@import "components/sample-form";
+@import "components/overlay-loader";
+@import "components/teaser-image-small";

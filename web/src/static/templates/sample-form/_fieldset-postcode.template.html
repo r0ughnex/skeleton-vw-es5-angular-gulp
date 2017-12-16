@@ -1,0 +1,23 @@
+<!-- fieldset -->
+<!-- (postcode) --><!--
+<fieldset class="fieldset">-->
+
+    <!-- label -->
+    <label class="label"> Postcode * </label>
+
+    <!-- input -->
+    <a class="input" ng-class="{'input--error': ($ctrl.form.postcode.$invalid && $ctrl.form.postcode.$dirty)}">
+
+        <!-- input - element -->
+        <input name="postcode" type="tel" ng-model="$ctrl.data.postcode" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" placeholder="Enter your postcode" autocomplete="off" spellcheck="false" ng-minlength="4" maxlength="4" ng-maxlength="4" ng-pattern="::$ctrl.pattern.postcode" ng-required="true" ng-change="$ctrl.onPostcodeChange($ctrl.data.postcode, $ctrl.form.postcode.$valid)"/>
+
+        <!-- input - clear / tick -->
+        <i class="icon icon-clear needsclick" ng-click="$ctrl.form.postcode.$setPristine(); $ctrl.data.postcode = ''"></i>
+        <i class="icon icon-tick"></i>
+
+    </a><!-- input end -->
+
+    <!-- error -->
+    <span> Please enter a valid postcode </span><!--
+
+</fieldset>--><!-- fieldset end -->

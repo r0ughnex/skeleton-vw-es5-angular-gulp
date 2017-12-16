@@ -58,9 +58,8 @@
         function _onChanges() { /* empty block */ }
 
         // @name _parseAttributes
-        // @desc function to parse the bound attributes and
-        //       replace any missing information with default values
-        // @params {Object} ctrl - the controller attributes are bound to
+        // @desc function to parse the bound attributes and fill gaps with default values
+        // @params {Object} ctrl - the controller that the attributes have been bound to
         function _parseAttributes(ctrl) {
             // parse the component type
             switch(ctrl.type) {
@@ -70,32 +69,32 @@
         }
 
         // @name _parseData
-        // @desc function to parse the bound data and
-        //       replace any missing information with default values
-        // @params {Object} data - the bound data that needs to parsed
-        // @return {Object} - the copy of the bound data after being parsed
+        // @desc function to parse the bound data and fill gaps with default values
+        // @params {Object} data - the bound data that needs to parsed and checked
+        // @return {Object} cdata - the copy of the bound data after being parsed
         function _parseData(data) {
             // make a local copy of the data
-            var data = angular.copy(data);
+            // (note: only if copy is required)
+            var cdata = angular.copy(data);
 
             // check if data attributes exist else
             // create a empty data attribute object
-            if(!data.attr) {  data.attr = {}; }
+            if(!cdata.attr) {  cdata.attr = {}; }
 
             // parse the data attributes
-            switch(data.attr.align) {
-                case "top":    { data.attr.align = "top";    break; } // top aligned (v)
-                case "center": { data.attr.align = "center"; break; } // center aligned (v)
+            switch(cdata.attr.align) {
+                case "top":    { cdata.attr.align = "top";    break; } // top aligned (v)
+                case "center": { cdata.attr.align = "center"; break; } // center aligned (v)
 
                 default: {
-                    if(ctrl.type == "alt") { data.attr.align = "top"; } // type alt - top aligned  (v)
-                    else { data.attr.align = "center"; } // type- default - center aligned (v)
+                    if(ctrl.type == "alt") { cdata.attr.align = "top"; } // type alt - top aligned (v)
+                    else { cdata.attr.align = "center"; } // type default - default center aligned (v)
                     break;
                 }
             }
 
             // return the parsed data
-            return data;
+            return cdata;
         }
 
         // ---------------------------------------------

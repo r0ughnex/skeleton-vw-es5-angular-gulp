@@ -29,7 +29,8 @@
             ng-bind-html="::$ctrl.data.copy">
         </p>
 
-        <!-- button -->
+        <!-- button - primary -->
+        <!-- (note: -primary is not requiured) -->
         <a class="button button--primary" ng-if="::$ctrl.data.cta" ng-href="{{::$ctrl.data.cta.url}}" target="{{::$ctrl.data.cta.target}}" title="{{::($ctrl.data.cta.title | stripHtml)}}"><span
             ng-bind-html="::$ctrl.data.cta.label">
         </span></a>

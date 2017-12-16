@@ -114,7 +114,7 @@
         // a $state view transition is triggered
         _registeredListeners.push(
             // when $state view change transition on start is triggered
-            // note: from https://ui-router.github.io/guide/transitionhooks
+            // (note: from https://ui-router.github.io/guide/transitionhooks)
             $transitions.onStart({ /* criteria object */ }, function(transition) {
                 ctrl.fromState = transition.$from(); // save the from state object
                 ctrl.toState   = transition.$to();   // save the next state object

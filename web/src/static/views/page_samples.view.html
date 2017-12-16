@@ -25,14 +25,15 @@
 
 
         <!-- section -->
-        <section class="section section--color-light" animate-fade-in enter-delay="4" enter-speed="slow">
+        <section class="section section--color-light" ng-if="::$ctrl_page.data.form" animate-fade-in enter-delay="4" enter-speed="slow">
             <div class="container" animate-slide-up-in enter-delay="5" enter-speed="slow"><!-- container -->
 
-                <h2> Lorem ipsum dolor sit amet, <br> consectetur adipiscing&nbsp;elit. </h2>
+                <!-- headline / copy -->
+                <h2 ng-bind-html="::$ctrl_page.data.form.headline"></h2>
+                <p  ng-bind-html="::$ctrl_page.data.form.copy"></p>
 
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porta augue dui, ac convallis ex tempor sed. Sed <br> consequat posuere rutrum. Aenean nec euismod elit. Sed velit est, congue egestas mollis eu, volutpat&nbsp;id&nbsp;quam.
-                </p>
+                <!-- sample form -->
+                <sample-form data="::$ctrl_page.data.form.data"></sample-form>
 
             </div><!-- container end -->
         </section><!-- section end -->
