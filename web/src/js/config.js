@@ -38,7 +38,7 @@ require("./base/query");
         //   Public members
         // ---------------------------------------------
         var bd = this; // to capture the context of this
-        bd.isProd = false; // flag turn dev mode on/off ( will be modified by gulp )
+        bd.isProd = true; // flag turn dev mode on/off ( will be modified by gulp )
         bd.isDeploy = false; // flag turn live mode on/off ( will be modified by gulp )
 
         // ---------------------------------------------

@@ -1,0 +1,80 @@
+<!-- fieldset -->
+<!-- (type) --><!--
+<fieldset class="fieldset">-->
+
+    <!-- fieldset - row (three columns) -->
+    <!-- (note: similar markup to be used -->
+    <!-- for rows with a two column layout -->
+    <div class="fieldset__row fieldset__row--x3">
+        <!-- fieldset - col -->
+        <div class="fieldset__col" align="left" ng-class="{'fieldset__col--error': $ctrl.isTypeError('pv'), 'fieldset__col--disabled': $ctrl.isTypeDisabled('pv')}">
+
+            <!-- input -->
+            <div class="input checkbox" ng-class="{'input--error': $ctrl.isTypeError('pv'), 'input-disabled': $ctrl.isTypeDisabled('pv')}">
+
+                <!-- input - element -->
+                <input id="type_pv" name="type_pv" type="checkbox" ng-model="$ctrl.data.type.pv" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" ng-true-value="::true" ng-false-value="::false" ng-required="$ctrl.isTypeRequired('pv')" ng-disabled="$ctrl.isTypeDisabled('pv')"/>
+
+                <!-- input - tick -->
+                <i class="icon icon-tick"></i>
+
+            </div><!-- input end -->
+
+            <!-- label -->
+            <label class="label" for="type_pv">
+                I own a Volkswagen <br> personal vehicle
+            </label>
+
+        </div><!-- fieldset - col end --><!--
+
+     --><!-- fieldset - col --><!--
+     --><div class="fieldset__col" align="center" ng-class="{'fieldset__col--error': $ctrl.isTypeError('cv'), 'fieldset__col--disabled': $ctrl.isTypeDisabled('cv')}">
+
+            <!-- input -->
+            <div class="input checkbox" ng-class="{'input--error': $ctrl.isTypeError('cv'), 'input-disabled': $ctrl.isTypeDisabled('cv')}">
+
+                <!-- input - element -->
+                <input id="type_cv" name="type_cv" type="checkbox" ng-model="$ctrl.data.type.cv" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" ng-true-value="::true" ng-false-value="::false" ng-required="$ctrl.isTypeRequired('cv')" ng-disabled="$ctrl.isTypeDisabled('cv')"/>
+
+                <!-- input - tick -->
+                <i class="icon icon-tick"></i>
+
+            </div><!-- input end -->
+
+            <!-- label -->
+            <label class="label" for="type_cv">
+                I own a Volkswagen <br> commercial vehicle
+            </label>
+
+        </div><!-- fieldset - col end --><!--
+
+     --><!-- fieldset - col --><!--
+     --><div class="fieldset__col" align="right" ng-class="{'fieldset__col--error': $ctrl.isTypeError('no'), 'fieldset__col--disabled': $ctrl.isTypeDisabled('no')}">
+
+            <!-- input -->
+            <div class="input checkbox" ng-class="{'input--error': $ctrl.isTypeError('no'), 'input--disabled': $ctrl.isTypeDisabled('no')}">
+
+                <!-- input - element -->
+                <input id="type_no" name="type_no" type="checkbox" ng-model="$ctrl.data.type.no" ng-model-options="::{debounce: $ctrl.CONFIG.timeout.scope}" ng-true-value="::true" ng-false-value="::false" ng-required="$ctrl.isTypeRequired('no')" ng-disabled="$ctrl.isTypeDisabled('no')"/>
+
+                <!-- input - tick -->
+                <i class="icon icon-tick"></i>
+
+            </div><!-- input end -->
+
+            <!-- label -->
+            <label class="label" for="type_no">
+                I do not own any <br> Volkswagen vehicles
+            </label>
+
+        </div><!-- fieldset - col end -->
+
+        <!-- error -->
+        <!-- note: the set data-lines attribute indicates -->
+        <!-- that the error might span over x no.of lines -->
+        <!-- (only available to be set on mobile devices) -->
+        <span data-lines="2">
+            Please select at least one type of vehicle you&nbsp;own  </span>
+    </div><!-- fieldset - row end --><!--
+
+</fieldset>--><!-- fieldset end -->

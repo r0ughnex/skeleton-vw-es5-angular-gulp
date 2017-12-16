@@ -1,0 +1,30 @@
+// -------------------------------------
+//   Component - Sample Form
+// -------------------------------------
+/**
+    * @name sample-form
+    * @desc Styles for the sample form component.
+**/
+
+.sample-form {
+    position: relative;
+    overflow: hidden;
+
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+// custom html tag used by
+// angular in the template
+sample-form {
+    .sample-form {
+        @extend %section--margin-top;
+    }
+
+    &:first-child {
+        .media-player-inline {
+             margin-top: 0;
+        }
+    }
+}

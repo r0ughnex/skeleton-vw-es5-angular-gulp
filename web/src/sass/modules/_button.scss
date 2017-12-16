@@ -113,6 +113,8 @@ $btn_error_darken: 6%;
 // modifier - disabled
 %button--disabled {
 	cursor: not-allowed;
+	pointer-events: none;
+
 	border-color: $color_grey_warm;
 	background-color: $color_grey_soft;
 	color: rgba($color_grey_midnight, $btn_disabled_opacity);

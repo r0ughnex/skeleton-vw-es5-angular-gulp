@@ -11,6 +11,7 @@
 // base
 require("../base/raf");
 require("../base/query");
+require("../base/promise");
 
 // -------------------------------------
 //   Component - Loader
@@ -124,7 +125,6 @@ require("../base/query");
             });
         };
 
-
         // ---------------------------------------------
         //   Public methods
         // ---------------------------------------------
@@ -141,7 +141,7 @@ require("../base/query");
                 }
 
                 ctrl.isLoading = true; // set visible flag as true
-                ScopeService.digest($scope); // update the loader controller scope
+                ScopeService.digest($scope); // update the loader component scope
                 _el.loader.classList.add(_class.visible); // add the visible class
 
                 // clear the previous timer
@@ -177,7 +177,7 @@ require("../base/query");
                 _end();
 
                 ctrl.isLoading = false; // set visible flag as false
-                ScopeService.digest($scope); // update the loader controller scope
+                ScopeService.digest($scope); // update the loader component scope
                 _el.loader.classList.remove(_class.visible); // remove visible class
 
                 // resolve the promise with true
@@ -208,13 +208,16 @@ require("../base/query");
         // deregister all registered listeners, clear set timers
         // and set intervals when the current scope is destroyed
         $scope.$on("$destroy", function() {
-            // remove the timers attached to the component
+            // clear the timers in the component
             clearTimeout(_showTimer);
             clearTimeout(_hideTimer);
             clearTimeout(_timer);
 
             // reset all references to objects and arrays
             _el.main = _el.loader = _nanobar = null;
+
+            // reset all flags to their default values
+            ctrl.isLoading = false;
 
             // reset all indices to their default values
             _percent.current = 0;
@@ -230,7 +233,7 @@ require("../base/query");
     /**
         * @name LoaderTemplate
         * @desc Class for the loader template.
-        * @param {Constant} CONFIG - App CONFIG values
+        * @param {Constant} CONFIG - The app config constant
         * @return {Object} - The instance of the template class
     **/
     function LoaderTemplate(CONFIG) {

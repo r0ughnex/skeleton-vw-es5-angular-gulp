@@ -74,7 +74,7 @@ console.log(CONFIG);
         // disable / enable the app debug mode. This will be enabled
         // in dev mode ( required for counting watchers ) and will
         // be disabled by gulp in prod / deploy mode
-        $compileProvider.debugInfoEnabled(true);
+        $compileProvider.debugInfoEnabled(false);
 
         // only animate elements prefixed with this class name
         $animateProvider.classNameFilter(/animate-/);
@@ -218,6 +218,9 @@ require("./directives/dominant-color.directive");
 // components
 require("./components/loader.component");
 require("./components/footer.component");
+
+require("./components/sample-form.component");
+require("./components/overlay-loader.component");
 require("./components/teaser-image-small.component");
 
 // complete

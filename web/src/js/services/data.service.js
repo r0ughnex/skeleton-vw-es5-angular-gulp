@@ -72,9 +72,11 @@ require("../base/promise");
         // @desc function to parse the given cta data and fill gaps with default values
         // @param {Object} cta - the data to be parsed and checked for any missing information
         // @return {Object} ccta - a copy of the parsed and modifed data once parsing is complete
-        function _parseCTA(cta) { try {
+        function _parseCTA(cta) { try { /*
             // make a local copy of the data
-            var ccta = angular.copy(cta);
+            // (note: only if copy is required)
+            var ccta = angular.copy(cta); */
+            var ccta = cta;
 
             // check if the given cta contains
             // valid url, title and target set
@@ -97,7 +99,6 @@ require("../base/promise");
                 prompt("----------------------------------------------");
                 prompt("data.service.js:", "Invalid CTA link detected:");
                 prompt("data.service.js:", (link ? link : "CTA link is not defined."));
-                prompt("----------------------------------------------");
             }
 
             // check if the the cta label is valid
@@ -107,7 +108,6 @@ require("../base/promise");
                 prompt("-----------------------------------------------");
                 prompt("data.service.js:", "Invalid CTA label detected:");
                 prompt("data.service.js:", (label ? label : "CTA label is not defined."));
-                prompt("-----------------------------------------------");
             }
 
             // return the parsed and
@@ -119,9 +119,11 @@ require("../base/promise");
         // @desc function to parse the given image data and fill gaps with default values
         // @param {Object} images - the data to be parsed and checked for any missing information
         // @return {Object} cimages - a copy of the parsed and modifed data once parsing is complete
-        function _parseImages(images) { try {
+        function _parseImages(images) { try { /*
             // make a local copy of the data
-            var cimages = angular.copy(images);
+            // (note: only if copy is required)
+            var cimages = angular.copy(images); */
+            var cimages = images;
 
             // loop through each image (desktop and mobile)
             Object.keys(cimages).forEach(function(key, index) {
@@ -140,7 +142,6 @@ require("../base/promise");
                     prompt("-------------------------------------------------------");
                     prompt("data.service.js:", "Invalid " + key + " image detected:");
                     prompt("data.service.js:", (image ? image : key + " image is not defined."));
-                    prompt("-------------------------------------------------------");
                 }
 
                 // note: the image can contain absolute or relative
@@ -167,15 +168,22 @@ require("../base/promise");
         // @desc function to parse the given response data and fill gaps with default values
         // @param {Object} data - the data to be parsed and checked for any missing information
         // @return {Object} cdata - a copy of the parsed and modifed data once parsing is complete
-        function _parseData(data) { try {
+        function _parseData(data) { try { /*
             // make a local copy of the data
-            var cdata = angular.copy(data);
+            // (note: only if copy is required)
+            var cdata = angular.copy(data); */
+            var cdata = data;
 
             // loop through each object in the response data
             Object.keys(cdata).forEach(function(key, index) {
                 // get the current object
                 var obj  = cdata[key];
-                var keys = Object.keys(obj);
+                var keys = [ ];
+
+                // get the nested keys for this key
+                // (note: the try is to avoid null)
+                try { keys = Object.keys(obj); }
+                catch(error) { keys = [ ]; }
 
                 // TO-DO: add code to parse
                 // the obtained data here
@@ -242,7 +250,6 @@ require("../base/promise");
                             prompt("---------------------------------------------------");
                             prompt("data.service.js:", "Invalid response data detected:");
                             prompt("data.service.js:", (responseData ? responseData : "response data is not defined."));
-                            prompt("---------------------------------------------------");
                         }
 
                         // save the data so as it can be re-used later

@@ -92,7 +92,10 @@ require("../base/raf");
         // @desc function for on post link
         function _onPostLink() {
             setTimeout(function() {
-                LoaderService.showLoader().then(function() {
+                LoaderService.showLoader().then(function(isShowSuccess) { /*
+                    console.log("--------------------------------------------------");
+                    console.log("modules.controller.js: Showing the default loader:");
+                    console.log("isShowSuccess:", isShowSuccess); */
 
                     // TO-DO: add code to request
                     // the data for the page here
@@ -100,11 +103,10 @@ require("../base/raf");
 
                     // get the data for the modules and components on the page
                     DataService.getData("page_modules").then(function(pageData) {
-                        ctrl.data = pageData; // set the response from the service as page data
-                        console.log("--------------------------------------------------------");
-                        console.log("modules.controller.js:", "Page data from the service is:");
-                        console.log("modules.controller.js:", (pageData ? pageData : "page data is not defined."));
-                        console.log("--------------------------------------------------------");
+                        ctrl.data = pageData; // set response from service as page data
+                        print("--------------------------------------------------------");
+                        print("modules.controller.js:", "Page data from the service is:");
+                        print("modules.controller.js:", (pageData ? pageData : "page data is not defined."));
 
                         /*
                         setTimeout(function() { */
@@ -123,7 +125,10 @@ require("../base/raf");
                             }
 
                             setTimeout(function() {
-                                LoaderService.hideLoader().then(function() {
+                                LoaderService.hideLoader().then(function(isHideSuccess) { /*
+                                    console.log("-------------------------------------------------");
+                                    console.log("modules.controller.js: Hiding the default loader:");
+                                    console.log("isHideSuccess:", isHideSuccess); */
 
                                     // TO-DO: add code to do something
                                     // with the obtained page data here
