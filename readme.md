@@ -22,7 +22,9 @@ http://skeleton-vw-es5-angular-gulp.master.s3-website-ap-southeast-2.amazonaws.c
 
 ## What is it about?
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac malesuada turpis, tristique volutpat ex. Aenean egestas justo vitae ultrices tempus. Cras aliquet urna a aliquam porta. Suspendisse iaculis consectetur scelerisque. Donec malesuada sapien in felis elementum ornare. Sed commodo nulla sed justo aliquet, sed commodo nisi consequat.
+The skeletal **app structure** and the **gulp framework** in this repository give a brief introduction on **how to structure** and configure your angular project (along with some sample modules and components) for any of the **Volkswagen NGW page** builds, that you might work on in the future.
+
+The main **purpose** of this skeleton is to **keep the outer structure** of all the builds, the **same**, across multiple projects including the ones that might be worked on by freelancers. This ensures that the built modules and **components can** easily **be made re-usable**, if required, for a different project that might currently be in the pipeline. It also enables **easier on boarding** for any of the in-house developers, who might be assigned to the project at a later point in time.
 
 ## How to use the skeleton?
 
