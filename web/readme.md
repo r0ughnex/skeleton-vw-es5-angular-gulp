@@ -20,11 +20,11 @@ http://skeleton-vw-es5-angular-gulp.master.s3-website-ap-southeast-2.amazonaws.c
 # Guide to Frontend Development
 ----
 
-## Installing Node, Bower and Gulp
+## Installing Node, Bower and Gulp?
 
 Install the latest **LTS** version of node and it's package manager, which can be found [here](https://nodejs.org/en/) (which were **8.9.1** and **5.5.1** at the time of writing this document). Once node in installed on your machine, open the terminal or command prompt and run the command **npm install -g bower** to install bower and then run the command **npm install -g gulp** to install gulp.
 
-## Commands to run in Localhost
+## Commands to run in Localhost?
 
 Open the terminal or command prompt at the root folder **/web/**, and run the command **npm install**, followed by the command **bower install**. Once installation of both, the node modules and the bower components are complete, run the command **gulp**. This will start a **local server on port: 8000** and also **start watchers to watch for changes** on all relevant files and assets inside **/web/src/**.
 
