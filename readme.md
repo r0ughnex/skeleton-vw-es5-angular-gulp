@@ -34,7 +34,9 @@ If you happen to come across any **issues** or want to **suggest improvements**,
 
 ## Why use ES5? Why not ES8?
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac malesuada turpis, tristique volutpat ex. Aenean egestas justo vitae ultrices tempus. Cras aliquet urna a aliquam porta. Suspendisse iaculis consectetur scelerisque. Donec malesuada sapien in felis elementum ornare. Sed commodo nulla sed justo aliquet, sed commodo nisi consequat.
+ECMAScript 8 or **ECMAScript 2017** was officially released at the end of June by TC39. Currently, the standard is to publish a new ES specification version once a year. ES6 was published in 2015 and ES7 was published in 2016, but do you remember when ES5 was released? It happened in 2009, before the magical rise of JavaScript. With that said, a significant **bulk of Volkswagen NGW projects still run on ES5**.
+
+So in-order to **make future code backwards compatible and re-usable** with older projects and different versions of angular, an **alternate ES8 version of this skeleton** (with the same outer skeletal structure) is currently being baked **in the oven**, and will be ready in the next 6-8 weeks. Once it is available, you **simply have to update your current skeleton** (the relevant files) and the gulp framework in your existing project to the newer version, and you're good to go, provided you followed the structural guidelines outlined in this skeleton.
 
 ----
 # Guide to Frontend Development
