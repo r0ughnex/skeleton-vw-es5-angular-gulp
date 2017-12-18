@@ -28,7 +28,9 @@ The main **purpose** of this skeleton is to **keep the outer structure** of all 
 
 ## How to use the skeleton?
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac malesuada turpis, tristique volutpat ex. Aenean egestas justo vitae ultrices tempus. Cras aliquet urna a aliquam porta. Suspendisse iaculis consectetur scelerisque. Donec malesuada sapien in felis elementum ornare. Sed commodo nulla sed justo aliquet, sed commodo nisi consequat.
+**Fork the skeleton** in this repository and use it as a starting point for your project. Apart from changing the outer skeletal structure and the gulp framework, you are **free to experiment** with, and improve upon the existing set of modules and components or build your own (provided the Volkswagen **guidelines are maintained**).
+
+If you happen to come across any **issues** or want to **suggest improvements**, raise it in the repository containing the original skeleton or create a new feature from develop, for the fix / improvement and issue a pull request back into develop for **review**, once it is complete.
 
 ## Why use ES5? Why not ES8?
 
